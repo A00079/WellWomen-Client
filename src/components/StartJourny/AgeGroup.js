@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -51,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
 
 const AgeGroup = () => {
     const classes = useStyles();
+    const [userage, setUserage] = useState(null);
+
+    const handelAge = (age) =>{
+        setUserage(age)
+        console.log('Age',userage)
+    }
 
     return (
         <React.Fragment>
@@ -61,34 +67,34 @@ const AgeGroup = () => {
                     justify="center"
                     alignItems="center">
                     <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img class="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-blue-700">20's</div>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(20)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">20's</div>
                             </div>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img class="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-blue-700">30's</div>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(30)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">30's</div>
                             </div>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img class="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-blue-700">40's</div>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(40)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">40's</div>
                             </div>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img class="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-blue-700">50's</div>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(50)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">50's</div>
                             </div>
                         </div>
                     </Grid>
