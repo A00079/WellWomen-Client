@@ -35,7 +35,7 @@ export default function Parallax(props) {
     var windowScrollTop = window.pageYOffset / 3;
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
-  const { filter, className, children, style, image, small } = props;
+  const { filter, className, children, style, video, small } = props;
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
@@ -46,14 +46,22 @@ export default function Parallax(props) {
   return (
     <div
       className={parallaxClasses}
-      style={{
-        ...style,
-        backgroundImage: "url(" + image + ")",
-        transform: transform
-      }}
     >
+      <video style={{position: 'absolute',right: '0', bottom: '0',minWidth: '100%', minHeight: '100%',width: 'auto', height: 'auto',zIndex: '-100'}} autoPlay loop id="video-background" muted>
+        <source src={video} type="video/mp4" />
+      </video>
       {children}
     </div>
+    // <div
+    //   className={parallaxClasses}
+    //   style={{
+    //     ...style,
+    //     backgroundImage: "url(" + image + ")",
+    //     transform: transform
+    //   }}
+    // >
+    //   {children}
+    // </div>
   );
 }
 

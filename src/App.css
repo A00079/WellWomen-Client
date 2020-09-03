@@ -15,7 +15,7 @@
 }
 
 /* Toast Overide */
-.toast-notification {
+/* .toast-notification {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 5px 5px;
   background: #fff;
@@ -23,7 +23,7 @@
   padding: 5px;
   color: #999;
   cursor: pointer;
-}
+} */
 
 /* Animations */
 .fadein {

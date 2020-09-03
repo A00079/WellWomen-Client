@@ -44,7 +44,7 @@ export default function Components(props) {
                     color: "white"
                 }}
             />
-            <Parallax image={require("../assets/img/bg4.jpg")}>
+            <Parallax video={require("../assets/videos/mainvideo.mp4")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem>
@@ -71,7 +71,7 @@ export default function Components(props) {
             </Parallax>
 
             <div className={classNames(classes.main, classes.mainRaised)}>
-                <Card>
+                <Card styles={{height: '490px'}}>
                     <CardBody>
                         <ReactSlider />
                     </CardBody>

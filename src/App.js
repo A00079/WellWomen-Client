@@ -17,6 +17,8 @@ import LandingPage from "../src/views/LandingPage.js";
 import SignIn from "../src/views/SignIn.js";
 import SignUp from "../src/views/SignUp.js";
 import StartJourney from "../src/views/StartJourney.js";
+import YoutubeVideos from "../src/views/YoutubeVideos/youtubeVideos.js";
+
 
 
 var hist = createBrowserHistory();
@@ -49,10 +51,12 @@ function App() {
         <Route exact path='/confirm/:id' component={Confirm} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
+        <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
 
         <Route exact path="/" component={LandingPage} />
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          {/* <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} /> */}
         </Switch>
       </Router>
     </Provider>

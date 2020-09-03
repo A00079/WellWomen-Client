@@ -38,11 +38,11 @@ export default class Confirm extends Component {
   // <Landing > component so they can confirm another email address.
   render = () =>
     <div className='confirm'>
-      {this.state.confirming
+      {/* {this.state.confirming
         ? <Spinner size='8x' spinning={'spinning'} /> 
         : <Link to='/'>
             <Spinner size='8x' spinning={''} /> 
           </Link>
-      }
+      } */}
     </div>
 }
