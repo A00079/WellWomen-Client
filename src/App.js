@@ -4,11 +4,13 @@ import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
+import Notifications from 'react-notify-toast'
 
 import { setCurrentUser, logoutUser } from "./actions/authActions.js";
 import { Provider } from "react-redux";
 import store from "./store.js";
 
+import Confirm from './components/ConfirmEmail/Confirm.js';
 import PrivateRoute from "./components/private-route/PrivateRoute.js";
 import Dashboard from "./components/dashboard/Dashboard.js";
 import LandingPage from "../src/views/LandingPage.js";
@@ -42,9 +44,12 @@ function App() {
   return (
     <Provider store={store}>
       <Router history={hist}>
+        <Notifications />
         <Route exact path="/startjourney" component={StartJourney} />
+        <Route exact path='/confirm/:id' component={Confirm} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
+
         <Route exact path="/" component={LandingPage} />
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />

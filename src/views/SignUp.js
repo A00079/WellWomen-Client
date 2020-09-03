@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../actions/authActions.js";
 import classnames from "classnames";
+import Spinner from '../components/Spinner/Spinner.js';
+
 
 
 class SignUp extends Component {
@@ -16,7 +18,8 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
-      errors: {}
+      errors: {},
+      sendingEmail: false
     };
   }
   componentDidMount() {
@@ -27,6 +30,7 @@ class SignUp extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
@@ -39,6 +43,7 @@ class SignUp extends Component {
   };
 
   onSubmit = e => {
+    this.setState({ sendingEmail: true })
     e.preventDefault();
 
     const newUser = {
@@ -52,6 +57,7 @@ class SignUp extends Component {
   };
   render() {
     const { errors } = this.state;
+    const { sendingEmail } = this.state
     return (
       <React.Fragment>
         <div
@@ -77,6 +83,7 @@ class SignUp extends Component {
                   <button
                     className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
                   >
+
                     <div className="bg-white p-2 rounded-full">
                       <svg className="w-4" viewBox="0 0 533.5 544.3">
                         <path
@@ -99,7 +106,9 @@ class SignUp extends Component {
                     </div>
                     <span className="ml-4">
                       Sign Up with Google
-                </span>
+                    </span>
+
+
                   </button>
 
                   <button
@@ -140,7 +149,7 @@ class SignUp extends Component {
                       })}
                       placeholder="Name"
                     />
-                    <span className="red-text">{errors.name}</span>
+                    <span className="text-red-600">{errors.name}</span>
 
                     <input
                       onChange={this.onChange}
@@ -154,7 +163,7 @@ class SignUp extends Component {
                       })}
                       placeholder="Email"
                     />
-                    <span className="red-text">{errors.email}</span>
+                    <span className="text-red-600">{errors.email}</span>
 
                     <input
                       onChange={this.onChange}
@@ -168,7 +177,7 @@ class SignUp extends Component {
                       })}
                       placeholder="Password"
                     />
-                    <span className="red-text">{errors.password}</span>
+                    <span className="text-red-600">{errors.password}</span>
 
                     <input
                       onChange={this.onChange}
@@ -182,27 +191,33 @@ class SignUp extends Component {
                       })}
                       placeholder="Confirm Password"
                     />
-                    <span className="red-text">{errors.password2}</span>
+                    <span className="text-red-600">{errors.password2}</span>
 
                     <button
                       type='submit'
                       className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                     >
-                      <svg
-                        className="w-6 h-6 -ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                        <circle cx="8.5" cy="7" r="4" />
-                        <path d="M20 8v6M23 11h-6" />
-                      </svg>
-                      <span className="ml-3">
-                        Sign Up
+                      {sendingEmail
+                        ? <Spinner size='lg' spinning='spinning' />
+                        :
+                        <React.Fragment>
+                          <svg
+                            className="w-6 h-6 -ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="8.5" cy="7" r="4" />
+                            <path d="M20 8v6M23 11h-6" />
+                          </svg>
+                          <span className="ml-3">
+                            Sign Up
                 </span>
+                        </React.Fragment>
+                      }
                     </button>
                     <p className="mt-6 text-xs text-gray-600 text-center">
                       I agree to abide by templatana's

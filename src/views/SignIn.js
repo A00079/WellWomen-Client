@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions.js";
 import classnames from "classnames";
+import { notify } from 'react-notify-toast'
 
 class Signin extends Component {
    constructor(props) {
@@ -16,6 +17,9 @@ class Signin extends Component {
    }
 
    componentDidMount() {
+      if(this.props.hasOwnProperty('msg') && Object.keys(this.props.msg).length != 0){
+         notify.show(this.props.msg,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
+      }
       // If logged in and user navigates to Login page, should redirect them to dashboard
       if (this.props.auth.isAuthenticated) {
          this.props.history.push("/dashboard");
@@ -28,6 +32,12 @@ class Signin extends Component {
       }
 
       if (nextProps.errors) {
+         if(nextProps.errors.email){
+            notify.show(nextProps.errors.email,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
+         }else{
+            notify.show(nextProps.errors.password,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
+         }
+
          this.setState({
             errors: nextProps.errors
          });
@@ -61,16 +71,18 @@ class Signin extends Component {
                <h2 className="text-4xl tracking-tight">
                   Sign in into your account
       </h2>
-               <span className="text-sm">or <a href="#" className="text-blue-500">
-                  register a new account
-      </a>
+               <span className="text-sm"> 
+                
+               <Link to="/signup" className="text-blue-500">
+                  or register a new account
+               </Link>
                </span>
             </div>
             <div className="flex justify-center my-2 mx-4 md:mx-0">
                <form noValidate onSubmit={this.onSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
                   <div className="flex flex-wrap -mx-3 mb-6">
                      <div className="w-full md:w-full px-3 mb-6">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for='email'>Email address</label>
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor='email'>Email address</label>
                         <input
                            onChange={this.onChange}
                            value={this.state.email}
@@ -82,13 +94,13 @@ class Signin extends Component {
                               "appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none": true
                            })}
                            required />
-                        <span className="red-text">
+                        {/* <span className="text-red-600">
                            {errors.email}
                            {errors.emailnotfound}
-                        </span>
+                        </span> */}
                      </div>
                      <div className="w-full md:w-full px-3 mb-6">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for='Password'>Password</label>
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor='Password'>Password</label>
                         <input
                            onChange={this.onChange}
                            value={this.state.password}
@@ -100,18 +112,18 @@ class Signin extends Component {
                               "appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none": true
                            })}
                            required />
-                        <span className="red-text">
+                        {/* <span className="text-red-600">
                            {errors.password}
                            {errors.passwordincorrect}
-                        </span>
+                        </span> */}
                      </div>
                      <div className="w-full md:w-full px-3 mb-6">
-                        <button type="submit" className="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none focus:bg-white focus:border-gray-500">Sign in</button>
+                        <button type="submit" className="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none  focus:border-gray-500">Sign in</button>
                      </div>
-                     <div className="mx-auto -mb-6 pb-1">
+                     {/* <div className="mx-auto -mb-6 pb-1">
                         <span className="text-center text-xs text-gray-700">or sign up with</span>
-                     </div>
-                     <div className="flex items-center w-full mt-2">
+                     </div> */}
+                     {/* <div className="flex items-center w-full mt-2">
                         <div className="w-full md:w-1/3 px-3 pt-4 mx-2 border-t border-gray-400">
                            <button className='appearance-none flex items-center justify-center block w-full bg-gray-100 text-gray-700 shadow border border-gray-500 rounded-lg py-3 px-3 leading-tight hover:bg-gray-200 hover:text-gray-700 focus:outline-none'>
                               <svg className="h-6 w-6 fill-current text-gray-700" viewBox="0 0 512 512">
@@ -133,7 +145,7 @@ class Signin extends Component {
                               </svg>
                            </button>
                         </div>
-                     </div>
+                     </div> */}
                   </div>
                </form>
             </div>
@@ -149,7 +161,8 @@ Signin.propTypes = {
 
 const mapStateToProps = state => ({
    auth: state.auth,
-   errors: state.errors
+   errors: state.errors,
+   msg: state.msg
 });
 
 export default connect(
