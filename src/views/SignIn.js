@@ -32,8 +32,9 @@ class Signin extends Component {
       if (nextProps.auth.isAuthenticated) {
          this.props.history.push("/dashboard");
       }
-      if (nextProps.errors.error) {
+      if (nextProps.errors.error && nextProps.errors.error !== '') {
          notify.show(nextProps.errors.error, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+         nextProps.errors.error = "";
          this.setState({
             errors: {}
          });
