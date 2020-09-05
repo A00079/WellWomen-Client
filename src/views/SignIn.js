@@ -20,6 +20,7 @@ class Signin extends Component {
    componentDidMount() {
       if (this.props.hasOwnProperty('msg') && Object.keys(this.props.msg).length != 0) {
          notify.show(this.props.msg, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+         this.props.msg = "";
       }
       // If logged in and user navigates to Login page, should redirect them to dashboard
       if (this.props.auth.isAuthenticated) {
@@ -31,8 +32,11 @@ class Signin extends Component {
       if (nextProps.auth.isAuthenticated) {
          this.props.history.push("/dashboard");
       }
-      if (nextProps.errors.emailnotfound) {
-         notify.show(nextProps.errors.emailnotfound, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+      if (nextProps.errors.error) {
+         notify.show(nextProps.errors.error, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+         this.setState({
+            errors: {}
+         });
       }
 
       if (nextProps.errors) {
@@ -242,8 +246,7 @@ Signin.propTypes = {
 const mapStateToProps = state => ({
    auth: state.auth,
    errors: state.errors,
-   msg: state.msg,
-   emailsnotfound: state.emailsnotfound,
+   msg: state.msg
 });
 
 export default connect(
