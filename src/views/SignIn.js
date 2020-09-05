@@ -7,6 +7,8 @@ import classnames from "classnames";
 import { notify } from 'react-notify-toast'
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import facebook from '../assets/img/facebook.png';
+import { ClearMessage } from '../actions/clearMessages.js';
+
 class Signin extends Component {
    constructor(props) {
       super(props);
@@ -17,10 +19,10 @@ class Signin extends Component {
       };
    }
 
-   componentDidMount() {
+   componentWillMount() {
       if (this.props.hasOwnProperty('msg') && Object.keys(this.props.msg).length != 0) {
          notify.show(this.props.msg, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
-         this.props.msg = "";
+         this.props.ClearMessage("");
       }
       // If logged in and user navigates to Login page, should redirect them to dashboard
       if (this.props.auth.isAuthenticated) {
@@ -35,6 +37,8 @@ class Signin extends Component {
       if (nextProps.errors.error && nextProps.errors.error !== '') {
          notify.show(nextProps.errors.error, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
          nextProps.errors.error = "";
+         this.props.ClearMessage("");
+
          this.setState({
             errors: {}
          });
@@ -252,5 +256,5 @@ const mapStateToProps = state => ({
 
 export default connect(
    mapStateToProps,
-   { loginUser }
+   { loginUser,ClearMessage }
 )(Signin);
