@@ -12,6 +12,16 @@ import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 import logo from '../../assets/img/logo.png';
+import { Link } from "react-router-dom";
+
+import clsx from 'clsx';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
@@ -72,8 +82,8 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-            brandComponent
-          )}
+              brandComponent
+            )}
         </div>
         <Hidden smDown implementation="css">
           {rightLinks}
@@ -99,8 +109,33 @@ export default function Header(props) {
           onClose={handleDrawerToggle}
         >
           <div className={classes.appResponsive}>
-            {leftLinks}
-            {rightLinks}
+            <List>
+              {['Home', 'About', 'Our Work', 'Testimonials', 'Pricing', 'Stats', 'Contact Us', 'Testimonials'].map((text, index) => (
+                <React.Fragment>
+                  <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                  <Divider />
+                </React.Fragment>
+              ))}
+            </List>
+            <List>
+              <ListItem>
+                <Button variant="contained" color="primary" style={{ width: '100%' }}>
+                  <Link to="/login" className={classes.dropdownLink}>
+                    SignIn
+                  </Link>
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button variant="contained" color="secondary" style={{ width: '100%' }}>
+                  <Link to="/signup" className={classes.dropdownLink}>
+                    Sign Up
+                  </Link>
+                </Button>
+              </ListItem>
+            </List>
           </div>
         </Drawer>
       </Hidden>

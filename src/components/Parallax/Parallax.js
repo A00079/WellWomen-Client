@@ -47,7 +47,7 @@ export default function Parallax(props) {
     <div
       className={parallaxClasses}
     >
-      <video style={{position: 'absolute',right: '0', bottom: '0',minWidth: '100%', minHeight: '100%',width: 'auto', height: 'auto',zIndex: '-100'}} autoPlay loop id="video-background" muted>
+      <video style={{height: '100%',width: '100%',position: 'absolute',top: '0',left: '0',zIndex: '-2',objectFit: 'cover'}} autoPlay loop id="video-background" muted>
         <source src={video} type="video/mp4" />
       </video>
       {children}

@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import { loginUser } from "../actions/authActions.js";
 import classnames from "classnames";
 import { notify } from 'react-notify-toast'
-
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
+import facebook from '../assets/img/facebook.png';
 class Signin extends Component {
    constructor(props) {
       super(props);
@@ -17,8 +18,8 @@ class Signin extends Component {
    }
 
    componentDidMount() {
-      if(this.props.hasOwnProperty('msg') && Object.keys(this.props.msg).length != 0){
-         notify.show(this.props.msg,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
+      if (this.props.hasOwnProperty('msg') && Object.keys(this.props.msg).length != 0) {
+         notify.show(this.props.msg, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
       }
       // If logged in and user navigates to Login page, should redirect them to dashboard
       if (this.props.auth.isAuthenticated) {
@@ -30,12 +31,17 @@ class Signin extends Component {
       if (nextProps.auth.isAuthenticated) {
          this.props.history.push("/dashboard");
       }
+      if (nextProps.errors.emailnotfound) {
+         notify.show(nextProps.errors.emailnotfound, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+      }
 
       if (nextProps.errors) {
-         if(nextProps.errors.email){
-            notify.show(nextProps.errors.email,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
-         }else{
-            notify.show(nextProps.errors.password,"custom",4000,{ background: '#0E1717', text: "#FFFFFF" })
+
+         if (nextProps.errors.email) {
+            notify.show(nextProps.errors.email, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+         }
+         else if (nextProps.errors.password) {
+            notify.show(nextProps.errors.password, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
          }
 
          this.setState({
@@ -62,92 +68,166 @@ class Signin extends Component {
       const { errors } = this.state;
       return (
          <React.Fragment>
-            <div className="text-center mt-24">
-               <div className="flex items-center justify-center">
-                  <svg fill="none" viewBox="0 0 24 24" className="w-12 h-12 text-blue-500" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-               </div>
-               <h2 className="text-4xl tracking-tight">
-                  Sign in into your account
-      </h2>
-               <span className="text-sm"> 
-                
-               <Link to="/signup" className="text-blue-500">
-                  or register a new account
-               </Link>
-               </span>
-            </div>
-            <div className="flex justify-center my-2 mx-4 md:mx-0">
-               <form noValidate onSubmit={this.onSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
-                  <div className="flex flex-wrap -mx-3 mb-6">
-                     <div className="w-full md:w-full px-3 mb-6">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor='email'>Email address</label>
-                        <input
-                           onChange={this.onChange}
-                           value={this.state.email}
-                           error={errors.email}
-                           id="email"
-                           type="email"
-                           className={classnames("", {
-                              invalid: errors.email || errors.emailnotfound,
-                              "appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none": true
-                           })}
-                           required />
-                        {/* <span className="text-red-600">
-                           {errors.email}
-                           {errors.emailnotfound}
-                        </span> */}
-                     </div>
-                     <div className="w-full md:w-full px-3 mb-6">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor='Password'>Password</label>
-                        <input
-                           onChange={this.onChange}
-                           value={this.state.password}
-                           error={errors.password}
-                           id="password"
-                           type="password"
-                           className={classnames("", {
-                              invalid: errors.password || errors.passwordincorrect,
-                              "appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none": true
-                           })}
-                           required />
-                        {/* <span className="text-red-600">
-                           {errors.password}
-                           {errors.passwordincorrect}
-                        </span> */}
-                     </div>
-                     <div className="w-full md:w-full px-3 mb-6">
-                        <button type="submit" className="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none  focus:border-gray-500">Sign in</button>
-                     </div>
-                     {/* <div className="mx-auto -mb-6 pb-1">
-                        <span className="text-center text-xs text-gray-700">or sign up with</span>
+            <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+               <div
+                  class="max-w-screen-xl m-0 sm:m-20 bg-white md:m-0 md:p-0 shadow sm:rounded-lg flex justify-center flex-1"
+               >
+                  <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+                     {/* <div>
+                        <img
+                           src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
+                           class="w-32 mx-auto"
+                        />
                      </div> */}
-                     {/* <div className="flex items-center w-full mt-2">
-                        <div className="w-full md:w-1/3 px-3 pt-4 mx-2 border-t border-gray-400">
-                           <button className='appearance-none flex items-center justify-center block w-full bg-gray-100 text-gray-700 shadow border border-gray-500 rounded-lg py-3 px-3 leading-tight hover:bg-gray-200 hover:text-gray-700 focus:outline-none'>
-                              <svg className="h-6 w-6 fill-current text-gray-700" viewBox="0 0 512 512">
-                                 <path d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z" />
-                              </svg>
-                           </button>
+                     <form noValidate onSubmit={this.onSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
+                        <h1 class="text-1xl xl:text-1xl font-extrabold ml-4">
+                           <KeyboardBackspaceIcon style={{ color: 'dodgerblue' }} /><Link to="/"><span style={{ color: 'dodgerblue' }} className="text-blue-900">Back</span></Link>
+                        </h1>
+                        <div class="mt-2 flex flex-col items-center">
+
+                           <h1 class="text-2xl xl:text-3xl font-extrabold">
+                              Sign In for Well Women
+                        </h1>
+                           <div class="w-full flex-1 mt-8">
+                              <div class="flex flex-col items-center">
+                                 <button
+                                    class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                                 >
+                                    <div class="bg-white mr-6 p-2 rounded-full">
+                                       <svg class="w-4" viewBox="0 0 533.5 544.3">
+                                          <path
+                                             d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
+                                             fill="#4285f4"
+                                          />
+                                          <path
+                                             d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z"
+                                             fill="#34a853"
+                                          />
+                                          <path
+                                             d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z"
+                                             fill="#fbbc04"
+                                          />
+                                          <path
+                                             d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z"
+                                             fill="#ea4335"
+                                          />
+                                       </svg>
+                                    </div>
+                                    <span class="ml-4">
+                                       Sign In with Google
+                                 </span>
+                                 </button>
+                                 <button
+                                    class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
+                                 >
+                                    <div class="bg-white rounded-full">
+                                       {/* <svg class="w-6" viewBox="0 0 32 32">
+                                          <path
+                                             fill-rule="evenodd"
+                                             d="M16 4C9.371 4 4 9.371 4 16c0 5.3 3.438 9.8 8.207 11.387.602.11.82-.258.82-.578 0-.286-.011-1.04-.015-2.04-3.34.723-4.043-1.609-4.043-1.609-.547-1.387-1.332-1.758-1.332-1.758-1.09-.742.082-.726.082-.726 1.203.086 1.836 1.234 1.836 1.234 1.07 1.836 2.808 1.305 3.492 1 .11-.777.422-1.305.762-1.605-2.664-.301-5.465-1.332-5.465-5.93 0-1.313.469-2.383 1.234-3.223-.121-.3-.535-1.523.117-3.175 0 0 1.008-.32 3.301 1.23A11.487 11.487 0 0116 9.805c1.02.004 2.047.136 3.004.402 2.293-1.55 3.297-1.23 3.297-1.23.656 1.652.246 2.875.12 3.175.77.84 1.231 1.91 1.231 3.223 0 4.61-2.804 5.621-5.476 5.922.43.367.812 1.101.812 2.219 0 1.605-.011 2.898-.011 3.293 0 .32.214.695.824.578C24.566 25.797 28 21.3 28 16c0-6.629-5.371-12-12-12z"
+                                          />
+                                       </svg> */}
+                                       <img src={facebook} style={{width: '40px'}}  />
+                                    </div>
+                                    <span class="ml-4">
+                                       Sign In with Facebook
+                                 </span>
+                                 </button>
+                              </div>
+
+                              <div class="my-12 border-b text-center">
+                                 <div
+                                    class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2"
+                                 >
+                                    Or sign in with e-mail
+                           </div>
+                              </div>
+
+                              <div class="mx-auto max-w-xs">
+                                 <input
+                                    onChange={this.onChange}
+                                    value={this.state.email}
+                                    error={errors.email}
+                                    id="email"
+                                    type="email"
+                                    placeholder="Email"
+                                    className={classnames("", {
+                                       invalid: errors.email || errors.emailnotfound,
+                                       "w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white": true
+                                    })}
+                                    required />
+                                 <input
+                                    onChange={this.onChange}
+                                    value={this.state.password}
+                                    error={errors.password}
+                                    id="password"
+                                    type="password"
+                                    placeholder="Password"
+                                    className={classnames("", {
+                                       invalid: errors.password || errors.passwordincorrect,
+                                       "w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5": true
+                                    })}
+                                    required />
+                                 <button
+                                    type="submit"
+                                    class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                                 >
+                                    <svg
+                                       class="w-6 h-6 -ml-2"
+                                       fill="none"
+                                       stroke="currentColor"
+                                       stroke-width="2"
+                                       stroke-linecap="round"
+                                       stroke-linejoin="round"
+                                    >
+                                       <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                       <circle cx="8.5" cy="7" r="4" />
+                                       <path d="M20 8v6M23 11h-6" />
+                                    </svg>
+                                    <span class="ml-3">
+                                       Sign In
+                </span>
+                                 </button>
+                                 <p className="mt-2" style={{float: 'right'}}>Don't have an account? <Link className="text-blue-600" to="/signup"> Sign Up</Link></p>
+                                 <p class="mt-12 text-xs text-gray-600 text-center">
+                                    I agree to abide by templatana's
+                <a href="#" class="border-b border-gray-500 border-dotted">
+                                       Terms of Service
+                </a>
+                                    and its
+                <a href="#" class="border-b border-gray-500 border-dotted">
+                                       Privacy Policy
+                </a>
+                                 </p>
+                              </div>
+                           </div>
                         </div>
-                        <div className="w-full md:w-1/3 px-3 pt-4 mx-2">
-                           <button className="appearance-none flex items-center justify-center block w-full bg-gray-100 text-gray-700 shadow border border-gray-500 rounded-lg py-3 px-3 leading-tight hover:bg-gray-200 hover:text-gray-700 focus:outline-none">
-                              <svg className="h-6 w-6 fill-current text-gray-700" viewBox="0 0 512 512">
-                                 <path d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z" />
-                              </svg>
-                           </button>
-                        </div>
-                        <div className="w-full md:w-1/3 px-3 pt-4 mx-2 border-t border-gray-400">
-                           <button className="appearance-none flex items-center justify-center block w-full bg-gray-100 text-gray-700 shadow border border-gray-500 rounded-lg py-3 px-3 leading-tight hover:bg-gray-200 hover:text-gray-700 focus:outline-none">
-                              <svg className="h-6 w-6 fill-current text-gray-700" viewBox="0 0 512 512">
-                                 <path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z" />
-                              </svg>
-                           </button>
-                        </div>
-                     </div> */}
+                     </form>
                   </div>
-               </form>
+                  <div class="flex-1 bg-indigo-100 text-center hidden lg:flex" style={{ display: 'none' }}>
+                     <div
+                        class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+                        style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}
+                     ></div>
+                  </div>
+               </div>
+               <div class="REMOVE-THIS-ELEMENT-IF-YOU-ARE-USING-THIS-PAGE hidden treact-popIn fixed inset-0 flex items-center justify-center" style={{ backgroundColor: "rgba(0,0,0,0.3)" }}>
+                  <div class="max-w-lg p-8 sm:pb-4 bg-white rounded shadow-lg text-center sm:text-left">
+
+                     <h3 class="text-xl sm:text-2xl font-semibold mb-6 flex flex-col sm:flex-row items-center">
+                        <div class="bg-green-200 p-2 rounded-full flex items-center mb-4 sm:mb-0 sm:mr-2">
+                           <svg class="text-green-800 inline-block w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                        </div>
+                        Free TailwindCSS Component Kit!
+          </h3>
+                     <p>I recently released Treact, a <span class="font-bold">free</span> TailwindCSS Component Kit built with React.</p>
+                     <p class="mt-2">It has 52 different UI components, 7 landing pages, and 8 inner pages prebuilt. And they are customizable!</p>
+                     <div class="mt-8 pt-8 sm:pt-4 border-t -mx-8 px-8 flex flex-col sm:flex-row justify-end leading-relaxed">
+                        <button class="close-treact-popup px-8 py-3 sm:py-2 rounded border border-gray-400 hover:bg-gray-200 transition duration-300">Close</button>
+                        <a class="font-bold mt-4 sm:mt-0 sm:ml-4 px-8 py-3 sm:py-2 rounded bg-purple-700 text-gray-100 hover:bg-purple-900 transition duration-300 text-center" href="https://treact.owaiskhan.me" target="_blank">See Treact</a>
+                     </div>
+                  </div>
+               </div>
             </div>
          </React.Fragment>
       );
@@ -162,7 +242,8 @@ Signin.propTypes = {
 const mapStateToProps = state => ({
    auth: state.auth,
    errors: state.errors,
-   msg: state.msg
+   msg: state.msg,
+   emailsnotfound: state.emailsnotfound,
 });
 
 export default connect(

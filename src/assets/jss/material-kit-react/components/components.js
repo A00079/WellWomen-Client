@@ -1,6 +1,6 @@
 import { container } from "../../material-kit-react.js";
 
-const componentsStyle = {
+const componentsStyle = theme => ({
   container,
   startbtn:{
     fontWeight: "bolder",
@@ -12,13 +12,13 @@ const componentsStyle = {
   },
   title: {
     margin: "0px 0px 0px 0px",
-    fontSize: "4.2rem",
+    fontSize: "350%",
     fontWeight: "600",
     display: "inline-block",
     position: "relative"
   },
   subtitle: {
-    fontSize: "1.313rem",
+    fontSize: "1.39rem",
     maxWidth: "500px",
     margin: "0px 0 10px 0"
   },
@@ -26,6 +26,12 @@ const componentsStyle = {
     background: "#ffffff",
     position: "relative",
     zIndex: "3"
+  },
+  RaisedCardMain:{
+    height: '490px',
+    [theme.breakpoints.down("sm")]: {
+      height: '350px'
+    }
   },
   mainRaised: {
     margin: "-60px 30px 0px",
@@ -39,6 +45,6 @@ const componentsStyle = {
   textCenter: {
     textAlign: "center"
   }
-};
+});
 
 export default componentsStyle;

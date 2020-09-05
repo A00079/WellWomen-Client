@@ -20,7 +20,7 @@ import Testimonial from "../components/Testimonials/Testimonials.js";
 import GetInTouch from "../components/GetInTouch/getInTouch.js";
 import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
-
+import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 
 
 
@@ -71,7 +71,7 @@ export default function Components(props) {
             </Parallax>
 
             <div className={classNames(classes.main, classes.mainRaised)}>
-                <Card styles={{height: '490px'}}>
+                <Card className={classNames(classes.RaisedCardMain)}>
                     <CardBody>
                         <ReactSlider />
                     </CardBody>
@@ -79,6 +79,7 @@ export default function Components(props) {
             </div>
             <div>
                 <CardCarousel />
+                <HowItWorks />
                 <AppInfo />
                 <About />
                 <Testimonial />

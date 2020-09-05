@@ -13,6 +13,12 @@ import {
 } from "../../material-kit-react.js";
 
 const headerStyle = {
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
   appBar: {
     display: "flex",
     border: "0",
