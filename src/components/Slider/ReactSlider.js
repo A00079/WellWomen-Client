@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {  withStyles,makeStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
+
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
@@ -11,33 +13,88 @@ import './reactslider.css';
 const useStyles = makeStyles((theme) => ({
 	screensContainer: {
 		height: '460px',
-		borderBottomLeftRadius: '0% 0% !important',
-    	borderBottomRightRadius: '0% 0% !important',
 		[theme.breakpoints.down("sm")]: {
 			height: '320px'
 		}
 	},
-	screenheight:{
+	screenheight: {
 		height: '100%',
 	}
 }));
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-const SimpleSlider = () =>{
+const SimpleSlider = () => {
 	const classes = useStyles();
-	return(
+	return (
 		<AutoplaySlider
-				organicArrows={false}
-				className={classes.screensContainer}
-				play={true}
-				bullets={false}
-				cancelOnInteraction={false} // should stop playing on user interaction
-				interval={1000}
-			>
-				{/* <div className='screenheight' data-src={image1} /> */}
-				{/* <div className='screenheight' data-src={image2} /> */}
-				<div className='screenheight' data-src={image3} />
-			</AutoplaySlider>
+			organicArrows={false}
+			className={classes.screensContainer}
+			play={true}
+			bullets={false}
+			cancelOnInteraction={false} // should stop playing on user interaction
+			interval={4000}
+		>
+			<section class="text-gray-700 body-font">
+				<div class="container mx-auto flex px-5 py-4 mt-12 md:flex-row flex-col items-center">
+					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+						<img class="object-cover object-center rounded" alt="hero" src={image1} />
+					</div>
+					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+						<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
+						<p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
+						<div class="flex w-full md:justify-start justify-center">
+							<button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+								<Link to="/startjourney" className={classes.dropdownLink}>
+									Start Your Journey
+                                    </Link>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+			<section class="text-gray-700 body-font">
+				<div class="container mx-auto flex px-5 py-4 mt-12 md:flex-row flex-col items-center">
+					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+						<img class="object-cover object-center rounded" alt="hero" src={image1} />
+					</div>
+					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+						<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
+						<p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
+						<div class="flex w-full md:justify-start justify-center">
+							<button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><Link to="/startjourney" className={classes.dropdownLink}>
+								Start Your Journey
+                                    </Link></button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+			<section class="text-gray-700 body-font">
+				<div class="container mx-auto flex px-5 py-4 mt-12 md:flex-row flex-col items-center">
+					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+						<img class="object-cover object-center rounded" alt="hero" src={image1} />
+					</div>
+					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+						<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
+						<p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
+						<div class="flex w-full md:justify-start justify-center">
+							<button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><Link to="/startjourney" className={classes.dropdownLink}>
+								Start Your Journey
+                                    </Link></button>
+						</div>
+					</div>
+				</div>
+			</section>
+			{/* <div className='screenheight' data-src={image1} /> */}
+			{/* <div className='screenheight' data-src={image2} /> */}
+			{/* <div className='screenheight' data-src={image3} /> */}
+		</AutoplaySlider>
 	)
 }
 

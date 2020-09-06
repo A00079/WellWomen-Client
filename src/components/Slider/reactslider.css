@@ -2,3 +2,6 @@
     border-bottom-left-radius: 0% 0% ;
     border-bottom-right-radius: 0% 0% ;
   }
+  .awssld__timer{
+    background: #fff !important;
+  }

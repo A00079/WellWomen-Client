@@ -21,6 +21,8 @@ import GetInTouch from "../components/GetInTouch/getInTouch.js";
 import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
+import OurWorking from "../components/OurWorking/OurWorking.js";
+
 
 
 
@@ -78,7 +80,8 @@ export default function Components(props) {
                 </Card>
             </div>
             <div>
-                <CardCarousel />
+                <OurWorking />
+                {/* <CardCarousel /> */}
                 <HowItWorks />
                 <AppInfo />
                 <About />

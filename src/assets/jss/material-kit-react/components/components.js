@@ -28,7 +28,7 @@ const componentsStyle = theme => ({
     zIndex: "3"
   },
   RaisedCardMain:{
-    height: '490px',
+    height: '430px',
     [theme.breakpoints.down("sm")]: {
       height: '350px'
     }
