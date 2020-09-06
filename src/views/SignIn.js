@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../actions/authActions.js";
+import { loginUser, googleRegister } from "../actions/authActions.js";
 import classnames from "classnames";
 import { notify } from 'react-notify-toast'
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import facebook from '../assets/img/facebook.png';
 import { ClearMessage } from '../actions/clearMessages.js';
+import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
+
 
 class Signin extends Component {
    constructor(props) {
@@ -63,6 +66,41 @@ class Signin extends Component {
       this.setState({ [e.target.id]: e.target.value });
    };
 
+   responseGoogle = (response) => {
+      //Google
+      //prod => 129584180577-d9c9ejb2tqu1q1hua57k57174c89ui0s.apps.googleusercontent.com
+      //production => 781211842293-ut2setg9ed4q53q90du78ss42nd7361o.apps.googleusercontent.com
+      //development => 426378221340-idlmvnc00edci66h1k345p2f61437vhu.apps.googleusercontent.com
+
+      //Facebook
+      //production =>  628171701217446
+      //development => 646713102629526
+      console.log('response google', response)
+      if (!!response) {
+         const newUser = {
+            name: response.profileObj.name,
+            email: response.profileObj.email,
+            password: response.profileObj.email,
+         };
+         this.props.googleRegister(newUser, this.props.history);
+      }
+   }
+
+   responseFacebook = (response) => {
+      console.log('face res',response);
+   }
+
+   facebookcallback = (data) =>{
+      console.log('face callback',data);
+      if (!!data) {
+         const newUser = {
+            name: data.name,
+            email: 'Not Available',
+            password: data.id
+         };
+         this.props.googleRegister(newUser, this.props.history);
+      }
+   }
    onSubmit = e => {
       e.preventDefault();
 
@@ -99,49 +137,42 @@ class Signin extends Component {
                         </h1>
                            <div className="w-full flex-1 mt-8">
                               <div className="flex flex-col items-center">
-                                 <button
-                                    className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
-                                 >
-                                    <div className="bg-white mr-6 p-2 rounded-full">
-                                       <svg className="w-4" viewBox="0 0 533.5 544.3">
-                                          <path
-                                             d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
-                                             fill="#4285f4"
-                                          />
-                                          <path
-                                             d="M272.1 544.3c73.4 0 135.3-24.1 180.4-65.7l-87.7-68c-24.4 16.6-55.9 26-92.6 26-71 0-131.2-47.9-152.8-112.3H28.9v70.1c46.2 91.9 140.3 149.9 243.2 149.9z"
-                                             fill="#34a853"
-                                          />
-                                          <path
-                                             d="M119.3 324.3c-11.4-33.8-11.4-70.4 0-104.2V150H28.9c-38.6 76.9-38.6 167.5 0 244.4l90.4-70.1z"
-                                             fill="#fbbc04"
-                                          />
-                                          <path
-                                             d="M272.1 107.7c38.8-.6 76.3 14 104.4 40.8l77.7-77.7C405 24.6 339.7-.8 272.1 0 169.2 0 75.1 58 28.9 150l90.4 70.1c21.5-64.5 81.8-112.4 152.8-112.4z"
-                                             fill="#ea4335"
-                                          />
+                                 <div>
+                                    <GoogleLogin
+                                       clientId='129584180577-d9c9ejb2tqu1q1hua57k57174c89ui0s.apps.googleusercontent.com'
+                                       buttonText='Sign In with Google'
+                                       onSuccess={this.responseGoogle}
+                                       onFailure={this.responseGoogle}
+                                       cookiePolicy={'single_host_origin'}
+                                       responseType='code,token'
+                                    />
+                                 </div>
+                                 <div className="mt-4">
+                                    <div style={{
+                                       display: 'flex',
+                                       background: '#4267b2',
+                                       color: 'white',
+                                       padding: '9px 10px 6px 10px',
+                                       fontSize: '12px',
+                                       borderRadius: '4px'
+                                    }}>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="26" viewBox="10 0 45 45" version="1">
+                                          <path fill="#FFFFFF" d="M32 30a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v28z" />
+                                          <path fill="#4267b2" d="M22 32V20h4l1-5h-5v-2c0-2 1.002-3 3-3h2V5h-4c-3.675 0-6 2.881-6 7v3h-4v5h4v12h5z" />
                                        </svg>
+                                       <FacebookLogin
+                                          appId="628171701217446"
+                                          autoLoad={false}
+                                          fields="name,email,picture"
+                                          scope="public_profile, email"
+                                          callback={this.facebookcallback}
+                                          onClick={this.responseFacebook}
+                                          cssClass="my-facebook-button-class"
+                                          textButton="Sign In with Facebook"
+                                       />
                                     </div>
-                                    <span className="ml-4">
-                                       Sign In with Google
-                                 </span>
-                                 </button>
-                                 <button
-                                    className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
-                                 >
-                                    <div className="bg-white rounded-full">
-                                       {/* <svg className="w-6" viewBox="0 0 32 32">
-                                          <path
-                                             fill-rule="evenodd"
-                                             d="M16 4C9.371 4 4 9.371 4 16c0 5.3 3.438 9.8 8.207 11.387.602.11.82-.258.82-.578 0-.286-.011-1.04-.015-2.04-3.34.723-4.043-1.609-4.043-1.609-.547-1.387-1.332-1.758-1.332-1.758-1.09-.742.082-.726.082-.726 1.203.086 1.836 1.234 1.836 1.234 1.07 1.836 2.808 1.305 3.492 1 .11-.777.422-1.305.762-1.605-2.664-.301-5.465-1.332-5.465-5.93 0-1.313.469-2.383 1.234-3.223-.121-.3-.535-1.523.117-3.175 0 0 1.008-.32 3.301 1.23A11.487 11.487 0 0116 9.805c1.02.004 2.047.136 3.004.402 2.293-1.55 3.297-1.23 3.297-1.23.656 1.652.246 2.875.12 3.175.77.84 1.231 1.91 1.231 3.223 0 4.61-2.804 5.621-5.476 5.922.43.367.812 1.101.812 2.219 0 1.605-.011 2.898-.011 3.293 0 .32.214.695.824.578C24.566 25.797 28 21.3 28 16c0-6.629-5.371-12-12-12z"
-                                          />
-                                       </svg> */}
-                                       <img src={facebook} style={{width: '40px'}}  />
-                                    </div>
-                                    <span className="ml-4">
-                                       Sign In with Facebook
-                                 </span>
-                                 </button>
+
+                                 </div>
                               </div>
 
                               <div className="my-12 border-b text-center">
@@ -197,7 +228,7 @@ class Signin extends Component {
                                        Sign In
                 </span>
                                  </button>
-                                 <p className="mt-2" style={{float: 'right'}}>Don't have an account? <Link className="text-blue-600" to="/signup"> Sign Up</Link></p>
+                                 <p className="mt-2" style={{ float: 'right' }}>Don't have an account? <Link className="text-blue-600" to="/signup"> Sign Up</Link></p>
                                  <p className="mt-12 text-xs text-gray-600 text-center">
                                     I agree to abide by templatana's
                 <a href="#" className="border-b border-gray-500 border-dotted">
@@ -238,7 +269,7 @@ class Signin extends Component {
                   </div>
                </div>
             </div>
-         </React.Fragment>
+         </React.Fragment >
       );
    }
 }
@@ -256,5 +287,5 @@ const mapStateToProps = state => ({
 
 export default connect(
    mapStateToProps,
-   { loginUser,ClearMessage }
+   { loginUser, googleRegister, ClearMessage }
 )(Signin);
