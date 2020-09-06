@@ -121,7 +121,7 @@ export default function HorizontalLabelPositionBelowStepper() {
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
             
             <div style={{textAlign: 'center'}}>
               <Button

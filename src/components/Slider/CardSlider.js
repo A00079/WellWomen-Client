@@ -25,7 +25,7 @@ const CardCarousel = () => {
     return (
       <React.Fragment>
         <div className="mt-24 md:mt-40">
-          <h1 style={{background :'#F9AE08',color:'#ffffff'}} class="sm:text-3xl mb-0 md:mb-0 text-4xl md:text-6xl font-medium title-font text-white-600" align="center">OUR WORK</h1>
+          <h1 style={{background :'#F9AE08',color:'#ffffff'}} className="sm:text-3xl mb-0 md:mb-0 text-4xl md:text-6xl font-medium title-font text-white-600" align="center">OUR WORK</h1>
           <div>
             <AutoplaySlider
               organicArrows={true}

@@ -110,11 +110,11 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-              {['Home', 'About', 'Our Work', 'Testimonials', 'Pricing', 'Stats', 'Contact Us', 'Testimonials'].map((text, index) => (
-                <React.Fragment>
-                  <ListItem button key={text}>
+              {['Home', 'About', 'Our Work', 'Testimonials', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
+                <React.Fragment  key={index}>
+                  <ListItem button key={index}>
                     <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
+                    <ListItemText key={index} primary={text} />
                   </ListItem>
                   <Divider />
                 </React.Fragment>
@@ -157,6 +157,7 @@ Header.propTypes = {
     "transparent",
     "white",
     "rose",
+    "darkpink",
     "dark"
   ]),
   rightLinks: PropTypes.node,
