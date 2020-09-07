@@ -126,10 +126,7 @@ class Signin extends Component {
                            className="w-32 mx-auto"
                         />
                      </div> */}
-                     <form noValidate onSubmit={this.onSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
-                        <h1 className="text-1xl xl:text-1xl font-extrabold ml-4">
-                           <KeyboardBackspaceIcon style={{ color: 'dodgerblue' }} /><Link to="/"><span style={{ color: 'dodgerblue' }} className="text-blue-900">Back</span></Link>
-                        </h1>
+                     <form noValidate onSubmit={this.onSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md pt-4 p-6">
                         <div className="mt-2 flex flex-col items-center">
 
                            <h1 className="text-2xl xl:text-3xl font-extrabold">
@@ -175,7 +172,7 @@ class Signin extends Component {
                                  </div>
                               </div>
 
-                              <div className="my-12 border-b text-center">
+                              <div className="my-6 border-b text-center">
                                  <div
                                     className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2"
                                  >
@@ -228,6 +225,17 @@ class Signin extends Component {
                                        Sign In
                 </span>
                                  </button>
+                        <Link to="/">
+                        <button
+                                    type="submit"
+                                    className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                                 >
+                                    <KeyboardBackspaceIcon style={{ color: 'white' }} />
+                                    <span className="ml-3">
+                                       Back
+                </span>
+                                 </button>
+                                 </Link>
                                  <p className="mt-2" style={{ float: 'right' }}>Don't have an account? <Link className="text-blue-600" to="/signup"> Sign Up</Link></p>
                                  <p className="mt-12 text-xs text-gray-600 text-center">
                                     I agree to abide by templatana's

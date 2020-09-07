@@ -5,11 +5,12 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import HowItWorksCard from '../../components/Card/HowItWorksCard.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginTop: '10rem'
+    marginTop: '4rem'
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     overflow: 'hidden',
   },
-  container_img :{
+  container_img: {
     position: 'absolute',
     height: '100%'
   }
@@ -36,54 +37,29 @@ function getSteps() {
 }
 
 function getStepContent(stepIndex) {
-    const classes = {
-        container: {
-            width: '50%',
-            paddingBottom: '50%',
-            margin: '10% auto',
-            position: 'relative',
-            overflow: 'hidden',
-          },
-          container_img :{
-            position: 'absolute',
-            height: '100%'
-          }
+  const classes = {
+    container: {
+      width: '50%',
+      paddingBottom: '50%',
+      margin: '10% auto',
+      position: 'relative',
+      overflow: 'hidden',
+    },
+    container_img: {
+      position: 'absolute',
+      height: '100%'
     }
+  }
 
   switch (stepIndex) {
     case 0:
-      return <div className={classes.container}>
-      <img style={{display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '30%'}} className={classes.container_img} src="https://homepages.cae.wisc.edu/~ece533/images/arctichare.png" alt="a baby duckling sitting on its duckling butt" />
-    <h4 align="center" className="m-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
-    </div>
-      ;
+      return <HowItWorksCard />;
     case 1:
-      return <div className={classes.container}>
-      <img style={{display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '30%'}} className={classes.container_img} src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png" alt="a baby duckling sitting on its duckling butt" />
-    <h4 align="center" className="m-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
-    </div>;
+      return <HowItWorksCard />;
     case 2:
-      return <div className={classes.container}>
-      <img style={{display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '30%'}} className={classes.container_img} src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png" alt="a baby duckling sitting on its duckling butt" />
-    <h4 align="center" className="m-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
-    </div>;
+      return <HowItWorksCard />;
     default:
-      return <div className={classes.container}>
-      <img style={{display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '30%'}} className={classes.container_img} src="https://homepages.cae.wisc.edu/~ece533/images/boat.png" alt="a baby duckling sitting on its duckling butt" />
-    <h4 align="center" className="m-8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h4>
-    </div>;
+      return <HowItWorksCard />;
   }
 }
 
@@ -105,39 +81,48 @@ export default function HorizontalLabelPositionBelowStepper() {
   };
 
   return (
+    <React.Fragment>
+    <h1 style={{ color: '#000' }} className="sm:text-3xl mb-0 md:mb-0 md:mt-16 text-3xl md:text-5xl font-medium title-font text-white-600" align="center">
+      HOW IT WORKS
+    </h1>
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel></StepLabel>
           </Step>
         ))}
       </Stepper>
       <div>
         {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>All steps completed</Typography>
-            <Button onClick={handleReset}>Reset</Button>
+          <div style={{width: '50%',margin: '0 auto'}}>
+            <Typography className={classes.instructions} style={{textAlign: 'center'}}>All steps completed</Typography>
+            <Button onClick={handleReset} variant="contained" color="primary" style={{width: '100%',margin: '0 auto'}}>Reset</Button>
           </div>
         ) : (
-          <div>
-            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-            
-            <div style={{textAlign: 'center'}}>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.backButton}
-              >
-                Back
+            <div>
+              <h1 style={{ color: '#000' }} className="sm:text-3xl mb-0 md:mb-0 text-2xl md:text-3xl font-medium title-font text-white-600" align="center">
+                  {steps[activeStep]}
+                </h1>
+              <div className={classes.instructions}>
+                  {getStepContent(activeStep)}
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <Button
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  className={classes.backButton}
+                >
+                  Back
               </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
+                <Button variant="contained" color="primary" onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     </div>
+    </React.Fragment>
   );
 }

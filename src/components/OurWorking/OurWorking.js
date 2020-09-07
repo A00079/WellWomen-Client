@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from "react-card-carousel";
-
+import ReactCard from "../../components/Card/ReactCard.js";
 class OurWorking extends Component {
     static get CONTAINER_STYLE() {
         return {
@@ -21,8 +21,8 @@ class OurWorking extends Component {
         return (
             <React.Fragment>
                 <h1 className="sm:text-3xl mb-0 md:mb-0 text-4xl mt-24 md:text-5xl font-medium title-font text-white-600" align="center">OUR WORK</h1>
-                <div style={OurWorking.CONTAINER_STYLE} className="mt-16">
-                    <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
+                <div style={OurWorking.CONTAINER_STYLE} className="mt-4 md:mt-8">
+                    <ReactCardCarousel autoplay={true} autoplay_speed={2500} style={{background:'#000'}}>
 
                         {/* <div className="max-w-md w-full lg:flex">
                             <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: "url('https://tailwindcss.com/img/card-left.jpg')" }} title="Woman holding a mug">
@@ -123,86 +123,111 @@ class OurWorking extends Component {
         </div>
         </div> */}
 
+
+
+
+
+            {/* <ReactCard /> */}
+            {/* <ReactCard /> */}
+            {/* <ReactCard /> */}
+            <ReactCard />
+            <ReactCard />
+            <ReactCard />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        {/* <div class="rounded overflow-hidden shadow-lg bg-white flex flex-col border">
+                            <div class="flex items-center p-4">
+                                <a href="#"><img class="w-12 h-12 rounded-full mr-2" src="https://tailwindcss.com/img/jonathan.jpg" alt="Avatar of Jonathan Reinink" /></a>
+                                <div class="text-sm">
+                                    <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
+                                    <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                        Cooking
+</a>, <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                            Recipe
+</a></p>
+                                </div>
+                            </div>
+
+                            <a href="#">
+                                <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
+                            </a>
+                            <div class="p-4 pb-6 bg-white">
+                                <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
+                                <p class="text-gray-500 text-sm">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+                            </div>
+                        </div> */}
+
+                        {/* <div class="rounded overflow-hidden shadow-lg bg-white flex flex-col border">
+                            <div class="flex items-center p-4">
+                                <a href="#"><img class="w-12 h-12 rounded-full mr-2" src="https://tailwindcss.com/img/jonathan.jpg" alt="Avatar of Jonathan Reinink" /></a>
+                                <div class="text-sm">
+                                    <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
+                                    <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                        Cooking
+</a>, <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                            Recipe
+</a></p>
+                                </div>
+                            </div>
+
+                            <a href="#">
+                                <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
+                            </a>
+                            <div class="p-4 pb-6 bg-white">
+                                <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
+                                <p class="text-gray-500 text-sm">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+                            </div>
+                        </div>
+
+
+
+
                         <div class="rounded overflow-hidden shadow-lg bg-white flex flex-col border">
                             <div class="flex items-center p-4">
                                 <a href="#"><img class="w-12 h-12 rounded-full mr-2" src="https://tailwindcss.com/img/jonathan.jpg" alt="Avatar of Jonathan Reinink" /></a>
-                                    <div class="text-sm">
-                                        <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
-                                        <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                            Cooking
+                                <div class="text-sm">
+                                    <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
+                                    <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                        Cooking
 </a>, <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                                Recipe
+                                            Recipe
 </a></p>
-                                    </div>
-    </div>
+                                </div>
+                            </div>
 
-                                <a href="#">
-                                    <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
-</a>
-                                    <div class="p-4 pb-6 bg-white">
-                                        <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
-                                        <p class="text-gray-500 text-sm">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            <a href="#">
+                                <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
+                            </a>
+                            <div class="p-4 pb-6 bg-white">
+                                <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
+                                <p class="text-gray-500 text-sm">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     </p>
-                                    </div>
-</div>
-
-<div class="rounded overflow-hidden shadow-lg bg-white flex flex-col border">
-                            <div class="flex items-center p-4">
-                                <a href="#"><img class="w-12 h-12 rounded-full mr-2" src="https://tailwindcss.com/img/jonathan.jpg" alt="Avatar of Jonathan Reinink" /></a>
-                                    <div class="text-sm">
-                                        <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
-                                        <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                            Cooking
-</a>, <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                                Recipe
-</a></p>
-                                    </div>
-    </div>
-
-                                <a href="#">
-                                    <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
-</a>
-                                    <div class="p-4 pb-6 bg-white">
-                                        <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
-                                        <p class="text-gray-500 text-sm">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    </p>
-                                    </div>
-</div>
-
-
-
-
-<div class="rounded overflow-hidden shadow-lg bg-white flex flex-col border">
-                            <div class="flex items-center p-4">
-                                <a href="#"><img class="w-12 h-12 rounded-full mr-2" src="https://tailwindcss.com/img/jonathan.jpg" alt="Avatar of Jonathan Reinink" /></a>
-                                    <div class="text-sm">
-                                        <a href="#" class="text-gray-900 font-medium leading-none hover:text-indigo-600">Jonathan Reinink</a>
-                                        <p class="text-gray-600 text-xs">Aug 18 | in <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                            Cooking
-</a>, <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                                Recipe
-</a></p>
-                                    </div>
-    </div>
-
-                                <a href="#">
-                                    <img class="w-full" src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Sunset in the mountains" />
-</a>
-                                    <div class="p-4 pb-6 bg-white">
-                                        <a href="#" class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Simplest Salad Recipe ever</a>
-                                        <p class="text-gray-500 text-sm">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    </p>
-                                    </div>
-</div>
+                            </div>
+                        </div> */}
                     </ ReactCardCarousel>
 
-                        </div>
+                </div>
             </React.Fragment >
-                    );
-                }
-            }
-            
+        );
+    }
+}
+
 export default OurWorking;

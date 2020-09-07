@@ -34,6 +34,8 @@ const useStyles = makeStyles(styles);
 
 export default function Components(props) {
     const classes = useStyles();
+	const floatingCard = classNames('p-0')
+
     return (
         <div>
             <Header
