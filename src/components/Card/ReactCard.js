@@ -19,7 +19,10 @@ import image1 from '../../../src/assets/img/bg4.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    width: '350px',
+    [theme.breakpoints.down("sm")]: {
+      height: '246px'
+    }
   },
   media: {
     height: 0,
@@ -49,7 +52,7 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card className={classes.root} style={{width: '246px',position: 'relative', left: '0'}}>
+    <Card className={classes.root} style={{position: 'relative', left: '0'}}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>

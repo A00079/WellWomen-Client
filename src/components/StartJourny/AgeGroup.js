@@ -66,7 +66,7 @@ const AgeGroup = () => {
                 <Grid container direction="row"
                     justify="center"
                     alignItems="center">
-                    <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
+                    {/* <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
                         <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(20)}>
                             <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
                             <div className="px-6 py-4">
@@ -81,7 +81,27 @@ const AgeGroup = () => {
                                 <div className="font-bold text-xl mb-2 text-blue-700">30's</div>
                             </div>
                         </div>
+                    </Grid> */}
+                    <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(40)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">40's</div>
+                            </div>
+                        </div>
                     </Grid>
+                    <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
+                        <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(50)}>
+                            <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
+                            <div className="px-6 py-4">
+                                <div className="font-bold text-xl mb-2 text-blue-700">50's</div>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+                <Grid container direction="row"
+                    justify="center"
+                    alignItems="center">
                     <Grid item xs={12} md={3} sm={12} lg={3} className={classes.cardcenter}>
                         <div className="max-w-sm rounded overflow-hidden shadow-lg" onClick={ () => handelAge(40)}>
                             <img className="w-full" style={{ width: '150px' }} src={oldWomen} alt="Sunset in the mountains" />
