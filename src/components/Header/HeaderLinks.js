@@ -76,7 +76,7 @@ const HeaderLinks = (props) => {
       </ListItem>
       }
       <ListItem className={classes.listItem}>
-        Blogs 
+        <Link to="/TrialBlog">Blogs</Link> 
       </ListItem>
       {
         props.is_admin.isAdmin?<ListItem className={classes.listItem}>

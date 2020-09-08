@@ -18,6 +18,8 @@ import SignIn from "../src/views/SignIn.js";
 import SignUp from "../src/views/SignUp.js";
 import StartJourney from "../src/views/StartJourney.js";
 import YoutubeVideos from "../src/views/YoutubeVideos/youtubeVideos.js";
+import TrialBlog from "../src/views/TrialBlogs/TrialBlogs.js";
+
 
 
 
@@ -52,7 +54,8 @@ function App() {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
         <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
-
+        <Route exact path="/TrialBlog" component={TrialBlog} />
+        
         <Route exact path="/" component={LandingPage} />
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />

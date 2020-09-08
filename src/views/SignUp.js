@@ -160,7 +160,7 @@ class SignUp extends Component {
 
                   <form noValidate onSubmit={this.onSubmit}>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>                      <input
                         onChange={this.onChange}
                         value={this.state.name}
@@ -169,7 +169,7 @@ class SignUp extends Component {
                         type="text"
                         className={classnames("", {
                           invalid: errors.name,
-                          "px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white": true
+                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white": true
                         })}
                         placeholder="Name"
                       />
@@ -184,7 +184,7 @@ class SignUp extends Component {
                         type="email"
                         className={classnames("", {
                           invalid: errors.email,
-                          "px-10 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                         })}
                         placeholder="Email"
                       />
@@ -199,7 +199,7 @@ class SignUp extends Component {
                         type="password"
                         className={classnames("", {
                           invalid: errors.password,
-                          "px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                         })}
                         placeholder="Password"
                       />
@@ -214,7 +214,7 @@ class SignUp extends Component {
                         type="password"
                         className={classnames("", {
                           invalid: errors.password2,
-                          "px-10 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                         })}
                         placeholder="Confirm Password"
                       />
