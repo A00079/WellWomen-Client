@@ -49,7 +49,7 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card className={classes.root} style={{width: '290px',position: 'relative', left: '0'}}>
+    <Card className={classes.root} style={{width: '260px',position: 'relative', left: '0'}}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
