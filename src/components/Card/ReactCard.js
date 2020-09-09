@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '350px',
     [theme.breakpoints.down("sm")]: {
-      height: '246px'
+      width: '246px'
     }
   },
   media: {
