@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
-const API_KEY = 'AIzaSyDeLZaSkgLXVAJ-PSjk2N6BFufmaIUD5tA';
+const API_KEY = 'AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I';
 const channelID = 'UC8KBEuXc5mdz0N5roXTbyVA';
 const result = 20;
 
