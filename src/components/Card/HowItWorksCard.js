@@ -9,18 +9,24 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import image1 from '../../assets/img/bg4.jpg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
-    },
-});
+        width: '50%',
+        margin: '0 auto',
+        boxShadow:'none',
+        textAlign: 'center',
+        [theme.breakpoints.down("sm")]: {
+            width: '100%',
+        }
+    }
+}));
 
 export default function ImgMediaCard() {
     const classes = useStyles();
 
     return (
         <React.Fragment>
-            <Card className={classes.root} style={{width: '50%',margin: '0 auto',boxShadow:'none',textAlign: 'center'}}>
+            <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -33,7 +39,7 @@ export default function ImgMediaCard() {
                         <Typography gutterBottom variant="h5" component="h2">
                             Lizard
           </Typography>
-                        <Typography variant="h4" color="textSecondary" component="p">
+                        <Typography variant="subtitle1" color="textSecondary" component="p">
                             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
                             across all continents except Antarctica
           </Typography>

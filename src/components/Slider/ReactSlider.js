@@ -33,7 +33,7 @@ const SimpleSlider = () => {
 			cancelOnInteraction={false} // should stop playing on user interaction
 			interval={4000}
 		>
-			<section class="text-gray-700 body-font">
+			<section class="text-gray-700 body-font" >
 				<div class="container mx-auto flex px-0 py-4 md:mt-8 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
 						<img class="object-cover object-center rounded" alt="hero" src={image1} />
@@ -42,7 +42,7 @@ const SimpleSlider = () => {
 						<h1 class="title-font sm:text-4xl md:text-3xl text-2xl mb-4 font-medium text-gray-900">Knausgaard typewriter readymade marfa</h1>
 						<p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
 						<div class="flex w-full md:justify-start justify-center">
-							<button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+							<button id="ourwork" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
 								<Link to="/startjourney" className={classes.dropdownLink}>
 									Start Your Journey
                                     </Link>

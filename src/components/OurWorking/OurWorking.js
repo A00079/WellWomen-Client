@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './OurWorking.css';
 import ReactCardCarousel from "react-card-carousel";
 import ReactCard from "../../components/Card/ReactCard.js";
 class OurWorking extends Component {
@@ -20,9 +21,13 @@ class OurWorking extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className="sm:text-3xl mb-0 md:mb-0 text-4xl mt-24 md:text-5xl font-medium title-font text-white-600" align="center">OUR WORK</h1>
+                <h1 className="sm:text-3xl mb-0 md:mb-0 text-4xl mt-24 md:text-5xl font-medium title-font text-white-600 special" align="center">OUR WORK</h1>
                 <div style={OurWorking.CONTAINER_STYLE} className="mt-4 md:mt-8">
-                    <ReactCardCarousel autoplay={true} autoplay_speed={2500} style={{background:'#000'}}>
+                <div style={{width: '90%',height: '100%',borderRadius: '8px',background: '#ff0084',background: '-webkit-linear-gradient(to right, #33001b, #ff0084)',
+    background: 'linear-gradient(to right, #33001b, #ff0084)',
+    margin: '0px',
+    padding: '0px'}}>
+                    <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
 
                         {/* <div className="max-w-md w-full lg:flex">
                             <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: "url('https://tailwindcss.com/img/card-left.jpg')" }} title="Woman holding a mug">
@@ -130,9 +135,12 @@ class OurWorking extends Component {
             {/* <ReactCard /> */}
             {/* <ReactCard /> */}
             {/* <ReactCard /> */}
+            
+             <ReactCard />
             <ReactCard />
             <ReactCard />
-            <ReactCard />
+           
+           
 
 
 
@@ -223,6 +231,7 @@ class OurWorking extends Component {
                             </div>
                         </div> */}
                     </ ReactCardCarousel>
+                    </div>
 
                 </div>
             </React.Fragment >

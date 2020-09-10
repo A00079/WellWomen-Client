@@ -10,7 +10,10 @@ import HowItWorksCard from '../../components/Card/HowItWorksCard.js';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginTop: '4rem'
+    marginTop: '4rem',
+    [theme.breakpoints.down("sm")]: {
+      marginTop: '1rem',
+    }
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -82,7 +85,8 @@ export default function HorizontalLabelPositionBelowStepper() {
 
   return (
     <React.Fragment>
-    <h1 style={{ color: '#000' }} className="sm:text-3xl mb-0 md:mb-0 md:mt-16 text-3xl md:text-5xl font-medium title-font text-white-600" align="center">
+    <h1 style={{ fontStyle: 'normal',
+    color: '#4e6073' }} className="sm:text-3xl mb-0 mt-24 md:mb-0 md:mt-16 text-3xl md:text-5xl font-medium title-font" align="center">
       HOW IT WORKS
     </h1>
     <div className={classes.root}>

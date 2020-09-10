@@ -74,21 +74,21 @@ export default function Components(props) {
                 </div>
             </Parallax>
 
-            <div className={classNames(classes.main, classes.mainRaised)}>
+            <div  className={classNames(classes.main, classes.mainRaised)}>
                 <Card className={classNames(classes.RaisedCardMain)}>
                     <CardBody>
-                        <ReactSlider />
+                        <ReactSlider  />
                     </CardBody>
                 </Card>
             </div>
             <div>
                 <OurWorking />
+                <AppInfo />
                 {/* <CardCarousel /> */}
                 <HowItWorks />
-                <AppInfo />
                 <About />
                 <Testimonial />
-                <Pricing />
+                {/* <Pricing /> */}
                 <GetInTouch />
                 <Contact />
             </div>

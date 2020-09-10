@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
@@ -14,7 +14,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import { logoutUser } from "../../actions/authActions";
-
+import * as Scroll from 'react-scroll';
 
 // @material-ui/icons
 import { Apps, CloudDownload } from "@material-ui/icons";
@@ -24,94 +24,126 @@ import { Apps, CloudDownload } from "@material-ui/icons";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
+let DirectLinkDiv = Scroll.Link;
 
 const HeaderLinks = (props) => {
   const classes = useStyles();
   const [handeldropdown, sethandeldropdown] = useState(null)
 
-  useEffect(()=>{
-    console.log('props',props)
-    if("authorizer" in localStorage){
+  useEffect(() => {
+    console.log('props', props)
+    if ("authorizer" in localStorage) {
       sethandeldropdown(true)
-   } else {
+    } else {
       sethandeldropdown(false)
-   }
-  },[props])
+    }
+  }, [props])
   const onLogoutClick = () => {
     props.logoutUser();
   };
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        Home 
+        Home
       </ListItem>
       {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-          About 
-      </ListItem>
-      }
-      {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-          Our Work 
-      </ListItem>
-      }
-      {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-          Testimonials 
+        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="aboutus"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            About</DirectLinkDiv>
       </ListItem>
       }
       {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-          Pricing 
+        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="ourwork"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Our Work</DirectLinkDiv>
+        </ListItem>
+      }
+      {
+        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="testimonials"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Testimonials</DirectLinkDiv>
       </ListItem>
       }
       {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-          Stats 
+        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="stats"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Stats</DirectLinkDiv>
       </ListItem>
       }
       {
-        props.is_admin.isAdmin?"":<ListItem className={classes.listItem}>
-        Contact Us 
+        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="contactus"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Contact Us</DirectLinkDiv>
+          
       </ListItem>
       }
       <ListItem className={classes.listItem}>
-        <Link to="/TrialBlog">Blogs</Link> 
+        <Link to="/TrialBlog">Blogs</Link>
       </ListItem>
       {
-        props.is_admin.isAdmin?<ListItem className={classes.listItem}>
-        Admin Panel 
+        props.is_admin.isAdmin ? <ListItem className={classes.listItem}>
+          Admin Panel
       </ListItem> : ""
       }
-      
+
       <ListItem className={classes.listItem}>
         Youtube
       </ListItem>
       {
-        handeldropdown?
-        <ListItem className={classes.listItem}>
-        <Button variant="contained" size="small" color="primary" onClick={() =>onLogoutClick()}>
-          Logout
+        handeldropdown ?
+          <ListItem className={classes.listItem}>
+            <Button variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
+              Logout
         </Button>
-        </ListItem>: <ListItem className={classes.listitemdrop}>
-      <CustomDropdown
-          noLiPadding
-          buttonText=""
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/login" className={classes.dropdownLink}>
-              Login
+          </ListItem> : <ListItem className={classes.listitemdrop}>
+            <CustomDropdown
+              noLiPadding
+              buttonText=""
+              buttonProps={{
+                className: classes.navLink,
+                color: "transparent"
+              }}
+              buttonIcon={Apps}
+              dropdownList={[
+                <Link to="/login" className={classes.dropdownLink}>
+                  Login
             </Link>,
-            <Link to="/signup" className={classes.dropdownLink}>
-              Sign Up
+                <Link to="/signup" className={classes.dropdownLink}>
+                  Sign Up
             </Link>
-          ]}
-        />
-      </ListItem>
+              ]}
+            />
+          </ListItem>
       }
     </List>
   );
@@ -126,5 +158,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,{logoutUser}
+  mapStateToProps, { logoutUser }
 )(HeaderLinks);
