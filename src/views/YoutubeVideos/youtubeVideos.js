@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
-const API_KEY = 'AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I';
+const API_KEY = 'AIzaSyBRkPv6tG9zDk1fJZClXA3NuOgnZURHo8M';
 const channelID = 'UC8KBEuXc5mdz0N5roXTbyVA';
 const result = 20;
 
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 	smallCardSkeleton: {
 		maxWidth: '72%',
 		flexBasis: '21%',
-		cursor:'pointer',
+		cursor: 'pointer',
 		[theme.breakpoints.down("sm")]: {
 			maxWidth: '100%',
 			flexBasis: '0%',
@@ -56,7 +56,7 @@ const YoutubeVideo = (props) => {
 
 	const [chunkVideos, setchunkVideos] = useState([]);
 
-	const playnewvideo = (newvideourl,newvideodesc,newvideotitle) =>{
+	const playnewvideo = (newvideourl, newvideodesc, newvideotitle) => {
 		setvideoSrc(`https://www.youtube.com/embed/${newvideourl}`)
 		setvideoDesc(newvideodesc)
 		setvideoTitle(newvideotitle)
@@ -96,12 +96,8 @@ const YoutubeVideo = (props) => {
 			{
 				fetchingVideos ? <SkeletonCard /> :
 					<React.Fragment>
-						{/* <div className='ui embed'>
-							<iframe src={this.state.videoSrc} allowFullScreen title='Video player' />
-						</div> */}
-
 						<div className={classes.root}>
-							<Grid container
+							<Grid
 								container
 								direction="row"
 								justify="center"
@@ -130,7 +126,70 @@ const YoutubeVideo = (props) => {
 										</CardContent>
 									</Card>
 								</Grid>
-									{(chunkVideos).map((item, index) => (
+
+
+								<main class="p-6 flex-1 overflow-auto col-span-2">
+									<div class="border-b-4 yt-border-gray-400 mb-10 pb-10">
+										<div class="text-xl font-bold mb-6">
+											All Videos
+							</div>
+										<div class="grid sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+											{(chunkVideos).map((item, index) => (
+
+												// <Grid item xs={12} key={index} md={4} lg={3} className={classes.smallCardSkeleton} onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
+												// 	<Box key={index} width={210} marginRight={0.5} my={5}>
+
+												// 		<img style={{ width: item.snippet.thumbnails.high.width, height: '200px' }} alt={item.snippet.title} src={item.snippet.thumbnails.high.url} />
+
+												// 		<Box pr={2}>
+												// 			<Typography gutterBottom variant="body2">
+												// 				{item.snippet.title}
+												// 			</Typography>
+												// 			<Typography display="block" variant="caption" color="textSecondary">
+												// 				{item.snippet.channelTitle}
+												// 			</Typography>
+												// 			<Typography variant="caption" color="textSecondary">
+												// 				{item.snippet.publishedAt}
+												// 			</Typography>
+												// 		</Box>
+												// 	</Box>
+												// </Grid>
+
+
+												<div onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
+													<div class="relative">
+														<img class="w-full" src={item.snippet.thumbnails.high.url} alt="" />
+														<span class="absolute bg-black bottom-0 font-bold mb-1 mr-1 px-1 py-px right-0 rounded-sm text-white text-xs">1:40</span>
+													</div>
+													<div class="flex mt-4">
+														<img class="mr-4 h-10 w-10 block flex-shrink-0 rounded-full object-cover" src={item.snippet.thumbnails.high.url} alt="" />
+														<div class="text-sm w-full">
+															<div class="font-bold text-line-clamp-2 mb-1 relative pr-6">
+															{item.snippet.title}
+																<button class="absolute right-0 inset-y-0 yt-text-gray-800">
+																	<svg class="h-6 fill-current" viewBox="0 0 24 24">
+																		<path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+																	</svg>
+																</button>
+															</div>
+															<div class="text-line-clamp-1 yt-text-gray-500 leading-tight">
+															{item.snippet.channelTitle}
+															</div>
+															<div class="yt-text-gray-500">
+																<span>{new Date(item.snippet.publishedAt).toDateString()}</span> 
+															</div>
+														</div>
+													</div>
+												</div>
+									))}
+										</div>
+									</div>
+								</main>
+
+
+
+
+								{/* {(chunkVideos).map((item, index) => (
 
 										<Grid item xs={12} key={index} md={4} lg={3} className={classes.smallCardSkeleton} onClick={() => playnewvideo(item.id.videoId,item.snippet.description,item.snippet.title)}>
 											<Box key={index} width={210} marginRight={0.5} my={5}>
@@ -151,8 +210,8 @@ const YoutubeVideo = (props) => {
 
 											</Box>
 										</Grid>
-									))}
-								</Grid>
+									))} */}
+							</Grid>
 						</div>
 					</React.Fragment>
 			}
