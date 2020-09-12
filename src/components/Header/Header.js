@@ -13,6 +13,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 import logo from '../../assets/img/logo.png';
 import { Link } from "react-router-dom";
+import * as Scroll from 'react-scroll';
 
 import clsx from 'clsx';
 import List from '@material-ui/core/List';
@@ -28,6 +29,8 @@ import Menu from "@material-ui/icons/Menu";
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
 
 const useStyles = makeStyles(styles);
+let DirectLinkDiv = Scroll.Link;
+
 
 export default function Header(props) {
   const classes = useStyles();
@@ -110,7 +113,67 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-              {['Home', 'About', 'Our Work', 'Testimonials', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
+            <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="aboutus"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            About</DirectLinkDiv>
+      </ListItem><Divider />
+      
+      <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="ourwork"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Our Work</DirectLinkDiv>
+        </ListItem><Divider />
+        <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="testimonials"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Testimonials</DirectLinkDiv>
+      </ListItem><Divider />
+      <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="stats"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Stats</DirectLinkDiv>
+      </ListItem><Divider />
+      <ListItem className={classes.listItem}>
+          <DirectLinkDiv
+            to="contactus"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Contact Us</DirectLinkDiv>
+          
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link to="/TrialBlog">Blogs</Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        Youtube
+
+      </ListItem><Divider />
+
+              {/* {['Home', 'About', 'Our Work', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
                 <React.Fragment  key={index}>
                   <ListItem button key={index}>
                     <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
@@ -118,7 +181,7 @@ export default function Header(props) {
                   </ListItem>
                   <Divider />
                 </React.Fragment>
-              ))}
+              ))} */}
             </List>
             <List>
               <ListItem>

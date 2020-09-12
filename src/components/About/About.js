@@ -9,7 +9,7 @@ class About extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 id="aboutus" style={{ color: '#4e6073', textAlign: 'center' }} className="sm:text-3xl text-3xl mt-24 md:text-5xl md:mt-16 font-medium title-font mb-4 text-gray-900">ABOUT US</h1>
+                <h1 id="aboutus" style={{ color: '#4e6073', textAlign: 'center' }} className="sm:text-3xl text-3xl mt-24 md:text-5xl md:mt-24 font-medium title-font mb-4 text-gray-900">ABOUT US</h1>
                 <section className="text-gray-700 body-font">
                     <div className="container mx-auto flex px-5 md:py-16  py-4 md:flex-row flex-col items-center">
                         <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
