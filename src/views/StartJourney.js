@@ -22,7 +22,13 @@ import { Link } from "react-router-dom";
 import CustomButton from "../../src/components/CustomButtons/Button.js";
 import ServewayForm from "../components/StartJourny/ServewayForm.js";
 import AgeGroup from "../components/StartJourny/AgeGroup.js";
-
+import { notify } from 'react-notify-toast'
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import Goal from "../../src/components/StartJourny/Goal.js"
+import ActivityLevel from "../../src/components/StartJourny/ActivityLevel.js"
+import EatHabbit from "../../src/components/StartJourny/EatHabbit.js"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,27 +71,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Select your age group.', 'Select your goal.', 'Select your activity level.', 'Select your eating habbits.', 'Completed.'];
+  return ['','','','','',''];
+  // return ['Select your age group.', 'Select your goal.', 'Select your activity level.', 'Select your eating habbits.', 'Completed.'];
 }
 
-function getStepContent(stepIndex) {
-  switch (stepIndex) {
-    case 0:
-      return <AgeGroup />;
-    case 1:
-      return 'What is an ad group anyways?';
-    case 2:
-      return 'This is the bit I really care about!';
-    case 3:
-      return 'This is the bit I really care about!';
-    case 4:
-      return <ServewayForm />;
-    default:
-      return 'Unknown stepIndex';
-  }
-}
 
-export default function HorizontalLabelPositionBelowStepper() {
+
+const HorizontalLabelPositionBelowStepper = (props) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -101,49 +93,35 @@ export default function HorizontalLabelPositionBelowStepper() {
   const handleReset = () => {
     setActiveStep(0);
   };
-
+  function getStepContent(stepIndex) {
+    switch (stepIndex) {
+      case 0:
+        return <AgeGroup handleNext={handleNext} />;
+      case 1:
+        return <Goal handleNext={handleNext} />;
+      case 2:
+        return <ActivityLevel handleNext={handleNext} />;
+      case 3:
+        return <EatHabbit handleNext={handleNext} />;
+      case 4:
+        return <ServewayForm />;
+      default:
+        return 'Unknown stepIndex';
+    }
+  }
   return (
     <div className={classes.root}>
-      <div className={classes.appbarroot}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              Well Women
-          </Typography>
-            <Link to="/login" className={classes.dropdownLink}>
-              Home
-          </Link>
-            <Link to="/login" className={classes.dropdownLink}>
-              Pricing
-          </Link>
-            <Link to="/login" className={classes.dropdownLink}>
-              Stats
-          </Link>
-            <Link to="/login" className={classes.dropdownLink}>
-              Contact Us
-          </Link>
-            <CustomButton
-              color="transparent"
-              size="sm"
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Login
-                                </CustomButton>
-            <CustomButton
-              color="twitter"
-              size="sm"
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Sign In
-                                </CustomButton>
-          </Toolbar>
-        </AppBar>
-      </div>
-      <Stepper activeStep={activeStep} alternativeLabel>
+      <Header
+        brand="Well Woman"
+        rightLinks={<HeaderLinks />}
+        fixed
+        color="darkpink"
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+      />
+      <Stepper activeStep={activeStep} alternativeLabel className="mt-24">
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -166,17 +144,6 @@ export default function HorizontalLabelPositionBelowStepper() {
                 ) : (
                     <div>
                       <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-                      <div>
-                        <Button
-                          disabled={activeStep === 0}
-                          onClick={handleBack}
-                          className={classes.backButton}
-                        >
-                          Back
-              </Button>
-                        
-                          {activeStep === steps.length - 1 ? '' : <Button variant="contained" color="primary" onClick={handleNext}>Next</Button>}
-                      </div>
                     </div>
                   )}
               </div>
@@ -187,3 +154,15 @@ export default function HorizontalLabelPositionBelowStepper() {
     </div>
   );
 }
+HorizontalLabelPositionBelowStepper.propTypes = {
+  journeydata: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+  journeydata: state.startjourney
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(withRouter(HorizontalLabelPositionBelowStepper));

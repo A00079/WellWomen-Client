@@ -113,64 +113,64 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-            <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="aboutus"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            About</DirectLinkDiv>
-      </ListItem><Divider />
-      
-      <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="ourwork"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Our Work</DirectLinkDiv>
-        </ListItem><Divider />
-        <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="testimonials"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Testimonials</DirectLinkDiv>
-      </ListItem><Divider />
-      <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="stats"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Stats</DirectLinkDiv>
-      </ListItem><Divider />
-      <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="contactus"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Contact Us</DirectLinkDiv>
-          
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link to="/TrialBlog">Blogs</Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        Youtube
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="aboutus"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  About</DirectLinkDiv>
+              </ListItem><Divider />
 
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="ourwork"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Our Work</DirectLinkDiv>
+              </ListItem><Divider />
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="testimonials"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Testimonials</DirectLinkDiv>
+              </ListItem><Divider />
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="stats"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Stats</DirectLinkDiv>
+              </ListItem><Divider />
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="contactus"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Contact Us</DirectLinkDiv>
+
+              </ListItem>
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <Link to="/TrialBlog">Blogs</Link>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                Youtube
+        
       </ListItem><Divider />
 
               {/* {['Home', 'About', 'Our Work', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
@@ -183,15 +183,18 @@ export default function Header(props) {
                 </React.Fragment>
               ))} */}
             </List>
-            <List>
-              <ListItem>
+            <List style={{
+              position: 'absolute',
+              bottom: '0px'
+            }}>
+              <ListItem style={{width: '15rem'}}>
                 <Button variant="contained" color="primary" style={{ width: '100%' }}>
                   <Link to="/login" className={classes.dropdownLink}>
                     SignIn
                   </Link>
                 </Button>
               </ListItem>
-              <ListItem>
+              <ListItem style={{width: '15rem'}}>
                 <Button variant="contained" color="secondary" style={{ width: '100%' }}>
                   <Link to="/signup" className={classes.dropdownLink}>
                     Sign Up

@@ -156,7 +156,7 @@ const YoutubeVideo = (props) => {
 												// </Grid>
 
 
-												<div onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
+												<div style={{cursor: 'pointer'}} onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
 													<div class="relative">
 														<img class="w-full" src={item.snippet.thumbnails.high.url} alt="" />
 														<span class="absolute bg-black bottom-0 font-bold mb-1 mr-1 px-1 py-px right-0 rounded-sm text-white text-xs">1:40</span>

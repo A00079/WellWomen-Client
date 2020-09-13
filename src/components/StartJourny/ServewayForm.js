@@ -1,7 +1,11 @@
-import React, { Component,useState } from 'react';
+import React, { Component,useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PostSerway from '../../REST/SubmitSerway.js';
+import { StartJourney } from "../../actions/StartYourJourney.js";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
     appbarroot: {
@@ -36,11 +40,15 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(1),
     },
 }));
-const ServeForm = () => {
+const ServeForm = (props) => {
     const classes = useStyles();
     const [name, setName] = useState('');
     const [email, setemail] = useState('');
     const [phone, setphone] = useState(0);
+
+    useEffect(() =>{
+        console.log('serway details',props.journeydata)
+    },[props])
 
     const handelFormSubmit = () =>{
         console.log('name',name)
@@ -77,19 +85,19 @@ const ServeForm = () => {
                         <div class="w-full max-w-xs" style={{ textAlign: 'left' }}>
                             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                 <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                                         Name
       </label>
                                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setName(event.target.value)}} id="username" type="text" placeholder="Name" />
                                 </div>
                                 <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                                         Email
       </label>
                                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setemail(event.target.value)}} id="email" type="email" placeholder="Email" />
                                 </div>
                                 <div class="mb-6">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
                                         Phone
       </label>
                                     <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setphone(event.target.value)}} id="phone" type="number" placeholder="91..." />
@@ -110,5 +118,15 @@ const ServeForm = () => {
         </React.Fragment>
     );
 }
+ServeForm.propTypes = {
+    journeydata: PropTypes.object.isRequired,
+};
 
-export default ServeForm;
+const mapStateToProps = state => ({
+    journeydata: state.startjourney
+});
+
+export default connect(
+    mapStateToProps,
+    { StartJourney }
+)(withRouter(ServeForm));

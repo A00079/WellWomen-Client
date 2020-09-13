@@ -22,7 +22,7 @@ const Testimonials = () => {
     const classes = useStyles();
     return (
         <React.Fragment>
-            <h1 id="testimonials" style={{ color: '#4e6073', textAlign: 'center' }} className="sm:text-3xl mt-24 text-3xl md:text-5xl md:mt-16 font-medium title-font mb-4 text-gray-900">TESTIMONIALS</h1>
+            <h1 id="testimonials" style={{ color: '#4e6073', textAlign: 'center' }} className="sm:text-3xl mt-24 text-3xl md:text-5xl md:mt-16 font-extrabold title-font mb-4 text-gray-900">TESTI<span class="text-indigo-600">MONIALS</span></h1>
             <div class="text-center">
                 <h3 class="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-gray-900">
                     What our <span class="text-indigo-600">Clients say?</span>
