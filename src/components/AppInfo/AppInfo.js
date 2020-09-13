@@ -58,7 +58,7 @@ class AppInfo extends Component {
                         </div>
                     </div>
                 </section> */}
-                <div class="py-24 bg-white">
+                <div class="py-24 md:py-0 bg-white">
                     <h3 class="text-3xl sm:text-5xl md:mt-16  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                         WE <span class="text-indigo-600"> NEVER STOP IMPROVING</span>
                     </h3>

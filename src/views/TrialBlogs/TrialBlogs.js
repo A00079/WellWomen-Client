@@ -1,92 +1,75 @@
 import React, { useEffect, useState } from 'react';
 import SignUpModal from '../../components/SignUpModal/SignUpModal.js';
+import Header from "../../components/Header/Header.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
 
 const TrialBlog = () => {
 
     const [showModal, setShowModal] = useState(false)
-    useEffect(()=>{
+    useEffect(() => {
         const timer = setTimeout(() => {
             setShowModal(true);
-          }, 5000);
-          return () => clearTimeout(timer);
-    },[])
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, [])
     return (
         <React.Fragment>
             {
-                showModal? <SignUpModal showModal={showModal}/> : ""
+                showModal ? <SignUpModal showModal={showModal} /> : ""
             }
-            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
-                <div class="grid grid-cols-1 sm:grid-cols-12 gap-10">
-
-                    <div class="sm:col-span-6 lg:col-span-5">
-                        <a href="#"><div class="h-56 bg-cover text-center overflow-hidden" style={{ backgroundImage: "url('https://tailwindcss.com/img/card-left.jpg')" }} title="Woman holding a mug">
-                        </div></a>
-                        <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                            <div class="lg:pl-16">
-                                <a href="#" class="text-xs text-indigo-600 uppercase font-medium mb-3 flex items-center hover:text-gray-900 transition duration-500 ease-in-out">
-                                    Fashion
-              </a>
-                                <a href="#" class="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 transition duration-500 ease-in-out">The perfect summer sweater that you can wear! </a>
-                                <p class="text-gray-700 text-xs mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-                            </div>
-                        </div>
+            <div className="mb-32">
+            <Header
+                brand="Well Woman"
+                rightLinks={<HeaderLinks />}
+                fixed
+                color="darkpink"
+                changeColorOnScroll={{
+                    height: 400,
+                    color: "white"
+                }}
+            />
+            </div>
+            <div class="max-w-6xl px-10 my-4 md:ml-8 py-6 bg-white rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                    <span class="font-light text-gray-600">mar 10, 2019</span>
+                    <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">Design</a>
+                </div>
+                <div class="mt-2">
+                    <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">Accessibility tools for designers and developers</a>
+                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <a class="text-blue-600 hover:underline" href="#">Read more</a>
+                    <div>
+                        <a class="flex items-center" href="#">
+                            <img class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=373&q=80" alt="avatar" />
+                            <h1 class="text-gray-700 font-bold">Khatab wedaa</h1>
+                        </a>
                     </div>
-
-                    <div class="sm:col-span-6 lg:col-span-4">
-                        <div class="flex items-start mb-3 pb-3">
-                            <a href="#" class="inline-block mr-3"><div class="w-20 h-20 bg-cover bg-center" style={{ backgroundImage: "url(https://media.gettyimages.com/photos/cristiano-ronaldo-of-juventus-fc-looks-dejected-during-the-uefa-of-picture-id1227967060?k=6&m=1227967060&s=612x612&w=0&h=cMSMlRyI6YAzcE_C2KgHGRLeVojHYoUhIvhwPBYv8f4=)" }}></div></a>
-                            <div class="text-sm">
-                                <p class="text-gray-600 text-xs">Aug 18</p>
-                                <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 leading-none">Cristiano Ronaldo of Juventus FC looks dejected during the...</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-3 pb-3">
-                            <a href="#" class="inline-block mr-3"><div class="w-20 h-20 bg-cover bg-center" style={{ backgroundImage: "url(https://media.gettyimages.com/photos/lionel-messi-and-marcandre-ter-stegen-of-fc-barcelona-waits-in-the-picture-id1266763488?k=6&m=1266763488&s=612x612&w=0&h=8vxz9HfQVfrff5N7d1lBVxtLamRQGK3J3lyHkUuuIiw=)" }}></div></a>
-                            <div class="text-sm w-2/3">
-                                <p class="text-gray-600 text-xs">Jan 18</p>
-                                <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 leading-none">Barcelona v Bayern Munich </a>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-3 pb-3">
-                            <a href="#" class="inline-block mr-3"><div class="w-20 h-20 bg-cover bg-center" style={{ backgroundImage: "url(https://media.gettyimages.com/photos/cristiano-ronaldo-of-juventus-fc-looks-dejected-during-the-uefa-of-picture-id1227967060?k=6&m=1227967060&s=612x612&w=0&h=cMSMlRyI6YAzcE_C2KgHGRLeVojHYoUhIvhwPBYv8f4=)" }}></div></a>
-                            <div class="text-sm">
-                                <p class="text-gray-600 text-xs">Aug 18</p>
-                                <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 leading-none">Cristiano Ronaldo of Juventus FC looks dejected during the...</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <a href="#" class="inline-block mr-3"><div class="w-20 h-20 bg-cover bg-center" style={{ backgroundImage: "url(https://media.gettyimages.com/photos/lionel-messi-of-fc-barcelona-looks-dejected-following-his-teams-in-picture-id1266341828?k=6&m=1266341828&s=612x612&w=0&h=FZi-bSrIlOEE01780h79GsbBYPqZo2l3aaCxoktWADY=)" }}></div></a>
-                            <div class="text-sm w-2/3">
-                                <p class="text-gray-600 text-xs">July 23</p>
-                                <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 leading-none">Barcelona v Bayern Munich - UEFA Champions League </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-12 lg:col-span-3">
-                        <a href="#"><div class="h-56 bg-cover text-center overflow-hidden" style={{backgroundImage: "url('https://tailwindcss.com/img/card-left.jpg')"}} title="Woman holding a mug">
-                        </div></a>
-                        <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-                            <div class="">
-                                <a href="#" class="text-xs text-indigo-600 uppercase font-medium flex items-center hover:text-gray-900 transition duration-500 ease-in-out">
-                                    Fashion
-              </a>
-                                <a href="#" class="text-gray-900 font-bold text-lg mb-2 hover:text-indigo-600 transition duration-500 ease-in-out">The perfect summer sweater that you can wear! </a>
-                                <p class="text-gray-700 text-xs mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
-            <a href="https://componentity.com" target="_blank" class="block">
-                <img src="http://codenawis.com/componentity/wp-content/uploads/2020/08/logo-componentity-%E2%80%93-9.png" class="w-48 mx-auto my-5" />
-            </a>
+            <div class="max-w-6xl px-10 my-4 md:ml-8 py-6 bg-white rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                    <span class="font-light text-gray-600">mar 10, 2019</span>
+                    <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">Design</a>
+                </div>
+                <div class="mt-2">
+                    <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">Accessibility tools for designers and developers</a>
+                    <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <a class="text-blue-600 hover:underline" href="#">Read more</a>
+                    <div>
+                        <a class="flex items-center" href="#">
+                            <img class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=373&q=80" alt="avatar" />
+                            <h1 class="text-gray-700 font-bold">Khatab wedaa</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-
-
-
+            
         </React.Fragment>
     );
 }

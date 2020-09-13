@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import SectionTabs from "../components/SectionTabs/SectionTabs.js";
@@ -22,9 +22,8 @@ import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
-
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // sections for this page
 
@@ -34,7 +33,11 @@ const useStyles = makeStyles(styles);
 
 export default function Components(props) {
     const classes = useStyles();
-	const floatingCard = classNames('p-0')
+    const floatingCard = classNames('p-0');
+    
+    useEffect(() =>{
+        AOS.init({ duration: 2000 });
+    },[]);
 
     return (
         <div>
@@ -82,15 +85,27 @@ export default function Components(props) {
                 </Card>
             </div>
             <div>
-                <OurWorking />
-                <AppInfo />
-                {/* <CardCarousel /> */}
-                <HowItWorks />
-                <About />
-                <Testimonial />
-                {/* <Pricing /> */}
-                <GetInTouch />
-                <Contact />
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <OurWorking />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <AppInfo />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <HowItWorks />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <About />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <Testimonial />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <GetInTouch />
+                </div>
+                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
+                    <Contact />
+                </div>
             </div>
             <Footer />
         </div>

@@ -56,7 +56,7 @@ const AgeGroup = (props) => {
     return (
         <React.Fragment>
             <div class="py-2 bg-white">
-                <h3 class="text-3xl sm:text-5xl md:mt-0 md:mb-0 md:text-3xl leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                <h3 class="text-3xl sm:text-5xl md:mt-0 md:mb-16 md:text-3xl leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                     WHAT'S <span class="text-indigo-600">  YOUR AGE GROUP?</span>
                 </h3>
                 <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between">
