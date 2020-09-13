@@ -16,61 +16,63 @@ class Pricing extends Component {
                 </g>
   </svg> */}
 
-            <h1 className="text-center font-bold text-5xl mt-8 tracking-wide relative">Our Pricing</h1>
 
-            <div className="flex flex-col md:flex-row md:transform md:scale-75 lg:scale-100 justify-center">
-                <div className="border rounded-lg md:rounded-r-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
-                    <div className="">Basic</div>
-                    <div id="month" className="font-bold text-6xl month hidden">$ 19.99</div>
-                    <div id="annual" className="font-bold text-6xl annual">$ 199.99</div>
-                    <hr/>
+                <h3 class="text-3xl sm:text-5xl md:mt-16  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                    OUR <span class="text-indigo-600"> PRICING</span>
+                </h3>
+                <div className="flex flex-col md:flex-row md:transform md:scale-75 lg:scale-100 justify-center">
+                    <div className="border rounded-lg md:rounded-r-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
+                        <div className="">Basic</div>
+                        <div id="month" className="font-bold text-6xl month hidden">$ 19.99</div>
+                        <div id="annual" className="font-bold text-6xl annual">$ 199.99</div>
+                        <hr />
                         <div className="text-sm my-3">500 GB Storage</div>
-                        <hr/>
-                            <div className="text-sm my-3">2 Users Allowed</div>
-                            <hr/>
-                                <div className="text-sm my-3">Send up to 3 GB</div>
-                                <hr/>
-                                    <a href="#" target="_blank">
-                                        <div className="bg-gradient-base border border-blue-600 hover:bg-white text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">Learn More</div>
-                                    </a>
-            </div>
+                        <hr />
+                        <div className="text-sm my-3">2 Users Allowed</div>
+                        <hr />
+                        <div className="text-sm my-3">Send up to 3 GB</div>
+                        <hr />
+                        <a href="#" target="_blank">
+                            <div className="bg-gradient-base border border-blue-600 hover:bg-white text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">Learn More</div>
+                        </a>
+                    </div>
 
-                                <div className="border-transparent rounded-lg text-center p-5 mx-auto md:mx-0 my-2 bg-gradient text-white font-medium z-10 shadow-lg">
-                                    <div className="py-4">Professional
+                    <div className="border-transparent rounded-lg text-center p-5 mx-auto md:mx-0 my-2 bg-gradient text-white font-medium z-10 shadow-lg">
+                        <div className="py-4">Professional
         <div id="month" className="font-bold text-6xl month hidden"> $ 24.99</div>
-                                        <div id="annual" className="font-bold text-6xl annual">$ 249.99</div>
-                                        <hr/>
-                                            <div className="text-sm my-3">1 TB Storage</div>
-                                            <hr/>
-                                                <div className="text-sm my-3">5 Users Allowed</div>
-                                                <hr/>
-                                                    <div className="text-sm my-3">Send up to 10 GB</div>
-                                                    <hr/>
-                                                        <a href="#" target="_blank">
-                                                            <div className="bg-white border border-white hover:bg-transparent text-blue-600 hover:text-white font-bold uppercase text-xs mt-5 py-2 mpx-4 rounded cursor-pointer">Learn More</div>
-                                                        </a>
-      </div>
-    </div>
+                            <div id="annual" className="font-bold text-6xl annual">$ 249.99</div>
+                            <hr />
+                            <div className="text-sm my-3">1 TB Storage</div>
+                            <hr />
+                            <div className="text-sm my-3">5 Users Allowed</div>
+                            <hr />
+                            <div className="text-sm my-3">Send up to 10 GB</div>
+                            <hr />
+                            <a href="#" target="_blank">
+                                <div className="bg-white border border-white hover:bg-transparent text-blue-600 hover:text-white font-bold uppercase text-xs mt-5 py-2 mpx-4 rounded cursor-pointer">Learn More</div>
+                            </a>
+                        </div>
+                    </div>
 
-                                                <div className="border rounded-lg  md:rounded-l-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
-                                                    <div className="">Master</div>
-                                                    <div id="month" className="font-bold text-6xl month hidden">$ 39.99</div>
-                                                    <div id="annual" className="font-bold text-6xl annual">$ 399.99</div>
-                                                    <hr/>
-                                                        <div className="text-sm my-3">2 TB Storage</div>
-                                                        <hr/>
-                                                            <div className="text-sm my-3">10 Users Allowed</div>
-                                                            <hr/>
-                                                                <div className="text-sm my-3">Send up to 20 GB</div>
-                                                                <hr/>
-                                                                    <a href="#" target="_blank">
-                                                                        <div className="bg-gradient-base border border-blue-600 hover:bg-transparent text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">Learn More</div>
-                                                                    </a>
-    </div>
-  </div>
+                    <div className="border rounded-lg  md:rounded-l-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg">
+                        <div className="">Master</div>
+                        <div id="month" className="font-bold text-6xl month hidden">$ 39.99</div>
+                        <div id="annual" className="font-bold text-6xl annual">$ 399.99</div>
+                        <hr />
+                        <div className="text-sm my-3">2 TB Storage</div>
+                        <hr />
+                        <div className="text-sm my-3">10 Users Allowed</div>
+                        <hr />
+                        <div className="text-sm my-3">Send up to 20 GB</div>
+                        <hr />
+                        <a href="#" target="_blank">
+                            <div className="bg-gradient-base border border-blue-600 hover:bg-transparent text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer">Learn More</div>
+                        </a>
+                    </div>
+                </div>
             </React.Fragment>
-         );
+        );
     }
 }
- 
+
 export default Pricing;

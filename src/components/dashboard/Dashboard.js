@@ -7,6 +7,8 @@ import Header from "../Header/Header.js";
 import HeaderLinks from "../Header/HeaderLinks.js";
 import { validateAdmin } from "../../actions/validateAdmin.js";
 import Admin from "../AdminPanel/Admin.js";
+import UserHeaderLinks from "../Header/UserHeaderLink.js";
+import Pricing from '../Pricing/Pricing.js';
 
 
 class Dashboard extends Component {
@@ -31,11 +33,11 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         {
-          this.props.is_admin ? <Admin />: 
+          this.props.is_admin.isAdmin? <Admin /> : 
           <React.Fragment>
           <Header
             brand="Well Woman"
-            rightLinks={<HeaderLinks />}
+            rightLinks={<UserHeaderLinks />}
             fixed
             color="darkpink"
             changeColorOnScroll={{
@@ -43,30 +45,8 @@ class Dashboard extends Component {
               color: "white"
             }}
           />
-          <div style={{ height: "175vh" }} className="container valign-wrapper">
-            <div className="row">
-              <div className="landing-copy col s12 center-align">
-                <h4>
-                  <b>Hey there,</b> {user.name.split(" ")[0]}
-                  <p className="flow-text grey-text text-darken-1">
-                    You are logged into a full-stack{" "}
-                    <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
-                </h4>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  onClick={this.onLogoutClick}
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Logout
-            </button>
-              </div>
-            </div>
+          <div className="mt-32">
+            <Pricing />
           </div>
         </React.Fragment>
         }

@@ -133,7 +133,7 @@ export default function MiniDrawer() {
                     <Typography variant="h6" noWrap>
                         Dashboard
           </Typography>
-          <Avatar alt="admin icon" src={userIcon} style={{position:'absolute',right: '40px'}}/>
+                    <Avatar alt="admin icon" src={userIcon} style={{ position: 'absolute', right: '40px' }} />
 
                 </Toolbar>
             </AppBar>
@@ -174,9 +174,29 @@ export default function MiniDrawer() {
                     ))}
                 </List>
             </Drawer>
-            <main className={classes.content}>
+            <Grid
+            style={{margin: '4rem 1rem'}}
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                spacing={3}>
+                <Grid item xs={12} md={3} lg={3}>
+                    <Budget />
+                </Grid>
+                <Grid item xs={12} md={3} lg={3}>
+                    <TotalCustomers />
+                </Grid>
+                <Grid item xs={12} md={3} lg={3}>
+                    <TasksProgress />
+                </Grid>
+                <Grid item xs={12} md={3} lg={3}>
+                    <TotalProfit />
+                </Grid>
+                
+            </Grid>
+            {/* <main className={classes.content}>
                 <div className={classes.toolbar} />
-                <Container maxWidth={false}>
                     <Grid
                         container
                         spacing={3}
@@ -197,7 +217,7 @@ export default function MiniDrawer() {
                             xl={3}
                             xs={12}
                         >
-                            <TotalCustomers />
+                            
                         </Grid>
                         <Grid
                             item
@@ -232,8 +252,7 @@ export default function MiniDrawer() {
                             <LatestOrders />
                         </Grid>
                     </Grid>
-                </Container>
-            </main>
+            </main> */}
         </div>
     );
 }
