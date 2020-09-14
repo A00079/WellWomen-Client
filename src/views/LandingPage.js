@@ -22,8 +22,6 @@ import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
-import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 // sections for this page
 
@@ -34,11 +32,6 @@ const useStyles = makeStyles(styles);
 export default function Components(props) {
     const classes = useStyles();
     const floatingCard = classNames('p-0');
-    
-    useEffect(() =>{
-        AOS.init({ duration: 2000 });
-    },[]);
-
     return (
         <div>
             <Header
@@ -66,7 +59,7 @@ export default function Components(props) {
                                     size="lg"
                                     rel="noopener noreferrer"
                                 >
-                                    <i className="fas fa-play" /> 
+                                    <i className="fas fa-play" />
                                     <Link to="/startjourney" className={classes.dropdownLink}>
                                         Start Your Journey
                                     </Link>
@@ -77,35 +70,27 @@ export default function Components(props) {
                 </div>
             </Parallax>
 
-            <div  className={classNames(classes.main, classes.mainRaised)}>
+            <div className={classNames(classes.main, classes.mainRaised)}>
                 <Card className={classNames(classes.RaisedCardMain)}>
                     <CardBody>
-                        <ReactSlider  />
+                        <ReactSlider />
                     </CardBody>
                 </Card>
             </div>
             <div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <OurWorking />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <AppInfo />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <HowItWorks />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <About />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <Testimonial />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <GetInTouch />
-                </div>
-                <div data-aos='fade-up' data-aos-easing="ease-in-out"> 
-                    <Contact />
-                </div>
+                <OurWorking />
+
+                <AppInfo />
+
+                <HowItWorks />
+
+                <About />
+
+                <Testimonial />
+
+                <GetInTouch />
+
+                <Contact />
             </div>
             <Footer />
         </div>
