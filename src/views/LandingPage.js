@@ -22,6 +22,8 @@ import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 // sections for this page
 
@@ -32,6 +34,12 @@ const useStyles = makeStyles(styles);
 export default function Components(props) {
     const classes = useStyles();
     const floatingCard = classNames('p-0');
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1500,
+        });
+    })
     return (
         <div>
             <Header
@@ -78,19 +86,27 @@ export default function Components(props) {
                 </Card>
             </div>
             <div>
-                <OurWorking />
-
-                <AppInfo />
-
-                <HowItWorks />
-
-                <About />
-
-                <Testimonial />
-
-                <GetInTouch />
-
-                <Contact />
+                <div data-aos="fade-up" >
+                    <OurWorking />
+                </div>
+                <div data-aos="fade-up" >
+                    <AppInfo />
+                </div>
+                <div data-aos="fade-up" >
+                    <HowItWorks />
+                </div>
+                <div data-aos="fade-up" >
+                    <About />
+                </div>
+                <div data-aos="fade-up" >
+                    <Testimonial />
+                </div>
+                <div data-aos="fade-up" >
+                    <GetInTouch />
+                </div>
+                <div data-aos="fade-up" >
+                    <Contact />
+                </div>
             </div>
             <Footer />
         </div>
