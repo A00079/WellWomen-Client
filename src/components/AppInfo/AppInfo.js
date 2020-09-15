@@ -59,7 +59,7 @@ class AppInfo extends Component {
                     </div>
                 </section> */}
                 <div class="py-24 md:py-0 bg-white">
-                    <h3 class="text-3xl sm:text-5xl md:mt-16  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                    <h3 class="text-3xl sm:text-5xl md:mt-16 md:text-4xl  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                         WE <span class="text-indigo-600"> NEVER STOP IMPROVING</span>
                     </h3>
                     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between">

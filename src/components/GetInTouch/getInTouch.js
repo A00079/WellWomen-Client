@@ -8,10 +8,10 @@ class getIntouch extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 style={{ color: '#4e6073',textAlign: 'center' }} className="sm:text-3xl text-3xl md:text-5xl md:mt-16 font-extrabold title-font mb-4 text-gray-900">GET IN  <span class="text-indigo-600">TOUCH WITH US</span></h1>
+                <h1 style={{ color: '#4e6073',textAlign: 'center' }} className="sm:text-3xl text-3xl md:text-4xl md:mt-16 font-extrabold title-font mb-4 text-gray-900">GET IN  <span class="text-indigo-600">TOUCH WITH US</span></h1>
 
                 <section className="text-gray-700 body-font">
-                    <div className="container px-5 py-8  md:py-24 mx-auto" id="contactus">
+                    <div className="container px-5 md:px-0 py-8  md:py-24 mx-auto" id="contactus">
                         <div className="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
                             <h1 style={{textAlign:'center'}} className="flex-grow sm:pr-16 mb-8 md:mb-0 text-2xl font-medium title-font text-gray-900">
                             Still confuse Get a FREE Suggetion from our Health Expert on WhatsApp

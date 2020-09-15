@@ -5,7 +5,7 @@ const componentsStyle = theme => ({
   startbtn: {
     fontWeight: "bolder",
     textAlign: 'center',
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       padding: '0.8rem 1rem !impotant'
     }
   },

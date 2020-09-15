@@ -86,7 +86,7 @@ export default function HorizontalLabelPositionBelowStepper() {
   return (
     <React.Fragment>
     <h1 style={{ fontStyle: 'normal',
-    color: '#4e6073' }} className="sm:text-3xl mb-0 mt-16 font-extrabold md:mb-0 md:mt-16 text-3xl md:text-5xl font-medium title-font" align="center">
+    color: '#4e6073' }} className="sm:text-3xl mb-0 mt-16 font-extrabold md:mb-0 md:mt-16 text-3xl  md:text-4xl font-medium title-font" align="center">
       HOW <span class="text-indigo-600"> IT WORKS</span>
     </h1>
 
