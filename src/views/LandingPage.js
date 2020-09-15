@@ -37,7 +37,7 @@ export default function Components(props) {
 
     useEffect(() => {
         Aos.init({
-            duration: 1500,
+            duration: 2000,
         });
     })
     return (
@@ -57,8 +57,8 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className={classes.title}>LOSE YOUR WEIGHT</h1>
-                                <h3 className={classes.subtitle}>
+                                <h1 className="md:text-4xl font-black">LOSE YOUR WEIGHT</h1>
+                                <h3 className="md:text-1xl font-medium">
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3>
                                 <Button

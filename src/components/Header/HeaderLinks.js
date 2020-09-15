@@ -124,7 +124,7 @@ const HeaderLinks = (props) => {
           <ListItem className={classes.listItem}>
             <Button variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
               Logout
-        </Button>
+          </Button>
           </ListItem> : <ListItem className={classes.listitemdrop}>
             <CustomDropdown
               noLiPadding

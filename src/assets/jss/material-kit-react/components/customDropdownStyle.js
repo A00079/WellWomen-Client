@@ -15,6 +15,11 @@ import {
 } from "../../material-kit-react.js";
 
 const customDropdownStyle = theme => ({
+  handelonMD:{
+    [theme.breakpoints.down("md")]: {
+      left: '-60px'
+    }
+  },
   popperClose: {
     pointerEvents: "none"
   },

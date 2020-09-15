@@ -4,7 +4,10 @@ const componentsStyle = theme => ({
   container,
   startbtn: {
     fontWeight: "bolder",
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down("sm")]: {
+      padding: '0.8rem 1rem !impotant'
+    }
   },
   brand: {
     color: "#FFFFFF",
