@@ -9,7 +9,7 @@ import { validateAdmin } from "../../actions/validateAdmin.js";
 import Admin from "../AdminPanel/Admin.js";
 import UserHeaderLinks from "../Header/UserHeaderLink.js";
 import Pricing from '../Pricing/Pricing.js';
-
+import UserBlogs from '../../views/UserBlogs/UserBlogs.js';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class Dashboard extends Component {
             }}
           />
           <div className="mt-32">
-            <Pricing />
+            <UserBlogs />
           </div>
         </React.Fragment>
         }

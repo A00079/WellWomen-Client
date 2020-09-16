@@ -62,7 +62,7 @@ const HeaderLinks = (props) => {
                     }}
                     buttonIcon={Apps}
                     dropdownList={[
-                        <Link onClick={() => onLogoutClick()} className={classes.dropdownLink}>
+                        <Link to="" onClick={() => onLogoutClick()} className={classes.dropdownLink}>
                             Logout
                 </Link>
                     ]}

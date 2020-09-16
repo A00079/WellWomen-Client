@@ -22,6 +22,7 @@ import Contact from "../components/Contact/Contact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
+import WorkingCards from "../components/OurWorking/OurWorkingCards.js";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -57,7 +58,7 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className="md:text-4xl text-4xl mt-64 font-black">LOSE YOUR WEIGHT</h1>
+                                <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black">LOSE YOUR WEIGHT</h1>
                                 <h3 className="md:text-1xl text-2xl font-medium">
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3>
@@ -87,6 +88,9 @@ export default function Components(props) {
             </div>
             <div>
                 <div data-aos="fade-up" >
+                    <WorkingCards />
+                </div>
+                <div data-aos="fade-up" >
                     <OurWorking />
                 </div>
                 <div data-aos="fade-up" >
@@ -98,9 +102,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <About />
                 </div>
-                {/* <div data-aos="fade-up" >
+                <div data-aos="fade-up" >
                     <Testimonial />
-                </div> */}
+                </div>
                 <div data-aos="fade-up" >
                     <GetInTouch />
                 </div>

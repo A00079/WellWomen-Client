@@ -4,7 +4,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
-
+import testimonial from  '../../assets/img/testimonial.jpg';
 const useStyles = makeStyles((theme) => ({
     screensContainer: {
         height: '460px',
@@ -90,11 +90,11 @@ const Testimonials = () => {
                         <div class="mt-8 md:mt-2">
 
                             <div class="sm:flex items-center">
-                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src="http://codenawis.com/wp-content/uploads/2020/08/images.jpg" alt="Avatar of Jonathan Reinink" />
+                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src={testimonial} alt="Avatar of Jonathan Reinink" />
 
                                 <div class="text-left">
                                     <div class="mb-4 text-gray-500  md:ml-24">
-                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="" x="0px" y="0px"
                                             viewBox="0 0 32 32" >
                                             <g>
                                                 <g id="right_x5F_quote">
@@ -127,11 +127,11 @@ const Testimonials = () => {
                         <div class="mt-8 md:mt-2">
 
                             <div class="sm:flex items-center">
-                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src="http://codenawis.com/wp-content/uploads/2020/08/images.jpg" alt="Avatar of Jonathan Reinink" />
+                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src={testimonial} alt="Avatar of Jonathan Reinink" />
 
                                 <div class="text-left">
                                     <div class="mb-4 text-gray-500  md:ml-24">
-                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="" x="0px" y="0px"
                                             viewBox="0 0 32 32" >
                                             <g>
                                                 <g id="right_x5F_quote">
@@ -165,11 +165,11 @@ const Testimonials = () => {
                         <div class="mt-8 md:mt-2">
 
                             <div class="sm:flex items-center">
-                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src="http://codenawis.com/wp-content/uploads/2020/08/images.jpg" alt="Avatar of Jonathan Reinink" />
+                                <img style={{ margin: '0 auto' }} class=" sm:w-48 sm:h-48 w-34 h-34 md:w-48 md:h-48 rounded-full sm:ml-10" src={testimonial} alt="Avatar of Jonathan Reinink" />
 
                                 <div class="text-left">
                                     <div class="mb-4 text-gray-500  md:ml-24">
-                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        <svg height="35px" class="mb-2" fill="#5a67d8" version="1.1" id="Capa_1" xmlns="" x="0px" y="0px"
                                             viewBox="0 0 32 32" >
                                             <g>
                                                 <g id="right_x5F_quote">
