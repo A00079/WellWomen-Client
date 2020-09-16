@@ -98,9 +98,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <About />
                 </div>
-                <div data-aos="fade-up" >
+                {/* <div data-aos="fade-up" >
                     <Testimonial />
-                </div>
+                </div> */}
                 <div data-aos="fade-up" >
                     <GetInTouch />
                 </div>

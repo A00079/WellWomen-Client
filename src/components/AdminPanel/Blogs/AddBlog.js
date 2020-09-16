@@ -24,19 +24,6 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Don Bosco
-      </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-
 const useStyles = makeStyles((theme) => ({
     paper: {
         marginTop: theme.spacing(8),
@@ -59,65 +46,60 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
     const classes = useStyles();
-    const [announcement, setAnnouncement] = useState('');
-    const [announceTitle, setannounceTitle] = useState('');
-    const [announceName, setannounceName] = useState('');
-    const [announceDate, setannounceDate] = useState('');
-    const [isdisable, setisdisable] = useState('');
-    const [isannouncement, setisannouncement] = useState(false);
+    const [postDiscription, setDiscription] = useState('');
+    const [postTitle, setpostTitle] = useState('');
+    const [postShortDiscription, setpostName] = useState('');
+    const [postAnyTags, setpostAnyTags] = useState('');
+    const [postYoutubelink, setpostYoutubelink] = useState('');
+    const [isdisable, setisdisable] = useState(true);
 
 
-    const handleAnnouncement = (e) =>{
+    const handlePostDiscription = (e) =>{
         if(e.target.value){
-            setisannouncement(false)
-        }
-        setAnnouncement(e.target.value)
-    }
-    const handleAnnounceDate = (e) =>{
-        const currentdate = e.target.value;
-        validateDate(currentdate);
-        console.log('Announcement Date', e.target.value)
-        setannounceDate(e.target.value)
-    }
-    const validateDate = (currentdate) =>{
-
-        var selectedDate = new Date(currentdate);
-        var now = new Date();
-        if(!selectedDate < now){
+            console.log('Announcement', e.target.value)
             setisdisable(false)
-        }else{
-            setisdisable(true)
         }
+        setDiscription(e.target.value)
     }
-    const handleAnnounceTitle = (e) =>{
+    const handlePostTitle = (e) =>{
         console.log('Announcement Title', e.target.value)
-        setannounceTitle(e.target.value)
+        setpostTitle(e.target.value)
     }
-
-    const handleAnnounceName = (e) =>{
+    const handlePostYoutubelink = (e) =>{
+        console.log('Announcement Title', e.target.value)
+        setpostYoutubelink(e.target.value)
+    }
+    const handlePostAnyTags = (e) =>{
+        console.log('Announcement Title', e.target.value)
+        setpostAnyTags(e.target.value)
+    }
+    const handlePostName = (e) =>{
         console.log('Announcement Name', e.target.value)
-        setannounceName(e.target.value)
+        setpostName(e.target.value)
     }
     const PostAnnouncement = () =>{
-        let api_url = "api/admin/announcement/create";
+        let api_url = "api/admin/postBlog/create";
         let data = {
-            'Title': announceTitle,
-            'Name': announceName,
-            'Message': announcement,
-            'Date': announceDate
+            'Title': postTitle,
+            'ShortDiscription': postShortDiscription,
+            'AnyTags': postAnyTags,
+            'Youtubelink': postYoutubelink,
+            'Discription': postDiscription,
+            'Date': new Date()
         }
-        if(data.Message !== ''){
+        if(data.Discription !== '' && data.Title !== ''){
             BlogsREST
             .postBlogdetails(api_url, data)
             .then(response => {
                 console.log("Response Data...", response);
-                document.getElementById('Title').value = '';
-                document.getElementById('outlined-adornment-amount').value = '';
-                document.getElementById('Announcement').value = '';
-                document.getElementById('date').value = '';
             });
         }else{
-            setisannouncement(true)
+            setisdisable(true)
+            document.getElementById('Title').value = '';
+            document.getElementById('ShortDiscription').value = ''
+            document.getElementById('AnyTags').value = ''
+            document.getElementById('YoutubeLink').value = ''
+            document.getElementById('Discription').value = ''
         }
         console.log('save data',data)
     }
@@ -127,13 +109,13 @@ export default function SignUp() {
                 <CssBaseline />
                 <div className={classes.paper}>
                     <Typography component="h1" variant="h5">
-                        Add Announcements
+                        Post Blog
                     </Typography>
                     <form className={classes.form} noValidate>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
-                                    onChange={e=>handleAnnounceTitle(e)}
+                                    onChange={e=>handlePostTitle(e)}
                                     autoComplete="Title"
                                     name="Title"
                                     variant="outlined"
@@ -144,52 +126,68 @@ export default function SignUp() {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                            <FormControl
+                            <TextField
+                                    onChange={e=>handlePostName(e)}
+                                    autoComplete="ShortDiscription"
+                                    name="ShortDiscription"
+                                    variant="outlined"
+                                    fullWidth
+                                    id="ShortDiscription"
+                                    label="Short Discription"
+                                    autoFocus
+                                />
+                            {/* <FormControl
                             id='Name'
                             onChange={e=>handleAnnounceName(e)}
                             fullWidth className={classes.margin} variant="outlined">
                                 <InputLabel
                                 
                                  htmlFor="outlined-adornment-amount"
-                                 >Name</InputLabel>
+                                 >Short Discription</InputLabel>
                                 <OutlinedInput
                                     id="outlined-adornment-amount"
-                                    startAdornment={<InputAdornment position="start">fr.</InputAdornment>}
                                     labelWidth={60}
                                 />
-                            </FormControl>
+                            </FormControl> */}
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    onChange={e=>handlePostAnyTags(e)}
+                                    autoComplete="AnyTags"
+                                    name="AnyTags"
+                                    variant="outlined"
+                                    fullWidth
+                                    id="AnyTags"
+                                    label="Any Tags"
+                                    autoFocus
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    onChange={e=>handlePostYoutubelink(e)}
+                                    autoComplete="YoutubeLink"
+                                    name="YoutubeLink"
+                                    variant="outlined"
+                                    fullWidth
+                                    id="YoutubeLink"
+                                    label="Youtube Link"
+                                    autoFocus
+                                />
                             </Grid>
                             <Grid item xs={12}>
                             <TextField
-                                error={isannouncement}
-                                onChange={e=>handleAnnouncement(e)}
-                                id="Announcement"
-                                label="Announcement"
+                                onChange={e=>handlePostDiscription(e)}
+                                id="Discription"
+                                label="Discription"
                                 required
                                 multiline
                                 rows={4}
                                 fullWidth
-                                name="Announcement"
+                                name="Discription"
                                 defaultValue=""
                                 variant="outlined"
-                                autoComplete="Announcement"
+                                autoComplete="Discription"
                             />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    error={isdisable}
-                                    onChange={e=>handleAnnounceDate(e)}
-                                    id="date"
-                                    fullWidth
-                                    variant="outlined"
-                                    label="Announce Date"
-                                    type="date"
-                                    minDate={new Date()}
-                                    className={classes.textField}
-                                    InputLabelProps={{
-                                    shrink: true,
-                                    }}
-                                />
                             </Grid>
                         </Grid>
                         <Button
@@ -200,7 +198,7 @@ export default function SignUp() {
                             color="primary"
                             className={classes.submit}
                         >
-                            Post Announcement
+                            Create Blog
                         </Button>
                     </form>
                 </div>

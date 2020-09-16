@@ -181,7 +181,7 @@ export default function MiniDrawer() {
                     <Divider />
                     <ListItem className={classes.drawerItems}>
                         <ListItemIcon><MailIcon /></ListItemIcon>
-                        <ListItemText onClick={() => handleActivePanel('postblog')}>Post Blog</ListItemText>
+                        <ListItemText onClick={() => handleActivePanel('postblog')}>Create Blog</ListItemText>
                     </ListItem>
                 </List>
                 <Divider />
