@@ -56,11 +56,11 @@ function App() {
         <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
         <Route exact path="/TrialBlog" component={TrialBlog} />
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        {/* <Route exact path="/dashboard" component={Dashboard} /> */}
 
         <Switch>
-          {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
-          {/* <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} /> */}
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} />
         </Switch>
       </Router>
     </Provider>

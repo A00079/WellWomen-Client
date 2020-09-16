@@ -17,7 +17,7 @@ class Pricing extends Component {
   </svg> */}
 
 
-                <h3 class="text-3xl sm:text-5xl md:mt-16  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                <h3 class="text-3xl sm:text-5xl md:text-4xl md:mt-16  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                     OUR <span class="text-indigo-600"> PRICING</span>
                 </h3>
                 <div className="flex flex-col md:flex-row md:transform md:scale-75 lg:scale-100 justify-center">

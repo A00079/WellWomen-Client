@@ -36,7 +36,7 @@ class Dashboard extends Component {
           this.props.is_admin.isAdmin? <Admin /> : 
           <React.Fragment>
           <Header
-            brand="Well Woman"
+            brand="Curvicare"
             rightLinks={<UserHeaderLinks />}
             fixed
             color="darkpink"

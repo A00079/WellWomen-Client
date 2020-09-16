@@ -123,7 +123,7 @@ export default function SignUp() {
     }
 
     return (
-            <Container component="main" maxWidth="xs">
+            <Container component="main" maxWidth="xs" className="md:mt-24">
                 <CssBaseline />
                 <div className={classes.paper}>
                     <Typography component="h1" variant="h5">
@@ -204,10 +204,9 @@ export default function SignUp() {
                         </Button>
                     </form>
                 </div>
-                <Box mt={5}>
+                {/* <Box mt={5}>
                     <Copyright />
-                </Box>
-                <ToastContainer />
+                </Box> */}
             </Container>
     );
 }

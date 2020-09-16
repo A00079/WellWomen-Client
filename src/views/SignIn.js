@@ -130,7 +130,7 @@ class Signin extends Component {
                         <div className="mt-2 flex flex-col items-center">
 
                            <h1 className="text-2xl xl:text-3xl font-extrabold">
-                              Sign In for Well Women
+                              Sign In for Curvicare
                         </h1>
                            <div className="w-full flex-1 mt-8">
                               <div className="flex flex-col items-center">

@@ -32,7 +32,7 @@ const OurWorking = () => {
                 <div className={classes.hideonmobile}>
                     <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:ml-16 md:mr-12  md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         {/* <img className="object-cover object-center rounded" style={{ width: '55rem' }} alt="hero" src={hero} /> */}
-                        <h3 class="text-3xl sm:text-5xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                        <h3 class="text-3xl md:text-4xl sm:text-5xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                             OUR <span class="text-indigo-600"> WORK</span>
                         </h3>
                     </div>

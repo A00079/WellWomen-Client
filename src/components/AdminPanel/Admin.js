@@ -30,13 +30,16 @@ import Button from '@material-ui/core/Button';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar';
 import userIcon from "../../assets/img/signfemale.png";
-
+import PostBlog from "./Blogs/AddBlog.js";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+    },
+    drawerItems:{
+        cursor: 'pointer'
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -100,6 +103,9 @@ export default function MiniDrawer() {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);
+    const [dashboard, setdashboard] = React.useState(true);
+    const [postBlog, setpostBlog] = React.useState(false);
+
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -107,6 +113,17 @@ export default function MiniDrawer() {
 
     const handleDrawerClose = () => {
         setOpen(false);
+    };
+
+    const handleActivePanel = (activePanel) => {
+        if(activePanel === 'dashboard'){
+            setdashboard(true);
+            setpostBlog(false);
+        }
+        if(activePanel === 'postblog'){
+            setdashboard(false);
+            setpostBlog(true);
+        }
     };
 
     return (
@@ -157,92 +174,45 @@ export default function MiniDrawer() {
                 </div>
                 <Divider />
                 <List>
-                <ListItem>
-                    <ListItemIcon><MailIcon /></ListItemIcon>
-                    <ListItemText primary={'Post Blog'} />
-                </ListItem>
+                    <ListItem className={classes.drawerItems}>
+                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemText onClick={() => handleActivePanel('dashboard')}>Dashboard</ListItemText>
+                    </ListItem>
+                    <Divider />
+                    <ListItem className={classes.drawerItems}>
+                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemText onClick={() => handleActivePanel('postblog')}>Post Blog</ListItemText>
+                    </ListItem>
                 </List>
                 <Divider />
             </Drawer>
-            <Grid
-            style={{margin: '4rem 1rem'}}
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                spacing={3}>
-                <Grid item xs={12} md={3} lg={3}>
-                    <Budget />
-                </Grid>
-                <Grid item xs={12} md={3} lg={3}>
-                    <TotalCustomers />
-                </Grid>
-                <Grid item xs={12} md={3} lg={3}>
-                    <TasksProgress />
-                </Grid>
-                <Grid item xs={12} md={3} lg={3}>
-                    <TotalProfit />
-                </Grid>
-                
-            </Grid>
-            {/* <main className={classes.content}>
-                <div className={classes.toolbar} />
+            {
+                dashboard ?
                     <Grid
+                        style={{ margin: '4rem 1rem' }}
                         container
-                        spacing={3}
-                    >
-                        <Grid
-                            item
-                            lg={3}
-                            sm={6}
-                            xl={3}
-                            xs={12}
-                        >
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={3}>
+                        <Grid item xs={12} md={3} lg={3}>
                             <Budget />
                         </Grid>
-                        <Grid
-                            item
-                            lg={3}
-                            sm={6}
-                            xl={3}
-                            xs={12}
-                        >
-                            
+                        <Grid item xs={12} md={3} lg={3}>
+                            <TotalCustomers />
                         </Grid>
-                        <Grid
-                            item
-                            lg={3}
-                            sm={6}
-                            xl={3}
-                            xs={12}
-                        >
+                        <Grid item xs={12} md={3} lg={3}>
                             <TasksProgress />
                         </Grid>
-                        <Grid
-                            item
-                            lg={3}
-                            sm={6}
-                            xl={3}
-                            xs={12}
-                        >
+                        <Grid item xs={12} md={3} lg={3}>
                             <TotalProfit />
                         </Grid>
-                    </Grid>
-                    <Grid
-                        container
-                        spacing={3}
-                    >
-                        <Grid
-                            item
-                            lg={8}
-                            md={12}
-                            xl={9}
-                            xs={12}
-                        >
-                            <LatestOrders />
-                        </Grid>
-                    </Grid>
-            </main> */}
+                    </Grid> : ""
+            }
+            {
+                postBlog ?
+                    <PostBlog /> : ""
+            }
         </div>
-    );
+    ); 
 }

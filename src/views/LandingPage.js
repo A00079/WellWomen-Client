@@ -57,8 +57,8 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className="md:text-4xl font-black">LOSE YOUR WEIGHT</h1>
-                                <h3 className="md:text-1xl font-medium">
+                                <h1 className="md:text-4xl text-4xl mt-64 font-black">LOSE YOUR WEIGHT</h1>
+                                <h3 className="md:text-1xl text-2xl font-medium">
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3>
                                 <Button

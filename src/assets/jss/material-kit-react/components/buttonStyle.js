@@ -8,12 +8,9 @@ import {
   dangerColor
 } from "../../material-kit-react.js";
 
-const buttonStyle = theme => ({
+const buttonStyle ={
   button: {
-    [theme.breakpoints.down("md")]: {
-      marginRight: '8px',
-      outline: 'antiquewhite',
-    },
+    
     minHeight: "auto",
     minWidth: "auto",
     backgroundColor: grayColor,
@@ -323,6 +320,6 @@ const buttonStyle = theme => ({
       }
     }
   }
-});
+};
 
 export default buttonStyle;

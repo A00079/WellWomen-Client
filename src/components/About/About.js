@@ -17,7 +17,7 @@ class About extends Component {
                         </div>
                         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                             <h1 className="title-font sm:text-4xl md:text-2xl text-3xl mb-4 font-medium text-gray-900">About
-                                <br className="hidden lg:inline-block" />Well Women
+                                <br className="hidden lg:inline-block" />Curvicare
                             </h1>
                             <p className="mb-8 leading-relaxed">While losing weight is tough for anyone, there are several factors that can make it extra challenging for women. We have our specialized Women diet program at Wellwoman which is designed by keeping their metabolism & Nutritional requirements in mind</p>
                             <div className="flex justify-center">
