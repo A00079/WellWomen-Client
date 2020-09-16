@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import hero from '../../assets/img/bg4.jpg'
+import hero from '../../assets/img/drsnehal.webp';
 
 class About extends Component {
     constructor(props) {
@@ -17,9 +17,9 @@ class About extends Component {
                         </div>
                         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                             <h1 className="title-font sm:text-4xl md:text-2xl text-3xl mb-4 font-medium text-gray-900">About
-                                <br className="hidden lg:inline-block" />Curvicare
+                                <br className="hidden lg:inline-block" />DR. SNEHAL ADSULE
                             </h1>
-                            <p className="mb-8 leading-relaxed">While losing weight is tough for anyone, there are several factors that can make it extra challenging for women. We have our specialized Women diet program at Wellwoman which is designed by keeping their metabolism & Nutritional requirements in mind</p>
+                            <p className="mb-8 leading-relaxed">Dr. Snehal Adsule (MD) is an enthusiastic, young Doctor & Nutritionist specialization in Women Weight Loss. She has a BHMS (Homeopathy) degree from Maharashtra University Of Health Sciences. She further certified herself with Nutrition & Dietetics from Tulip International with affiliation of GCTA (Australia). She is also a certified Personal Counselor & REBT Therapist. With all her medical knowledge, passion & ever positive attitude, she is successfully treating & giving complete personal attention to every woman whose unable to find weight loss solution by their own.</p>
                             <div className="flex justify-center">
                                 <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Read More</button>
                             </div>
