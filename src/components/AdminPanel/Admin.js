@@ -31,14 +31,14 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar';
 import userIcon from "../../assets/img/signfemale.png";
 import PostBlog from "./Blogs/AddBlog.js";
-
+import EditBlog from "./Blogs/EditBlog.js";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
     },
-    drawerItems:{
+    drawerItems: {
         cursor: 'pointer'
     },
     appBar: {
@@ -105,7 +105,7 @@ export default function MiniDrawer() {
     const [open, setOpen] = React.useState(true);
     const [dashboard, setdashboard] = React.useState(true);
     const [postBlog, setpostBlog] = React.useState(false);
-
+    const [editBlog, seteditBlog] = React.useState(false);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -116,13 +116,21 @@ export default function MiniDrawer() {
     };
 
     const handleActivePanel = (activePanel) => {
-        if(activePanel === 'dashboard'){
+        if (activePanel === 'dashboard') {
             setdashboard(true);
             setpostBlog(false);
+            seteditBlog(false);
+
         }
-        if(activePanel === 'postblog'){
+        if (activePanel === 'postblog') {
             setdashboard(false);
             setpostBlog(true);
+            seteditBlog(false);
+        }
+        if (activePanel === 'editblog') {
+            setdashboard(false);
+            setpostBlog(false);
+            seteditBlog(true);
         }
     };
 
@@ -183,6 +191,11 @@ export default function MiniDrawer() {
                         <ListItemIcon><MailIcon /></ListItemIcon>
                         <ListItemText onClick={() => handleActivePanel('postblog')}>Create Blog</ListItemText>
                     </ListItem>
+                    <Divider />
+                    <ListItem className={classes.drawerItems}>
+                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemText onClick={() => handleActivePanel('editblog')}>Manage Blog</ListItemText>
+                    </ListItem>
                 </List>
                 <Divider />
             </Drawer>
@@ -213,6 +226,20 @@ export default function MiniDrawer() {
                 postBlog ?
                     <PostBlog /> : ""
             }
+            {
+                editBlog ?
+                    <Grid
+                        style={{ margin: '4rem 1rem' }}
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={3}>
+                        <EditBlog />
+                    </Grid>
+                    : <React.Fragment></React.Fragment>
+
+            }
         </div>
-    ); 
+    );
 }

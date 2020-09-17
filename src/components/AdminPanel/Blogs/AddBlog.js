@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -22,9 +22,15 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 const useStyles = makeStyles((theme) => ({
+    alertroot: {
+        width: '100%',
+        '& > * + *': {
+            marginTop: theme.spacing(2),
+        },
+    },
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
@@ -54,30 +60,30 @@ export default function SignUp() {
     const [isdisable, setisdisable] = useState(true);
 
 
-    const handlePostDiscription = (e) =>{
-        if(e.target.value){
+    const handlePostDiscription = (e) => {
+        if (e.target.value) {
             console.log('Announcement', e.target.value)
             setisdisable(false)
         }
         setDiscription(e.target.value)
     }
-    const handlePostTitle = (e) =>{
+    const handlePostTitle = (e) => {
         console.log('Announcement Title', e.target.value)
         setpostTitle(e.target.value)
     }
-    const handlePostYoutubelink = (e) =>{
+    const handlePostYoutubelink = (e) => {
         console.log('Announcement Title', e.target.value)
         setpostYoutubelink(e.target.value)
     }
-    const handlePostAnyTags = (e) =>{
+    const handlePostAnyTags = (e) => {
         console.log('Announcement Title', e.target.value)
         setpostAnyTags(e.target.value)
     }
-    const handlePostName = (e) =>{
+    const handlePostName = (e) => {
         console.log('Announcement Name', e.target.value)
         setpostName(e.target.value)
     }
-    const PostAnnouncement = () =>{
+    const PostAnnouncement = () => {
         let api_url = "api/admin/postBlog/create";
         let data = {
             'Title': postTitle,
@@ -87,55 +93,60 @@ export default function SignUp() {
             'Discription': postDiscription,
             'Date': new Date()
         }
-        if(data.Discription !== '' && data.Title !== ''){
+        if (data.Discription !== '' && data.Title !== '') {
             BlogsREST
-            .postBlogdetails(api_url, data)
-            .then(response => {
-                console.log("Response Data...", response);
-            });
-        }else{
+                .postBlogdetails(api_url, data)
+                .then(response => {
+                    console.log("Response Data...", response);
+                    document.getElementById('Title').value = '';
+                    document.getElementById('ShortDiscription').value = ''
+                    document.getElementById('AnyTag').value = ''
+                    document.getElementById('YoutubeLink').value = ''
+                    document.getElementById('Discription').value = ''
+                });
+        } else {
             setisdisable(true)
-            document.getElementById('Title').value = '';
-            document.getElementById('ShortDiscription').value = ''
-            document.getElementById('AnyTags').value = ''
-            document.getElementById('YoutubeLink').value = ''
-            document.getElementById('Discription').value = ''
         }
-        console.log('save data',data)
+        console.log('save data', data)
     }
 
     return (
-            <Container component="main" maxWidth="xs" className="md:mt-24">
-                <CssBaseline />
-                <div className={classes.paper}>
-                    <Typography component="h1" variant="h5">
-                        Post Blog
+        <Container component="main" maxWidth="xs" className="md:mt-24">
+            <Alert severity="warning">
+                    <AlertTitle>Warning</AlertTitle>
+                    Please recheck your post — <strong>Once posted can be viewed by Users!</strong>
+                </Alert>
+            <CssBaseline />
+            <div className={classes.paper}>
+                
+                <Typography component="h1" variant="h5">
+                    Post Blog
                     </Typography>
-                    <form className={classes.form} noValidate>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    onChange={e=>handlePostTitle(e)}
-                                    autoComplete="Title"
-                                    name="Title"
-                                    variant="outlined"
-                                    fullWidth
-                                    id="Title"
-                                    label="Title"
-                                    autoFocus
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
+                <form className={classes.form} noValidate>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
                             <TextField
-                                    onChange={e=>handlePostName(e)}
-                                    autoComplete="ShortDiscription"
-                                    name="ShortDiscription"
-                                    variant="outlined"
-                                    fullWidth
-                                    id="ShortDiscription"
-                                    label="Short Discription"
-                                    autoFocus
-                                />
+                                onChange={e => handlePostTitle(e)}
+                                autoComplete="Title"
+                                name="Title"
+                                variant="outlined"
+                                fullWidth
+                                id="Title"
+                                label="Title"
+                                autoFocus
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                onChange={e => handlePostName(e)}
+                                autoComplete="ShortDiscription"
+                                name="ShortDiscription"
+                                variant="outlined"
+                                fullWidth
+                                id="ShortDiscription"
+                                label="Short Discription"
+                                autoFocus
+                            />
                             {/* <FormControl
                             id='Name'
                             onChange={e=>handleAnnounceName(e)}
@@ -149,34 +160,34 @@ export default function SignUp() {
                                     labelWidth={60}
                                 />
                             </FormControl> */}
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    onChange={e=>handlePostAnyTags(e)}
-                                    autoComplete="AnyTags"
-                                    name="AnyTags"
-                                    variant="outlined"
-                                    fullWidth
-                                    id="AnyTags"
-                                    label="Any Tags"
-                                    autoFocus
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    onChange={e=>handlePostYoutubelink(e)}
-                                    autoComplete="YoutubeLink"
-                                    name="YoutubeLink"
-                                    variant="outlined"
-                                    fullWidth
-                                    id="YoutubeLink"
-                                    label="Youtube Link"
-                                    autoFocus
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
                             <TextField
-                                onChange={e=>handlePostDiscription(e)}
+                                onChange={e => handlePostAnyTags(e)}
+                                autoComplete="AnyTag"
+                                name="AnyTag"
+                                variant="outlined"
+                                fullWidth
+                                id="AnyTag"
+                                label="Any Tag"
+                                autoFocus
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                onChange={e => handlePostYoutubelink(e)}
+                                autoComplete="YoutubeLink"
+                                name="YoutubeLink"
+                                variant="outlined"
+                                fullWidth
+                                id="YoutubeLink"
+                                label="Youtube Link"
+                                autoFocus
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                onChange={e => handlePostDiscription(e)}
                                 id="Discription"
                                 label="Discription"
                                 required
@@ -188,23 +199,23 @@ export default function SignUp() {
                                 variant="outlined"
                                 autoComplete="Discription"
                             />
-                            </Grid>
                         </Grid>
-                        <Button
-                            disabled={isdisable}
-                            onClick={() => PostAnnouncement()}
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                        >
-                            Create Blog
+                    </Grid>
+                    <Button
+                        disabled={isdisable}
+                        onClick={() => PostAnnouncement()}
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}
+                    >
+                        Create Blog
                         </Button>
-                    </form>
-                </div>
-                {/* <Box mt={5}>
+                </form>
+            </div>
+            {/* <Box mt={5}>
                     <Copyright />
                 </Box> */}
-            </Container>
+        </Container>
     );
 }
