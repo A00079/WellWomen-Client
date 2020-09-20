@@ -87,13 +87,15 @@ const OurWorking = () => {
                             padding: '0px'
                         }}>
                             <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans1.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -102,13 +104,15 @@ const OurWorking = () => {
                                 </Card>
 
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans2.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -116,13 +120,15 @@ const OurWorking = () => {
                                     </CardContent>
                                 </Card>
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans3.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -130,13 +136,15 @@ const OurWorking = () => {
                                     </CardContent>
                                 </Card>
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans4.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -144,13 +152,15 @@ const OurWorking = () => {
                                     </CardContent>
                                 </Card>
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans5.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -159,13 +169,15 @@ const OurWorking = () => {
                                 </Card>
 
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans6.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -173,13 +185,15 @@ const OurWorking = () => {
                                     </CardContent>
                                 </Card>
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans7.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -188,13 +202,15 @@ const OurWorking = () => {
                                 </Card>
 
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans8.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -203,13 +219,15 @@ const OurWorking = () => {
                                 </Card>
 
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans9.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
@@ -218,13 +236,15 @@ const OurWorking = () => {
                                 </Card>
 
 
-                                <Card className={classes.root} style={{ position: 'relative', left: '0' }}>
+                                <Card className={classes.root} style={{ position: 'relative', left: '0',border: '3px solid #f9ae08',
+    borderBottom: 'none' }}>
                                     <CardMedia
                                         className={classes.media}
                                         image={require('../../assets/img/trans10.jpg')}
                                         title="Paella dish"
                                     />
-                                    <CardContent>
+                                    <CardContent style={{border: '1px solid #f9ae08',
+    borderTop: 'none',borderBottom: '3px solid #f9ae08'}}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
