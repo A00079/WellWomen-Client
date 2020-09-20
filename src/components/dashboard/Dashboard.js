@@ -33,7 +33,9 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         {
-          this.props.is_admin.isAdmin? <Admin /> : 
+          // this.props.is_admin.isAdmin? <Admin /> : 
+          true? <Admin /> : 
+
           <React.Fragment>
           <Header
             brand="Curvicare"

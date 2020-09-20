@@ -15,23 +15,32 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { Link } from "react-router-dom";
+import HomeIcon from '@material-ui/icons/Home';
 import {
     Container,
     Grid
 } from '@material-ui/core';
-import Budget from './Budget';
-import TasksProgress from './TasksProgress';
-import TotalProfit from './TotalProfit';
-import TotalCustomers from './TotalCustomers';
-import LatestOrders from './LatestOrders';
 import Button from '@material-ui/core/Button';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar';
 import userIcon from "../../assets/img/signfemale.png";
 import PostBlog from "./Blogs/AddBlog.js";
 import EditBlog from "./Blogs/EditBlog.js";
+import applogo from "../../assets/img/logo.png";
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import CreateIcon from '@material-ui/icons/Create';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import adminImg from "../../assets/img/drsnehal.webp";
+import InfoCards from "./InfoCards.js";
+import BlogCard from "./BlogCard.js";
+import UserLogs from "./UserLogs.js";
+import Blogs from '../../../src/REST/Blogs.js';
+import Paper from '@material-ui/core/Paper';
+import {
+    LineChart, BarChart, Bar, AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+} from 'recharts';
+import CustomAreaChart from './AreaChart.js';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer'
     },
     appBar: {
+        // backgroundColor: '#aa076b !important',
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['width', 'margin'], {
             easing: theme.transitions.easing.sharp,
@@ -97,6 +107,14 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
     },
+    large: {
+        width: theme.spacing(7),
+        height: theme.spacing(7),
+        margin: '0 auto'
+    },
+    margin: {
+        margin: theme.spacing(1),
+    }
 }));
 
 export default function MiniDrawer() {
@@ -106,20 +124,180 @@ export default function MiniDrawer() {
     const [dashboard, setdashboard] = React.useState(true);
     const [postBlog, setpostBlog] = React.useState(false);
     const [editBlog, seteditBlog] = React.useState(false);
+    const [getBlogs, setBloga] = React.useState([]);
+    const [postCount, setpostCount] = React.useState(0);
+    const [userCount, setuserCount] = React.useState(0);
+    const [UserLogsDetails, setUserLogsDetails] = React.useState(false);
+    const [demograph, setdemograph] = React.useState(true);
+
+    const [serveyDetails, setserveyDetails] = React.useState([
+        {
+            name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        },
+        {
+            name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        },
+        {
+            name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        },
+        {
+            name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        },
+        {
+            name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        },
+        {
+            name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+        },
+        {
+            name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+        },
+        {
+            name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        },
+        {
+            name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        },
+        {
+            name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        },
+        {
+            name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        },
+        {
+            name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        },
+        {
+            name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+        },
+        {
+            name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+        },
+        {
+            name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        },
+        {
+            name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        },
+        {
+            name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        },
+        {
+            name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        },
+        {
+            name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        },
+        {
+            name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+        },
+        {
+            name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+        }
+    ])
+
+    const [linechart, setlinechart] = React.useState([
+        {
+            name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        },
+        {
+            name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        },
+        {
+            name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        },
+        {
+            name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        },
+        {
+            name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        },
+        {
+            name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+        },
+        {
+            name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+        },
+        {
+            name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+        },
+        {
+            name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+        },
+        {
+            name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+        },
+        {
+            name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+        },
+        {
+            name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+        },
+        {
+            name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+        },
+        {
+            name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+        }
+    ])
+    React.useEffect(() => {
+        fetchBlogs();
+        fetchUsers();
+    }, [])
+    const fetchBlogs = () => {
+        setOpen(!open)
+        let api_url = "api/admin/getBlog/read";
+        Blogs
+            .getBlogList(api_url)
+            .then((res) => {
+                setBloga(res.data)
+                if (res.data && res.data.length !== 0) {
+                    setpostCount(res.data.length)
+                }
+                console.log('All Announcements', res)
+                setOpen(false)
+            })
+    }
+    const fetchUsers = () => {
+        setOpen(!open)
+        let api_url = "api/admin/getUsers/read";
+        Blogs
+            .getBlogList(api_url)
+            .then((res) => {
+                if (res.data && res.data.length !== 0) {
+                    setuserCount(res.data.length)
+                }
+                console.log('All Users', res)
+                setOpen(false)
+            })
+    }
 
     const handleDrawerOpen = () => {
         setOpen(true);
     };
 
+    const handelDemograph = () => {
+        if (demograph) {
+            setdemograph(false)
+        } else {
+            setdemograph(true)
+        }
+    }
     const handleDrawerClose = () => {
         setOpen(false);
     };
-
+    const handelLogs = (activeLog) => {
+        if (activeLog === 'userlog') {
+            setUserLogsDetails(true)
+            setdashboard(false);
+        }
+    }
     const handleActivePanel = (activePanel) => {
         if (activePanel === 'dashboard') {
             setdashboard(true);
             setpostBlog(false);
             seteditBlog(false);
+            setUserLogsDetails(false);
 
         }
         if (activePanel === 'postblog') {
@@ -176,51 +354,177 @@ export default function MiniDrawer() {
                 }}
             >
                 <div className={classes.toolbar}>
+                    <img src={applogo} style={{ width: '4rem', position: 'absolute', left: '1rem' }} />
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </div>
                 <Divider />
                 <List>
+                    {
+                        open ?
+                            <React.Fragment>
+                                <ListItem className={classes.drawerItems}>
+                                    <Avatar alt="Remy Sharp" src={adminImg} className={classes.large} />
+                                </ListItem>
+                                <ListItem className={classes.drawerItems} style={{ display: 'block', textAlign: 'center' }}>
+                                    <h5 class="text-green-900 font-black">Welcome</h5>
+                                    <h6 class="text-black-900 font-black">dr.snehal adsule</h6>
+                                    <h6 class="text-blue-600 font-black">drsnehaladsule@gmail.com</h6>
+                                </ListItem>
+                                <Divider />
+                            </React.Fragment> : ""
+                    }
+                    {
+                        open == false ?
+                            <ListItem className={classes.drawerItems}>
+                                <ListItemIcon><AccountCircle /></ListItemIcon>
+                            </ListItem> : ""
+                    }
+
                     <ListItem className={classes.drawerItems}>
-                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                        <ListItemText><Link to="/">Home</Link></ListItemText>
+                    </ListItem>
+                    <Divider />
+                    <ListItem className={classes.drawerItems}>
+                        <ListItemIcon><DashboardIcon /></ListItemIcon>
                         <ListItemText onClick={() => handleActivePanel('dashboard')}>Dashboard</ListItemText>
                     </ListItem>
                     <Divider />
                     <ListItem className={classes.drawerItems}>
-                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemIcon><CreateIcon /></ListItemIcon>
                         <ListItemText onClick={() => handleActivePanel('postblog')}>Create Blog</ListItemText>
                     </ListItem>
                     <Divider />
                     <ListItem className={classes.drawerItems}>
-                        <ListItemIcon><MailIcon /></ListItemIcon>
+                        <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
                         <ListItemText onClick={() => handleActivePanel('editblog')}>Manage Blog</ListItemText>
                     </ListItem>
+                    {/* <Divider /> */}
+                    {/* <ListItem className={classes.drawerItems}>
+                        <ListItemIcon><PollIcon /></ListItemIcon>
+                        <ListItemText onClick={() => handleActivePanel('editblog')}> Demographic</ListItemText>
+                    </ListItem> */}
                 </List>
                 <Divider />
             </Drawer>
             {
                 dashboard ?
-                    <Grid
-                        style={{ margin: '4rem 1rem' }}
-                        container
-                        direction="row"
-                        justify="center"
-                        alignItems="center"
-                        spacing={3}>
-                        <Grid item xs={12} md={3} lg={3}>
-                            <Budget />
+                    <React.Fragment>
+                        <Grid
+                            style={{
+                                margin: '4rem 0rem 0rem 0rem',
+                                height: '100vh',
+                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                            }}
+                            container
+                            direction="row"
+                            justify="center"
+                            spacing={3}>
+                            <Grid item xs={12} md={4} lg={6} >
+                                <InfoCards userCount={userCount} cardtitle="User Traffic" />
+                            </Grid>
+                            <Grid item xs={12} md={4} lg={6} >
+                                <InfoCards userCount={userCount} cardtitle="User Traffic" />
+                            </Grid>
+                            <Grid item xs={12} md={4} lg={6}>
+                                <BlogCard postCount={postCount} cardtitle="Blog Posts" />
+                            </Grid>
+                            <Grid item xs={12} md={5} lg={6}>
+                                <Paper elevation={3}>
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Users</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of users can be viewed here.</h6>
+                                    <div className="ml-24">
+                                        <BarChart width={200} height={60} data={linechart}>
+                                            <Bar dataKey="uv" fill="#8884d8" />
+                                        </BarChart>
+                                    </div>
+                                    <Button onClick={() => handelLogs('userlog')} variant="contained" size="small" color="primary" className={classes.margin}>
+                                        View Logs
+        </Button>
+                                </Paper>
+                                {/* <UserLogs getBlogs={getBlogs} /> */}
+                            </Grid>
+                            <Grid item xs={12} md={5} lg={6}>
+                                <Paper elevation={3}>
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Blogs</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
+                                    <div className="ml-24">
+                                        <AreaChart
+                                            width={200}
+                                            height={60}
+                                            data={linechart}
+                                            margin={{
+                                                top: 5, right: 0, left: 0, bottom: 5,
+                                            }}
+                                        >
+                                            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                                        </AreaChart>
+                                    </div>
+                                    <Button variant="contained" size="small" color="primary" className={classes.margin}>
+                                        View Logs
+        </Button>
+                                </Paper>
+                                {/* <UserLogs getBlogs={getBlogs} /> */}
+                            </Grid>
+                            <Grid item xs={12} md={10} lg={6}>
+                                <Paper elevation={3}>
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Survey Details</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
+                                    <div className="ml-56">
+                                        <LineChart width={300} height={100} data={serveyDetails}>
+                                            <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
+                                        </LineChart>
+                                    </div>
+                                    <Button variant="contained" size="small" color="primary" className={classes.margin}>
+                                        View Logs
+        </Button>
+                                </Paper>
+                                {/* <UserLogs getBlogs={getBlogs} /> */}
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} md={3} lg={3}>
-                            <TotalCustomers />
+
+                    </React.Fragment>
+                    : ""
+            }
+            {
+                UserLogsDetails ?
+                    <React.Fragment>
+
+                        <Grid
+                            style={{
+                                margin: '4rem 0rem 0rem 0rem',
+                                height: '100vh',
+                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                            }}
+                            container
+                            direction="row"
+                            justify="center"
+                            spacing={3}>
+                            {
+                                demograph ?
+                                    <Grid item xs={12} md={12} lg={6} >
+                                        <Button onClick={() => handelDemograph()} variant="contained" size="small" color="primary" className={classes.margin}>
+                                            {
+                                                demograph ? "Demographic View" : "Standard View"
+                                            }
+                                        </Button>
+                                        <UserLogs />
+                                    </Grid>
+                                    :
+                                    <Grid item xs={12} md={12} lg={6} >
+                                        <Button onClick={() => handelDemograph()} variant="contained" size="small" color="primary" className={classes.margin}>
+                                            {
+                                                demograph ? "Demographic View" : "Standard View"
+                                            }
+                                        </Button>
+                                        <CustomAreaChart />
+                                    </Grid>
+                            }
                         </Grid>
-                        <Grid item xs={12} md={3} lg={3}>
-                            <TasksProgress />
-                        </Grid>
-                        <Grid item xs={12} md={3} lg={3}>
-                            <TotalProfit />
-                        </Grid>
-                    </Grid> : ""
+                    </React.Fragment>
+                    : ""
             }
             {
                 postBlog ?

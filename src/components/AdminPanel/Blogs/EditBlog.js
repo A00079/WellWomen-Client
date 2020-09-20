@@ -171,7 +171,7 @@ export default function AcccessibleTable() {
       <div className="md:mt-16">
         <Alert severity="warning">
           <AlertTitle>Warning</AlertTitle>
-          Please Re-check — <strong>Once posted deleted cannot be restored!</strong>
+          Notice — <strong>Once post deleted cannot be restored!</strong>
         </Alert>
       </div>
       <TableContainer component={Paper} className="md:mt-8">
