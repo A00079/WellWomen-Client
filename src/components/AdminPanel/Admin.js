@@ -254,7 +254,6 @@ export default function MiniDrawer() {
                 if (res.data && res.data.length !== 0) {
                     setpostCount(res.data.length)
                 }
-                console.log('All Announcements', res)
                 setOpen(false)
             })
     }
