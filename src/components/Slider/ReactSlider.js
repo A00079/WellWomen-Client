@@ -45,7 +45,7 @@ const SimpleSlider = () => {
 							<button id="ourwork" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
 								<Link to="/startjourney" className={classes.dropdownLink}>
 									Start Your Journey
-                                    </Link>
+                                </Link>
 							</button>
 						</div>
 					</div>
@@ -65,7 +65,7 @@ const SimpleSlider = () => {
 							</button>
 						</div>
 					</div>
-					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
+					<div class="lg:max-w-lg mt-8 md:mt-0 lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
 						<img class="object-cover object-center rounded" alt="hero" src={image1} />
 					</div>
 				</div>

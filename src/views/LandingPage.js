@@ -23,6 +23,8 @@ import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
 import WorkingCards from "../components/OurWorking/OurWorkingCards.js";
+import PartOneGallery from '../components/Gallary/PartoneGallery.js';
+import PartTwoGallery from '../components/Gallary/PartTwoGallary.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -92,6 +94,12 @@ export default function Components(props) {
                 </div>
                 <div data-aos="fade-up" >
                     <OurWorking />
+                </div>
+                <div data-aos="fade-up" >
+                    <PartOneGallery />
+                </div>
+                <div data-aos="fade-up" >
+                    <PartTwoGallery />
                 </div>
                 <div data-aos="fade-up" >
                     <AppInfo />
