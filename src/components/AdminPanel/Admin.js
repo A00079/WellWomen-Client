@@ -421,16 +421,16 @@ export default function MiniDrawer() {
                             direction="row"
                             justify="center"
                             spacing={3}>
-                            <Grid item xs={12} md={4} lg={6} >
+                            <Grid item xs={12} md={4} lg={4} >
                                 <InfoCards userCount={userCount} cardtitle="User Traffic" />
                             </Grid>
-                            <Grid item xs={12} md={4} lg={6} >
+                            <Grid item xs={12} md={4} lg={4} >
                                 <InfoCards userCount={userCount} cardtitle="User Traffic" />
                             </Grid>
-                            <Grid item xs={12} md={4} lg={6}>
+                            <Grid item xs={12} md={4} lg={4}>
                                 <BlogCard postCount={postCount} cardtitle="Blog Posts" />
                             </Grid>
-                            <Grid item xs={12} md={5} lg={6}>
+                            <Grid item xs={12} md={5} lg={5}>
                                 <Paper elevation={3}>
                                     <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Users</h6>
                                     <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of users can be viewed here.</h6>
@@ -445,7 +445,7 @@ export default function MiniDrawer() {
                                 </Paper>
                                 {/* <UserLogs getBlogs={getBlogs} /> */}
                             </Grid>
-                            <Grid item xs={12} md={5} lg={6}>
+                            <Grid item xs={12} md={5} lg={5}>
                                 <Paper elevation={3}>
                                     <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Blogs</h6>
                                     <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
@@ -467,7 +467,7 @@ export default function MiniDrawer() {
                                 </Paper>
                                 {/* <UserLogs getBlogs={getBlogs} /> */}
                             </Grid>
-                            <Grid item xs={12} md={10} lg={6}>
+                            <Grid item xs={12} md={10} lg={10}>
                                 <Paper elevation={3}>
                                     <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Survey Details</h6>
                                     <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
@@ -501,26 +501,9 @@ export default function MiniDrawer() {
                             direction="row"
                             justify="center"
                             spacing={3}>
-                            {
-                                demograph ?
-                                    <Grid item xs={12} md={12} lg={6} >
-                                        <Button onClick={() => handelDemograph()} variant="contained" size="small" color="primary" className={classes.margin}>
-                                            {
-                                                demograph ? "Demographic View" : "Standard View"
-                                            }
-                                        </Button>
-                                        <UserLogs />
-                                    </Grid>
-                                    :
-                                    <Grid item xs={12} md={12} lg={6} >
-                                        <Button onClick={() => handelDemograph()} variant="contained" size="small" color="primary" className={classes.margin}>
-                                            {
-                                                demograph ? "Demographic View" : "Standard View"
-                                            }
-                                        </Button>
-                                        <CustomAreaChart />
-                                    </Grid>
-                            }
+                            <Grid item xs={12} md={12} lg={6} >
+                                <UserLogs />
+                            </Grid>
                         </Grid>
                     </React.Fragment>
                     : ""
