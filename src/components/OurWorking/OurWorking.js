@@ -62,8 +62,7 @@ const OurWorking = () => {
                     OUR <span class="text-indigo-600"> WORK</span>
                 </h3>
             </div>
-            <div className="container mx-auto flex px-5 md:py-0  py-0 md:flex-row flex-col items-center" style={{
-                background: 'linear-gradient(to right, #ffb75e, #ed8f03)',
+            <div className="container mx-auto flex px-5 md:py-0  py-0 md:flex-row flex-col items-center bg-img-css" style={{
                 borderRadius: '8px', boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)'
             }}>
                 <div className={classes.hideonmobile}>

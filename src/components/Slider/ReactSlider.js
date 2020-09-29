@@ -34,7 +34,7 @@ const SimpleSlider = () => {
 			interval={4000}
 		>
 			<section class="text-gray-700 body-font" >
-				<div class="container mx-auto flex px-0 py-4 md:mt-8 mt-0 md:flex-row flex-col items-center">
+				<div class="container mx-auto flex px-0 py-4 md:mt-16 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
 						<img class="object-cover object-center rounded" alt="hero" src={image1} />
 					</div>
@@ -53,7 +53,7 @@ const SimpleSlider = () => {
 			</section>
 
 			<section class="text-gray-700 body-font">
-				<div class="container mx-auto flex px-0 py-4 md:mt-8 mt-0 md:flex-row flex-col items-center">
+				<div class="container mx-auto flex px-0 py-4 md:mt-16 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:flex-grow md:w-1/2 lg:pl-8 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center">
 					<h1 class="title-font sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-gray-900">Our Special Journeys</h1>
 						<p class="mb-8 leading-relaxed">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
@@ -73,7 +73,7 @@ const SimpleSlider = () => {
 
 
 			<section class="text-gray-700 body-font">
-				<div class="container mx-auto flex px-0 py-4 md:mt-8 mt-0 md:flex-row flex-col items-center">
+				<div class="container mx-auto flex px-0 py-4 md:mt-16 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
 						<img class="object-cover object-center rounded" alt="hero" src={image1} />
 					</div>

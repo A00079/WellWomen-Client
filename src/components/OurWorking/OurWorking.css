@@ -1,4 +1,12 @@
 
+  .bg-img-css{
+    background-image: url(../../assets/img/weightloss.jpg);
+    object-fit: contain;
+    object-fit: cover;
+    height: 46%;
+    background-size: cover;
+    background-position: center;
+  }
   .special {
     font-size: 48px;
     font-family: Roboto;

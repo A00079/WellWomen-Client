@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['','','','','',''];
+  return ['','','','',''];
   // return ['Select your age group.', 'Select your goal.', 'Select your activity level.', 'Select your eating habbits.', 'Completed.'];
 }
 
@@ -121,7 +121,7 @@ const HorizontalLabelPositionBelowStepper = (props) => {
           color: "white"
         }}
       />
-      <Stepper activeStep={activeStep} alternativeLabel className="mt-24">
+      <Stepper activeStep={activeStep} alternativeLabel className="mt-32">
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>

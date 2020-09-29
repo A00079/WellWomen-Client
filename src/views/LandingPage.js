@@ -24,7 +24,8 @@ import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
 import WorkingCards from "../components/OurWorking/OurWorkingCards.js";
 import PartOneGallery from '../components/Gallary/PartoneGallery.js';
-import PartTwoGallery from '../components/Gallary/PartTwoGallary.js';
+import FullGallery from '../components/Gallary/FullGallary.js';
+import Clients from '../components/Testimonials/OurClients.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -99,7 +100,7 @@ export default function Components(props) {
                     <PartOneGallery />
                 </div>
                 <div data-aos="fade-up" >
-                    <PartTwoGallery />
+                    <FullGallery />
                 </div>
                 <div data-aos="fade-up" >
                     <AppInfo />
@@ -112,6 +113,9 @@ export default function Components(props) {
                 </div>
                 <div data-aos="fade-up" >
                     <Testimonial />
+                </div>
+                <div data-aos="fade-up" >
+                    <Clients />
                 </div>
                 <div data-aos="fade-up" >
                     <GetInTouch />

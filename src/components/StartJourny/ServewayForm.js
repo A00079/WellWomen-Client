@@ -1,59 +1,72 @@
-import React, { Component,useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
+import React, {useState, useEffect} from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import PostSerway from '../../REST/SubmitSerway.js';
 import { StartJourney } from "../../actions/StartYourJourney.js";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import Notifications, { notify } from 'react-notify-toast'
+
+function Copyright() {
+    return (
+        <Typography variant="body2" color="textSecondary" align="center">
+            {'Copyright © '}
+            <Link color="inherit" href="/">
+                @Team Pratham
+      </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
+}
 
 const useStyles = makeStyles((theme) => ({
-    appbarroot: {
-        flexGrow: 1,
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
     },
-    dropdownLink: {
-        marginLeft: '20px'
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(3),
     },
-    title: {
-        flexGrow: 1,
-    },
-    cardroot: {
-        maxWidth: 345,
-    },
-    cardcenter: {
-        textAlign: '-webkit-center'
-    },
-    root: {
-        width: '100%'
-    },
-    footer: {
-        textAlign: 'center'
-    },
-    backButton: {
-        marginRight: theme.spacing(1),
-    },
-    instructions: {
-        marginTop: theme.spacing(1),
-        marginBottom: theme.spacing(1),
+    submit: {
+        margin: theme.spacing(3, 0, 2),
     },
 }));
-const ServeForm = (props) => {
+
+export default function SubmitForm(props) {
     const classes = useStyles();
     const [name, setName] = useState('');
     const [email, setemail] = useState('');
     const [phone, setphone] = useState(0);
 
-    useEffect(() =>{
-        console.log('serway details',props.journeydata)
-    },[props])
+    useEffect(() => {
+        console.log('serway details', props.journeydata)
+    }, [props])
 
-    const handelFormSubmit = () =>{
-        console.log('name',name)
-        console.log('email',email)
-        console.log('phone',phone)
+    const handelFormSubmit = () => {
+        console.log('name', name)
+        console.log('email', email)
+        console.log('phone', phone)
 
         let api_url = "api/user/submitserway/create";
         let data = {
@@ -64,69 +77,81 @@ const ServeForm = (props) => {
         PostSerway
             .postSerway(api_url, data)
             .then(response => {
+                notify.show(response.msg, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
+                if(response.msg !== 'Email already exists'){
+                    document.getElementById('firstName').value = '';
+                    document.getElementById('phoneno').value = '';
+                    document.getElementById('email').value = '';
+                }
                 console.log("Response Data...", response);
-                setName('')
-                setemail('')
-                setphone(0)
             });
     }
-    return (
-        <React.Fragment>
-            <div className={classes.root}>
-                <Grid container direction="row"
-                    justify="center"
-                    alignItems="center">
-                    <Grid item xs={12} md={6} sm={12} lg={6} className={classes.cardcenter}>
-                        <h1 className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST FINISHED!</h1>
-                        <h1 className="text-center  text-1xl mt-8 tracking-wide relative">
-                            The next page will take you to the optimal program designed according to your answers.
-                        </h1>
 
-                        <div class="w-full max-w-xs" style={{ textAlign: 'left' }}>
-                            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                                        Name
-      </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setName(event.target.value)}} id="username" type="text" placeholder="Name" />
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                                        Email
-      </label>
-                                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setemail(event.target.value)}} id="email" type="email" placeholder="Email" />
-                                </div>
-                                <div class="mb-6">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-                                        Phone
-      </label>
-                                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" onChange={event =>{setphone(event.target.value)}} id="phone" type="number" placeholder="91..." />
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handelFormSubmit} type="button">
-                                        Submit
-      </button>
-                                </div>
-                            </form>
-                            <p class="text-center text-gray-500 text-xs">
-                                &copy;2020 Acme Corp. All rights reserved.
-  </p>
-                        </div>
+    return (
+        <Container component="main" maxWidth="xs">
+            <Notifications options={{zIndex: 9999, top: '0px'}} />
+            <CssBaseline />
+            <div className={classes.paper} style={{marginTop: '0px'}}>
+                <h1 className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST FINISHED!</h1>
+                <h1 className="text-center  text-1xl mt-8 tracking-wide relative">
+                    The next page will take you to the optimal program designed according to your answers.
+                        </h1>
+                <form className={classes.form} noValidate>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                onChange={event => { setName(event.target.value) }} 
+                                autoComplete="fname"
+                                name="firstName"
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="firstName"
+                                label="Name"
+                                autoFocus
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                onChange={event => { setphone(event.target.value) }}
+                                variant="outlined"
+                                required
+                                fullWidth
+                                type="number"
+                                id="phoneno"
+                                label="Phone Number"
+                                name="phoneno"
+                                autoComplete="phoneno"
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                onChange={event => { setemail(event.target.value) }}
+                                variant="outlined"
+                                required
+                                fullWidth
+                                id="email"
+                                label="Email Address"
+                                name="email"
+                                autoComplete="email"
+                            />
+                        </Grid>
                     </Grid>
-                </Grid>
+                    <Button
+                        onClick={handelFormSubmit}
+                        type="button"
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        className={classes.submit}
+                    >
+                        Start Journey
+          </Button>
+                </form>
             </div>
-        </React.Fragment>
+            <Box mt={5}>
+                <Copyright />
+            </Box>
+        </Container>
     );
 }
-ServeForm.propTypes = {
-    journeydata: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = state => ({
-    journeydata: state.startjourney
-});
-
-export default connect(
-    mapStateToProps,
-    { StartJourney }
-)(withRouter(ServeForm));

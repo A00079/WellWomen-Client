@@ -34,7 +34,7 @@ const SimpleSlider = () => {
 			interval={4000}
 		>
 			<section class="text-gray-700 body-font" >
-				<div class="container mx-auto flex px-0 py-4 md:mt-8 mt-0 md:flex-row flex-col items-center">
+				<div class="container mx-auto flex px-0 py-4 md:mt-0 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0" style={{margin: '0 auto'}}>
 						<img class="object-cover md:pl-8 object-center rounded" alt="hero" src={image1} style={{margin: '0 auto',
     width: '25rem'}} />
