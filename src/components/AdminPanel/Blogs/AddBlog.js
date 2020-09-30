@@ -23,6 +23,8 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import Compress from "browser-image-compression";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     alertroot: {
@@ -58,6 +60,8 @@ export default function SignUp() {
     const [postAnyTags, setpostAnyTags] = useState('');
     const [postYoutubelink, setpostYoutubelink] = useState('');
     const [isdisable, setisdisable] = useState(true);
+    const [image, setImage] = React.useState("");
+	const [imagePreview, setImagePreview] = React.useState("");
 
 
     const handlePostDiscription = (e) => {
@@ -85,40 +89,76 @@ export default function SignUp() {
     }
     const PostAnnouncement = () => {
         let api_url = "api/admin/postBlog/create";
-        let data = {
-            'Title': postTitle,
-            'ShortDiscription': postShortDiscription,
-            'AnyTags': postAnyTags,
-            'Youtubelink': postYoutubelink,
-            'Discription': postDiscription,
-            'Date': new Date()
-        }
-        if (data.Discription !== '' && data.Title !== '') {
-            BlogsREST
-                .postBlogdetails(api_url, data)
-                .then(response => {
-                    console.log("Response Data...", response);
-                    document.getElementById('Title').value = '';
-                    document.getElementById('ShortDiscription').value = ''
-                    document.getElementById('AnyTag').value = ''
-                    document.getElementById('YoutubeLink').value = ''
-                    document.getElementById('Discription').value = ''
-                });
+        var formData = new FormData();
+
+        formData.append('Title', postTitle);
+        formData.append("ShortDiscription", postShortDiscription);
+        formData.append("AnyTags", postAnyTags);
+        formData.append("Youtubelink", postYoutubelink);
+        formData.append("Discription", postDiscription);
+        formData.append("image", image);
+        formData.append("Date", new Date());
+
+        if (postDiscription !== '' && postTitle !== '') {
+
+            // const headers = {
+            //     "Content-Type": "application/json"
+            // };
+            axios.post(api_url, formData)
+            .then((res) =>{
+                console.log('response',res)
+            })
+            .catch((err) =>{
+                console.error('Post Error:',err)
+            })
         } else {
             setisdisable(true)
         }
-        console.log('save data', data)
     }
+
+    const onFileChange = (event) => {
+		const file = event.target.files[0];
+		const reader = new FileReader();
+		reader.onload = () => {
+			if (reader.readyState === 2) {
+				setImagePreview(reader.result);
+			}
+		};
+		if (file) {
+			reader.readAsDataURL(event.target.files[0]);
+		}
+
+		const options = {
+			maxSizeMB: 1.5,
+			maxWidthOrHeight: 420,
+			useWebWorker: true,
+		};
+
+		Compress(file, options)
+			.then((compressedBlob) => {
+				compressedBlob.lastModifiedDate = new Date();
+				// Convert the blob to file
+				const convertedBlobFile = new File([compressedBlob], file.name, {
+					type: file.type,
+					lastModified: Date.now(),
+				});
+				setImage(convertedBlobFile);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	};
+
 
     return (
         <Container component="main" maxWidth="xs" className="md:mt-24">
             <Alert severity="warning">
-                    <AlertTitle>Warning</AlertTitle>
+                <AlertTitle>Warning</AlertTitle>
                     Please recheck your post — <strong>Once posted can be viewed by Users!</strong>
-                </Alert>
+            </Alert>
             <CssBaseline />
             <div className={classes.paper}>
-                
+
                 <Typography component="h1" variant="h5">
                     Post Blog
                     </Typography>
@@ -199,6 +239,27 @@ export default function SignUp() {
                                 variant="outlined"
                                 autoComplete="Discription"
                             />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <h6>Preview</h6>
+                            <img src={imagePreview} />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                variant="contained"
+                                component="label"
+                                color="primary"
+                                fullWidth
+                            >
+                                Upload File
+                                <input
+                                    name="myImage"
+                                    id="input"
+                                    onChange={onFileChange}
+                                    type="file"
+                                    style={{ display: "none" }}
+                                />
+                            </Button>
                         </Grid>
                     </Grid>
                     <Button

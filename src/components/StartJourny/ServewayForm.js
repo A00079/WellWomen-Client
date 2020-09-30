@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SubmitForm(props) {
+const SubmitForm = (props) => {
     const classes = useStyles();
     const [name, setName] = useState('');
     const [email, setemail] = useState('');
@@ -72,13 +72,17 @@ export default function SubmitForm(props) {
         let data = {
             'name': name,
             'email': email,
-            'phone': phone
+            'phone': phone,
+            'activity':props.journeydata.user_activity,
+            'age':props.journeydata.user_age,
+            'eatinghabbit':props.journeydata.user_eatinghabbit,
+            'goal':props.journeydata.user_goal
         }
         PostSerway
             .postSerway(api_url, data)
             .then(response => {
                 notify.show(response.msg, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
-                if(response.msg !== 'Email already exists'){
+                if (response.msg !== 'Email already exists') {
                     document.getElementById('firstName').value = '';
                     document.getElementById('phoneno').value = '';
                     document.getElementById('email').value = '';
@@ -89,9 +93,9 @@ export default function SubmitForm(props) {
 
     return (
         <Container component="main" maxWidth="xs">
-            <Notifications options={{zIndex: 9999, top: '0px'}} />
+            <Notifications options={{ zIndex: 9999, top: '0px' }} />
             <CssBaseline />
-            <div className={classes.paper} style={{marginTop: '0px'}}>
+            <div className={classes.paper} style={{ marginTop: '0px' }}>
                 <h1 className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST FINISHED!</h1>
                 <h1 className="text-center  text-1xl mt-8 tracking-wide relative">
                     The next page will take you to the optimal program designed according to your answers.
@@ -100,7 +104,7 @@ export default function SubmitForm(props) {
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                onChange={event => { setName(event.target.value) }} 
+                                onChange={event => { setName(event.target.value) }}
                                 autoComplete="fname"
                                 name="firstName"
                                 variant="outlined"
@@ -155,3 +159,16 @@ export default function SubmitForm(props) {
         </Container>
     );
 }
+
+SubmitForm.propTypes = {
+    journeydata: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+    journeydata: state.startjourney
+});
+
+export default connect(
+    mapStateToProps,
+    {}
+)(withRouter(SubmitForm));

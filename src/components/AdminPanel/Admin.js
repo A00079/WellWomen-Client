@@ -35,6 +35,8 @@ import adminImg from "../../assets/img/drsnehal.webp";
 import InfoCards from "./InfoCards.js";
 import BlogCard from "./BlogCard.js";
 import UserLogs from "./UserLogs.js";
+import BlogLogs from './BlogLogs.js';
+import SerwayData from './SerwayDetailsLogs.js';
 import Blogs from '../../../src/REST/Blogs.js';
 import Paper from '@material-ui/core/Paper';
 import {
@@ -124,11 +126,19 @@ export default function MiniDrawer() {
     const [dashboard, setdashboard] = React.useState(true);
     const [postBlog, setpostBlog] = React.useState(false);
     const [editBlog, seteditBlog] = React.useState(false);
-    const [getBlogs, setBloga] = React.useState([]);
+    const [getBlogs, setBlog] = React.useState([]);
+    const [getUserData, setgetUserData] = React.useState([]);
     const [postCount, setpostCount] = React.useState(0);
     const [userCount, setuserCount] = React.useState(0);
-    const [UserLogsDetails, setUserLogsDetails] = React.useState(false);
     const [demograph, setdemograph] = React.useState(true);
+    const [BlogLogDetails, setBlogLogDetails] = React.useState([]);
+    const [UserLogsDetails, setUserLogsDetails] = React.useState([]);
+    const [ShowUser, setShowUser] = React.useState(false);
+    const [ShowBlogs, setShowBlogs] = React.useState(false);
+    const [ShowSerway, setShowSerway] = React.useState(false);
+    const [SerwayDetails, setSerwayDetails] = React.useState([]);
+
+    const [SerwayCount, setSerwayCount] = React.useState(0);
 
     const [serveyDetails, setserveyDetails] = React.useState([
         {
@@ -243,6 +253,7 @@ export default function MiniDrawer() {
     React.useEffect(() => {
         fetchBlogs();
         fetchUsers();
+        fetchSerwayDetails();
     }, [])
     const fetchBlogs = () => {
         setOpen(!open)
@@ -250,9 +261,23 @@ export default function MiniDrawer() {
         Blogs
             .getBlogList(api_url)
             .then((res) => {
-                setBloga(res.data)
+                setBlog(res.data)
                 if (res.data && res.data.length !== 0) {
+                    setgetUserData(res.data)
                     setpostCount(res.data.length)
+                }
+                setOpen(false)
+            })
+    }
+    const fetchSerwayDetails = () => {
+        setOpen(!open)
+        let api_url = "api/user/submitserway/read";
+        Blogs
+            .getBlogList(api_url)
+            .then((res) => {
+                if (res.data && res.data.length !== 0) {
+                    setSerwayCount(res.data.length)
+                    setSerwayDetails(res.data)
                 }
                 setOpen(false)
             })
@@ -264,6 +289,7 @@ export default function MiniDrawer() {
             .getBlogList(api_url)
             .then((res) => {
                 if (res.data && res.data.length !== 0) {
+                    setUserLogsDetails(res.data)
                     setuserCount(res.data.length)
                 }
                 console.log('All Users', res)
@@ -287,8 +313,22 @@ export default function MiniDrawer() {
     };
     const handelLogs = (activeLog) => {
         if (activeLog === 'userlog') {
-            setUserLogsDetails(true)
+            setShowUser(true);
             setdashboard(false);
+            setShowBlogs(false);
+            setShowSerway(false);
+        }
+        if (activeLog === 'bloglog') {
+            setShowUser(false);
+            setdashboard(false);
+            setShowSerway(false);
+            setShowBlogs(true);
+        }
+        if (activeLog === 'serwaylog') {
+            setShowUser(false);
+            setdashboard(false);
+            setShowSerway(true);
+            setShowBlogs(false);
         }
     }
     const handleActivePanel = (activePanel) => {
@@ -296,18 +336,27 @@ export default function MiniDrawer() {
             setdashboard(true);
             setpostBlog(false);
             seteditBlog(false);
-            setUserLogsDetails(false);
+            setShowUser(false);
+            setShowBlogs(false);
+            setShowSerway(false);
 
         }
         if (activePanel === 'postblog') {
             setdashboard(false);
             setpostBlog(true);
             seteditBlog(false);
+            setShowUser(false);
+            setShowBlogs(false);
+            setShowSerway(false);
+
         }
         if (activePanel === 'editblog') {
             setdashboard(false);
             setpostBlog(false);
             seteditBlog(true);
+            setShowUser(false);
+            setShowBlogs(false);
+            setShowSerway(false);
         }
     };
 
@@ -425,7 +474,7 @@ export default function MiniDrawer() {
                                 <InfoCards userCount={userCount} cardtitle="User Traffic" />
                             </Grid>
                             <Grid item xs={12} md={4} lg={4} >
-                                <InfoCards userCount={userCount} cardtitle="User Traffic" />
+                                <InfoCards userCount={SerwayCount} cardtitle="Started Journey" />
                             </Grid>
                             <Grid item xs={12} md={4} lg={4}>
                                 <BlogCard postCount={postCount} cardtitle="Blog Posts" />
@@ -461,9 +510,9 @@ export default function MiniDrawer() {
                                             <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
                                         </AreaChart>
                                     </div>
-                                    <Button variant="contained" size="small" color="primary" className={classes.margin}>
+                                    <Button onClick={() => handelLogs('bloglog')} variant="contained" size="small" color="primary" className={classes.margin}>
                                         View Logs
-        </Button>
+                                    </Button>
                                 </Paper>
                                 {/* <UserLogs getBlogs={getBlogs} /> */}
                             </Grid>
@@ -476,9 +525,9 @@ export default function MiniDrawer() {
                                             <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
                                         </LineChart>
                                     </div>
-                                    <Button variant="contained" size="small" color="primary" className={classes.margin}>
+                                    <Button onClick={() => handelLogs('serwaylog')} variant="contained" size="small" color="primary" className={classes.margin}>
                                         View Logs
-        </Button>
+                                    </Button>
                                 </Paper>
                                 {/* <UserLogs getBlogs={getBlogs} /> */}
                             </Grid>
@@ -488,7 +537,7 @@ export default function MiniDrawer() {
                     : ""
             }
             {
-                UserLogsDetails ?
+                ShowUser ?
                     <React.Fragment>
 
                         <Grid
@@ -501,8 +550,50 @@ export default function MiniDrawer() {
                             direction="row"
                             justify="center"
                             spacing={3}>
-                            <Grid item xs={12} md={12} lg={6} >
-                                <UserLogs />
+                            <Grid item xs={12} md={12} lg={12} >
+                                <UserLogs UserLogsDetails={UserLogsDetails} />
+                            </Grid>
+                        </Grid>
+                    </React.Fragment>
+                    : ""
+            }
+            {
+                ShowBlogs ?
+                    <React.Fragment>
+
+                        <Grid
+                            style={{
+                                margin: '4rem 0rem 0rem 0rem',
+                                height: '100vh',
+                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                            }}
+                            container
+                            direction="row"
+                            justify="center"
+                            spacing={3}>
+                            <Grid item xs={12} md={12} lg={12} >
+                                <BlogLogs getBlogs={getBlogs} />
+                            </Grid>
+                        </Grid>
+                    </React.Fragment>
+                    : ""
+            }
+            {
+                ShowSerway ?
+                    <React.Fragment>
+
+                        <Grid
+                            style={{
+                                margin: '4rem 0rem 0rem 0rem',
+                                height: '100vh',
+                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                            }}
+                            container
+                            direction="row"
+                            justify="center"
+                            spacing={3}>
+                            <Grid item xs={12} md={12} lg={12} >
+                                <SerwayData SerwayDetails={SerwayDetails} />
                             </Grid>
                         </Grid>
                     </React.Fragment>

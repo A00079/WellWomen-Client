@@ -36,7 +36,7 @@ export default function StickyHeadTable(props) {
   const classes = useStyles();
 
   React.useEffect(() => {
-    console.log('table data',props.getBlogs)
+    console.log('table data',props.UserLogsDetails)
   },[props])
 
   return (
@@ -47,25 +47,19 @@ export default function StickyHeadTable(props) {
           <TableHead>
             <TableRow>
             <TableCell align="right">Sr.No</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Tag</TableCell>
-              <TableCell align="right">Short Discription</TableCell>
-              <TableCell align="right">Discription</TableCell>
-              <TableCell align="right">Youtube Link</TableCell>
+              <TableCell align="right">Name</TableCell>
+              <TableCell align="right">Email</TableCell>
               <TableCell align="right">Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {
-              (props.getBlogs)?
-                props.getBlogs.map((row,index) => (
+              (props.UserLogsDetails)?
+                props.UserLogsDetails.map((row,index) => (
                   <TableRow key={row._id}>
                     <TableCell align="right">{index + 1}</TableCell>
-                    <TableCell align="right">{row.title}</TableCell>
-                    <TableCell align="right">{row.anytag}</TableCell>
-                    <TableCell align="right">{row.shortdiscription}</TableCell>
-                    <TableCell align="right">{row.discription}</TableCell>
-                    <TableCell align="right">{row.youtubelink}</TableCell>
+                    <TableCell align="right">{row.name}</TableCell>
+                    <TableCell align="right">{row.email}</TableCell>
                     <TableCell align="right">{row.date}</TableCell>
                   </TableRow>
                 )) : ""
