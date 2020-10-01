@@ -30,6 +30,12 @@ const useStyles = makeStyles({
   container: {
     maxHeight: 440,
   },
+  table_row: {
+    background: "#f1f1f1",
+    '&:hover': {
+      background: "#000",
+    },
+  },
 });
 
 export default function StickyHeadTable(props) {
@@ -61,7 +67,7 @@ export default function StickyHeadTable(props) {
             {
               (props.SerwayDetails)?
                 props.SerwayDetails.map((row,index) => (
-                  <TableRow key={row._id}>
+                  <TableRow key={row._id} hover={true} className={classes.table_row}>
                     <TableCell align="right">{index + 1}</TableCell>
                     <TableCell align="right">{row.name}</TableCell>
                     <TableCell align="right">{row.email}</TableCell>

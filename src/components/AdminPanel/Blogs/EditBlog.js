@@ -26,6 +26,8 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import Compress from "browser-image-compression";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -60,6 +62,9 @@ export default function AcccessibleTable() {
   const [postYoutubelink, setpostYoutubelink] = useState('');
   const [isdisable, setisdisable] = useState(true);
   const [openModal, setOpenModal] = React.useState(false);
+  const [image, setImage] = React.useState("");
+  const [imagePreview, setImagePreview] = React.useState("");
+  const [imageUrl, setimageUrl] = React.useState("");
 
 
 
@@ -67,7 +72,7 @@ export default function AcccessibleTable() {
     console.log('View all Announcements')
     fetchBlogs();
   }, [])
-  const fetchBlogs = () =>{
+  const fetchBlogs = () => {
     setOpen(!open)
     let api_url = "api/admin/getBlog/read";
     Blogs
@@ -111,9 +116,9 @@ export default function AcccessibleTable() {
     console.log('Edit Data', editData);
     setEditBlog(editData)
   }
-  const deleteConfirmation = (Post_id) =>{
+  const deleteConfirmation = (Post_id) => {
     let flag = window.confirm("Are you sure you want to delete this post.");
-    if(flag){
+    if (flag) {
       deleteBlogpost(Post_id)
     }
   }
@@ -136,35 +141,71 @@ export default function AcccessibleTable() {
 
   const PostAnnouncement = () => {
     let api_url = "api/admin/updateBlog/modify";
-    let data = {
-      'Title': (postTitle)?postTitle : EditBlog.title ,
-      'ShortDiscription': (postShortDiscription)?postShortDiscription :EditBlog.shortdiscription  ,
-      'AnyTags': (postAnyTags)? postAnyTags : EditBlog.anytag,
-      'Youtubelink': (postYoutubelink)? postYoutubelink :  EditBlog.youtubelink,
-      'Discription': (postDiscription)? postDiscription :  EditBlog.discription,
-      'Date':new Date(),
-      'id': EditBlog._id
-    }
-    console.log('data formed',data)
-    if (data.Title !== '' && data.Discription !== '') {
-      Blogs
-        .updateBlogdetails(api_url, data)
-        .then(response => {
-          fetchBlogs();
-          console.log("Response Data...", response);
+
+    var formData = new FormData();
+
+    formData.append('Title', (postTitle) ? postTitle : EditBlog.title);
+    formData.append("ShortDiscription", (postShortDiscription) ? postShortDiscription : EditBlog.shortdiscription);
+    formData.append("AnyTags", (postAnyTags) ? postAnyTags : EditBlog.anytag);
+    formData.append("Youtubelink", (postYoutubelink) ? postYoutubelink : EditBlog.youtubelink);
+    formData.append("Discription", (postDiscription) ? postDiscription : EditBlog.discription);
+    formData.append("image", image);
+    formData.append("imageUrl", EditBlog.imageurl);
+    formData.append("Date", new Date());
+    formData.append("id", EditBlog._id);
+
+
+    !!postTitle? setDiscription(EditBlog.title) : setDiscription(postTitle)
+    !!postDiscription? setDiscription(EditBlog.discription) : setDiscription(postDiscription)
+
+      axios.post(api_url, formData)
+        .then((res) => {
+          console.log('response', res)
+          console.log("Response Data...", res);
           document.getElementById('Title').value = '';
           document.getElementById('ShortDiscription').value = ''
           document.getElementById('AnyTags').value = ''
           document.getElementById('YoutubeLink').value = ''
           document.getElementById('Discription').value = ''
           setOpenModal(false)
-        });
-    } else {
-      console.log('Data not submitted...')      
+        })
+        .catch((err) => {
+          console.error('Post Error:', err)
+        })
+  }
+
+  const onFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setImagePreview(reader.result);
+      }
+    };
+    if (file) {
+      reader.readAsDataURL(event.target.files[0]);
     }
 
-    console.log('save data', data)
-  }
+    const options = {
+      maxSizeMB: 1.5,
+      maxWidthOrHeight: 420,
+      useWebWorker: true,
+    };
+
+    Compress(file, options)
+      .then((compressedBlob) => {
+        compressedBlob.lastModifiedDate = new Date();
+        // Convert the blob to file
+        const convertedBlobFile = new File([compressedBlob], file.name, {
+          type: file.type,
+          lastModified: Date.now(),
+        });
+        setImage(convertedBlobFile);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -179,6 +220,8 @@ export default function AcccessibleTable() {
           <caption>A basic table example with a caption</caption>
           <TableHead>
             <TableRow>
+              <TableCell>Sr.no</TableCell>
+              <TableCell>Image</TableCell>
               <TableCell>Title</TableCell>
               <TableCell>Tag</TableCell>
               <TableCell>Short Discription</TableCell>
@@ -189,8 +232,10 @@ export default function AcccessibleTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {getBlogs.map((row) => (
+            {getBlogs.map((row, index) => (
               <TableRow key={row._id}>
+                <TableCell align="right">{index + 1}</TableCell>
+                <TableCell align="right">{!!row.imageurl ? <img src={row.imageurl} width='100px' /> : <span>Not Availble</span>}</TableCell>
                 <TableCell align="right">{row.title}</TableCell>
                 <TableCell align="right">{row.anytag}</TableCell>
                 <TableCell align="right">{row.shortdiscription}</TableCell>
@@ -280,6 +325,29 @@ export default function AcccessibleTable() {
                   autoComplete="Discription"
                   defaultValue={(postDiscription) ? postDiscription : EditBlog.discription}
                 />
+              </Grid>
+              <Grid item xs={12}>
+                <h6>Preview</h6>
+                {
+                  !!imagePreview? <img src={imagePreview} /> : <img src={EditBlog.imageurl} />
+                }
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  variant="contained"
+                  component="label"
+                  color="primary"
+                  fullWidth
+                >
+                  Upload File
+                                <input
+                    name="myImage"
+                    id="input"
+                    onChange={onFileChange}
+                    type="file"
+                    style={{ display: "none" }}
+                  />
+                </Button>
               </Grid>
             </Grid>
           </form>

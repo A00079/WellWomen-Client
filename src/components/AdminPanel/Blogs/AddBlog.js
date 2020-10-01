@@ -97,6 +97,7 @@ export default function SignUp() {
         formData.append("Youtubelink", postYoutubelink);
         formData.append("Discription", postDiscription);
         formData.append("image", image);
+        formData.append("imageurl", '');
         formData.append("Date", new Date());
 
         if (postDiscription !== '' && postTitle !== '') {
