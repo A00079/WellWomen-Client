@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { notify } from 'react-notify-toast';
-import Header from "../Header/Header.js";
+import Header from "../Header/BlogHeader.js";
 import HeaderLinks from "../Header/HeaderLinks.js";
 import { validateAdmin } from "../../actions/validateAdmin.js";
 import Admin from "../AdminPanel/Admin.js";
@@ -33,21 +33,20 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         {
-          // this.props.is_admin.isAdmin? <Admin /> : 
-          true? <Admin /> : 
+          this.props.is_admin.isAdmin? <Admin /> : 
 
           <React.Fragment>
           <Header
             brand="Curvicare"
             rightLinks={<UserHeaderLinks />}
             fixed
-            color="darkpink"
+            color="white"
             changeColorOnScroll={{
               height: 400,
               color: "white"
             }}
           />
-          <div className="mt-32">
+          <div className="mt-16">
             <UserBlogs />
           </div>
         </React.Fragment>
