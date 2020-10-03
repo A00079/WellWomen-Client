@@ -10,6 +10,7 @@ import facebook from '../assets/img/facebook.png';
 import { ClearMessage } from '../actions/clearMessages.js';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
+import Spinner from '../components/Spinner/Spinner.js';
 
 
 class Signin extends Component {
@@ -18,7 +19,8 @@ class Signin extends Component {
       this.state = {
          email: "",
          password: "",
-         errors: {}
+         errors: {},
+         loggingUser: false
       };
    }
 
@@ -48,7 +50,10 @@ class Signin extends Component {
       }
 
       if (nextProps.errors) {
-
+         console.log('sendingEmail', nextProps.errors)
+         if (nextProps.errors) {
+            this.setState({ loggingUser: false })
+         }
          if (nextProps.errors.email) {
             notify.show(nextProps.errors.email, "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
          }
@@ -80,18 +85,18 @@ class Signin extends Component {
          const newUser = {
             name: response.profileObj.name,
             email: response.profileObj.email,
-         password: response.profileObj.email,
+            password: response.profileObj.email,
          };
          this.props.googleRegister(newUser, this.props.history);
       }
    }
 
    responseFacebook = (response) => {
-      console.log('face res',response);
+      console.log('face res', response);
    }
 
-   facebookcallback = (data) =>{
-      console.log('face callback',data);
+   facebookcallback = (data) => {
+      console.log('face callback', data);
       if (!!data) {
          const newUser = {
             name: data.name,
@@ -102,6 +107,7 @@ class Signin extends Component {
       }
    }
    onSubmit = e => {
+      this.setState({ loggingUser: true })
       e.preventDefault();
 
       const userData = {
@@ -113,6 +119,8 @@ class Signin extends Component {
    };
    render() {
       const { errors } = this.state;
+      const { loggingUser } = this.state
+
       return (
          <React.Fragment>
             <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
@@ -209,32 +217,38 @@ class Signin extends Component {
                                     type="submit"
                                     className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                                  >
-                                    <svg
-                                       className="w-6 h-6 -ml-2"
-                                       fill="none"
-                                       stroke="currentColor"
-                                       strokeWidth="2"
-                                       strokeLinecap="round"
-                                       strokeLinejoin="round"
+                                    {
+                                       loggingUser ? <Spinner size='lg' spinning='spinning' />
+                                          : <React.Fragment>
+                                             <svg
+                                                className="w-6 h-6 -ml-2"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                             >
+                                                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                                <circle cx="8.5" cy="7" r="4" />
+                                                <path d="M20 8v6M23 11h-6" />
+                                             </svg>
+                                             <span className="ml-3">
+                                                Sign In
+                                             </span>
+                                          </React.Fragment>
+                                    }
+
+                                 </button>
+                                 <Link to="/">
+                                    <button
+                                       type="submit"
+                                       className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                                     >
-                                       <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                                       <circle cx="8.5" cy="7" r="4" />
-                                       <path d="M20 8v6M23 11h-6" />
-                                    </svg>
-                                    <span className="ml-3">
-                                       Sign In
+                                       <KeyboardBackspaceIcon style={{ color: 'white' }} />
+                                       <span className="ml-3">
+                                          Back
                 </span>
-                                 </button>
-                        <Link to="/">
-                        <button
-                                    type="submit"
-                                    className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-                                 >
-                                    <KeyboardBackspaceIcon style={{ color: 'white' }} />
-                                    <span className="ml-3">
-                                       Back
-                </span>
-                                 </button>
+                                    </button>
                                  </Link>
                                  <p className="mt-2" style={{ float: 'right' }}>Don't have an account? <Link className="text-blue-600" to="/signup"> Sign Up</Link></p>
                                  <p className="mt-12 text-xs text-gray-600 text-center">

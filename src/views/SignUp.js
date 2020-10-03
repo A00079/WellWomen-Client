@@ -40,6 +40,9 @@ class SignUp extends Component {
       if (nextProps.errors.name) {
         this.setState({ sendingEmail: false })
       }
+      if(nextProps.errors.email === 'Email already exists'){
+        this.setState({ sendingEmail: false })
+      }
       this.setState({
         errors: nextProps.errors
       });
