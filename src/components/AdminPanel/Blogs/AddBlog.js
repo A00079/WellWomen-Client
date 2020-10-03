@@ -24,6 +24,9 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import Compress from "browser-image-compression";
+import Tooltip from '@material-ui/core/Tooltip';
+import Spinner from '../../Spinner/Spinner.js';
+
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
-    },
+    }
 }));
 
 export default function SignUp() {
@@ -61,7 +64,8 @@ export default function SignUp() {
     const [postYoutubelink, setpostYoutubelink] = useState('');
     const [isdisable, setisdisable] = useState(true);
     const [image, setImage] = React.useState("");
-	const [imagePreview, setImagePreview] = React.useState("");
+    const [imagePreview, setImagePreview] = React.useState("");
+    const [postingBlog, setpostingBlog] = React.useState(false);
 
 
     const handlePostDiscription = (e) => {
@@ -88,6 +92,7 @@ export default function SignUp() {
         setpostName(e.target.value)
     }
     const PostAnnouncement = () => {
+        setpostingBlog(true)
         let api_url = "api/admin/postBlog/create";
         var formData = new FormData();
 
@@ -107,6 +112,15 @@ export default function SignUp() {
             // };
             axios.post(api_url, formData)
             .then((res) =>{
+                document.getElementById('Title').value = '';
+                document.getElementById('ShortDiscription').value = '';
+                document.getElementById('AnyTag').value = '';
+                document.getElementById('YoutubeLink').value = '';
+                document.getElementById('Discription').value = '';
+                document.getElementById('input').value = '';
+                setImagePreview('');
+
+                setpostingBlog(false)
                 console.log('response',res)
             })
             .catch((err) =>{
@@ -243,7 +257,7 @@ export default function SignUp() {
                         </Grid>
                         <Grid item xs={12}>
                             <h6>Preview</h6>
-                            <img src={imagePreview} />
+                            <img  width='400px' height='300px' src={imagePreview} />
                         </Grid>
                         <Grid item xs={12}>
                             <Button
@@ -263,7 +277,9 @@ export default function SignUp() {
                             </Button>
                         </Grid>
                     </Grid>
-                    <Button
+                    
+                        
+                        <Button
                         disabled={isdisable}
                         onClick={() => PostAnnouncement()}
                         fullWidth
@@ -271,8 +287,12 @@ export default function SignUp() {
                         color="primary"
                         className={classes.submit}
                     >
-                        Create Blog
+                        {
+                            postingBlog? <Spinner size='lg' spinning='spinning' /> :
+                            'Create Blog'
+                        }
                         </Button>
+                    
                 </form>
             </div>
             {/* <Box mt={5}>

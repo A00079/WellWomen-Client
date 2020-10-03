@@ -9,6 +9,8 @@ import image1 from '../../assets/img/weightloss.jpg';
 import image2 from '../../assets/img/w3.jpg';
 import image3 from '../../assets/img/w6.jpg';
 import doctor from '../../assets/img/drsnehal.webp';
+import { Link } from "react-router-dom";
+
 import {
     Container,
     Grid
@@ -129,7 +131,7 @@ const UserBlog = () => {
                             class="mr-6 w-full mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-lg">
 
-                            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-8">
+                            <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-4">
 
                                 <div class="border-b mb-5 flex justify-between text-sm">
                                     <div class="text-indigo-600 flex items-center pb-2 pr-2 border-b-2 border-indigo-600 uppercase">
@@ -171,7 +173,7 @@ const UserBlog = () => {
                                     <a href="#"></a>
                                 </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5">
                                     {
                                         useBlogs.map((blog, index) => {
                                             return (
@@ -187,7 +189,7 @@ const UserBlog = () => {
                                                                 </a>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <span class="tracking-wider text-white bg-red-500 px-4 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
+                                                                <span class="tracking-wider text-white bg-red-500 px-1 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
                                                                     {/* <i class="fas fa-heart" aria-hidden="true"></i>  */}
                                                                     {CalculateDate(new Date(blog.date), new Date())}
                                                                 </span>
@@ -210,8 +212,13 @@ const UserBlog = () => {
                                                         </div>
                                                     </div>
                                                     <a href="#" style={{ textAlign: 'end' }} class="pb-2 pr-4 text-xs text-indigo-600 transition font-black duration-500 ease-in-out">
-                                                        View Blog
-                                                        </a>
+                                                        <Link to={{
+                                                            pathname: "/blog/" + blog._id,
+                                                            state: blog
+                                                        }}>
+                                                            View Blog
+                                                        </Link>
+                                                    </a>
                                                 </div>
                                             )
                                         })
@@ -405,9 +412,13 @@ const UserBlog = () => {
                         </div>
                     </div>
                     <span class="mt-0 text-gray-600">Blogs For Desi Diets</span>
-                    <span class="mt-1 text-1xl font-semibold"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Pricing
-</button></span>
+                    <span class="mt-1 text-1xl font-semibold">
+                        <Link to='/pricing'>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Pricing
+                        </button>
+                        </Link>
+                    </span>
 
                     {/* <button
                         class="mt-8 flex items-center py-4 px-3 text-white rounded-lg
@@ -459,7 +470,6 @@ const UserBlog = () => {
                                         </div>
                                     </div>
                                     <span className='text-sm text-blue-500'>view</span>
-
                                 </a>
                             )
                         })

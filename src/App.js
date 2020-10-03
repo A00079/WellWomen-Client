@@ -19,7 +19,8 @@ import SignUp from "../src/views/SignUp.js";
 import StartJourney from "../src/views/StartJourney.js";
 import YoutubeVideos from "../src/views/YoutubeVideos/youtubeVideos.js";
 import TrialBlog from "../src/views/TrialBlogs/TrialBlogs.js";
-
+import SingleBlog from "../src/views/UserBlogs/SingleBlog.js";
+import Pricing from "../src/views/UserPricing.js";
 
 
 
@@ -57,6 +58,9 @@ function App() {
         <Route exact path="/TrialBlog" component={TrialBlog} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/blog/:id" component={SingleBlog} />
+        <Route exact path="/pricing" component={Pricing} />
+
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} /> */}

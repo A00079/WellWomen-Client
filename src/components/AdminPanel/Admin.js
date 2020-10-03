@@ -435,19 +435,19 @@ export default function MiniDrawer() {
                         <ListItemText><Link to="/">Home</Link></ListItemText>
                     </ListItem>
                     <Divider />
-                    <ListItem className={classes.drawerItems}>
+                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('dashboard')}>
                         <ListItemIcon><DashboardIcon /></ListItemIcon>
-                        <ListItemText onClick={() => handleActivePanel('dashboard')}>Dashboard</ListItemText>
+                        <ListItemText>Dashboard</ListItemText>
                     </ListItem>
                     <Divider />
-                    <ListItem className={classes.drawerItems}>
+                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('postblog')}>
                         <ListItemIcon><CreateIcon /></ListItemIcon>
-                        <ListItemText onClick={() => handleActivePanel('postblog')}>Create Blog</ListItemText>
+                        <ListItemText>Create Blog</ListItemText>
                     </ListItem>
                     <Divider />
-                    <ListItem className={classes.drawerItems}>
+                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('editblog')}>
                         <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
-                        <ListItemText onClick={() => handleActivePanel('editblog')}>Manage Blog</ListItemText>
+                        <ListItemText >Manage Blog</ListItemText>
                     </ListItem>
                     {/* <Divider /> */}
                     {/* <ListItem className={classes.drawerItems}>

@@ -23,12 +23,21 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
+
 const useStyles = makeStyles({
   root: {
     width: '100%',       
   },
+  tableRow: {
+    cursor:'pointer',
+    "&:hover": {
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'
+    }
+  },
   container: {
-    maxHeight: 440,
+    maxHeight: 400,
   },
 });
 
@@ -41,26 +50,25 @@ export default function StickyHeadTable(props) {
 
   return (
     <Paper className={classes.root}>
-      <TableContainer   component={Paper} className="md:mt-8">
+      <TableContainer className={classes.container}  component={Paper}>
         <Table stickyHeader className={classes.table} aria-label="caption table">
-          <caption>A basic table example with a caption</caption>
           <TableHead>
             <TableRow>
-            <TableCell align="right">Sr.No</TableCell>
-              <TableCell align="right">Name</TableCell>
-              <TableCell align="right">Email</TableCell>
-              <TableCell align="right">Date</TableCell>
+            <TableCell align="left">Sr.No</TableCell>
+              <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Email</TableCell>
+              <TableCell align="left">Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {
               (props.UserLogsDetails)?
                 props.UserLogsDetails.map((row,index) => (
-                  <TableRow key={row._id}>
-                    <TableCell align="right">{index + 1}</TableCell>
-                    <TableCell align="right">{row.name}</TableCell>
-                    <TableCell align="right">{row.email}</TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
+                  <TableRow key={row._id} className={classes.tableRow}>
+                    <TableCell align="left">{index + 1}</TableCell>
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.email}</TableCell>
+                    <TableCell align="left">{new Date(row.date).toDateString()}</TableCell>
                   </TableRow>
                 )) : ""
               } 

@@ -23,19 +23,29 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import Tooltip from '@material-ui/core/Tooltip';
+
 const useStyles = makeStyles({
   root: {
     width: '100%',       
   },
+  tableRow: {
+    cursor:'pointer',
+    "&:hover": {
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'
+    }
+  },
+  txt_elip:{
+    width: '100px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  },
   container: {
-    maxHeight: 440,
-  },
-  table_row: {
-    background: "#f1f1f1",
-    '&:hover': {
-      background: "#000",
-    },
-  },
+    maxHeight: 400,
+  }
 });
 
 export default function StickyHeadTable(props) {
@@ -47,20 +57,19 @@ export default function StickyHeadTable(props) {
 
   return (
     <Paper className={classes.root}>
-      <TableContainer   component={Paper} className="md:mt-8">
+      <TableContainer className={classes.container}   component={Paper}>
         <Table stickyHeader className={classes.table} aria-label="caption table">
-          <caption>A basic table example with a caption</caption>
           <TableHead>
             <TableRow>
-            <TableCell align="right">Sr.No</TableCell>
-            <TableCell align="right">Name</TableCell>
-              <TableCell align="right">Email</TableCell>
-              <TableCell align="right">Phone</TableCell>
-              <TableCell align="right">Activity</TableCell>
-              <TableCell align="right">Age</TableCell>
-              <TableCell align="right">Goal</TableCell>
-              <TableCell align="right">Eat Habbit</TableCell>
-              <TableCell align="right">Date</TableCell>
+            <TableCell align="left">Sr.No</TableCell>
+            <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Email</TableCell>
+              <TableCell align="left">Phone</TableCell>
+              <TableCell align="left">Activity</TableCell>
+              <TableCell align="left">Age</TableCell>
+              <TableCell align="left">Goal</TableCell>
+              <TableCell align="left">Eat Habbit</TableCell>
+              <TableCell align="left">Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -68,15 +77,15 @@ export default function StickyHeadTable(props) {
               (props.SerwayDetails)?
                 props.SerwayDetails.map((row,index) => (
                   <TableRow key={row._id} hover={true} className={classes.table_row}>
-                    <TableCell align="right">{index + 1}</TableCell>
-                    <TableCell align="right">{row.name}</TableCell>
-                    <TableCell align="right">{row.email}</TableCell>
-                    <TableCell align="right">{row.phone}</TableCell>
-                    <TableCell align="right">{row.activity}</TableCell>
-                    <TableCell align="right">{row.age}</TableCell>
-                    <TableCell align="right">{row.goal}</TableCell>
-                    <TableCell align="right">{row.eatinghabbit}</TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
+                    <TableCell align="left">{index + 1}</TableCell>
+                    <TableCell align="left">{row.name}</TableCell>
+                    <TableCell align="left">{row.email}</TableCell>
+                    <TableCell align="left">{row.phone}</TableCell>
+                    <Tooltip title={row.activity} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.activity}</p></TableCell></Tooltip>
+                    <TableCell align="left">{row.age}</TableCell>
+                    <Tooltip title={row.goal} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.goal}</p></TableCell></Tooltip>
+                    <Tooltip title={row.eatinghabbit} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.eatinghabbit}</p></TableCell></Tooltip>
+                    <TableCell align="left">{new Date(row.date).toDateString()}</TableCell>
                   </TableRow>
                 )) : ""
               } 

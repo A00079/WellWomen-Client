@@ -27,11 +27,27 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import Compress from "browser-image-compression";
+import Tooltip from '@material-ui/core/Tooltip';
+import Spinner from '../../Spinner/Spinner.js';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
-  table: {
-    minWidth: 650,
+  container: {
+    maxHeight: 400,
+  },
+  tableRow: {
+    cursor: 'pointer',
+    "&:hover": {
+      boxShadow: '0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow: '0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow: '0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'
+    }
+  },
+  txt_elip: {
+    width: '100px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -65,6 +81,7 @@ export default function AcccessibleTable() {
   const [image, setImage] = React.useState("");
   const [imagePreview, setImagePreview] = React.useState("");
   const [imageUrl, setimageUrl] = React.useState("");
+  const [postingBlog, setpostingBlog] = React.useState(false);
 
 
 
@@ -140,6 +157,7 @@ export default function AcccessibleTable() {
   }
 
   const PostAnnouncement = () => {
+    setpostingBlog(true)
     let api_url = "api/admin/updateBlog/modify";
 
     var formData = new FormData();
@@ -155,23 +173,27 @@ export default function AcccessibleTable() {
     formData.append("id", EditBlog._id);
 
 
-    !!postTitle? setDiscription(EditBlog.title) : setDiscription(postTitle)
-    !!postDiscription? setDiscription(EditBlog.discription) : setDiscription(postDiscription)
+    !!postTitle ? setDiscription(EditBlog.title) : setDiscription(postTitle)
+    !!postDiscription ? setDiscription(EditBlog.discription) : setDiscription(postDiscription)
 
-      axios.post(api_url, formData)
-        .then((res) => {
-          console.log('response', res)
-          console.log("Response Data...", res);
-          document.getElementById('Title').value = '';
-          document.getElementById('ShortDiscription').value = ''
-          document.getElementById('AnyTags').value = ''
-          document.getElementById('YoutubeLink').value = ''
-          document.getElementById('Discription').value = ''
-          setOpenModal(false)
-        })
-        .catch((err) => {
-          console.error('Post Error:', err)
-        })
+    axios.post(api_url, formData)
+      .then((res) => {
+        console.log('response', res)
+        console.log("Response Data...", res);
+        document.getElementById('Title').value = '';
+        document.getElementById('ShortDiscription').value = '';
+        document.getElementById('AnyTag').value = '';
+        document.getElementById('YoutubeLink').value = '';
+        document.getElementById('Discription').value = '';
+        document.getElementById('input').value = '';
+        setImagePreview('');
+        setpostingBlog(false);
+        setOpenModal(false);
+        fetchBlogs();
+      })
+      .catch((err) => {
+        console.error('Post Error:', err)
+      })
   }
 
   const onFileChange = (event) => {
@@ -215,9 +237,8 @@ export default function AcccessibleTable() {
           Notice — <strong>Once post deleted cannot be restored!</strong>
         </Alert>
       </div>
-      <TableContainer component={Paper} className="md:mt-8">
-        <Table className={classes.table} aria-label="caption table">
-          <caption>A basic table example with a caption</caption>
+      <TableContainer className={classes.container} component={Paper}>
+        <Table stickyHeader className={classes.table} aria-label="caption table">
           <TableHead>
             <TableRow>
               <TableCell>Sr.no</TableCell>
@@ -225,25 +246,26 @@ export default function AcccessibleTable() {
               <TableCell>Title</TableCell>
               <TableCell>Tag</TableCell>
               <TableCell>Short Discription</TableCell>
-              <TableCell align="right">Discription</TableCell>
-              <TableCell align="right">Youtube Link</TableCell>
-              <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Action</TableCell>
+              <TableCell align="left">Discription</TableCell>
+              <TableCell align="left">Youtube Link</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Action</TableCell>
+              <TableCell align="left"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {getBlogs.map((row, index) => (
               <TableRow key={row._id}>
-                <TableCell align="right">{index + 1}</TableCell>
-                <TableCell align="right">{!!row.imageurl ? <img src={row.imageurl} width='100px' /> : <span>Not Availble</span>}</TableCell>
-                <TableCell align="right">{row.title}</TableCell>
-                <TableCell align="right">{row.anytag}</TableCell>
-                <TableCell align="right">{row.shortdiscription}</TableCell>
-                <TableCell align="right">{row.discription}</TableCell>
-                <TableCell align="right">{row.youtubelink}</TableCell>
-                <TableCell align="right">{row.date}</TableCell>
-                <TableCell title='Edit' className="cursor-pointer" align="right"><EditIcon onClick={() => editBlogpost(row)} /></TableCell>
-                <TableCell title='Delete' className="cursor-pointer" align="right"><DeleteOutlinedIcon onClick={() => deleteConfirmation(row._id)} /></TableCell>
+                <TableCell align="left">{index + 1}</TableCell>
+                <TableCell align="left">{!!row.imageurl ? <img src={row.imageurl} width='40px' /> : <span>Not Availble</span>}</TableCell>
+                <Tooltip title={row.title} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.title}</p></TableCell></Tooltip>
+                <TableCell align="left">{row.anytag}</TableCell>
+                <Tooltip title={row.shortdiscription} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.shortdiscription}</p></TableCell></Tooltip>
+                <Tooltip title={row.discription} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.discription}</p></TableCell></Tooltip>
+                <Tooltip title={row.youtubelink} arrow><TableCell align="left"><p className={classes.txt_elip}><span className='text-indigo-500'>{row.youtubelink}</span></p></TableCell></Tooltip>
+                <TableCell align="left">{new Date(row.date).toDateString()}</TableCell>
+                <TableCell title='Edit' className="cursor-pointer" style={{ color: 'blue' }} align="left"><EditIcon onClick={() => editBlogpost(row)} /></TableCell>
+                <TableCell title='Delete' className="cursor-pointer" style={{ color: 'red' }} align="left"><DeleteOutlinedIcon onClick={() => deleteConfirmation(row._id)} /></TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -255,7 +277,7 @@ export default function AcccessibleTable() {
 
 
       <Dialog open={openModal} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Edit Announcement</DialogTitle>
+        <DialogTitle id="form-dialog-title">Update Blog</DialogTitle>
         <DialogContent>
           <form className={classes.form} noValidate>
             <Grid container spacing={2}>
@@ -288,12 +310,12 @@ export default function AcccessibleTable() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   onChange={e => handlePostAnyTags(e)}
-                  autoComplete="AnyTags"
-                  name="AnyTags"
+                  autoComplete="AnyTag"
+                  name="AnyTag"
                   variant="outlined"
                   fullWidth
-                  id="AnyTags"
-                  label="Any Tags"
+                  id="AnyTag"
+                  label="Any Tag"
                   autoFocus
                   defaultValue={(postAnyTags) ? postAnyTags : EditBlog.anytag}
                 />
@@ -329,7 +351,7 @@ export default function AcccessibleTable() {
               <Grid item xs={12}>
                 <h6>Preview</h6>
                 {
-                  !!imagePreview? <img src={imagePreview} /> : <img src={EditBlog.imageurl} />
+                  !!imagePreview ? <img src={imagePreview} /> : <img src={EditBlog.imageurl} />
                 }
               </Grid>
               <Grid item xs={12}>
@@ -362,7 +384,10 @@ export default function AcccessibleTable() {
             color="primary"
             className={classes.submit}
           >
-            Post Announcement
+            {
+              postingBlog ? <Spinner size='lg' spinning='spinning' /> :
+                'Update Blog'
+            }
           </Button>
         </DialogActions>
       </Dialog>

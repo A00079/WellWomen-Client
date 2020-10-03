@@ -23,12 +23,27 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import Tooltip from '@material-ui/core/Tooltip';
 const useStyles = makeStyles({
   root: {
     width: '100%',       
   },
+  tableRow: {
+    cursor:'pointer',
+    "&:hover": {
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset',
+      boxShadow:'0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset'
+    }
+  },
+  txt_elip:{
+    width: '100px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  },
   container: {
-    maxHeight: 440,
+    maxHeight: 400,
   },
 });
 
@@ -41,34 +56,33 @@ export default function StickyHeadTable(props) {
 
   return (
     <Paper className={classes.root}>
-      <TableContainer   component={Paper} className="md:mt-8">
+      <TableContainer className={classes.container} component={Paper}>
         <Table stickyHeader className={classes.table} aria-label="caption table">
-          <caption>A basic table example with a caption</caption>
           <TableHead>
             <TableRow>
-            <TableCell align="right">Sr.No</TableCell>
-            <TableCell align="right">Image</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Tag</TableCell>
-              <TableCell align="right">Short Discription</TableCell>
-              <TableCell align="right">Discription</TableCell>
-              <TableCell align="right">Youtube Link</TableCell>
-              <TableCell align="right">Date</TableCell>
+            <TableCell align="left">Sr.No</TableCell>
+            <TableCell align="left">Image</TableCell>
+              <TableCell align="left">Title</TableCell>
+              <TableCell align="left">Tag</TableCell>
+              <TableCell align="left">Short Discription</TableCell>
+              <TableCell align="left">Discription</TableCell>
+              <TableCell align="left">Youtube Link</TableCell>
+              <TableCell align="left">Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {
               (props.getBlogs)?
                 props.getBlogs.map((row,index) => (
-                  <TableRow key={row._id}>
-                    <TableCell align="right">{index + 1}</TableCell>
-                    <TableCell align="right">{!!row.imageurl ? <img src={row.imageurl} width='100px' /> : <span>Not Availble</span>}</TableCell>
-                    <TableCell align="right">{row.title}</TableCell>
-                    <TableCell align="right">{row.anytag}</TableCell>
-                    <TableCell align="right">{row.shortdiscription}</TableCell>
-                    <TableCell align="right">{row.discription}</TableCell>
-                    <TableCell align="right">{row.youtubelink}</TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
+                  <TableRow key={row._id} className={classes.tableRow}>
+                    <TableCell align="left">{index + 1}</TableCell>
+                    <TableCell align="left">{!!row.imageurl ? <img src={row.imageurl} width='40px' /> : <span>Not Availble</span>}</TableCell>
+                    <Tooltip title={row.title} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.title}</p></TableCell></Tooltip>
+                    <TableCell align="left">{row.anytag}</TableCell>
+                    <Tooltip title={row.shortdiscription} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.shortdiscription}</p></TableCell></Tooltip>
+                    <Tooltip title={row.discription} arrow><TableCell align="left"><p className={classes.txt_elip}>{row.discription}</p></TableCell></Tooltip>
+                    <Tooltip title={row.youtubelink} arrow><TableCell align="left"><p className={classes.txt_elip}><span className='text-indigo-500'>{row.youtubelink}</span></p></TableCell></Tooltip>
+                    <TableCell align="left">{new Date(row.date).toDateString()}</TableCell>
                   </TableRow>
                 )) : ""
               } 
