@@ -32,7 +32,7 @@ export const googleRegister = (userData, history) => dispatch => {
           type: IS_ADMIN,
           payload: _isAdmin
         })
-      } else {
+      }else {
         dispatch({
           type: IS_ADMIN,
           payload: _isAdmin

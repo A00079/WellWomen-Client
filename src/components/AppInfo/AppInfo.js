@@ -58,7 +58,7 @@ class AppInfo extends Component {
                         </div>
                     </div>
                 </section> */}
-                <div class="py-24 md:py-0 bg-white">
+                <div class="py-24 md:py-8" style={{backgroundColor: '#F9AE08'}}>
                     <h3 class="text-3xl sm:text-5xl md:mt-16 md:text-4xl  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                         WE <span class="text-indigo-600"> NEVER STOP IMPROVING</span>
                     </h3>
@@ -142,12 +142,12 @@ class AppInfo extends Component {
                         </div>
 
                     </div> */}
-                    <section class="text-gray-700 body-font">
-                        <div class="container px-5 py-24 mx-auto">
+                    <section class="text-gray-700 pb-10 body-font">
+                        <div class="container px-5 py-4 mx-auto">
 
                             <div class="flex flex-wrap -m-4 text-center">
                                 <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                                    <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                                    <div class="border-2 border-white-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
                                             <path d="M8 17l4 4 4-4m-4-5v9"></path>
                                             <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
@@ -157,7 +157,7 @@ class AppInfo extends Component {
                                     </div>
                                 </div>
                                 <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                                    <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                                    <div class="border-2 border-white-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-indigo-500 w-12 h-12 mb-3 inline-block">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                                                 </svg>
@@ -166,7 +166,7 @@ class AppInfo extends Component {
                                     </div>
                                 </div>
                                 <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                                    <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                                    <div class="border-2 border-white-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-indigo-500 w-12 h-12 mb-3 inline-block" >
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
                                                 </svg>
@@ -175,7 +175,7 @@ class AppInfo extends Component {
                                     </div>
                                 </div>
                                 <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-                                    <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                                    <div class="border-2 border-white-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-indigo-500 w-12 h-12 mb-3 inline-block">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                 </svg>

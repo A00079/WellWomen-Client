@@ -21,6 +21,7 @@ import YoutubeVideos from "../src/views/YoutubeVideos/youtubeVideos.js";
 import TrialBlog from "../src/views/TrialBlogs/TrialBlogs.js";
 import SingleBlog from "../src/views/UserBlogs/SingleBlog.js";
 import Pricing from "../src/views/UserPricing.js";
+import PrivacyPolicy from '../src/views/PrivacyPolicy.js';
 
 
 
@@ -50,20 +51,19 @@ function App() {
     <Provider store={store}>
       <Router history={hist}>
         <Notifications />
-        <Route exact path="/startjourney" component={StartJourney} />
-        <Route exact path='/confirm/:id' component={Confirm} />
+        <Route exact path="/" component={LandingPage} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
-        <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
+        <Route exact path='/confirm/:id' component={Confirm} />
+        <Route exact path="/startjourney" component={StartJourney} />
         <Route exact path="/TrialBlog" component={TrialBlog} />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/blog/:id" component={SingleBlog} />
-        <Route exact path="/pricing" component={Pricing} />
-
+        <Route exact path="/privacypolicy" component={PrivacyPolicy} />
         <Switch>
-          {/* <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} /> */}
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          {/* <PrivateRoute exact path="/privacypolicy" component={PrivacyPolicy} /> */}
+          <PrivateRoute exact path="/pricing" component={Pricing} />
+          <PrivateRoute exact path="/blog/:id" component={SingleBlog} />
+          <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} />
         </Switch>
       </Router>
     </Provider>

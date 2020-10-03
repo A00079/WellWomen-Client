@@ -10,6 +10,7 @@ import image2 from '../../assets/img/w3.jpg';
 import image3 from '../../assets/img/w6.jpg';
 import doctor from '../../assets/img/drsnehal.webp';
 import { Link } from "react-router-dom";
+import Multi from './MultiSlider.js';
 
 import {
     Container,
@@ -90,6 +91,7 @@ const UserBlog = () => {
                     <div className='screenheight' data-src={image3} />
                 </AutoplaySlider>
             </div>
+            {/* <Multi /> */}
             {/* <Grid
                 container
                 direction="row"

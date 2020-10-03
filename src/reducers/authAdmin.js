@@ -1,7 +1,7 @@
 import { IS_ADMIN } from "../actions/types";
 
 const initialState = {
-  isAdmin: false,
+  isAdmin: null,
 };
 
 export default function(state = initialState, action) {

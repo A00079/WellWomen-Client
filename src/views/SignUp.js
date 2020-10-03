@@ -46,6 +46,7 @@ class SignUp extends Component {
 
   responseGoogle = (response) => {
     //Google
+    //OG => 974319766461-sl24j1uanrhgto3mkacao9gcnmgpcvn6.apps.googleusercontent.com
     //prod => 129584180577-d9c9ejb2tqu1q1hua57k57174c89ui0s.apps.googleusercontent.com
     //production => 781211842293-ut2setg9ed4q53q90du78ss42nd7361o.apps.googleusercontent.com
     //development => 426378221340-idlmvnc00edci66h1k345p2f61437vhu.apps.googleusercontent.com
@@ -116,7 +117,7 @@ class SignUp extends Component {
                   <div class="flex flex-col items-center">
                     <div>
                       <GoogleLogin
-                        clientId='129584180577-d9c9ejb2tqu1q1hua57k57174c89ui0s.apps.googleusercontent.com'
+                        clientId='974319766461-sl24j1uanrhgto3mkacao9gcnmgpcvn6.apps.googleusercontent.com'
                         buttonText='Sign In with Google'
                         onSuccess={this.responseGoogle}
                         onFailure={this.responseGoogle}
