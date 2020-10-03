@@ -24,7 +24,7 @@ class SignUp extends Component {
       sendingEmail: false
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -32,7 +32,9 @@ class SignUp extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
     if (nextProps.errors) {
       console.log('sendingEmail', nextProps.errors)
       if (nextProps.errors.name) {
@@ -177,99 +179,99 @@ class SignUp extends Component {
                         <span className="text-red-600">{errors.name}</span>
                       </div>
                       <div>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.email}
-                        error={errors.email}
-                        id="email"
-                        type="email"
-                        className={classnames("", {
-                          invalid: errors.email,
-                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
-                        })}
-                        placeholder="Email"
-                      />
-                      <span className="text-red-600">{errors.email}</span>
+                        <input
+                          onChange={this.onChange}
+                          value={this.state.email}
+                          error={errors.email}
+                          id="email"
+                          type="email"
+                          className={classnames("", {
+                            invalid: errors.email,
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          })}
+                          placeholder="Email"
+                        />
+                        <span className="text-red-600">{errors.email}</span>
                       </div>
                       <div>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.password}
-                        error={errors.password}
-                        id="password"
-                        type="password"
-                        className={classnames("", {
-                          invalid: errors.password,
-                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
-                        })}
-                        placeholder="Password"
-                      />
-                      <span className="text-red-600">{errors.password}</span>
+                        <input
+                          onChange={this.onChange}
+                          value={this.state.password}
+                          error={errors.password}
+                          id="password"
+                          type="password"
+                          className={classnames("", {
+                            invalid: errors.password,
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          })}
+                          placeholder="Password"
+                        />
+                        <span className="text-red-600">{errors.password}</span>
                       </div>
                       <div>
-                      <input
-                        onChange={this.onChange}
-                        value={this.state.password2}
-                        error={errors.password2}
-                        id="password2"
-                        type="password"
-                        className={classnames("", {
-                          invalid: errors.password2,
-                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
-                        })}
-                        placeholder="Confirm Password"
-                      />
-                      <span className="text-red-600">{errors.password2}</span>
+                        <input
+                          onChange={this.onChange}
+                          value={this.state.password2}
+                          error={errors.password2}
+                          id="password2"
+                          type="password"
+                          className={classnames("", {
+                            invalid: errors.password2,
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                          })}
+                          placeholder="Confirm Password"
+                        />
+                        <span className="text-red-600">{errors.password2}</span>
                       </div>
                     </div>
                     <button
-                        type='submit'
-                        class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
-                      >
-                        {sendingEmail
-                          ? <Spinner size='lg' spinning='spinning' />
-                          : <React.Fragment>
-                            <svg
-                              class="w-6 h-6 -ml-2"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                              <circle cx="8.5" cy="7" r="4" />
-                              <path d="M20 8v6M23 11h-6" />
-                            </svg>
-                            <span class="ml-3">
-                              Sign Up
+                      type='submit'
+                      class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                    >
+                      {sendingEmail
+                        ? <Spinner size='lg' spinning='spinning' />
+                        : <React.Fragment>
+                          <svg
+                            class="w-6 h-6 -ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="8.5" cy="7" r="4" />
+                            <path d="M20 8v6M23 11h-6" />
+                          </svg>
+                          <span class="ml-3">
+                            Sign Up
                             </span>
-                          </React.Fragment>
-                        }
+                        </React.Fragment>
+                      }
 
-                      </button>
-                      <Link to="/">
+                    </button>
+                    <Link to="/">
                       <button
                         type='submit'
                         class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                       >
-                            <KeyboardBackspaceIcon style={{ color: 'white' }} />
-                            <span class="ml-3">
-                              Back
+                        <KeyboardBackspaceIcon style={{ color: 'white' }} />
+                        <span class="ml-3">
+                          Back
                             </span>
                       </button>
-                      </Link>
-                      <p className="mt-4" style={{ float: 'right' }}>Already have an account? <Link to="/login" className="text-blue-600">Sign In</Link></p>
-                      <p class="mt-12 text-xs text-gray-600 text-center">
-                        I agree to abide by templatana's
+                    </Link>
+                    <p className="mt-4" style={{ float: 'right' }}>Already have an account? <Link to="/login" className="text-blue-600">Sign In</Link></p>
+                    <p class="mt-12 text-xs text-gray-600 text-center">
+                      I agree to abide by templatana's
                 <a href="#" class="border-b border-gray-500 border-dotted">
-                          Terms of Service
+                        Terms of Service
                 </a>
                         and its
                 <a href="#" class="border-b border-gray-500 border-dotted">
-                          Privacy Policy
+                        Privacy Policy
                 </a>
-                      </p>
+                    </p>
                   </form>
                 </div>
               </div>

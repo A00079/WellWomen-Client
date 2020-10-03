@@ -23,7 +23,7 @@ export default class Confirm extends Component {
   componentDidMount = () => {
     const { id } = this.props.match.params
 
-    fetch(`http://wellwomen.herokuapp.com/email/confirm/${id}`)
+    fetch(`https://www.curvicare.com/email/confirm/${id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({ confirming: false })

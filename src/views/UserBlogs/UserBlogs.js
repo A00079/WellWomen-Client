@@ -471,7 +471,14 @@ const UserBlog = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <span className='text-sm text-blue-500'>view</span>
+                                    <span className='text-sm text-blue-500'>
+                                        <Link to={{
+                                            pathname: "/blog/" + blog._id,
+                                            state: blog
+                                        }}>
+                                            View
+                                        </Link>
+                                    view</span>
                                 </a>
                             )
                         })

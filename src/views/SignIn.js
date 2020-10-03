@@ -80,7 +80,7 @@ class Signin extends Component {
          const newUser = {
             name: response.profileObj.name,
             email: response.profileObj.email,
-            password: response.profileObj.email,
+         password: response.profileObj.email,
          };
          this.props.googleRegister(newUser, this.props.history);
       }

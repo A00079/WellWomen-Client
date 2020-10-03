@@ -39,6 +39,7 @@ const HeaderLinks = (props) => {
     }
   }, [props])
   const onLogoutClick = () => {
+    sethandeldropdown(false)
     props.logoutUser();
   };
   return (
