@@ -10,7 +10,7 @@ import HowItWorksCard from '../../components/Card/HowItWorksCard.js';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    marginTop: '4rem',
+    marginTop: '0rem',
     [theme.breakpoints.down("sm")]: {
       marginTop: '1rem',
     }

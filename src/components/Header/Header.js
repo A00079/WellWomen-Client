@@ -12,6 +12,8 @@ import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 import logo from '../../assets/img/logo.png';
+import logoBW from '../../assets/img/logo_BW.png';
+//background: -webkit-linear-gradient(to right, #833ab4, #fd1d1d, #fcb045); /* Chrome 10-25, Safari 5.1-6 */
 import { Link } from "react-router-dom";
 import * as Scroll from 'react-scroll';
 
@@ -35,6 +37,7 @@ let DirectLinkDiv = Scroll.Link;
 export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isScrolled,setisScrolled] = React.useState(null)
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -58,6 +61,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
+      setisScrolled(logoBW)
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -65,6 +69,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
+      setisScrolled(logo)
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
@@ -75,7 +80,7 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = <img style={{width: '6rem',
-    height: '6rem'}} className={classes.title} src={logo} />;
+    height: '6rem'}} className={classes.title} src={isScrolled} />;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
