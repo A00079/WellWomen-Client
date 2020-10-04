@@ -13,8 +13,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-
-const API_KEY = 'AIzaSyBRkPv6tG9zDk1fJZClXA3NuOgnZURHo8M';
+// const API_KEY = 'AIzaSyBRkPv6tG9zDk1fJZClXA3NuOgnZURHo8M';
+const API_KEY = 'AIzaSyAtu6fiJRER96wlMzjX7n7qu6JF4z6y8js';
 const channelID = 'UC8KBEuXc5mdz0N5roXTbyVA';
 const result = 20;
 
