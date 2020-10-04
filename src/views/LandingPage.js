@@ -61,11 +61,12 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black">LOSE YOUR WEIGHT</h1>
-                                <h3 className="md:text-1xl text-2xl font-medium">
+                                <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}>LOSE YOUR WEIGHT</h1>
+                                <h3 className="md:text-1xl text-2xl font-medium" style={{ fontFamily: 'Paytone One' }}>
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3>
                                 <Button
+                                    style={{ backgroundColor: '#D00f7F', fontFamily: 'Open Sans', color: '#FFF' }}
                                     className={classes.startbtn}
                                     color="danger"
                                     size="lg"
@@ -99,9 +100,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <PartOneGallery />
                 </div>
-                <div data-aos="fade-up" >
+                {/* <div data-aos="fade-up" >
                     <FullGallery />
-                </div>
+                </div> */}
                 <div data-aos="fade-up" >
                     <AppInfo />
                 </div>
@@ -114,9 +115,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <Testimonial />
                 </div>
-                <div data-aos="fade-up" >
+                {/* <div data-aos="fade-up" >
                     <Clients />
-                </div>
+                </div> */}
                 <div data-aos="fade-up" >
                     <GetInTouch />
                 </div>

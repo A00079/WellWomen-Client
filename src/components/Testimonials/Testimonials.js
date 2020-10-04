@@ -28,7 +28,7 @@ const Testimonials = () => {
     const classes = useStyles();
     return (
         <React.Fragment>
-            <h1 id="testimonials" style={{ color: '#4e6073', textAlign: 'center' }} className="sm:text-3xl mt-24 text-3xl md:text-4xl md:mt-16 font-extrabold title-font mb-4 text-gray-900">TESTI<span class="text-indigo-600">MONIALS</span></h1>
+            <h1 id="testimonials" style={{ color: '#4e6073', textAlign: 'center',fontFamily: 'Paytone One' }} className="sm:text-3xl mt-24 text-3xl md:text-4xl md:mt-16 font-extrabold title-font mb-4 text-gray-900">TESTI<span class="text-indigo-600" style={{color:'#D00F7F'}}>MONIALS</span></h1>
             <ReactSlider />
 
             {/* <AutoplaySlider

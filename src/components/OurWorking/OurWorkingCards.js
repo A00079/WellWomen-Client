@@ -65,16 +65,16 @@ export default function WorkingCards() {
             <section class="text-gray-700 body-font">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="flex flex-col text-center w-full mb-20">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Work</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style={{fontFamily: 'Paytone One'}}>Our Work</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style={{ fontFamily: 'Open Sans'}}>Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
                     </div>
                     <div class="flex flex-wrap -m-2">
                         <div class="p-2 lg:w-1/3 md:w-1/2 w-full cursor-pointer" onClick={() => handleClickOpen('trans1.jpg')}>
-                            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style={{background: 'linear-gradient(to right, #c31432, #240b36)'}}>
+                            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style={{background:'linear-gradient(to right, #8a2387, #e94057, #f27121)'}}>
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans1} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-500 title-font font-medium">Holden Caulfield</h2>
-                                    <p class="text-gray-500">UI Designer</p>
+                                    <h2 class="text-gray-500 title-font font-medium" style={{fontFamily: 'Paytone One'}}>Holden Caulfield</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>UI Designer</p>
                                 </div>
                             </div>
                         </div>
@@ -82,17 +82,17 @@ export default function WorkingCards() {
                             <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans2} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 title-font font-medium">Henry Letham</h2>
-                                    <p class="text-gray-500">CTO</p>
+                                    <h2 class="text-gray-900 title-font font-medium" style={{fontFamily: 'Paytone One'}}>Henry Letham</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>CTO</p>
                                 </div>
                             </div>
                         </div>
                         <div class="p-2 lg:w-1/3 md:w-1/2 w-full cursor-pointer" onClick={() => handleClickOpen('trans3.jpg')}>
-                            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style={{background: 'linear-gradient(to right, #c94b4b, #4b134f)'}}>
+                            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style={{background:'linear-gradient(to right, #8a2387, #e94057, #f27121)'}}>
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans3} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-500 title-font font-medium">Oskar Blinde</h2>
-                                    <p class="text-gray-500">Founder</p>
+                                    <h2 class="text-gray-500 title-font font-medium" style={{fontFamily: 'Paytone One'}}>Oskar Blinde</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>Founder</p>
                                 </div>
                             </div>
                         </div>
@@ -100,8 +100,8 @@ export default function WorkingCards() {
                             <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans4} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 title-font font-medium">John Doe</h2>
-                                    <p class="text-gray-500">DevOps</p>
+                                    <h2 class="text-gray-900 title-font font-medium" style={{fontFamily: 'Paytone One'}}>John Doe</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>DevOps</p>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,8 @@ export default function WorkingCards() {
                             <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg" style={{background:'linear-gradient(to right, #8a2387, #e94057, #f27121)'}}>
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans5} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-500 title-font font-medium">Martin Eden</h2>
-                                    <p class="text-gray-500">Software Engineer</p>
+                                    <h2 class="text-gray-500 title-font font-medium" style={{fontFamily: 'Paytone One'}}>Martin Eden</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>Software Engineer</p>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +118,8 @@ export default function WorkingCards() {
                             <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                                 <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={trans6} />
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 title-font font-medium">Boris Kitua</h2>
-                                    <p class="text-gray-500">UX Researcher</p>
+                                    <h2 class="text-gray-900 title-font font-medium" style={{fontFamily: 'Paytone One'}}>Boris Kitua</h2>
+                                    <p class="text-gray-500" style={{fontFamily: 'Paytone One'}}>UX Researcher</p>
                                 </div>
                             </div>
                         </div>

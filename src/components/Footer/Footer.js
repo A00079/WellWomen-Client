@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class Footer extends Component {
     return (
       <React.Fragment>
         <footer class="text-gray-700 body-font">
-          <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
-            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+          <div class="container px-5 py-0 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
+            {/* <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
               <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                 <svg xmlns="" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -18,8 +19,8 @@ class Footer extends Component {
                 <span class="ml-3 text-xl">Curvicare</span>
               </a>
               <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
-            </div>
-            <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+            </div> */}
+            {/* <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
               <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                 <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
                 <nav class="list-none mb-10">
@@ -88,7 +89,7 @@ class Footer extends Component {
                   </li>
                 </nav>
               </div>
-            </div>
+            </div> */}
           </div>
           <div class="bg-gray-200">
             <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
@@ -117,6 +118,11 @@ class Footer extends Component {
                     <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
                     <circle cx="4" cy="4" r="2" stroke="none"></circle>
                   </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <Link to='/privacypolicy'>
+                    Privacy Policy
+                  </Link>
                 </a>
               </span>
             </div>

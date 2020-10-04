@@ -6,7 +6,7 @@ const headerLinksStyle = theme => ({
   list: {
     ...defaultFont,
     fontSize: "0.8rem",
-    fontWeight: "bolder",
+    // fontWeight: "bolder",
     margin: 0,
     paddingLeft: "0",
     listStyle: "none",
@@ -15,6 +15,9 @@ const headerLinksStyle = theme => ({
     color: "inherit"
   },
   listItem: {
+    textTransform: 'uppercase',
+    fontWeight: '200 !important',
+    fontFamily: 'Paytone One',
     cursor: 'pointer',
     float: "left",
     color: "inherit",
@@ -23,6 +26,12 @@ const headerLinksStyle = theme => ({
     width: "auto",
     marginLeft: "1.2rem",
     paddingLeft: "0",
+    "&:hover": {
+      background: '#D00F7F',
+      padding: '10px',
+      color: 'white',
+      transition: 'all 0.3s ease-in-out'
+    },
     [theme.breakpoints.down("sm")]: {
       width: "100%",
       marginLeft: "0px",
@@ -37,7 +46,7 @@ const headerLinksStyle = theme => ({
       // }
     }
   },
-  listitemdrop:{
+  listitemdrop: {
     padding: '0px',
     margin: '-6px 0px 0px 40px',
     cursor: 'pointer',
@@ -77,7 +86,7 @@ const headerLinksStyle = theme => ({
     display: "inline-flex",
     "&:hover,&:focus": {
       color: "inherit",
-      background: "rgba(200, 200, 200, 0.2)"
+      background: "#D00F7F"
     },
     [theme.breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
@@ -128,11 +137,17 @@ const headerLinksStyle = theme => ({
     marginRight: "4px"
   },
   dropdownLink: {
+    textTransform: 'uppercase',
+    fontWeight: '200 !important',
+    fontFamily: 'Paytone One !important',
     "&,&:hover,&:focus": {
       color: "inherit",
       textDecoration: "none",
       display: "block",
-      padding: "10px 20px"
+      padding: "10px 20px",
+      "&:hover,&:focus": {
+        backgroundColor: '#D00F7F'
+      },
     }
   },
   ...tooltip,

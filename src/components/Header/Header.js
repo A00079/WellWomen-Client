@@ -37,7 +37,7 @@ let DirectLinkDiv = Scroll.Link;
 export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [isScrolled,setisScrolled] = React.useState(null)
+  const [isScrolled, setisScrolled] = React.useState(null)
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -61,7 +61,6 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
-      setisScrolled(logoBW)
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -69,7 +68,6 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
-      setisScrolled(logo)
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
@@ -79,10 +77,12 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <img style={{width: '6rem',
-    height: '6rem'}} className={classes.title} src={isScrolled} />;
+  const brandComponent = <img style={{
+    width: '6rem',
+    height: '6rem'
+  }} className={classes.title} src={logo} />;
   return (
-    <AppBar className={appBarClasses}>
+    <AppBar style={{ opacity: '0.9' }} className={appBarClasses}>
       <Toolbar className={classes.container}>
         {leftLinks !== undefined ? brandComponent : null}
         <div className={classes.flex}>
@@ -119,7 +119,18 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="aboutus"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Home
+                </DirectLinkDiv>
+              </ListItem><Divider />
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="aboutus"
                   spy={true}
@@ -130,7 +141,7 @@ export default function Header(props) {
                   About</DirectLinkDiv>
               </ListItem><Divider />
 
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="ourwork"
                   spy={true}
@@ -140,7 +151,7 @@ export default function Header(props) {
                 >
                   Our Work</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="testimonials"
                   spy={true}
@@ -150,7 +161,7 @@ export default function Header(props) {
                 >
                   Testimonials</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="stats"
                   spy={true}
@@ -160,7 +171,7 @@ export default function Header(props) {
                 >
                   Stats</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="contactus"
                   spy={true}
@@ -171,13 +182,17 @@ export default function Header(props) {
                   Contact Us</DirectLinkDiv>
 
               </ListItem>
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
-                <Link to="/TrialBlog">Blogs</Link>
+              <Link to="/TrialBlog">
+                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
+                  Blogs
               </ListItem>
-              <ListItem className={classes.listItem}>
+              </Link>
+              <Divider />
+
+              <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
                 Youtube
-        
-      </ListItem><Divider />
+              </ListItem>
+              <Divider />
 
               {/* {['Home', 'About', 'Our Work', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
                 <React.Fragment  key={index}>
@@ -189,21 +204,18 @@ export default function Header(props) {
                 </React.Fragment>
               ))} */}
             </List>
-            <List style={{
-              position: 'absolute',
-              bottom: '0px'
-            }}>
-              <ListItem style={{width: '15rem'}}>
+            <List>
+              <ListItem style={{ width: '15rem',fontFamily: 'Paytone One' }}>
                 <Button variant="contained" color="primary" style={{ width: '100%' }}>
                   <Link to="/login" className={classes.dropdownLink}>
-                    SignIn
+                    <span style={{fontFamily: 'Paytone One'}}>Sign In</span>
                   </Link>
                 </Button>
               </ListItem>
-              <ListItem style={{width: '15rem'}}>
+              <ListItem style={{ width: '15rem',fontFamily: 'Paytone One'}}>
                 <Button variant="contained" color="secondary" style={{ width: '100%' }}>
                   <Link to="/signup" className={classes.dropdownLink}>
-                    Sign Up
+                  <span style={{fontFamily: 'Paytone One'}}> Sign Up</span>
                   </Link>
                 </Button>
               </ListItem>

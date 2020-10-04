@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!-- saved from url=(1158)https://social-blog.wix.com/custom-feed-widget?cacheKiller=1601487670149&commonConfig=%7B%22brand%22%3A%22wix%22%2C%22consentPolicy%22%3A%7B%22essential%22%3Atrue%2C%22functional%22%3Atrue%2C%22analytics%22%3Atrue%2C%22advertising%22%3Atrue%2C%22dataToThirdParty%22%3Atrue%7D%2C%22consentPolicyHeader%22%3A%7B%7D%2C%22bsi%22%3A%227cc14ff8-7f85-4067-bc1f-8a24fb9b6106%7C1%22%7D&compId=comp-jqq8c5j6&currency=INR&deviceType=desktop&height=494&instance=dRdk_2POVqshyE_h__VH1AC0SxZk-jw1WszaWicLD8g.eyJpbnN0YW5jZUlkIjoiODhmZmU2ZDctYjE5ZS00ZWZhLTlhMzctYjljYWQzODBjMzNlIiwiYXBwRGVmSWQiOiIxNGJjZGVkNy0wMDY2LTdjMzUtMTRkNy00NjZjYjNmMDkxMDMiLCJtZXRhU2l0ZUlkIjoiZDIwYjVkYTctOTdhNi00MTk2LThmNjQtM2E1NWQwZGNiYzBhIiwic2lnbkRhdGUiOiIyMDIwLTEwLTA0VDE5OjQ0OjMyLjQ2N1oiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiIwMWE5ZWM0NS04ODc1LTRmNGQtOTE0Yi1lNWM3MGUzN2FkNjUiLCJhaWQiOiJkMjY1OTI4Yi03Njk3LTQ0OTEtYTNhMi05YjQ0NDQ3MWY3YjUiLCJiaVRva2VuIjoiNWFmNGJiNzAtMjYzOC0wZjZjLTE1NTMtODM5ZjAzNWM3ZjM0Iiwic2l0ZU93bmVySWQiOiI3MGM4YTk0Zi1mMzAxLTRhZjQtOTE2OS00Mzk5NDE3Yzk4MGQifQ&locale=en&pageId=e0w6v&siteRevision=1587&tz=Asia%2FKolkata&viewMode=site&viewerCompId=comp-jqq8c5j6&width=980 -->
+<html lang="en"><head dir="ltr"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script>
+(function() {
+  try {
+    var canvas = typeof document === 'object' ? window.document.createElement('canvas') : {};
+    canvas.width = canvas.height = 1;
+    window.__IS_WEBP_SUPPORTED__ = canvas.toDataURL ? canvas.toDataURL('image/webp').indexOf('image/webp') === 5 : false;
+  } catch (e) {
+    window.__IS_WEBP_SUPPORTED__ = false;
+  }
+})();
+</script>
+
+
+
+    
+
+      
+  
+  
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://www.wix.com/favicon.ico">
+
+
+
+
+  <script type="text/javascript">
+  (function(x,e,o,s,n){var a=window.fedops||{};a.apps=a.apps||{};a.apps[x]={startLoadTime:e&&e.now&&e.now()};try{a.sessionId=o.getItem("fedops.logger.sessionId")}catch(x){}a.sessionId=a.sessionId||"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(x){var e=s()*16|0,o=x=="x"?e:e&3|8;return o.toString(16)});window.fedops=a;var d="//frog.wix.com/fed?appName="+x+"&src=72&evid=14&session_id="+a.sessionId+"&_="+s();if(!!n&&!!n.sendBeacon){n.sendBeacon(d)}else{(new Image).src=d}})('communities-blog-custom-feed-widget',window.performance,window.localStorage,Math.random,window.navigator);
+</script>
+
+
+
+
+      
+      
+<script>
+  try {
+    if (window.parent) {
+      var msgSent = false;
+      var vars = window.location.search.replace('?', '').split('&');
+      for (var i = 0; i < vars.length; i++) {
+        var arr = vars[i].split('=');
+        if (arr[0] == 'compId') {
+          window.parent.postMessage('{"intent":"TPA2","callId":1,"type":"appIsAlive","compId":"' + arr[1] + '","deviceType":"desktop","data":{"version":"1.66.0"}}', '*')
+          msgSent = true;
+        }
+      }
+      if (!msgSent) {
+        console.info('couldn\'t find compId in', window.location);
+      }
+    }
+  } catch (e) {
+    console.error('Error posting keep alive msg', e);
+  }
+</script>
+
+      
+
+      
+        <script src="./polyfill.min.js.download" crossorigin=""></script>
+
+        
+    <script src="./bundle.min.js.download" crossorigin="anonymous"></script>
+    <script>
+      (function initSentry() {
+        function isDuplexerError(event) {
+          try {
+            var stackFrames = event.exception.values[0].stacktrace.frames;
+            return /@wix\/wix-duplexer-js/.test(stackFrames[stackFrames.length - 1].filename);
+          } catch (error) {
+            return false;
+          }
+        }
+
+        Sentry.init({
+          dsn: 'https://71e32b4ded27414b90a94adb4e8b4d23@sentry.wixpress.com/94',
+          beforeSend: function beforeSend(event) {
+            return isDuplexerError(event) ? null : event;
+          },
+        });
+
+        Sentry.configureScope(function(scope) {
+          var p = function(x) { return x.split('=', 2).map(decodeURIComponent); };
+          var r = function(acc, x) { acc[x[0]] = x[1]; return acc; };
+          var q = location.search.replace(/^\?/, '').split('&').map(p).reduce(r, {});
+          
+          scope.setTag('bundleName', 'custom-feed-widget');
+          scope.setTag('instanceId', '88ffe6d7-b19e-4efa-9a37-b9cad380c33e');
+          scope.setTag('viewMode', q.viewMode);
+          scope.setTag('deviceType', q.deviceType);
+          scope.setTag('locale', q.locale);
+        });
+      })();
+    </script>
+  
+        
+      
+
+      
+        <link rel="stylesheet" type="text/css" href="./css">
+<link rel="stylesheet" type="text/css" href="./languages.css">
+<link rel="stylesheet" type="text/css" href="./languages(1).css">
+<link rel="stylesheet" type="text/css" href="./languages(2).css">
+<link rel="stylesheet" type="text/css" href="./custom-feed-widget.min.css">
+        
+
+<style wix-style="">
+  /* Widget styles */
+  .blog-background-color { background-color: rgba(255,255,255,0); }
+	.blog-background-color { background-color: rgba(255,255,255,0); }
+
+  /* Post styles */
+  .blog-text-color { color: rgba(255,255,255,1); }
+	.blog-text-color { color: rgba(255,255,255,1); }
+	.blog-text-border-color { border-color: rgba(255,255,255,1); }
+	.blog-text-border-color { border-color: rgba(255,255,255,1); }
+	.blog-text-background-color { background-color: rgba(255,255,255,1); }
+	.blog-text-background-color { background-color: rgba(255,255,255,1); }
+  .blog-icon-fill { fill: rgba(255,255,255,1); }
+	.blog-icon-fill { fill: rgba(255,255,255,1); }
+	.blog-icon-stroke { stroke: rgba(255,255,255,1); }
+	.blog-icon-stroke { stroke: rgba(255,255,255,1); }
+  .blog-separator-background-color { background-color: rgba(255,255,255,1); }
+	.blog-separator-background-color { background-color: rgba(255,255,255,1); }
+  .blog-inverted-separator-background-color { background-color: rgba(255,255,255,1); }
+	.blog-inverted-separator-background-color { background-color: rgba(255,255,255,1); }
+  .blog-card-background-color { background-color: rgba(255,255,255,1); }
+	.blog-card-background-color { background-color: rgba(255,255,255,1); }
+	.blog-card-fill { fill: rgba(255,255,255,1); }
+	.blog-card-fill { fill: rgba(255,255,255,1); }
+	.blog-card-stroke { stroke: rgba(255,255,255,1); }
+	.blog-card-stroke { stroke: rgba(255,255,255,1); }
+	.blog-card-color { color: rgba(255,255,255,1); }
+	.blog-card-color { color: rgba(255,255,255,1); }
+  .blog-card-border-color { border-color: rgba(50,50,50,0.25); }
+	.blog-card-border-color { border-color: rgba(50,50,50,0.25); }
+  .blog-post-title-color { color: rgba(255,255,255,1); }
+	.blog-post-title-color { color: rgba(255,255,255,1); }
+  .blog-post-image-overlay-background-color { background-color: rgba(50,50,50,0.35); }
+	.blog-post-image-overlay-background-color { background-color: rgba(50,50,50,0.35); }
+
+  .blog-post-title-font { font:normal normal normal 28px/1.375em dinneuzeitgroteskltw01-_812426,sans-serif; font-size: 28px; line-height: normal; }
+	.blog-post-title-font { font:normal normal normal 26px/32px proxima-n-w01-reg,sans-serif; line-height: normal; }
+	.blog-post-title-font { font:normal normal normal 26px/32px proxima-n-w01-reg,sans-serif; line-height: normal; }
+  .blog-post-description-font { font:normal normal normal 18px/1.75em barlow-extralight,barlow,sans-serif; font-size: 16px; line-height: normal; }
+	.blog-post-description-font { font:normal normal normal 16px/20px proxima-n-w01-reg,sans-serif; line-height: normal; }
+	.blog-post-description-font { font:normal normal normal 16px/20px proxima-n-w01-reg,sans-serif; line-height: normal; }
+
+  /* Button styles */
+  .blog-button-primary-text-color { color: #ffffff; }
+	.blog-button-primary-text-color { color: #ffffff; }
+	.blog-button-primary-text-background-color { background-color: #ffffff; }
+	.blog-button-primary-text-background-color { background-color: #ffffff; }
+  .blog-button-primary-icon-fill { fill: #ffffff; }
+	.blog-button-primary-icon-fill { fill: #ffffff; }
+  .blog-button-secondary-text-color { color: #ec1484; }
+	.blog-button-secondary-text-color { color: #ec1484; }
+  .blog-button-secondary-icon-fill { fill: #ec1484; }
+	.blog-button-secondary-icon-fill { fill: #ec1484; }
+  .blog-button-color { color: #ec1484; }
+	.blog-button-color { color: #ec1484; }
+	.blog-button-background-color { background-color: #ec1484; }
+	.blog-button-background-color { background-color: #ec1484; }
+	.blog-button-border-color { border-color: #ec1484; }
+	.blog-button-border-color { border-color: #ec1484; }
+	.blog-button-fill { fill: #ec1484; }
+	.blog-button-fill { fill: #ec1484; }
+	.blog-button-stroke { stroke: #ec1484; }
+	.blog-button-stroke { stroke: #ec1484; }
+  .is-desktop .blog-button-hover-color:hover { color: rgba(255,255,255,1); }
+	.is-desktop .blog-button-hover-color:hover { color: rgba(255,255,255,1); }
+	.is-desktop .blog-button-hover-fill:hover { fill: rgba(255,255,255,1); }
+	.is-desktop .blog-button-hover-fill:hover { fill: rgba(255,255,255,1); }
+  .is-desktop .blog-link-hover-color:hover { color: rgba(255,255,255,1); }
+	.is-desktop .blog-link-hover-color:hover { color: rgba(255,255,255,1); }
+	.is-desktop .blog-link-hover-fill:hover { fill: rgba(255,255,255,1); }
+	.is-desktop .blog-link-hover-fill:hover { fill: rgba(255,255,255,1); }
+  .is-desktop .blog-hover-container:hover .blog-hover-container-element-color { color: rgba(255,255,255,1); }
+	.is-desktop .blog-hover-container:hover .blog-hover-container-element-color { color: rgba(255,255,255,1); }
+	.is-desktop .blog-hover-container:hover .blog-hover-container-element-fill { fill: rgba(255,255,255,1); }
+	.is-desktop .blog-hover-container:hover .blog-hover-container-element-fill { fill: rgba(255,255,255,1); }
+  .is-desktop .blog-button-hover-after-border-color:hover::after { border-color: #ec1484; }
+	.is-desktop .blog-button-hover-after-border-color:hover::after { border-color: #ec1484; }
+  .blog-button-after-border-color::after { border-color: #ec1484; }
+	.blog-button-after-border-color::after { border-color: #ec1484; }
+
+  /* Fixed styles */
+  .blog-default-card-background-color { background-color: #ffffff; }
+	.blog-default-card-background-color { background-color: #ffffff; }
+  .blog-default-button-background-color { background-color: #ec1484; }
+	.blog-default-button-background-color { background-color: #ec1484; }
+  .blog-quote-border-color { border-color: #949494; }
+	.blog-quote-border-color { border-color: #949494; }
+</style>
+
+      
+    <style wix-style="">.Title{ font:normal normal normal 22px/1.41em dinneuzeitgroteskltw01-_812426,sans-serif; } .Menu{ font:normal normal normal 14px/1.79em raleway,sans-serif; } .Page-title{ font:normal normal normal 28px/1.375em dinneuzeitgroteskltw01-_812426,sans-serif; } .Heading-XL{ font:normal normal normal 88px/1.2em dinneuzeitgroteskltw01-_812426,sans-serif; } .Heading-L{ font:normal normal normal 72px/1.25em dinneuzeitgroteskltw01-_812426,sans-serif; } .Heading-M{ font:normal normal normal 50px/1.34em dinneuzeitgroteskltw01-_812426,sans-serif; } .Heading-S{ font:normal normal normal 40px/1.35em dinneuzeitgroteskltw01-_812426,sans-serif; } .Body-L{ font:normal normal normal 20px/1.67em barlow-extralight,barlow,sans-serif; } .Body-M{ font:normal normal normal 18px/1.75em barlow-extralight,barlow,sans-serif; } .Body-S{ font:normal normal normal 15px/1.875em raleway,sans-serif; } .Body-XS{ font:normal normal normal 14px/1.79em raleway,sans-serif; } }</style><link type="text/css" rel="stylesheet" href="./css" id="wix-google-fonts"><link type="text/css" rel="stylesheet" href="./languages(3).css"><style>:focus {
+    outline: none;
+}
+
+.js-focus-visible .focus-visible:focus,
+.js-focus-visible .focus-visible:focus ~ .wixSdkShowFocusOnSibling
+{
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 1px 2px #3899EC;
+}
+</style><script src="./focus-visible.min.js.download" id="dynamic_script_FOCUS_VISIBLE"></script></head>
+
+    <body class="oSNla js-focus-visible">
+      
+
+      <div id="root"><div id="direction-provider-wrapper"><div dir="ltr"><div class="_2oAx1 blog-background-color is-desktop app-desktop" id="content-wrapper"><div class="cSnEi"><div></div><div><div><div class="_3sa-M _1xkDa post-list"><div><div class="_1xkDa"><div class="tZgfA _1xkDa"><div class="_sg9w"><div class="_1GFPu"><article class="dJBp- _2OwGv _2lmPI blog-post-description-font blog-text-color blog-card-background-color blog-card-border-color post-list-item" tabindex="0" style="border-width:0" data-hook="post-list-item"><div style="height:454px;min-height:454px" class="T-BZz"><a tabindex="-1" href="https://www.drsnehaladsule.com/post/5-easy-ways-for-the-laziest-busiest-women-to-be-healthy" target="_top" class="blog-link-hover-color"><div class="_3RKAW _3-Hjr" data-hook="post-list-item-image"><div class="_1mvj7" style="background-image:url(https://happilyhealthyy.files.wordpress.com/2018/01/modernwomenjugglinghealthylifestyle_weightlossfoodsforwomen.jpg);background-size:cover" data-pin-url="https://www.drsnehaladsule.com/post/5-easy-ways-for-the-laziest-busiest-women-to-be-healthy"></div></div></a></div><div class="_3kcJF _2OwGv _2lmPI blog-post-image-overlay-background-color _1Twkt"><div class="blog-post-description-font"><div class="_3CJpQ blog-post-metadata-font post-header"><div class="gui6j"><div class="_2wbeQ"><span class="_25KXg"><span class="_2MJF1 user-name _1Gv8s blog-link-hover-color blog-text-color" data-hook="user-name">Dr. Snehal Adsule</span><div aria-label="Admin" data-hook="badge" class="Cu6fU"><svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" style="fill-rule:evenodd" class="blog-icon-fill"><path d="M15.3812,6.495914 L12.6789333,8.77258837 C12.6191333,8.84477644 12.5099333,8.85722265 12.4354,8.79997005 C12.4215333,8.79001308 12.4094,8.77756686 12.3998667,8.76429089 L9.78686667,6.14327115 C9.67766667,5.99225704 9.46186667,5.95491839 9.305,6.05863687 C9.26946667,6.08186981 9.23913333,6.11091099 9.21573333,6.14493065 L6.60013333,8.81075677 C6.5464,8.88626383 6.43893333,8.90534803 6.3592,8.85390366 C6.34446667,8.84394669 6.33146667,8.83233022 6.32106667,8.81905425 L3.61966667,6.50587098 C3.5018,6.36149485 3.28426667,6.33577266 3.13346667,6.44861837 C3.0494,6.51167921 3,6.60792997 3,6.70998895 L4,14 L15,14 L16,6.70169148 C16,6.51831719 15.8448667,6.36979232 15.6533333,6.36979232 C15.5476,6.36979232 15.4470667,6.41625821 15.3812,6.495914 Z"></path></svg></div></span><ul class="_1ReRx _2qkGq"><li><span class="post-metadata__date time-ago" data-hook="time-ago">Dec 18, 2018</span></li><li><div class="_2yYN5 e8kGb blog-separator-background-color"></div></li><li><span class="post-metadata__readTime" data-hook="time-to-read">3 min</span></li></ul></div></div></div></div><a class="_1NTXA _2OwGv _2lmPI" href="https://www.drsnehaladsule.com/post/5-easy-ways-for-the-laziest-busiest-women-to-be-healthy" target="_top"><div class="_3sZWk blog-post-title-font _2OwGv _2lmPI" data-hook="post-title"><h1 class="_2MNte post-title post-title__text blog-post-title-color blog-hover-container-element-color" datahook="post-title"><div style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2;">5 easy ways for the laziest &amp; busiest women to be healthy!</div></h1></div></a><div class="_1vZkh _2OwGv"><div class="_2Dps0 _3CI45 _2OwGv blog-separator-background-color"></div><div class="blog-post-description-font"><div class="fhim2 blog-post-description-font blog-text-color post-footer"><div class="_60xHi"><div class="MEOqZ post-stats" data-hook="post-stats"><span>2,883 views</span><a class="_3EfO5" href="https://www.drsnehaladsule.com/post/5-easy-ways-for-the-laziest-busiest-women-to-be-healthy" target="_top"><span>2 comments</span></a></div></div><div class="vP6YT"><button class="_3Bdxz post-footer__like-button"><span class="_3BTGY" data-hook="like-button-with-count__like-count"><span aria-hidden="true" class="_8J1xw like-button-with-count__like-count">25</span><div class="like-button _7QZoA" aria-label="25 likes. Post not marked as liked" role="button" data-hook="like-button"><div class="JuFMG"><div class="_3GAmo"></div></div><div class="_1UeeA"><div class="_3GAmo"></div></div><div class="_3KlwM"><div class="_3GAmo"></div></div><div class="uanT3"><div class="_3GAmo"></div></div><div class="_2x4gn"></div><svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" role="img"><path d="M9.44985848,15.5291774 C9.43911371,15.5362849 9.42782916,15.5449227 9.41715267,15.5553324 L9.44985848,15.5291774 Z M9.44985848,15.5291774 L9.49370677,15.4941118 C9.15422701,15.7147757 10.2318883,15.0314406 10.7297038,14.6971183 C11.5633567,14.1372547 12.3827081,13.5410755 13.1475707,12.9201001 C14.3829188,11.9171478 15.3570936,10.9445466 15.9707237,10.0482572 C16.0768097,9.89330422 16.1713564,9.74160032 16.2509104,9.59910798 C17.0201658,8.17755699 17.2088969,6.78363112 16.7499013,5.65913129 C16.4604017,4.81092573 15.7231445,4.11008901 14.7401472,3.70936139 C13.1379564,3.11266008 11.0475663,3.84092251 9.89976068,5.36430396 L9.50799408,5.8842613 L9.10670536,5.37161711 C7.94954806,3.89335486 6.00516066,3.14638251 4.31830373,3.71958508 C3.36517186,4.00646284 2.65439601,4.72068063 2.23964629,5.77358234 C1.79050315,6.87166888 1.98214559,8.26476279 2.74015555,9.58185512 C2.94777753,9.93163559 3.23221417,10.3090129 3.5869453,10.7089994 C4.17752179,11.3749196 4.94653811,12.0862394 5.85617417,12.8273544 C7.11233096,13.8507929 9.65858244,15.6292133 9.58280954,15.555334 C9.53938013,15.5129899 9.48608859,15.5 9.50042471,15.5 C9.5105974,15.5 9.48275828,15.5074148 9.44985848,15.5291774 Z"></path></svg></div></span></button></div></div></div></div></div></article></div></div><div class="_sg9w"><div class="_1GFPu"><article class="dJBp- _2OwGv _2lmPI blog-post-description-font blog-text-color blog-card-background-color blog-card-border-color post-list-item" tabindex="0" style="border-width:0" data-hook="post-list-item"><div style="height:454px;min-height:454px" class="T-BZz"><a tabindex="-1" href="https://www.drsnehaladsule.com/post/5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight" target="_top" class="blog-link-hover-color"><div class="_3RKAW _3-Hjr" data-hook="post-list-item-image"><div class="_1mvj7" style="background-image:url(https://happilyhealthyy.files.wordpress.com/2018/02/131ef8461eeb3cc11092432feaef74af-1.jpg);background-size:cover" data-pin-url="https://www.drsnehaladsule.com/post/5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight"></div></div></a></div><div class="_3kcJF _2OwGv _2lmPI blog-post-image-overlay-background-color _1Twkt"><div class="blog-post-description-font"><div class="_3CJpQ blog-post-metadata-font post-header"><div class="gui6j"><div class="_2wbeQ"><span class="_25KXg"><span class="_2MJF1 user-name _1Gv8s blog-link-hover-color blog-text-color" data-hook="user-name">Dr. Snehal Adsule</span><div aria-label="Admin" data-hook="badge" class="Cu6fU"><svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" style="fill-rule:evenodd" class="blog-icon-fill"><path d="M15.3812,6.495914 L12.6789333,8.77258837 C12.6191333,8.84477644 12.5099333,8.85722265 12.4354,8.79997005 C12.4215333,8.79001308 12.4094,8.77756686 12.3998667,8.76429089 L9.78686667,6.14327115 C9.67766667,5.99225704 9.46186667,5.95491839 9.305,6.05863687 C9.26946667,6.08186981 9.23913333,6.11091099 9.21573333,6.14493065 L6.60013333,8.81075677 C6.5464,8.88626383 6.43893333,8.90534803 6.3592,8.85390366 C6.34446667,8.84394669 6.33146667,8.83233022 6.32106667,8.81905425 L3.61966667,6.50587098 C3.5018,6.36149485 3.28426667,6.33577266 3.13346667,6.44861837 C3.0494,6.51167921 3,6.60792997 3,6.70998895 L4,14 L15,14 L16,6.70169148 C16,6.51831719 15.8448667,6.36979232 15.6533333,6.36979232 C15.5476,6.36979232 15.4470667,6.41625821 15.3812,6.495914 Z"></path></svg></div></span><ul class="_1ReRx _2qkGq"><li><span class="post-metadata__date time-ago" data-hook="time-ago">Dec 18, 2018</span></li><li><div class="_2yYN5 e8kGb blog-separator-background-color"></div></li><li><span class="post-metadata__readTime" data-hook="time-to-read">2 min</span></li></ul></div></div></div></div><a class="_1NTXA _2OwGv _2lmPI" href="https://www.drsnehaladsule.com/post/5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight" target="_top"><div class="_3sZWk blog-post-title-font _2OwGv _2lmPI" data-hook="post-title"><h1 class="_2MNte post-title post-title__text blog-post-title-color blog-hover-container-element-color" datahook="post-title"><div style="overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2;">5 scientific reasons Why it is much harder for women to lose weight??</div></h1></div></a><div class="_1vZkh _2OwGv"><div class="_2Dps0 _3CI45 _2OwGv blog-separator-background-color"></div><div class="blog-post-description-font"><div class="fhim2 blog-post-description-font blog-text-color post-footer"><div class="_60xHi"><div class="MEOqZ post-stats" data-hook="post-stats"><span>1,857 views</span><a class="_3EfO5" href="https://www.drsnehaladsule.com/post/5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight" target="_top"><span>1 comment</span></a></div></div><div class="vP6YT"><button class="_3Bdxz post-footer__like-button"><span class="_3BTGY" data-hook="like-button-with-count__like-count"><span aria-hidden="true" class="_8J1xw like-button-with-count__like-count">12</span><div class="like-button _7QZoA" aria-label="12 likes. Post not marked as liked" role="button" data-hook="like-button"><div class="JuFMG"><div class="_3GAmo"></div></div><div class="_1UeeA"><div class="_3GAmo"></div></div><div class="_3KlwM"><div class="_3GAmo"></div></div><div class="uanT3"><div class="_3GAmo"></div></div><div class="_2x4gn"></div><svg xmlns="http://www.w3.org/2000/svg" width="19" viewBox="0 0 19 19" role="img"><path d="M9.44985848,15.5291774 C9.43911371,15.5362849 9.42782916,15.5449227 9.41715267,15.5553324 L9.44985848,15.5291774 Z M9.44985848,15.5291774 L9.49370677,15.4941118 C9.15422701,15.7147757 10.2318883,15.0314406 10.7297038,14.6971183 C11.5633567,14.1372547 12.3827081,13.5410755 13.1475707,12.9201001 C14.3829188,11.9171478 15.3570936,10.9445466 15.9707237,10.0482572 C16.0768097,9.89330422 16.1713564,9.74160032 16.2509104,9.59910798 C17.0201658,8.17755699 17.2088969,6.78363112 16.7499013,5.65913129 C16.4604017,4.81092573 15.7231445,4.11008901 14.7401472,3.70936139 C13.1379564,3.11266008 11.0475663,3.84092251 9.89976068,5.36430396 L9.50799408,5.8842613 L9.10670536,5.37161711 C7.94954806,3.89335486 6.00516066,3.14638251 4.31830373,3.71958508 C3.36517186,4.00646284 2.65439601,4.72068063 2.23964629,5.77358234 C1.79050315,6.87166888 1.98214559,8.26476279 2.74015555,9.58185512 C2.94777753,9.93163559 3.23221417,10.3090129 3.5869453,10.7089994 C4.17752179,11.3749196 4.94653811,12.0862394 5.85617417,12.8273544 C7.11233096,13.8507929 9.65858244,15.6292133 9.58280954,15.555334 C9.53938013,15.5129899 9.48608859,15.5 9.50042471,15.5 C9.5105974,15.5 9.48275828,15.5074148 9.44985848,15.5291774 Z"></path></svg></div></span></button></div></div></div></div></div></article></div></div></div></div><div></div></div></div></div></div></div></div></div></div></div>
+
+      
+        <script>
+  var p = function(x) { return x.split('=', 2).map(decodeURIComponent); };
+  var r = function(acc, x) { acc[x[0]] = x[1]; return acc; };
+  var q = location.search.replace(/^\?/, '').split('&').map(p).reduce(r, {});
+  window.parent.postMessage(
+  '{"intent":"TPA2","callId":1,"type":"applicationLoadingStep","compId":"' + q.compId + '","deviceType":"' + q.deviceType + '","data":{"version":"1.94.0", "args":{"stage":"firstMeaningfulPaint", "stageNum":0}}}', '*'
+  );
+</script>
+
+      
+
+      
+        <script>
+  window.wixTpaWindowResize = {
+    elSelector: '#content-wrapper',
+    enableViewportFix: false,
+  };
+</script>
+<script>!function(){"use strict";!function(e){var n=e.wixTpaWindowResize;if(n){if(!n.elSelector)return console.error("Aborting window resize handler: you must specify a css selector");var i,t=decodeURIComponent(e.location.search).split("&").reduce(function(e,n){var i=n.split("=");return e[i[0]]=i[1],e},{}),o=320,r=n.elSelector,a=n.interval||160,s=n.minHeight||null,c=n.disableOnMobile||!1,l=n.enableViewportFix||!1,d="mobile"===t.deviceType,u=["editor","preview"].indexOf(t.viewMode)>-1,h=n.onInit||function(){},f=!1!==n.listenOnInit,v=!0===n.log;d&&c||(f&&g(),h({startListening:g,stopListening:m}))}function p(e){v&&console.log("window-resize-handler ",e)}function w(n){var i=n.scrollHeight*(d&&l?o/(u?o:function(){var n=!1;if(void 0!==e.orientation)n=90===e.orientation||-90===e.orientation;else{var i=e.matchMedia("(orientation: landscape)");n=!(!i||!0!==i.matches)}return n}()?Math.max(e.screen.width,e.screen.height):e.screen.width):1);return s?Math.max(i,s):i}function g(){var n=0;i=e.setInterval(function(){var i=e.document.querySelector(r);if(i){var t=w(i);n===t&&e.innerHeight===t||(n=t,function(n){e.Wix?(p("window.Wix.setHeight"),e.Wix.setHeight(n)):(p("window.parent.postMessage"),e.parent.postMessage('{"intent":"TPA2","callId":1,"type":"heightChanged","compId":"'+e.name+'","deviceType":"desktop","data":{"version":"1.66.0", "args":{"height":"'+n+'", "overflow":"false"}}}',"*"))}(t))}},a)}function m(){e.clearInterval(i)}}(window)}();
+</script>
+
+
+        <script src="./wix-private.min.js.download" crossorigin=""></script>
+
+
+        <script src="./react.production.min.js.download" crossorigin=""></script>
+<script src="./react-dom.production.min.js.download" crossorigin=""></script>
+
+
+        <script src="./ReactPlayer.js.download" crossorigin=""></script>
+
+
+        <script src="./custom-feed-widget.bundle.min.js.download" crossorigin="" defer=""></script>
+
+        
+
+        <script>
+          window.__INITIAL_STATE__ = {"appData":{"_id":"88ffe6d7-b19e-4efa-9a37-b9cad380c33e","label":"Welcome to Your Blog","menuLabel":"All Posts","description":"Review the posts below for some great tips. To edit this header go to Settings \u003E Categories.","language":"en","cover":{"original_file_name":"a27d24_85296a50517f45428acb01b9c4911ba1~mv2_d_3992_1513_s_2.jpg","file_name":"a27d24_85296a50517f45428acb01b9c4911ba1~mv2_d_3992_1513_s_2.jpg","width":3992,"height":1513},"overlayColor":{"color":"#ffffff","opacity":0.35},"backgroundColor":{"color":"#FFFFFF","opacity":1},"coverType":"image","textColor":{"color":"#000000","opacity":1},"postPageEnabled":true,"sendEmailsToSiteSubscribers":true,"sendEmailsToSiteMembers":true},"appSettings":{"colorPresets":[{"name":"color_1","value":"#323232","reference":"white\u002Fblack"},{"name":"color_2","value":"#ec1484","reference":"black\u002Fwhite"},{"name":"color_3","value":"#4c4c4c","reference":"primery-1"},{"name":"color_4","value":"#FFFFFF","reference":"primery-2"},{"name":"color_5","value":"#f0439d","reference":"primery-3"},{"name":"color_11","value":"#ffffff","reference":"color-1"},{"name":"color_12","value":"#cccccc","reference":"color-2"},{"name":"color_13","value":"#999999","reference":"color-3"},{"name":"color_14","value":"#656565","reference":"color-4"},{"name":"color_15","value":"#323232","reference":"color-5"},{"name":"color_16","value":"#f9b1d6","reference":"color-6"},{"name":"color_17","value":"#f262ad","reference":"color-7"},{"name":"color_18","value":"#ec1484","reference":"color-8"},{"name":"color_19","value":"#9e0d58","reference":"color-9"},{"name":"color_20","value":"#4f062c","reference":"color-10"},{"name":"color_21","value":"#dbdbdb","reference":"color-11"},{"name":"color_22","value":"#b7b7b7","reference":"color-12"},{"name":"color_23","value":"#949494","reference":"color-13"},{"name":"color_24","value":"#707070","reference":"color-14"},{"name":"color_25","value":"#4c4c4c","reference":"color-15"},{"name":"color_26","value":"#ffffff","reference":"color-16"},{"name":"color_27","value":"#FFFFFF","reference":"color-17"},{"name":"color_28","value":"#bfbfbf","reference":"color-18"},{"name":"color_29","value":"#808080","reference":"color-19"},{"name":"color_30","value":"#404040","reference":"color-20"},{"name":"color_31","value":"#f8a1ce","reference":"color-21"},{"name":"color_32","value":"#f0439d","reference":"color-22"},{"name":"color_33","value":"#d51177","reference":"color-23"},{"name":"color_34","value":"#8e0b4f","reference":"color-24"},{"name":"color_35","value":"#470628","reference":"color-25"}],"textPresets":{"Title":{"editorKey":"font_0","lineHeight":"1.41em","style":"normal","weight":"normal","size":"22px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 22px\u002F1.41em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Menu":{"editorKey":"font_1","lineHeight":"1.79em","style":"normal","weight":"normal","size":"14px","fontFamily":"raleway","value":"font:normal normal normal 14px\u002F1.79em raleway,sans-serif;"},"Page-title":{"editorKey":"font_2","lineHeight":"1.375em","style":"normal","weight":"normal","size":"28px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 28px\u002F1.375em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Heading-XL":{"editorKey":"font_3","lineHeight":"1.2em","style":"normal","weight":"normal","size":"88px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 88px\u002F1.2em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Heading-L":{"editorKey":"font_4","lineHeight":"1.25em","style":"normal","weight":"normal","size":"72px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 72px\u002F1.25em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Heading-M":{"editorKey":"font_5","lineHeight":"1.34em","style":"normal","weight":"normal","size":"50px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 50px\u002F1.34em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Heading-S":{"editorKey":"font_6","lineHeight":"1.35em","style":"normal","weight":"normal","size":"40px","fontFamily":"dinneuzeitgroteskltw01-_812426","value":"font:normal normal normal 40px\u002F1.35em dinneuzeitgroteskltw01-_812426,sans-serif;"},"Body-L":{"editorKey":"font_7","lineHeight":"1.67em","style":"normal","weight":"normal","size":"20px","fontFamily":"barlow-extralight","value":"font:normal normal normal 20px\u002F1.67em barlow-extralight,barlow,sans-serif;"},"Body-M":{"editorKey":"font_8","lineHeight":"1.75em","style":"normal","weight":"normal","size":"18px","fontFamily":"barlow-extralight","value":"font:normal normal normal 18px\u002F1.75em barlow-extralight,barlow,sans-serif;"},"Body-S":{"editorKey":"font_9","lineHeight":"1.875em","style":"normal","weight":"normal","size":"15px","fontFamily":"raleway","value":"font:normal normal normal 15px\u002F1.875em raleway,sans-serif;"},"Body-XS":{"editorKey":"font_10","lineHeight":"1.79em","style":"normal","weight":"normal","size":"14px","fontFamily":"raleway","value":"font:normal normal normal 14px\u002F1.79em raleway,sans-serif;"}},"updatedAt":1601840675003,"style":{"colors":{"post-backgroundColor":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-borderColor":{"themeName":"color-5","value":"rgba(50,50,50,0.25)"},"post-descriptionColo-textOnImager":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-descriptionColor":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-descriptionColor-standard":{"themeName":"color-5","value":"rgba(50,50,50,1)"},"post-hoverColor":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-hoverColor-standard":{"themeName":"color-8","value":"rgba(236,20,132,1)"},"post-imageOverlayColor":{"themeName":"color-5","value":"rgba(50,50,50,0.35)"},"post-titleColo-textOnImager":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-titleColor":{"themeName":"color-1","value":"rgba(255,255,255,1)"},"post-titleColor-standard":{"themeName":"color-5","value":"rgba(50,50,50,1)"},"widget-backgroundColor":{"themeName":"color-1","value":"rgba(255,255,255,0)"}},"numbers":{"list-layoutId":3,"list-numberOfRows":1,"list-postLimitType":1},"booleans":{"blog-isAuthorNameEnabled":true},"fonts":{"ignored-as-color-picker-does-not-support-info-text":{"family":"dinneuzeitgroteskltw01-_812426","displayName":"Heading 2","style":{"bold":false,"italic":false,"underline":false},"size":28,"preset":"Page-title","editorKey":"font_2","fontStyleParam":true,"value":"font:normal normal normal 28px\u002F1.375em dinneuzeitgroteskltw01-_812426,sans-serif;"},"post-descriptionFont":{"family":"proxima-n-w01-reg","style":{"bold":false,"italic":false,"underline":false},"size":16,"preset":"Custom","editorKey":"font_9","fontStyleParam":true,"displayName":"Paragraph 3","value":"font:normal normal normal 16px\u002F20px proxima-n-w01-reg,sans-serif;"},"post-descriptionFont-standard":{"family":"barlow-extralight","style":{"bold":false,"italic":false,"underline":false},"size":18,"preset":"Body-M","editorKey":"font_8","fontStyleParam":true,"displayName":"Paragraph 2","value":"font:normal normal normal 18px\u002F1.75em barlow-extralight,barlow,sans-serif;"},"post-descriptionFont-textOnImage":{"family":"raleway","style":{"bold":false,"italic":false,"underline":false},"size":15,"preset":"Body-S","editorKey":"font_9","fontStyleParam":true,"displayName":"Paragraph 3","value":"font:normal normal normal 15px\u002F1.875em raleway,sans-serif;"},"post-titleFont":{"family":"proxima-n-w01-reg","style":{"bold":false,"italic":false,"underline":false},"size":26,"preset":"Custom","editorKey":"font_0","fontStyleParam":true,"displayName":"Heading 1","value":"font:normal normal normal 26px\u002F32px proxima-n-w01-reg,sans-serif;"},"post-titleFont-standard":{"family":"dinneuzeitgroteskltw01-_812426","style":{"bold":false,"italic":false,"underline":false},"size":22,"preset":"Title","editorKey":"font_0","fontStyleParam":true,"displayName":"Heading 1","value":"font:normal normal normal 22px\u002F1.41em dinneuzeitgroteskltw01-_812426,sans-serif;"},"post-titleFont-textOnImage":{"family":"dinneuzeitgroteskltw01-_812426","style":{"bold":false,"italic":false,"underline":false},"size":22,"preset":"Title","editorKey":"font_0","fontStyleParam":true,"displayName":"Heading 1","value":"font:normal normal normal 22px\u002F1.41em dinneuzeitgroteskltw01-_812426,sans-serif;"}},"googleFontsCssUrl":"\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Barlow:n,b,i,bi|Raleway:n,b,i,bi|&subset=hebrew,arabic,latin","uploadFontFaces":"","cssUrls":["\u002F\u002Fstatic.parastorage.com\u002Fservices\u002Fsanta-resources\u002Fresources\u002Fviewer\u002Fuser-site-fonts\u002Fv5\u002Flanguages.css","\u002F\u002Fstatic.parastorage.com\u002Fservices\u002Fsanta-resources\u002Fresources\u002Fviewer\u002Fuser-site-fonts\u002Fv7\u002Flanguages.css","\u002F\u002Fstatic.parastorage.com\u002Fservices\u002Fsanta-resources\u002Fresources\u002Fviewer\u002Fuser-site-fonts\u002Fv8\u002Flanguages.css"]},"custom":{}},"commonSettings":{"postPageEnabled":true},"auth":{"currentUser":null,"isAuthenticated":false,"isAuthenticating":false},"communitiesContext":{"14cc59bc-f0b7-15b8-e1c7-89ce41d0e0c9":{"isInstalled":false}},"experiments":{"se_newBlogQuickMigration":"old","specs.wixBlog.MigrationPublishInBulk":"true","specs.wixBlog.UseRpcMemberAreaClient":"true","specs.wixBlog.CollectMetrics":"false","com.wixpress.communities.blog.subscription.experiments.AutoSubscribeToBlogNotifications":"true","specs.wixBlog.DoNotLoadPostContentInList":"false","specs.wixBlog.UseNextRCE":"false","specs.wixBlog.ValidateViewMode":"false","specs.wixBlog.RceExpandImage":"true","specs.wixBlog.RssFeedAlwaysResolveCoverImage":"true","specs.wixBlog.UseDuplexerNewUrl":"true","specs.wixBlog.UseRceTruncateContentService":"false","specs.wixBlog.RequestRateLimiter":"true","specs.wixBlog.MoveCreatePostButton":"true","specs.wixBlog.TagsPageSEO":"true","specs.wixBlog.PaywallBanner":"true","specs.wixBlog.UseRicos":"false","specs.blogImporter.EnableRollbackOfMigrationsBM":"false","specs.wixBlog.RemovePaidGroupIdsOnPlanArchived":"true","specs.wixBlog.ProvisionEditorXDemo":"true","specs.wixBlog.BlogFeedProGalleryLayouts":"true","specs.wixBlog.FetchPostMetadataSeparately":"true","specs.wixBlog.UseSiteQueryService":"false","specs.wixBlog.ImageCropSetting":"true","specs.wixBlog.TestBlogOOI":"false","specs.wixBlog.MigrationUseNodeFetchForNodeApi":"true","specs.wixBlog.UseFilesusrDomain":"false","specs.wixBlog.EnablePostReadingTimeBI":"false","specs.wixBlog.NextProdOOIViewer":"false","specs.wixBlog.UseLaterKafkaEventAspects":"false","specs.wixBlog.UseSiteMembersID":"false","specs.wixBlog.ArchiveMonthsLimit":"true","specs.wixBlog.RCEHTMLPluginWrapper":"true"},"isAppLoaded":false,"isDemoMode":false,"isLoaded":{"feed-posts":true},"isLoading":{"feed-posts":false},"pagination":{"comments":{"entitiesByPage":{}},"posts":{"entitiesByPage":{"1":["5c191cdfaf4d06001a79810c","5c191c3c017b1b001a12ca70"]},"currentPage":1,"pageSize":2,"entityCount":4},"posts-unpublished":{"entitiesByPage":{}},"posts-published":{"entitiesByPage":{}},"posts-scheduled":{"entitiesByPage":{}},"posts-deleted":{"entitiesByPage":{}}},"posts":{"5c191cdfaf4d06001a79810c":{"_id":"5c191cdfaf4d06001a79810c","id":"ff44f326-dc07-4676-897d-1490d21a6b7b","instanceId":"88ffe6d7-b19e-4efa-9a37-b9cad380c33e","status":"published","categoryIds":[],"createdDate":"2018-12-18T16:14:23.469Z","lastPublishedDate":"2018-12-18T16:19:50.610Z","slugs":["5-easy-ways-for-the-laziest-busiest-women-to-be-healthy"],"seoSlug":"5-easy-ways-for-the-laziest-busiest-women-to-be-healthy","ownerId":"5bdc2f7cf77541001aa858b4","ownerSiteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","lastWriterId":"5bdc2f7cf77541001aa858b4","lastWriterSiteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","isPinned":false,"isCommentsDisabled":false,"likeCount":25,"viewCount":2883,"totalComments":2,"lastActivityDate":"2020-09-17T07:01:01.869Z","isFeatured":false,"firstPublishedDate":"2018-12-18T16:19:50.610Z","seoShowInSearch":true,"seoShowSnippetInSearch":true,"heroImage":{"src":null,"isCustom":false,"isEnabled":false},"tagIds":[],"relatedPostIds":[],"title":"5 easy ways for the laziest & busiest women to be healthy!","timeToRead":3,"excerpt":"📷Career, office, home, kids, food... Isn't it too much to take care of??? And in this hectic process have you ever tried following a (he...","coverImage":{"shouldRender":true,"imageMetadata":"https:\u002F\u002Fhappilyhealthyy.files.wordpress.com\u002F2018\u002F01\u002Fmodernwomenjugglinghealthylifestyle_weightlossfoodsforwomen.jpg","src":"https:\u002F\u002Fhappilyhealthyy.files.wordpress.com\u002F2018\u002F01\u002Fmodernwomenjugglinghealthylifestyle_weightlossfoodsforwomen.jpg","isEnabled":true,"isCustom":false,"isResolved":true},"slug":"5-easy-ways-for-the-laziest-busiest-women-to-be-healthy","isLiked":false,"owner":{"name":"Dr. Snehal Adsule","image":{"id":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg","url":"","height":1280,"width":1280,"file_name":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg","original_file_name":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg"},"cover":null,"siteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","isOwner":true,"isBlocked":false,"appStore":{"14bcded7-0066-7c35-14d7-466cb3f09103":{"permissions":{"role":"owner"}}},"_id":"5bdc2f7cf77541001aa858b4","slug":"drsnehaladsule","privacyStatus":"PUBLIC"},"isSubscribed":false},"5c191c3c017b1b001a12ca70":{"_id":"5c191c3c017b1b001a12ca70","id":"99fe4e45-75f8-419e-a241-7e46d840eef6","instanceId":"88ffe6d7-b19e-4efa-9a37-b9cad380c33e","status":"published","categoryIds":[],"createdDate":"2018-12-18T16:11:40.721Z","lastPublishedDate":"2018-12-18T16:12:44.447Z","slugs":["5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight"],"seoSlug":"5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight","ownerId":"5bdc2f7cf77541001aa858b4","ownerSiteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","lastWriterId":"5bdc2f7cf77541001aa858b4","lastWriterSiteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","isPinned":false,"isCommentsDisabled":false,"likeCount":12,"viewCount":1857,"totalComments":1,"lastActivityDate":"2019-09-18T02:40:40.346Z","isFeatured":false,"firstPublishedDate":"2018-12-18T16:12:44.447Z","seoShowInSearch":true,"seoShowSnippetInSearch":true,"heroImage":{"src":null,"isCustom":false,"isEnabled":false},"tagIds":[],"relatedPostIds":[],"title":"5 scientific reasons Why it is much harder for women to lose weight??","timeToRead":2,"excerpt":"📷Remember that time when you & your partner started this journey together but he smoothly went too ahead & you are still standing here &...","coverImage":{"shouldRender":true,"imageMetadata":"https:\u002F\u002Fhappilyhealthyy.files.wordpress.com\u002F2018\u002F02\u002F131ef8461eeb3cc11092432feaef74af-1.jpg","src":"https:\u002F\u002Fhappilyhealthyy.files.wordpress.com\u002F2018\u002F02\u002F131ef8461eeb3cc11092432feaef74af-1.jpg","isEnabled":true,"isCustom":false,"isResolved":true},"slug":"5-scientific-reasons-why-it-is-much-harder-for-women-to-lose-weight","isLiked":false,"owner":{"name":"Dr. Snehal Adsule","image":{"id":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg","url":"","height":1280,"width":1280,"file_name":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg","original_file_name":"70c8a9_a04d5ed37e354e94963621bbc9c85d1f~mv2_d_1280_1280_s_2.jpeg"},"cover":null,"siteMemberId":"70c8a94f-f301-4af4-9169-4399417c980d","isOwner":true,"isBlocked":false,"appStore":{"14bcded7-0066-7c35-14d7-466cb3f09103":{"permissions":{"role":"owner"}}},"_id":"5bdc2f7cf77541001aa858b4","slug":"drsnehaladsule","privacyStatus":"PUBLIC"},"isSubscribed":false}},"routing":{"locationBeforeTransitions":{"pathname":"\u002Fcustom-feed-widget","search":"","hash":"","action":"POP","key":null,"query":{}}},"searchParams":{"cacheKiller":"1601487670149","commonConfig":"{\"brand\":\"wix\",\"consentPolicy\":{\"essential\":true,\"functional\":true,\"analytics\":true,\"advertising\":true,\"dataToThirdParty\":true},\"consentPolicyHeader\":{},\"bsi\":\"7cc14ff8-7f85-4067-bc1f-8a24fb9b6106|1\"}","compId":"comp-jqq8c5j6","currency":"INR","deviceType":"desktop","height":"494","instance":"dRdk_2POVqshyE_h__VH1AC0SxZk-jw1WszaWicLD8g.eyJpbnN0YW5jZUlkIjoiODhmZmU2ZDctYjE5ZS00ZWZhLTlhMzctYjljYWQzODBjMzNlIiwiYXBwRGVmSWQiOiIxNGJjZGVkNy0wMDY2LTdjMzUtMTRkNy00NjZjYjNmMDkxMDMiLCJtZXRhU2l0ZUlkIjoiZDIwYjVkYTctOTdhNi00MTk2LThmNjQtM2E1NWQwZGNiYzBhIiwic2lnbkRhdGUiOiIyMDIwLTEwLTA0VDE5OjQ0OjMyLjQ2N1oiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiIwMWE5ZWM0NS04ODc1LTRmNGQtOTE0Yi1lNWM3MGUzN2FkNjUiLCJhaWQiOiJkMjY1OTI4Yi03Njk3LTQ0OTEtYTNhMi05YjQ0NDQ3MWY3YjUiLCJiaVRva2VuIjoiNWFmNGJiNzAtMjYzOC0wZjZjLTE1NTMtODM5ZjAzNWM3ZjM0Iiwic2l0ZU93bmVySWQiOiI3MGM4YTk0Zi1mMzAxLTRhZjQtOTE2OS00Mzk5NDE3Yzk4MGQifQ","locale":"en","pageId":"e0w6v","siteRevision":"1587","tz":"Asia\u002FKolkata","viewMode":"site","viewerCompId":"comp-jqq8c5j6","width":"980"},"users":{},"viewMode":"site"};
+          window.__CONFIG__ = {"bundleName":"custom-feed-widget","fedopsAppName":"communities-blog-custom-feed-widget","imageHost":"static.wixstatic.com","videoHost":"video.wixstatic.com","sectionUrl":"https:\u002F\u002Fwww.drsnehaladsule.com\u002Fblogs","instanceId":"88ffe6d7-b19e-4efa-9a37-b9cad380c33e","duplexer":{"url":"apps.wix.com\u002Fwix-duplexer-sockets-server","key":"8dd942aa-6255-4bb0-b004-8bd6cf2f6b35"},"isInEditor":false,"isInPreview":false,"categoryPath":"categories","useCategoryMenuLabelForMetadataTitle":false,"editorConfig":{"enableLinkify":true,"mediaToken":null},"isDevMode":false,"postPageSectionUrl":"https:\u002F\u002Fwww.drsnehaladsule.com\u002Fpost"};
+          window.__INITIAL_I18N__ = {"localeData":{"account-suspended.account-suspended":"Account Suspended","account-suspended.contact-owner":"For further information get in touch with the site owner.","badge.admin":"Admin","badge.owner":"Admin","badge.editor":"Editor","badge.writer":"Writer","comment-count.label_plural":"{{count, number}} comments","comment-count.label":"{{count, number}} comment","counter.count":"{{count, number}}","date":"{{time, date}}","fullDate":"{{time, fullDate}}","like-button.is-liked":"Post marked as liked","like-button.is-unliked":"Post not marked as liked","like-button.total-likes_plural":"likes.","like-button.total-likes":"like.","no-posts-feed.on-the-way":"Posts Are Coming Soon","no-posts-feed.stay-tuned":"Stay tuned...","time-relative":"{{time, timeRelative}}","time-to-read.label":"{{minutes}} min read","time-to-read.short-label":"{{minutes}} min","video-embed.disabled-tooltip":"To play this video, view this post from your live site.","video-embed.load-video":"Load video","view-count.label_plural":"{{count, number}} views","view-count.label":"{{count, number}} view","write-comment.write-a-comment":"Write a comment","comment-count.icon-aria-label":"Comment count","like-button.comment-is-liked":"Comment marked as liked","like-button.comment-is-unliked":"Comment not marked as liked","aria-label.authors-picture":"Author's picture"},"lang":"en"};
+          window.__STATICS_VERSION__ = '1.1928.0';
+          window.__WS_CONFIG__ = {"url":"https:\u002F\u002Fforums.wix.com\u002Fwix-ws-server","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0YW5jZUlkIjoiODhmZmU2ZDctYjE5ZS00ZWZhLTlhMzctYjljYWQzODBjMzNlIiwiYXBpS2V5IjoiNTQ3NmQ5MjMtYWVmMy00NjMxLWFhM2ItODg4NjBmYmUxYjg4IiwiY2hhbm5lbHMiOlt7Im1hc2siOiJpbnN0YW5jZS04OGZmZTZkNy1iMTllLTRlZmEtOWEzNy1iOWNhZDM4MGMzM2UvYmxvZyIsInJlcXVpcmVzQXV0aCI6bnVsbCwicmVjZWl2ZU93bk1lc3NhZ2VzIjpmYWxzZX0seyJtYXNrIjoiaW5zdGFuY2UtODhmZmU2ZDctYjE5ZS00ZWZhLTlhMzctYjljYWQzODBjMzNlL2NhdGVnb3J5LShcXHcpIiwicmVxdWlyZXNBdXRoIjpudWxsLCJyZWNlaXZlT3duTWVzc2FnZXMiOmZhbHNlfSx7Im1hc2siOiJpbnN0YW5jZS04OGZmZTZkNy1iMTllLTRlZmEtOWEzNy1iOWNhZDM4MGMzM2UvcG9zdC0oXFx3KSIsInJlcXVpcmVzQXV0aCI6bnVsbCwicmVjZWl2ZU93bk1lc3NhZ2VzIjpmYWxzZX1dLCJwcmVzZW5jZURhdGEiOnsibmFtZSI6ImFub255bW91cyJ9LCJpYXQiOjE2MDE4NDA2NzR9.OEy-XjplBIEbLRE6xJf9fmAqrTIQkCvxhnJZXy3Tdy4","communityToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnN0YW5jZUlkIjoiODhmZmU2ZDctYjE5ZS00ZWZhLTlhMzctYjljYWQzODBjMzNlIiwiYXBpS2V5IjoiYzhmZWZlZDctNjVmNi00Mzc4LWJiZDQtMjAzZTI1NmUzNmIwIiwiY2hhbm5lbHMiOlt7Im1hc2siOiJjb21tdW5pdHktdW5kZWZpbmVkIiwicmVxdWlyZXNBdXRoIjpudWxsLCJyZWNlaXZlT3duTWVzc2FnZXMiOmZhbHNlfV0sInByZXNlbmNlRGF0YSI6eyJuYW1lIjoiYW5vbnltb3VzIn0sImlhdCI6MTYwMTg0MDY3NH0.Nu3VxBMioU2rnwdbr4tkand4HrNsl0FhReQ5_ivLwHI"};
+          window.__LOCALE__ = "en";
+          window.__BASE_PATH__ = 'https://social-blog.wix.com';
+          window.__API_BASE_URL__ = 'https://apps.wix.com/_api/communities-blog-node-api';
+          window.__CLIENT_BASE_PATH__ = '';
+          window.__IS_DEV_MODE__ = false;
+        </script>
+      
+    
+  
+
+</body></html>

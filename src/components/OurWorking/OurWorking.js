@@ -58,8 +58,8 @@ const OurWorking = () => {
     return (
         <React.Fragment>
             <div className={classes.onmobileviewhead}>
-                <h3 class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-24 sm:mb-16">
-                    OUR <span class="text-indigo-600"> WORK</span>
+                <h3 style={{fontFamily: 'Paytone One'}} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">
+                    OUR <span class="text-indigo-600" style={{color:'#D00F7F'}}> WORK</span>
                 </h3>
             </div>
             <div className="container mx-auto flex px-5 md:py-0  py-0 md:flex-row flex-col items-center bg-img-css" style={{
@@ -68,8 +68,8 @@ const OurWorking = () => {
                 <div className={classes.hideonmobile}>
                     <div className="lg:flex-grow lg:ml-16 md:w-1/2 lg:pr-4 md:ml-16 md:mr-12  md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                         {/* <img className="object-cover object-center rounded" style={{ width: '55rem' }} alt="hero" src={hero} /> */}
-                        <h3 class="text-3xl md:text-5xl sm:text-5xl md:mt-4 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
-                            OUR <span class="text-indigo-600"> WORK</span>
+                        <h3 style={{fontFamily: 'Paytone One'}} class="text-3xl md:text-5xl sm:text-5xl md:mt-4 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                            OUR <span class="text-indigo-600" style={{color:'#D00F7F'}}> WORK</span>
                         </h3>
                         <p className='text-1xl lg:mr-0 font-black' style={{color: 'white'}}>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -94,7 +94,7 @@ const OurWorking = () => {
                         }}>
                             <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -103,19 +103,19 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '10px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
-                                        <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <Typography style={{ fontFamily: 'Open Sans'}} className='font-black' variant="body2" color="textSecondary" component="p">
+                                            <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
 
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -124,8 +124,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -135,7 +135,7 @@ const OurWorking = () => {
                                 </Card>
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -144,8 +144,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -155,7 +155,7 @@ const OurWorking = () => {
                                 </Card>
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -164,8 +164,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -175,7 +175,7 @@ const OurWorking = () => {
                                 </Card>
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -184,8 +184,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -196,7 +196,7 @@ const OurWorking = () => {
 
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -205,8 +205,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -216,7 +216,7 @@ const OurWorking = () => {
                                 </Card>
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -225,8 +225,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -237,7 +237,7 @@ const OurWorking = () => {
 
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -246,8 +246,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -258,7 +258,7 @@ const OurWorking = () => {
 
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -267,8 +267,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your
@@ -279,7 +279,7 @@ const OurWorking = () => {
 
 
                                 <Card className={classes.root} style={{
-                                    position: 'relative', left: '0', border: '3px solid #f9ae08',
+                                    position: 'relative', left: '0', border: '10px solid #fff',
                                     borderBottom: 'none'
                                 }}>
                                     <CardMedia
@@ -288,8 +288,8 @@ const OurWorking = () => {
                                         title="Paella dish"
                                     />
                                     <CardContent style={{
-                                        border: '1px solid #f9ae08',
-                                        borderTop: 'none', borderBottom: '3px solid #f9ae08'
+                                        border: '1px solid #fff',
+                                        borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             This impressive paella is a perfect party dish and a fun meal to cook together with your

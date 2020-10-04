@@ -74,7 +74,10 @@ const headerStyle = {
     // }
   },
   appResponsive: {
-    margin: "20px 10px"
+    margin: "20px 10px",
+    textTransform: 'uppercase !important',
+    fontWeight: '200 !important',
+    fontFamily: 'Paytone One'
   },
   primary: {
     backgroundColor: primaryColor,
@@ -131,12 +134,12 @@ const headerStyle = {
       "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)"
   },
   white: {
-    color: '#fff',
+    color: '#000',
     border: '0',
     padding: '0.625rem 0',
     boxShadow: '0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)',
     marginBottom: '20px',
-    backgroundColor: '#aa076b !important'
+    backgroundColor: '#FFF !important'
   },
   drawerPaper: {
     border: "none",
