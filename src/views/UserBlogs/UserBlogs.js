@@ -41,7 +41,6 @@ const UserBlog = () => {
             .getBlogList(api_url)
             .then((res) => {
                 setBloga(res.data)
-                console.log('All Announcements', res)
             })
     }, [])
 
