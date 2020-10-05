@@ -103,7 +103,7 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu />
+            <Menu style={{color: '#D00F7F'}} />
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -182,16 +182,18 @@ export default function Header(props) {
                   Contact Us</DirectLinkDiv>
 
               </ListItem>
+              <Divider />
               <Link to="/TrialBlog">
                 <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
                   Blogs
               </ListItem>
               </Link>
               <Divider />
-
+              <Link to="/YoutubeVideos">
               <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
                 Youtube
               </ListItem>
+              </Link>
               <Divider />
 
               {/* {['Home', 'About', 'Our Work', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
@@ -206,19 +208,24 @@ export default function Header(props) {
             </List>
             <List>
               <ListItem style={{ width: '15rem',fontFamily: 'Paytone One' }}>
-                <Button variant="contained" color="primary" style={{ width: '100%' }}>
+                <Button variant="contained" color="primary" style={{ width: '100%',paddingRight: '20px' }}>
                   <Link to="/login" className={classes.dropdownLink}>
                     <span style={{fontFamily: 'Paytone One'}}>Sign In</span>
                   </Link>
                 </Button>
-              </ListItem>
-              <ListItem style={{ width: '15rem',fontFamily: 'Paytone One'}}>
                 <Button variant="contained" color="secondary" style={{ width: '100%' }}>
                   <Link to="/signup" className={classes.dropdownLink}>
                   <span style={{fontFamily: 'Paytone One'}}> Sign Up</span>
                   </Link>
                 </Button>
               </ListItem>
+              {/* <ListItem style={{ width: '15rem',fontFamily: 'Paytone One'}}>
+                <Button variant="contained" color="secondary" style={{ width: '100%' }}>
+                  <Link to="/signup" className={classes.dropdownLink}>
+                  <span style={{fontFamily: 'Paytone One'}}> Sign Up</span>
+                  </Link>
+                </Button>
+              </ListItem> */}
             </List>
           </div>
         </Drawer>

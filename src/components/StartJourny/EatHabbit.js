@@ -16,8 +16,8 @@ class EatHabbit extends Component {
     render() {
         return (
             <React.Fragment>
-                <h3 class="text-3xl sm:text-5xl md:mt-0 md:mb-0 md:text-3xl leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
-                WHAT  <span class="text-indigo-600"> ARE YOUR CURRENT EATING HABITS ?</span>
+                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:mt-0 md:mb-0 md:text-3xl leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
+                WHAT  <span style={{color:'#D00F7F'}}> ARE YOUR CURRENT EATING HABITS ?</span>
                 </h3>
                 <section class="text-gray-700 body-font">
                     <div class="container px-5 py-4 md:py-24 mx-auto">

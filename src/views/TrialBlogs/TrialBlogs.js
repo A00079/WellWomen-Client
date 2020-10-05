@@ -34,7 +34,7 @@ const TrialBlog = () => {
                     brand="Well Woman"
                     rightLinks={<HeaderLinks />}
                     fixed
-                    color="darkpink"
+                    color="white"
                     changeColorOnScroll={{
                         height: 400,
                         color: "white"

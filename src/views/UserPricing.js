@@ -57,13 +57,16 @@ const Pricing = () => {
                                         </svg>
                                     </span>Mixtape chillwave tumeric
           </p>
+                            <a href='https://www.instamojo.com/wellwomanclinic/'>
                                 <button
-                                    className={activePlan === 'free' ? 'flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded' : 'flex items-center mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded'}
+                                    style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
+                                    className={activePlan === 'free' ? 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none  rounded' : 'flex items-center mt-auto text-white border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded'}
                                 >Get Plan
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
                                 </button>
+                                </a>
                                 <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
                             </div>
                         </div>
@@ -105,13 +108,16 @@ const Pricing = () => {
                                         </svg>
                                     </span>Mixtape chillwave tumeric
           </p>
+          <a href='https://www.instamojo.com/wellwomanclinic/'>
                                 <button
-                                    className={activePlan === 'popular' ? 'flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded' : 'flex items-center mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded'}
+                                    style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
+                                    className={activePlan === 'popular' ? 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none rounded' : 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none  rounded'}
                                 >Get Plan
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
                                 </button>
+                                </a>
                                 <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
                             </div>
                         </div>
@@ -160,18 +166,20 @@ const Pricing = () => {
                                         </svg>
                                     </span>Mixtape chillwave tumeric
           </p>
+          <a href='https://www.instamojo.com/wellwomanclinic/'>
                                 <button
-
-                                    className={activePlan === 'BUSINESS' ? 'flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded' : 'flex items-center mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded'}
+                                    style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
+                                    className={activePlan === 'BUSINESS' ? 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none  rounded' : 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none  rounded'}
                                 >Get Plan
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
                                 </button>
+                                </a>
                                 <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
                             </div>
                         </div>
-                        <div class="p-4 xl:w-1/4 md:w-1/2 w-full cursor-pointer" onClick={() => handelActivePlan('SPECIAL')}>
+                        {/* <div class="p-4 xl:w-1/4 md:w-1/2 w-full cursor-pointer" onClick={() => handelActivePlan('SPECIAL')}>
                             <div
 
                                 className={activePlan === 'SPECIAL' ? 'h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden' : 'h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden'}
@@ -218,7 +226,8 @@ const Pricing = () => {
                                     </span>Mixtape chillwave tumeric
           </p>
                                 <button
-                                    className={activePlan === 'SPECIAL' ? 'flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded' : 'flex items-center mt-auto text-white bg-gray-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-600 rounded'}
+                                    style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
+                                    className={activePlan === 'SPECIAL' ? 'flex items-center mt-auto text-white  border-0 py-2 px-4 w-full focus:outline-none  rounded' : 'flex items-center mt-auto text-white border-0 py-2 px-4 w-full focus:outline-none  rounded'}
                                     >Get Plan
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -226,7 +235,7 @@ const Pricing = () => {
                                 </button>
                                 <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

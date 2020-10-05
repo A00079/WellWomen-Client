@@ -26,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
     },
     screenheight: {
         height: '100%',
+    },
+    hideonMobile:{
+        [theme.breakpoints.down("sm")]: {
+            display: 'none'
+        }
     }
 }));
 
@@ -121,7 +126,7 @@ const UserBlog = () => {
 
                 </nav> */}
                 <main
-                    class="my-1 pt-2 pb-2 px-10 flex-1 bg-gray-200 dark:bg-black rounded-l-lg
+                    class="my-1 pt-2 pb-2 px-0 lg:px-10 md:px-10 flex-1 bg-gray-200 dark:bg-black rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto">
                     <div class="flex flex-col capitalize text-3xl">
                         <span class="font-semibold">hello,</span>
@@ -401,10 +406,11 @@ const UserBlog = () => {
                         </div> */}
                     </div>
                 </main>
-                <aside
-                    class="w-1/4 my-1 mr-1 px-6 py-4 flex flex-col bg-gray-200 dark:bg-black
-		dark:text-gray-400 rounded-r-lg overflow-y-auto">
+                <aside className={classes.hideonMobile}>
+                        <div className='class="w-1/4 my-1 mr-1 px-6 py-4 flex flex-col bg-gray-200 dark:bg-black
+		dark:text-gray-400 rounded-r-lg overflow-y-auto"'>
 
+                        
                     <div class="flex items-center justify-between">
 
                         <div class="flex flex-col text-center w-full mb-10">
@@ -497,7 +503,7 @@ const UserBlog = () => {
                     {/* <div class="mt-4 flex justify-center capitalize text-blue-600">
                         <a href="expenses-dashboard/">see all</a>
                     </div> */}
-
+</div>
                 </aside>
 
             </div>

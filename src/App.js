@@ -22,7 +22,7 @@ import TrialBlog from "../src/views/TrialBlogs/TrialBlogs.js";
 import SingleBlog from "../src/views/UserBlogs/SingleBlog.js";
 import Pricing from "../src/views/UserPricing.js";
 import PrivacyPolicy from '../src/views/PrivacyPolicy.js';
-
+import SingleAboutUs from '../src/views/AboutUs';
 
 
 var hist = createBrowserHistory();
@@ -58,8 +58,11 @@ function App() {
         <Route exact path="/startjourney" component={StartJourney} />
         <Route exact path="/TrialBlog" component={TrialBlog} />
         <Route exact path="/privacypolicy" component={PrivacyPolicy} />
+        <Route exact path="/singleaboutus" component={SingleAboutUs} />
+        <Route exact path="/dashboard" component={Dashboard} />
+
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           {/* <PrivateRoute exact path="/privacypolicy" component={PrivacyPolicy} /> */}
           <PrivateRoute exact path="/pricing" component={Pricing} />
           <PrivateRoute exact path="/blog/:id" component={SingleBlog} />

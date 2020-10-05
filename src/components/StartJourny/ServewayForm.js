@@ -64,6 +64,7 @@ const SubmitForm = (props) => {
     }, [props])
 
     const handelFormSubmit = () => {
+
         console.log('name', name)
         console.log('email', email)
         console.log('phone', phone)
@@ -73,10 +74,10 @@ const SubmitForm = (props) => {
             'name': name,
             'email': email,
             'phone': phone,
-            'activity':props.journeydata.user_activity,
-            'age':props.journeydata.user_age,
-            'eatinghabbit':props.journeydata.user_eatinghabbit,
-            'goal':props.journeydata.user_goal
+            'activity': props.journeydata.user_activity,
+            'age': props.journeydata.user_age,
+            'eatinghabbit': props.journeydata.user_eatinghabbit,
+            'goal': props.journeydata.user_goal
         }
         PostSerway
             .postSerway(api_url, data)
@@ -87,6 +88,7 @@ const SubmitForm = (props) => {
                     document.getElementById('phoneno').value = '';
                     document.getElementById('email').value = '';
                 }
+                props.history.push('/singleaboutus')
                 console.log("Response Data...", response);
             });
     }
@@ -96,8 +98,8 @@ const SubmitForm = (props) => {
             <Notifications options={{ zIndex: 9999, top: '0px' }} />
             <CssBaseline />
             <div className={classes.paper} style={{ marginTop: '0px' }}>
-                <h1 className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST FINISHED!</h1>
-                <h1 className="text-center  text-1xl mt-8 tracking-wide relative">
+                <h1 style={{ fontFamily: 'Paytone One' }} className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST <span style={{ color: '#D00F7F' }}>FINISHED!</span></h1>
+                <h1 style={{ fontFamily: 'Open Sans' }} className="text-center  text-1xl mt-8 tracking-wide relative">
                     The next page will take you to the optimal program designed according to your answers.
                         </h1>
                 <form className={classes.form} noValidate>
@@ -142,6 +144,7 @@ const SubmitForm = (props) => {
                         </Grid>
                     </Grid>
                     <Button
+                        style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }}
                         onClick={handelFormSubmit}
                         type="button"
                         fullWidth

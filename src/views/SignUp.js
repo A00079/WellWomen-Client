@@ -11,7 +11,7 @@ import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import { loginUser, googleRegister } from "../actions/authActions.js";
-
+import logo from '../../src/assets/img/logo.png';
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +40,7 @@ class SignUp extends Component {
       if (nextProps.errors.name) {
         this.setState({ sendingEmail: false })
       }
-      if(nextProps.errors.email === 'Email already exists'){
+      if (nextProps.errors.email === 'Email already exists') {
         this.setState({ sendingEmail: false })
       }
       this.setState({
@@ -115,8 +115,11 @@ class SignUp extends Component {
 
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
               <div class="mt-0 flex flex-col items-center">
-                <h1 class="text-2xl xl:text-3xl font-extrabold">
-                  Sign up for Curvicare
+                <h3  class="text-3xl sm:text-5xl md:text-4xl md:mt-0 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-0 sm:mb-10">
+                  <Link to='/'><img width='100px' src={logo} /></Link>
+                </h3>
+                <h1 style={{ fontFamily: 'Paytone One' }} className="text-2xl xl:text-3xl font-extrabold">
+                  <span>Sign Up For</span> <span style={{color:'#D00F7F'}}>Curvicare</span>
                 </h1>
                 <div class="w-full flex-1 mt-8">
                   <div class="flex flex-col items-center">
@@ -175,7 +178,7 @@ class SignUp extends Component {
                         type="text"
                         className={classnames("", {
                           invalid: errors.name,
-                          "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white": true
+                          "px-16 py-4 md:px-2 ml-4 md:ml-0 lg:px-10  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white": true
                         })}
                         placeholder="Name"
                       />
@@ -190,7 +193,7 @@ class SignUp extends Component {
                           type="email"
                           className={classnames("", {
                             invalid: errors.email,
-                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0 lg:px-10 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                           })}
                           placeholder="Email"
                         />
@@ -205,7 +208,7 @@ class SignUp extends Component {
                           type="password"
                           className={classnames("", {
                             invalid: errors.password,
-                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0 lg:px-10 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                           })}
                           placeholder="Password"
                         />
@@ -220,7 +223,7 @@ class SignUp extends Component {
                           type="password"
                           className={classnames("", {
                             invalid: errors.password2,
-                            "px-16 py-4 md:px-2 ml-4 md:ml-0  rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
+                            "px-16 py-4 md:px-2 ml-4 md:ml-0 lg:px-10 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-0": true
                           })}
                           placeholder="Confirm Password"
                         />
@@ -228,6 +231,7 @@ class SignUp extends Component {
                       </div>
                     </div>
                     <button
+                      style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
                       type='submit'
                       class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                     >
@@ -255,6 +259,7 @@ class SignUp extends Component {
                     </button>
                     <Link to="/">
                       <button
+                        style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF' }}
                         type='submit'
                         class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                       >
@@ -264,14 +269,14 @@ class SignUp extends Component {
                             </span>
                       </button>
                     </Link>
-                    <p className="mt-4" style={{ float: 'right' }}>Already have an account? <Link to="/login" className="text-blue-600">Sign In</Link></p>
-                    <p class="mt-12 text-xs text-gray-600 text-center">
-                      I agree to abide by templatana's
-                <a href="#" class="border-b border-gray-500 border-dotted">
-                        Terms of Service
-                </a>
+                    <p className="mt-4" style={{ float: 'right' }} style={{fontFamily: 'Open Sans',float: 'right'}}>Already have an account? <Link to="/login" className="text-blue-600">Sign In</Link></p>
+                    <p style={{fontFamily: 'Open Sans'}} class="mt-12 text-xs text-gray-600 text-center">
+                      I agree to the  
+                 <a href="#" style={{fontFamily: 'Open Sans'}} class="border-b border-gray-500 border-dotted">
+                         Terms of Service
+                 </a>
                         and its
-                <a href="#" class="border-b border-gray-500 border-dotted">
+                <a href="#" style={{fontFamily: 'Open Sans'}} class="border-b border-gray-500 border-dotted">
                         Privacy Policy
                 </a>
                     </p>
