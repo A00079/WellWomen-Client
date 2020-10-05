@@ -26,6 +26,7 @@ import WorkingCards from "../components/OurWorking/OurWorkingCards.js";
 import PartOneGallery from '../components/Gallary/PartoneGallery.js';
 import FullGallery from '../components/Gallary/FullGallary.js';
 import Clients from '../components/Testimonials/OurClients.js';
+import TrialBlog from '../views/UserBlogs/TrialBlogs.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -100,9 +101,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <PartOneGallery />
                 </div>
-                {/* <div data-aos="fade-up" >
-                    <FullGallery />
-                </div> */}
+                <div data-aos="fade-up" >
+                    <TrialBlog />
+                </div>
                 <div data-aos="fade-up" >
                     <AppInfo />
                 </div>
