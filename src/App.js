@@ -59,11 +59,9 @@ function App() {
         <Route exact path="/TrialBlog" component={TrialBlog} />
         <Route exact path="/privacypolicy" component={PrivacyPolicy} />
         <Route exact path="/singleaboutus" component={SingleAboutUs} />
-        <Route exact path="/dashboard" component={Dashboard} />
 
         <Switch>
-          {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
-          {/* <PrivateRoute exact path="/privacypolicy" component={PrivacyPolicy} /> */}
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/pricing" component={Pricing} />
           <PrivateRoute exact path="/blog/:id" component={SingleBlog} />
           <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} />
