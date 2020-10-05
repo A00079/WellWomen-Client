@@ -519,7 +519,7 @@ export default function MiniDrawer() {
                             <Grid item xs={12} md={10} lg={10}>
                                 <Paper elevation={3}>
                                     <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Survey Details</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of users who started journey can be viewed here.</h6>
                                     <div className="ml-56">
                                         <LineChart width={300} height={100} data={serveyDetails}>
                                             <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
