@@ -67,6 +67,7 @@ export default function WorkingCards() {
                     <div class="flex flex-col text-center w-full mb-20">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" style={{fontFamily: 'Paytone One'}}>Our Work</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base" style={{ fontFamily: 'Open Sans'}}>Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                        <p class="lg:w-2/3 mx-auto mt-4 leading-relaxed text-base" style={{ fontFamily: 'Open Sans'}}>Click on the card to view image.</p>
                     </div>
                     <div class="flex flex-wrap -m-2">
                         <div class="p-2 lg:w-1/3 md:w-1/2 w-full cursor-pointer" onClick={() => handleClickOpen('trans1.jpg')}>

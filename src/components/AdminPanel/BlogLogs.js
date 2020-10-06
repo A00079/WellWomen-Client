@@ -24,7 +24,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import Tooltip from '@material-ui/core/Tooltip';
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+
   root: {
     width: '100%',       
   },
@@ -44,8 +45,12 @@ const useStyles = makeStyles({
   },
   container: {
     maxHeight: 400,
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: 600,
+    }
   },
-});
+}));
+
 
 export default function StickyHeadTable(props) {
   const classes = useStyles();

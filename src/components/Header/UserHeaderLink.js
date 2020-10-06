@@ -44,7 +44,9 @@ const HeaderLinks = (props) => {
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
-                Home
+                <Link to='/'>
+                    Home
+                </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Blogs</Link>

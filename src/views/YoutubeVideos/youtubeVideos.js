@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import './youtubeVideos.css';
 import { Link } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
-import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import HeaderLinks from "./YoutubeHeaderLink.js";
 import Header from "../../components/Header/Header.js";
 import SkeletonCard from './skeletonCard.js';
 import { makeStyles } from '@material-ui/core/styles';
@@ -75,7 +75,7 @@ const YoutubeVideo = (props) => {
 					setchunkVideos(response.items)
 					setfetchingVideos(false)
 					console.log('chunkVideos', chunkVideos)
-				}, 2000)
+				}, 4000)
 			})
 			.catch((err) => setfetchingVideos(true))
 	}, [])

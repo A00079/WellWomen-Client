@@ -195,7 +195,7 @@ const UserBlog = () => {
                                                                 </a>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <span class="tracking-wider text-white bg-red-500 px-1 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
+                                                                <span style={{fontSize: '0.5rem'}} class="tracking-wider text-white bg-red-500 px-1 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
                                                                     {/* <i class="fas fa-heart" aria-hidden="true"></i>  */}
                                                                     {CalculateDate(new Date(blog.date), new Date())}
                                                                 </span>
@@ -481,9 +481,9 @@ const UserBlog = () => {
                                             pathname: "/blog/" + blog._id,
                                             state: blog
                                         }}>
-                                            View
+                                            view
                                         </Link>
-                                    view</span>
+                                    </span>
                                 </a>
                             )
                         })

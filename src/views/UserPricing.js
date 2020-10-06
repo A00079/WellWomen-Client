@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from "../components/Header/BlogHeader.js";
-import UserHeaderLinks from "../components/Header/UserHeaderLink.js";
+import UserHeaderLinks from "./UserPricingHeader.js";
 const Pricing = () => {
     const [activePlan, setactivePlan] = useState('popular');
     const handelActivePlan = (plan) => {

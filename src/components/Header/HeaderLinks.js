@@ -45,7 +45,7 @@ const HeaderLinks = (props) => {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        Home
+        <Link to='/'>Home</Link>
       </ListItem>
       {
         props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
@@ -123,7 +123,7 @@ const HeaderLinks = (props) => {
       {
         handeldropdown ?
           <ListItem className={classes.listItem}>
-            <Button variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
+            <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
               Logout
           </Button>
           </ListItem> : <ListItem className={classes.listitemdrop}>
@@ -137,7 +137,7 @@ const HeaderLinks = (props) => {
               buttonIcon={Apps}
               dropdownList={[
                 <Link to="/login" className={classes.dropdownLink}>
-                  Login
+                  Sign In
             </Link>,
                 <Link to="/signup" className={classes.dropdownLink}>
                   Sign Up

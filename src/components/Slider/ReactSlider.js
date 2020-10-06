@@ -54,7 +54,7 @@ const SimpleSlider = () => {
 				</div>
 			</section>
 
-			{/* <section class="text-gray-700 body-font">
+			<section class="text-gray-700 body-font">
 				<div class="container mx-auto flex px-0 py-4 md:mt-16 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:flex-grow md:w-1/2 lg:pl-8 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center">
 						<h2 class="mb-8 font-black leading-relaxed" style={{ fontFamily: 'Open Sans', fontSize: '1.2rem' }}>"Having now dropped lots of weight & successfully managed PCOD, it’s my mission to help 1 million WOMEN so that they can have the body & life they always wanted."</h2>
@@ -93,7 +93,7 @@ const SimpleSlider = () => {
 						</div>
 					</div>
 				</div>
-			</section> */}
+			</section>
 			{/* <div className='screenheight' data-src={image1} /> */}
 			{/* <div className='screenheight' data-src={image2} /> */}
 			{/* <div className='screenheight' data-src={image3} /> */}

@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     paper: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(4),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -111,63 +111,63 @@ export default function SignUp() {
             //     "Content-Type": "application/json"
             // };
             axios.post(api_url, formData)
-            .then((res) =>{
-                document.getElementById('Title').value = '';
-                document.getElementById('ShortDiscription').value = '';
-                document.getElementById('AnyTag').value = '';
-                document.getElementById('YoutubeLink').value = '';
-                document.getElementById('Discription').value = '';
-                document.getElementById('input').value = '';
-                setImagePreview('');
+                .then((res) => {
+                    document.getElementById('Title').value = '';
+                    document.getElementById('ShortDiscription').value = '';
+                    document.getElementById('AnyTag').value = '';
+                    document.getElementById('YoutubeLink').value = '';
+                    document.getElementById('Discription').value = '';
+                    document.getElementById('input').value = '';
+                    setImagePreview('');
 
-                setpostingBlog(false)
-                console.log('response',res)
-            })
-            .catch((err) =>{
-                console.error('Post Error:',err)
-            })
+                    setpostingBlog(false)
+                    console.log('response', res)
+                })
+                .catch((err) => {
+                    console.error('Post Error:', err)
+                })
         } else {
             setisdisable(true)
         }
     }
 
     const onFileChange = (event) => {
-		const file = event.target.files[0];
-		const reader = new FileReader();
-		reader.onload = () => {
-			if (reader.readyState === 2) {
-				setImagePreview(reader.result);
-			}
-		};
-		if (file) {
-			reader.readAsDataURL(event.target.files[0]);
-		}
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setImagePreview(reader.result);
+            }
+        };
+        if (file) {
+            reader.readAsDataURL(event.target.files[0]);
+        }
 
-		const options = {
-			maxSizeMB: 1.5,
-			maxWidthOrHeight: 420,
-			useWebWorker: true,
-		};
+        const options = {
+            maxSizeMB: 1.5,
+            maxWidthOrHeight: 420,
+            useWebWorker: true,
+        };
 
-		Compress(file, options)
-			.then((compressedBlob) => {
-				compressedBlob.lastModifiedDate = new Date();
-				// Convert the blob to file
-				const convertedBlobFile = new File([compressedBlob], file.name, {
-					type: file.type,
-					lastModified: Date.now(),
-				});
-				setImage(convertedBlobFile);
-			})
-			.catch((e) => {
-				console.log(e);
-			});
-	};
+        Compress(file, options)
+            .then((compressedBlob) => {
+                compressedBlob.lastModifiedDate = new Date();
+                // Convert the blob to file
+                const convertedBlobFile = new File([compressedBlob], file.name, {
+                    type: file.type,
+                    lastModified: Date.now(),
+                });
+                setImage(convertedBlobFile);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+    };
 
 
     return (
-        <Container component="main" maxWidth="xs" className="md:mt-24">
-            <Alert severity="warning">
+        <Container component="main" maxWidth="xs" className="mt-16 md:mt-24">
+            <Alert severity="warning" className="mr-8 md:mr-0 lg:mr-0">
                 <AlertTitle>Warning</AlertTitle>
                     Please recheck your post — <strong>Once posted can be viewed by Users!</strong>
             </Alert>
@@ -179,7 +179,7 @@ export default function SignUp() {
                     </Typography>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={11} md={6} sm={6} lg={6}>
                             <TextField
                                 onChange={e => handlePostTitle(e)}
                                 autoComplete="Title"
@@ -191,7 +191,7 @@ export default function SignUp() {
                                 autoFocus
                             />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={11} md={6} sm={6} lg={6}>
                             <TextField
                                 onChange={e => handlePostName(e)}
                                 autoComplete="ShortDiscription"
@@ -216,7 +216,7 @@ export default function SignUp() {
                                 />
                             </FormControl> */}
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={11} md={6} sm={6} lg={6}>
                             <TextField
                                 onChange={e => handlePostAnyTags(e)}
                                 autoComplete="AnyTag"
@@ -228,7 +228,7 @@ export default function SignUp() {
                                 autoFocus
                             />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={11} md={6} sm={6} lg={6}>
                             <TextField
                                 onChange={e => handlePostYoutubelink(e)}
                                 autoComplete="YoutubeLink"
@@ -240,7 +240,7 @@ export default function SignUp() {
                                 autoFocus
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={11}  md={12} lg={12}>
                             <TextField
                                 onChange={e => handlePostDiscription(e)}
                                 id="Discription"
@@ -255,11 +255,11 @@ export default function SignUp() {
                                 autoComplete="Discription"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={11} md={12} lg={12}>
                             <h6>Preview</h6>
-                            <img  width='400px' height='300px' src={imagePreview} />
+                            <img width='400px' height='300px' src={imagePreview} />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={11} md={12} lg={12}>
                             <Button
                                 variant="contained"
                                 component="label"
@@ -276,23 +276,24 @@ export default function SignUp() {
                                 />
                             </Button>
                         </Grid>
-                    </Grid>
-                    
-                        
+                    </Grid> 
+
+                    <Grid item xs={11} md={12} lg={12}>
                         <Button
-                        disabled={isdisable}
-                        onClick={() => PostAnnouncement()}
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                    >
-                        {
-                            postingBlog? <Spinner size='lg' spinning='spinning' /> :
-                            'Create Blog'
-                        }
+                            disabled={isdisable}
+                            onClick={() => PostAnnouncement()}
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit}
+                        >
+                            {
+                                postingBlog ? <Spinner size='lg' spinning='spinning' /> :
+                                    'Create Blog'
+                            }
                         </Button>
-                    
+                    </Grid>
+
                 </form>
             </div>
             {/* <Box mt={5}>

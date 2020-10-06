@@ -120,16 +120,11 @@ export default function Header(props) {
           <div className={classes.appResponsive}>
             <List>
               <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="aboutus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Home
-                </DirectLinkDiv>
-              </ListItem><Divider />
+                  <Link to='/'>
+                    Home
+                  </Link>
+              </ListItem>
+              <Divider />
               <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="aboutus"

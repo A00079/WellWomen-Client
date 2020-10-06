@@ -34,6 +34,9 @@ import axios from 'axios';
 const useStyles = makeStyles((theme) => ({
   container: {
     maxHeight: 400,
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: 600,
+    }
   },
   tableRow: {
     cursor: 'pointer',

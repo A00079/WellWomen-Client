@@ -31,9 +31,9 @@ const PartOneGallery = () => {
                             </div>
                             <div class="flex w-full mt-8  md:justify-start justify-center">
                                 <button style={{ backgroundColor: '#FFF', fontFamily: 'Open Sans',color:'#D00F7F' }} id="ourwork" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                                    <Link to="/startjourney" className={classes.dropdownLink}>
+                                    <a href="https://www.youtube.com/channel/UC8KBEuXc5mdz0N5roXTbyVA" className={classes.dropdownLink}>
                                         Subscribe <SubscriptionsIcon />
-                                </Link>
+                                </a>
                                 </button>
                             </div>
                             {/* <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Buy Desi Diet.</h2>

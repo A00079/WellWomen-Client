@@ -43,6 +43,7 @@ const TasksProgress = (props) => {
         >
           <Grid item>
             <Typography
+              style={{fontFamily: 'Paytone One'}}
               color="textSecondary"
               gutterBottom
               variant="subtitle2"
@@ -50,6 +51,7 @@ const TasksProgress = (props) => {
               {props.cardtitle}
             </Typography>
             <Typography
+              style={{fontFamily: 'Paytone One'}}
               color="textPrimary"
               variant="subtitle2"
             >

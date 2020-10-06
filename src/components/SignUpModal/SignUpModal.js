@@ -71,14 +71,14 @@ const SignUpModal = (props) => {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"SignUp For More Blogs."}</DialogTitle>
+                <DialogTitle  style={{fontFamily: 'Paytone One'}} id="alert-dialog-title">{"SignUp For More Blogs."}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         <div className="w-full flex-1 mt-8">
                             <div className="flex flex-col items-center">
                                 <div>
                                     <GoogleLogin
-                                        clientId='129584180577-d9c9ejb2tqu1q1hua57k57174c89ui0s.apps.googleusercontent.com'
+                                        clientId='974319766461-sl24j1uanrhgto3mkacao9gcnmgpcvn6.apps.googleusercontent.com'
                                         buttonText='Sign In with Google'
                                         onSuccess={responseGoogle}
                                         onFailure={responseGoogle}
@@ -123,7 +123,9 @@ const SignUpModal = (props) => {
                            </div>
                                 <Link to="/signup">
                                     <button
+                                    
                                     style={{    
+                                        backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF',
                                         width: '213px',
                                         margin: '0 auto',
                                         marginTop: '1rem',

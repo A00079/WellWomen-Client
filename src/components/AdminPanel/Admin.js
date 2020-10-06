@@ -429,11 +429,14 @@ export default function MiniDrawer() {
                                 <ListItemIcon><AccountCircle /></ListItemIcon>
                             </ListItem> : ""
                     }
+                    <Divider />
 
+                    <Link to="/">
                     <ListItem className={classes.drawerItems}>
                         <ListItemIcon><HomeIcon /></ListItemIcon>
-                        <ListItemText><Link to="/">Home</Link></ListItemText>
+                        <ListItemText>Home</ListItemText>
                     </ListItem>
+                    </Link>
                     <Divider />
                     <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('dashboard')}>
                         <ListItemIcon><DashboardIcon /></ListItemIcon>
@@ -470,19 +473,19 @@ export default function MiniDrawer() {
                             direction="row"
                             justify="center"
                             spacing={3}>
-                            <Grid item xs={12} md={4} lg={4} >
+                            <Grid item xs={4} md={4} lg={4} >
                                 <InfoCards userCount={userCount} cardtitle="User Traffic" />
                             </Grid>
-                            <Grid item xs={12} md={4} lg={4} >
+                            <Grid item xs={4} md={4} lg={4} >
                                 <InfoCards userCount={SerwayCount} cardtitle="Started Journey" />
                             </Grid>
-                            <Grid item xs={12} md={4} lg={4}>
+                            <Grid item xs={4} md={4} lg={4}>
                                 <BlogCard postCount={postCount} cardtitle="Blog Posts" />
                             </Grid>
                             <Grid item xs={12} md={5} lg={5}>
                                 <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Users</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of users can be viewed here.</h6>
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Users</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of users can be viewed here.</h6>
                                     <div className="ml-24">
                                         <BarChart width={200} height={60} data={linechart}>
                                             <Bar dataKey="uv" fill="#8884d8" />
@@ -496,8 +499,8 @@ export default function MiniDrawer() {
                             </Grid>
                             <Grid item xs={12} md={5} lg={5}>
                                 <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Blogs</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of blog can be viewed here.</h6>
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Blogs</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of blog can be viewed here.</h6>
                                     <div className="ml-24">
                                         <AreaChart
                                             width={200}
@@ -518,9 +521,9 @@ export default function MiniDrawer() {
                             </Grid>
                             <Grid item xs={12} md={10} lg={10}>
                                 <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center">Survey Details</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center">A detailed log of users who started journey can be viewed here.</h6>
-                                    <div className="ml-56">
+                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Survey Details</h6>
+                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of users who started journey can be viewed here.</h6>
+                                    <div className="ml-4 md:ml-56 lg:ml-56">
                                         <LineChart width={300} height={100} data={serveyDetails}>
                                             <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
                                         </LineChart>
