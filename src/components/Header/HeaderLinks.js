@@ -31,7 +31,6 @@ const HeaderLinks = (props) => {
   const [handeldropdown, sethandeldropdown] = useState(null)
 
   useEffect(() => {
-    console.log('props', props)
     if ("authorizer" in localStorage) {
       sethandeldropdown(true)
     } else {

@@ -37,8 +37,15 @@ let DirectLinkDiv = Scroll.Link;
 export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [isScrolled, setisScrolled] = React.useState(null)
+  const [isScrolled, setisScrolled] = React.useState(null);
+  const [isloggedIn, setisloggedIn] = React.useState(false);
   React.useEffect(() => {
+    if ("authorizer" in localStorage) {
+      setisloggedIn(true)
+    } else {
+      setisloggedIn(false)
+    }
+
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
     }
@@ -48,6 +55,10 @@ export default function Header(props) {
       }
     };
   });
+  const onLogoutClick = () => {
+    setisloggedIn(false)
+    props.logoutUser();
+  };
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -103,7 +114,7 @@ export default function Header(props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu style={{color: '#D00F7F'}} />
+            <Menu style={{ color: '#D00F7F' }} />
           </IconButton>
         </Hidden>
       </Toolbar>
@@ -120,8 +131,8 @@ export default function Header(props) {
           <div className={classes.appResponsive}>
             <List>
               <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                  <Link to='/'>
-                    Home
+                <Link to='/'>
+                  Home
                   </Link>
               </ListItem>
               <Divider />
@@ -178,32 +189,52 @@ export default function Header(props) {
 
               </ListItem>
               <Divider />
-              <Link to="/TrialBlog">
-                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                  Blogs
-              </ListItem>
-              </Link>
+              {
+                isloggedIn?
+                  <Link to="/dashboard">
+                    <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
+                      Blogs
+                    </ListItem>
+                  </Link>
+                  :
+                  <Link to="/TrialBlog">
+                    <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
+                      Blogs
+                    </ListItem>
+                  </Link>
+              }
+
               <Divider />
               <Link to="/YoutubeVideos">
-              <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                Youtube
+                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
+                  Youtube
               </ListItem>
               </Link>
               <Divider />
             </List>
             <List>
-              <ListItem style={{ width: '15rem',fontFamily: 'Paytone One' }}>
-                <Button variant="contained" color="primary" style={{ width: '100%',paddingRight: '20px' }}>
-                  <Link to="/login" className={classes.dropdownLink}>
-                    <span style={{fontFamily: 'Paytone One'}}>Sign In</span>
-                  </Link>
-                </Button>
-                <Button variant="contained" color="secondary" style={{ width: '100%' }}>
-                  <Link to="/signup" className={classes.dropdownLink}>
-                  <span style={{fontFamily: 'Paytone One'}}> Sign Up</span>
-                  </Link>
-                </Button>
-              </ListItem>
+              {
+                isloggedIn ?
+                  <ListItem className={classes.listItem}>
+                    <Button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
+                      Logout
+                    </Button>
+                  </ListItem>
+                  :
+                  <ListItem style={{ width: '15rem', fontFamily: 'Paytone One' }}>
+                    <Button variant="contained" color="primary" style={{ width: '100%', paddingRight: '20px' }}>
+                      <Link to="/login" className={classes.dropdownLink}>
+                        <span style={{ fontFamily: 'Paytone One' }}>Sign In</span>
+                      </Link>
+                    </Button>
+                    <Button variant="contained" color="secondary" style={{ width: '100%' }}>
+                      <Link to="/signup" className={classes.dropdownLink}>
+                        <span style={{ fontFamily: 'Paytone One' }}> Sign Up</span>
+                      </Link>
+                    </Button>
+                  </ListItem>
+              }
+
             </List>
           </div>
         </Drawer>

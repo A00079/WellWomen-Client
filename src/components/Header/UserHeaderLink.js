@@ -49,7 +49,7 @@ const HeaderLinks = (props) => {
                 </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link to="/YoutubeVideos">Blogs</Link>
+                <Link to="/dashboard">Blogs</Link>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>

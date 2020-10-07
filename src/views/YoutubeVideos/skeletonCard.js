@@ -12,6 +12,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import * as Scroll from 'react-scroll';
+let DirectLinkDiv = Scroll.Link;
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         }
         // margin: theme.spacing(2),
     },
-    smallCardSkeleton:{
+    smallCardSkeleton: {
         maxWidth: '25%',
         flexBasis: '0%',
         [theme.breakpoints.down("sm")]: {
@@ -42,14 +44,14 @@ function Media(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id='skeletonframe'>
             <Grid container
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            spacing={3}>
-                <Grid item  xs={12} md={12} lg={12}>
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+                spacing={3}>
+                <Grid item xs={12} md={12} lg={12}>
                     <Card className={classes.card}>
                         <CardHeader
                             avatar={
@@ -105,7 +107,7 @@ function Media(props) {
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={3} lg={3} className={classes.smallCardSkeleton}>
-                    <Box  width={210} marginRight={0.5} my={5}>
+                    <Box width={210} marginRight={0.5} my={5}>
                         <Skeleton variant="rect" width={210} height={118} />
                         <Box pt={0.5}>
                             <Skeleton />
@@ -114,7 +116,7 @@ function Media(props) {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={3} lg={3} className={classes.smallCardSkeleton}>
-                <Box  width={210} marginRight={0.5} my={5}>
+                    <Box width={210} marginRight={0.5} my={5}>
                         <Skeleton variant="rect" width={210} height={118} />
                         <Box pt={0.5}>
                             <Skeleton />
@@ -124,7 +126,7 @@ function Media(props) {
 
                 </Grid>
                 <Grid item xs={12} md={3} lg={3} className={classes.smallCardSkeleton}>
-                <Box  width={210} marginRight={0.5} my={5}>
+                    <Box width={210} marginRight={0.5} my={5}>
                         <Skeleton variant="rect" width={210} height={118} />
                         <Box pt={0.5}>
                             <Skeleton />
@@ -132,15 +134,23 @@ function Media(props) {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={3} lg={3} className={classes.smallCardSkeleton}>
-                <Box  width={210} marginRight={0.5} my={5}>
-                        <Skeleton variant="rect" width={210} height={118} />
-                        <Box pt={0.5}>
-                            <Skeleton />
-                            <Skeleton width="60%" />
+                <DirectLinkDiv
+                    to="skeletonframe"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                >
+                    <Grid item xs={12} md={3} lg={3} className={classes.smallCardSkeleton}>
+                        <Box width={210} marginRight={0.5} my={5}>
+                            <Skeleton variant="rect" width={210} height={118} />
+                            <Box pt={0.5}>
+                                <Skeleton />
+                                <Skeleton width="60%" />
+                            </Box>
                         </Box>
-                    </Box>
-                </Grid>
+                    </Grid>
+                </DirectLinkDiv>
             </Grid>
         </div>
     );

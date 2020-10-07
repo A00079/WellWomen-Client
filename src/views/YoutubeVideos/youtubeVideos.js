@@ -3,7 +3,7 @@ import './youtubeVideos.css';
 import { Link } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "./YoutubeHeaderLink.js";
-import Header from "../TrialBlogs/TrialHeader.js";
+import Header from "./YoutubeHeader.js";
 import SkeletonCard from './skeletonCard.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -13,6 +13,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import * as Scroll from 'react-scroll';
+let DirectLinkDiv = Scroll.Link;
+
 // const API_KEY = 'AIzaSyBRkPv6tG9zDk1fJZClXA3NuOgnZURHo8M';
 const API_KEY = 'AIzaSyAtu6fiJRER96wlMzjX7n7qu6JF4z6y8js';
 const channelID = 'UC8KBEuXc5mdz0N5roXTbyVA';
@@ -96,7 +99,7 @@ const YoutubeVideo = (props) => {
 			{
 				fetchingVideos ? <SkeletonCard /> :
 					<React.Fragment>
-						<div className={classes.root}>
+						<div className={classes.root} id='videoframe'>
 							<Grid
 								container
 								direction="row"
@@ -155,33 +158,40 @@ const YoutubeVideo = (props) => {
 												// 	</Box>
 												// </Grid>
 
-
-												<div style={{cursor: 'pointer'}} onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
-													<div class="relative">
-														<img class="w-full" src={item.snippet.thumbnails.high.url} alt="" />
-														<span class="absolute bg-black bottom-0 font-bold mb-1 mr-1 px-1 py-px right-0 rounded-sm text-white text-xs">1:40</span>
-													</div>
-													<div class="flex mt-4">
-														<img class="mr-4 h-10 w-10 block flex-shrink-0 rounded-full object-cover" src={item.snippet.thumbnails.high.url} alt="" />
-														<div class="text-sm w-full">
-															<div class="font-bold text-line-clamp-2 mb-1 relative pr-6">
-															{item.snippet.title}
-																<button class="absolute right-0 inset-y-0 yt-text-gray-800">
-																	<svg class="h-6 fill-current" viewBox="0 0 24 24">
-																		<path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-																	</svg>
-																</button>
-															</div>
-															<div class="text-line-clamp-1 yt-text-gray-500 leading-tight">
-															{item.snippet.channelTitle}
-															</div>
-															<div class="yt-text-gray-500">
-																<span>{new Date(item.snippet.publishedAt).toDateString()}</span> 
+												<DirectLinkDiv
+													to="videoframe"
+													spy={true}
+													smooth={true}
+													offset={50}
+													duration={500}
+												>
+													<div style={{ cursor: 'pointer' }} onClick={() => playnewvideo(item.id.videoId, item.snippet.description, item.snippet.title)}>
+														<div class="relative">
+															<img class="w-full" src={item.snippet.thumbnails.high.url} alt="" />
+															<span class="absolute bg-black bottom-0 font-bold mb-1 mr-1 px-1 py-px right-0 rounded-sm text-white text-xs">1:40</span>
+														</div>
+														<div class="flex mt-4">
+															<img class="mr-4 h-10 w-10 block flex-shrink-0 rounded-full object-cover" src={item.snippet.thumbnails.high.url} alt="" />
+															<div class="text-sm w-full">
+																<div class="font-bold text-line-clamp-2 mb-1 relative pr-6">
+																	{item.snippet.title}
+																	<button class="absolute right-0 inset-y-0 yt-text-gray-800">
+																		<svg class="h-6 fill-current" viewBox="0 0 24 24">
+																			<path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+																		</svg>
+																	</button>
+																</div>
+																<div class="text-line-clamp-1 yt-text-gray-500 leading-tight">
+																	{item.snippet.channelTitle}
+																</div>
+																<div class="yt-text-gray-500">
+																	<span>{new Date(item.snippet.publishedAt).toDateString()}</span>
+																</div>
 															</div>
 														</div>
 													</div>
-												</div>
-									))}
+												</DirectLinkDiv>
+											))}
 										</div>
 									</div>
 								</main>

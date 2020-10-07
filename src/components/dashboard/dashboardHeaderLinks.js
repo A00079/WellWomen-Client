@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import CustomDropdown from "../../components/CustomDropdown/CustomDropdown.js";
+import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import { logoutUser } from "../../actions/authActions";
 import * as Scroll from 'react-scroll';
 
@@ -28,59 +28,42 @@ let DirectLinkDiv = Scroll.Link;
 
 const HeaderLinks = (props) => {
     const classes = useStyles();
-    const [isloggedIn, setisloggedIn] = useState(null)
+    const [handeldropdown, sethandeldropdown] = useState(null)
 
     useEffect(() => {
         console.log('props', props)
         if ("authorizer" in localStorage) {
-            setisloggedIn(true)
+            sethandeldropdown(true)
         } else {
-            setisloggedIn(false)
+            sethandeldropdown(false)
         }
     }, [props])
     const onLogoutClick = () => {
-        setisloggedIn(false)
         props.logoutUser();
     };
     return (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
-                <Link to="/">
+                <Link to='/'>
                     Home
                 </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link to="/TrialBlog" style={{borderBottom: '2px solid #d00f7f'}}>Blogs</Link>
+                <Link to="/dashboard">Blogs</Link>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Link to="/pricing">Pricing</Link>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>
             </ListItem>
-            {
-                isloggedIn ?
-                    <ListItem className={classes.listItem}>
-                        <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
-                            Logout
-                        </Button>
-                    </ListItem> : <ListItem className={classes.listitemdrop}>
-                        <CustomDropdown
-                            noLiPadding
-                            buttonText=""
-                            buttonProps={{
-                                className: classes.navLink,
-                                color: "transparent"
-                            }}
-                            buttonIcon={Apps}
-                            dropdownList={[
-                                <Link to="/login" className={classes.dropdownLink}>
-                                    Sign In
-            </Link>,
-                                <Link to="/signup" className={classes.dropdownLink}>
-                                    Sign Up
-            </Link>
-                            ]}
-                        />
-                    </ListItem>
-            }
+            <ListItem className={classes.listitemdrop}>
+                <ListItem className={classes.listItem}>
+                    <Button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
+                        Logout
+                    </Button>
+                </ListItem>
+            </ListItem>
         </List>
     );
 }

@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { notify } from 'react-notify-toast';
-import Header from "../../views/TrialBlogs/TrialHeader.js";
+import Header from "./DashHeader.js";
 import HeaderLinks from "../Header/HeaderLinks.js";
 import { validateAdmin } from "../../actions/validateAdmin.js";
 import Admin from "../AdminPanel/Admin.js";
-import UserHeaderLinks from "../Header/UserHeaderLink.js";
+import DashHeaderLinks from "./dashboardHeaderLinks.js";
 import Pricing from '../Pricing/Pricing.js';
 import UserBlogs from '../../views/UserBlogs/UserBlogs.js';
 
@@ -38,7 +38,7 @@ class Dashboard extends Component {
           <React.Fragment>
           <Header
             brand="Curvicare"
-            rightLinks={<UserHeaderLinks />}
+            rightLinks={<DashHeaderLinks />}
             fixed
             color="white"
             changeColorOnScroll={{
