@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from "../components/Header/BlogHeader.js";
+import Header from "./PricingHeader.js";
 import UserHeaderLinks from "./UserPricingHeader.js";
 const Pricing = () => {
     const [activePlan, setactivePlan] = useState('popular');
@@ -18,7 +18,7 @@ const Pricing = () => {
                     color: "white"
                 }}
             />
-            <section class="text-gray-700 body-font overflow-hidden">
+            <section class="mt-8 text-gray-700 body-font overflow-hidden">
                 <div class="container px-5 py-24 mx-auto">
                     <div class="flex flex-col text-center w-full mb-20">
                         <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>

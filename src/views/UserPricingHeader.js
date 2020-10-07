@@ -61,11 +61,11 @@ const HeaderLinks = (props) => {
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>
             </ListItem>
-            {/* <ListItem className={classes.listItem}>
+            <ListItem className={classes.listItem}>
                 <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
                     Logout
                 </Button>
-            </ListItem>  */}
+            </ListItem> 
         </List>
     );
 }

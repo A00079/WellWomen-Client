@@ -3,7 +3,7 @@ import './youtubeVideos.css';
 import { Link } from "react-router-dom";
 import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "./YoutubeHeaderLink.js";
-import Header from "../../components/Header/Header.js";
+import Header from "../TrialBlogs/TrialHeader.js";
 import SkeletonCard from './skeletonCard.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -75,7 +75,7 @@ const YoutubeVideo = (props) => {
 					setchunkVideos(response.items)
 					setfetchingVideos(false)
 					console.log('chunkVideos', chunkVideos)
-				}, 4000)
+				}, 3000)
 			})
 			.catch((err) => setfetchingVideos(true))
 	}, [])

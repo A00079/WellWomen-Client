@@ -125,59 +125,6 @@ export default function Header(props) {
                   </Link>
               </ListItem>
               <Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="aboutus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  About</DirectLinkDiv>
-              </ListItem><Divider />
-
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="ourwork"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Our Work</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="testimonials"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Testimonials</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="stats"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Stats</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="contactus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Contact Us</DirectLinkDiv>
-
-              </ListItem>
-              <Divider />
               <Link to="/TrialBlog">
                 <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
                   Blogs

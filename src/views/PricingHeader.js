@@ -11,8 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
-import logo from '../../assets/img/logo.png';
-import logoBW from '../../assets/img/logo_BW.png';
+import logo from '../assets/img/logo.png';
 //background: -webkit-linear-gradient(to right, #833ab4, #fd1d1d, #fcb045); /* Chrome 10-25, Safari 5.1-6 */
 import { Link } from "react-router-dom";
 import * as Scroll from 'react-scroll';
@@ -28,7 +27,7 @@ import MailIcon from '@material-ui/icons/Mail';
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
+import styles from "../assets/jss/material-kit-react/components/headerStyle.js";
 
 const useStyles = makeStyles(styles);
 let DirectLinkDiv = Scroll.Link;
@@ -48,6 +47,9 @@ export default function Header(props) {
       }
     };
   });
+  const onLogoutClick = () => {
+    props.logoutUser();
+  };
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -78,8 +80,8 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = <img style={{
-    width: '6rem',
-    height: '6rem'
+    width: '5rem',
+    height: '5rem'
   }} className={classes.title} src={logo} />;
   return (
     <AppBar style={{ opacity: '0.9' }} className={appBarClasses}>
@@ -119,91 +121,36 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem className={classes.listItem}>
                   <Link to='/'>
                     Home
                   </Link>
               </ListItem>
               <Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="aboutus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  About</DirectLinkDiv>
-              </ListItem><Divider />
+              <ListItem className={classes.listItem}>
+                <Link to="/TrialBlog">Blogs</Link>
+            </ListItem>
+            <Divider />
 
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="ourwork"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Our Work</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="testimonials"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Testimonials</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="stats"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Stats</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="contactus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Contact Us</DirectLinkDiv>
+            <ListItem className={classes.listItem}>
+                <Link  to="/pricing">Pricing</Link>
+            </ListItem>
+            <Divider />
 
-              </ListItem>
-              <Divider />
-              <Link to="/TrialBlog">
-                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                  Blogs
-              </ListItem>
-              </Link>
-              <Divider />
-              <Link to="/YoutubeVideos">
-              <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                Youtube
-              </ListItem>
-              </Link>
-              <Divider />
-            </List>
-            <List>
-              <ListItem style={{ width: '15rem',fontFamily: 'Paytone One' }}>
-                <Button variant="contained" color="primary" style={{ width: '100%',paddingRight: '20px' }}>
-                  <Link to="/login" className={classes.dropdownLink}>
-                    <span style={{fontFamily: 'Paytone One'}}>Sign In</span>
-                  </Link>
+            <ListItem className={classes.listItem}>
+                <Link  to="/singleaboutus">About Us</Link>
+            </ListItem>
+            <Divider />
+
+            <ListItem className={classes.listItem}>
+                <Link to="/YoutubeVideos">Youtube</Link>
+            </ListItem>
+            <Divider />
+              <ListItem className={classes.listItem}>
+                <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
+                    Logout
                 </Button>
-                <Button variant="contained" color="secondary" style={{ width: '100%' }}>
-                  <Link to="/signup" className={classes.dropdownLink}>
-                  <span style={{fontFamily: 'Paytone One'}}> Sign Up</span>
-                  </Link>
-                </Button>
-              </ListItem>
+            </ListItem> 
             </List>
           </div>
         </Drawer>

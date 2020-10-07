@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { notify } from 'react-notify-toast';
-import Header from "../Header/BlogHeader.js";
+import Header from "../../views/TrialBlogs/TrialHeader.js";
 import HeaderLinks from "../Header/HeaderLinks.js";
 import { validateAdmin } from "../../actions/validateAdmin.js";
 import Admin from "../AdminPanel/Admin.js";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SignUpModal from '../../components/SignUpModal/SignUpModal.js';
-import Header from "../../components/Header/Header.js";
+import Header from "./TrialHeader.js";
 import HeaderLinks from './TrialHeaderLinks.js';
 import Blogs from '../../REST/Blogs.js';
 import { Link } from "react-router-dom";
