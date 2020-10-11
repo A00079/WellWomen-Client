@@ -74,8 +74,11 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <img style={{width: '5rem',
+  const brandComponent = 
+  <Link to='/'>
+    <img style={{width: '5rem',
     height: '4rem'}} className={classes.title} src={logo} />;
+  </Link>
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -167,7 +170,7 @@ export default function Header(props) {
 
               </ListItem>
               <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
-                <Link to="/TrialBlog">Blogs</Link>
+                <Link to="/dashboard">Blogs</Link>
               </ListItem>
               <ListItem className={classes.listItem}>
                 Youtube
@@ -184,7 +187,7 @@ export default function Header(props) {
                 </React.Fragment>
               ))} */}
             </List>
-            <List style={{
+            {/* <List style={{
               position: 'absolute',
               bottom: '0px'
             }}>
@@ -202,7 +205,7 @@ export default function Header(props) {
                   </Link>
                 </Button>
               </ListItem>
-            </List>
+            </List> */}
           </div>
         </Drawer>
       </Hidden>

@@ -49,7 +49,7 @@ const SingleBlog = (props) => {
                     color: "white"
                 }}
             />
-                <section class="text-gray-700 body-font" style={{
+                <section class="mt-16 text-gray-700 body-font" style={{
                     background: '#072540',
                     color: '#93c2db'
                 }}>
@@ -57,7 +57,7 @@ const SingleBlog = (props) => {
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
                     <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
                         <Link to='/dashboard'>
-                        <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Back</button>
+                        <button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Back</button>
                         </Link>
                     </h2>
                     </div>

@@ -402,7 +402,9 @@ export default function MiniDrawer() {
                 }}
             >
                 <div className={classes.toolbar}>
-                    <img src={applogo} style={{ width: '4rem', position: 'absolute', left: '1rem' }} />
+                    <Link to='/'>
+                        <img src={applogo} style={{ width: '4rem', position: 'absolute', left: '1rem' }} />
+                    </Link>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>

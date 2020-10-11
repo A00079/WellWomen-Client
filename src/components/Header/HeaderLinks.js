@@ -108,7 +108,7 @@ const HeaderLinks = (props) => {
       </ListItem>
       }
       <ListItem className={classes.listItem}>
-        <Link to="/TrialBlog">Blogs</Link>
+        <Link to="/dashboard">Blogs</Link>
       </ListItem>
       {
         props.is_admin.isAdmin ? <ListItem className={classes.listItem}>
@@ -119,7 +119,7 @@ const HeaderLinks = (props) => {
       <ListItem className={classes.listItem}>
       <Link to="/YoutubeVideos">Youtube</Link>
       </ListItem>
-      {
+      {/* {
         handeldropdown ?
           <ListItem className={classes.listItem}>
             <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
@@ -144,7 +144,7 @@ const HeaderLinks = (props) => {
               ]}
             />
           </ListItem>
-      }
+      } */}
     </List>
   );
 }

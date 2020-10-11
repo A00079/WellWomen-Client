@@ -50,12 +50,12 @@ const HeaderLinks = (props) => {
                 </Link>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link to="/TrialBlog" style={{borderBottom: '2px solid #d00f7f'}}>Blogs</Link>
+                <Link to="/dashboard" style={{borderBottom: '2px solid #d00f7f'}}>Blogs</Link>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>
             </ListItem>
-            {
+            {/* {
                 isloggedIn ?
                     <ListItem className={classes.listItem}>
                         <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
@@ -80,7 +80,7 @@ const HeaderLinks = (props) => {
                             ]}
                         />
                     </ListItem>
-            }
+            } */}
         </List>
     );
 }

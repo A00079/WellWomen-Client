@@ -11,6 +11,7 @@ import image3 from '../../assets/img/w6.jpg';
 import doctor from '../../assets/img/drsnehal.webp';
 import { Link } from "react-router-dom";
 import Multi from './MultiSlider.js';
+import Typography from '@material-ui/core/Typography';
 
 import {
     Container,
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     screenheight: {
         height: '100%',
     },
-    hideonMobile:{
+    hideonMobile: {
         [theme.breakpoints.down("sm")]: {
             display: 'none'
         }
@@ -195,7 +196,7 @@ const UserBlog = () => {
                                                                 </a>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <span style={{fontSize: '0.5rem'}} class="tracking-wider text-white bg-red-500 px-1 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
+                                                                <span style={{ fontSize: '0.5rem' }} class="tracking-wider text-white bg-red-500 px-1 py-1 text-xs rounded leading-loose mx-2 font-semibold" title="">
                                                                     {/* <i class="fas fa-heart" aria-hidden="true"></i>  */}
                                                                     {CalculateDate(new Date(blog.date), new Date())}
                                                                 </span>
@@ -407,27 +408,27 @@ const UserBlog = () => {
                     </div>
                 </main>
                 <aside className={classes.hideonMobile}>
-                        <div className='class="w-1/4 my-1 mr-1 px-6 py-4 flex flex-col bg-gray-200 dark:bg-black
+                    <div className='class="w-1/4 my-1 mr-1 px-6 py-4 flex flex-col bg-gray-200 dark:bg-black
 		dark:text-gray-400 rounded-r-lg overflow-y-auto"'>
 
-                        
-                    <div class="flex items-center justify-between">
 
-                        <div class="flex flex-col text-center w-full mb-10">
-                            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Dr.Snehal Adsule</h2>
-                            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Recommended Blogs</h1>
+                        <div class="flex items-center justify-between">
+
+                            <div class="flex flex-col text-center w-full mb-10">
+                                <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Dr.Snehal Adsule</h2>
+                                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Recommended Blogs</h1>
+                            </div>
                         </div>
-                    </div>
-                    <span class="mt-0 text-gray-600">Blogs For Desi Diets</span>
-                    <span class="mt-1 text-1xl font-semibold">
-                        <Link to='/pricing'>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Pricing
+                        <span class="mt-0 text-gray-600">Blogs For Desi Diets</span>
+                        <span class="mt-1 text-1xl font-semibold">
+                            <Link to='/pricing'>
+                                <button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Pricing
                         </button>
-                        </Link>
-                    </span>
+                            </Link>
+                        </span>
 
-                    {/* <button
+                        {/* <button
                         class="mt-8 flex items-center py-4 px-3 text-white rounded-lg
 			bg-green-400 shadow focus:outline-none">
 
@@ -439,57 +440,57 @@ const UserBlog = () => {
 
                     </button> */}
 
-                    <div class="mt-6 flex items-center">
-                        <span>View Blogs</span>
-                        <button class="ml-2 focus:outline-none">
-                            <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
-                                <path
-                                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
+                        <div class="mt-6 flex items-center">
+                            <span>View Blogs</span>
+                            <button class="ml-2 focus:outline-none">
+                                <svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
+                                    <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
 						0l-22.6-22.6c-9.4-9.4-9.4-24.6
 						0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3
 						103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1
 						34z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    {
-                        useBlogs.map((blog, index) => {
-                            return (
-                                <a key={index}
-                                    href="/"
-                                    class="mt-2 p-4 flex justify-between bg-gray-300 rounded-lg
+                                </svg>
+                            </button>
+                        </div>
+                        {
+                            useBlogs.map((blog, index) => {
+                                return (
+                                    <a key={index}
+                                        href="/"
+                                        class="mt-2 p-4 flex justify-between bg-gray-300 rounded-lg
 			font-semibold capitalize">
 
-                                    <div class="flex">
+                                        <div class="flex">
 
-                                        <img
-                                            class="h-10 w-10 rounded-full object-cover"
-                                            src={blog.imageurl}
-                                            alt="accelerator profile" />
-                                        <div class="flex flex-col ml-4">
+                                            <img
+                                                class="h-10 w-10 rounded-full object-cover"
+                                                src={blog.imageurl}
+                                                alt="accelerator profile" />
+                                            <div class="flex flex-col ml-4">
 
-                                            <span class="text-xs">{blog.title}</span>
-                                            <span class="text-sm text-gray-600">
-                                                <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
-                                                    <span className='text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-purple'>{blog.anytag}</span>
-                                                </a>
-                                            </span>
+                                                <span class="text-xs">{blog.title}</span>
+                                                <span class="text-sm text-gray-600">
+                                                    <a href="#" class="text-xs text-indigo-600 transition duration-500 ease-in-out">
+                                                        <span className='text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-purple'>{blog.anytag}</span>
+                                                    </a>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <span className='text-sm text-blue-500'>
-                                        <Link to={{
-                                            pathname: "/blog/" + blog._id,
-                                            state: blog
-                                        }}>
-                                            view
+                                        <span className='text-sm text-blue-500'>
+                                            <Link to={{
+                                                pathname: "/blog/" + blog._id,
+                                                state: blog
+                                            }}>
+                                                view
                                         </Link>
-                                    </span>
-                                </a>
-                            )
-                        })
-                    }
+                                        </span>
+                                    </a>
+                                )
+                            })
+                        }
 
-                    {/* <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+                        {/* <div class="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
                         <div class="w-2 bg-gray-800"></div>
                         <div class="flex items-center px-2 py-3">
                             <img class="w-12 h-12 object-cover rounded-full" src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
@@ -500,10 +501,10 @@ const UserBlog = () => {
                         </div>
                     </div> */}
 
-                    {/* <div class="mt-4 flex justify-center capitalize text-blue-600">
+                        {/* <div class="mt-4 flex justify-center capitalize text-blue-600">
                         <a href="expenses-dashboard/">see all</a>
                     </div> */}
-</div>
+                    </div>
                 </aside>
 
             </div>
@@ -539,6 +540,14 @@ const UserBlog = () => {
                     )
                 })
             } */}
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <Link color="inherit" href="/">
+                    @Team Pratham
+      </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
 
         </React.Fragment>
     );

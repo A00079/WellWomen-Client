@@ -88,10 +88,11 @@ export default function Header(props) {
         [classes.absolute]: absolute,
         [classes.fixed]: fixed
     });
-    const brandComponent = <img style={{
+    const brandComponent =
+    <Link to='/'><img style={{
         width: '6rem',
         height: '6rem'
-    }} className={classes.title} src={logo} />;
+    }} className={classes.title} src={logo} /></Link> ;
     return (
         <AppBar style={{ opacity: '0.9' }} className={appBarClasses}>
             <Toolbar className={classes.container}>
@@ -136,7 +137,7 @@ export default function Header(props) {
                   </Link>
                             </ListItem>
                             <Divider />
-                            <Link to="/TrialBlog">
+                            <Link to="/dashboard">
                                 <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
                                     Blogs
               </ListItem>
@@ -149,13 +150,13 @@ export default function Header(props) {
                             </Link>
                             <Divider />
                         </List>
-                        <List>
+                        {/* <List>
                             <ListItem className={classes.listItem}>
                                 <Button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
                                     Logout
                     </Button>
                             </ListItem>
-                        </List>
+                        </List> */}
                     </div>
                 </Drawer>
             </Hidden>

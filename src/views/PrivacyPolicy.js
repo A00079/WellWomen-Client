@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from '../assets/img/logo.png';
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
     return (
         <React.Fragment>
             <section className="ml-24 mr-24 mt-16">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-8">
-                    <img width='100px' style={{margin: '0 auto'}} src={logo} />
+                    <Link to='/'><img width='100px' style={{margin: '0 auto'}} src={logo} /></Link>
                     <br class="hidden sm:block" />Privacy Policy
                 </h1>
                 <h2>Privacy Policy</h2> <p> Crispy Fhres built the Drag Racing Lights app as a Commercial app. This SERVICE is provided by

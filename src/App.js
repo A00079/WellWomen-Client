@@ -59,11 +59,15 @@ function App() {
         <Route exact path="/TrialBlog" component={TrialBlog} />
         <Route exact path="/privacypolicy" component={PrivacyPolicy} />
         <Route exact path="/singleaboutus" component={SingleAboutUs} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
+        <Route exact path="/pricing" component={Pricing} />
+        <Route exact path="/blog/:id" component={SingleBlog} />
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/pricing" component={Pricing} />
-          <PrivateRoute exact path="/blog/:id" component={SingleBlog} />
-          <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} />
+          {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
+          {/* <PrivateRoute exact path="/pricing" component={Pricing} /> */}
+          {/* <PrivateRoute exact path="/blog/:id" component={SingleBlog} /> */}
+          {/* <PrivateRoute exact path="/YoutubeVideos" component={YoutubeVideos} /> */}
         </Switch>
       </Router>
     </Provider>
