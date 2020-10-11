@@ -82,7 +82,7 @@ const UserBlog = () => {
 
     return (
         <React.Fragment>
-            <div>
+            <div className="mt-32">
                 <AutoplaySlider
                     organicArrows={true}
                     className={classes.screensContainer}
