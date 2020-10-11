@@ -37,7 +37,7 @@ const images = [
 
 const Gallery = () =>{
     return(
-        <div class="px-8 py-24 mx-auto">
+        <div class="px-8 py-16 mx-auto">
             <ResponsiveGallery images={images} />
         </div>
     );

@@ -17,13 +17,16 @@ const TrialBlog = () => {
     }, [])
     return (
         <React.Fragment>
+            <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">
+                BLO<span class="text-indigo-600" style={{ color: '#D00F7F' }}>GS</span>
+            </h3>
             <section class="text-gray-700 body-font">
-                <div class="container px-5 py-24 mx-auto">
+                <div class="container px-5 py-4 mx-auto">
                     <div class="flex flex-wrap -mx-4 -mb-10 text-center">
                         {
 
                             <section class="text-gray-700 body-font overflow-hidden">
-                                <div class="container px-5 py-24 mx-auto">
+                                <div class="container px-5 py-0 mx-auto">
                                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
                                         <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={useBlogsOne.imageurl} />
                                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">

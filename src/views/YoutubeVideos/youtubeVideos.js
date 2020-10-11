@@ -78,7 +78,7 @@ const YoutubeVideo = (props) => {
 					setchunkVideos(response.items)
 					setfetchingVideos(false)
 					console.log('chunkVideos', chunkVideos)
-				}, 300000)
+				}, 3000)
 			})
 			.catch((err) => setfetchingVideos(true))
 	}, [])
