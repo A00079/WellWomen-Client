@@ -128,7 +128,7 @@ const Pricing = () => {
                                     <span class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Business</span>
                                     <h2 class="text-sm tracking-widest title-font mb-1 font-medium">BUSINESS</h2>
                                     <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                                        <span>$56</span>
+                                        <span>&#x20B9; 8,900</span>
                                         <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
                                     </h1>
                                     <p class="flex items-center text-gray-600 mb-2">
