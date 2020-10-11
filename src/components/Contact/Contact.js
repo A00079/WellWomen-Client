@@ -39,7 +39,7 @@ const Contact = () => {
     return (
         <React.Fragment>
             <div className="flex flex-col text-center w-full mb-0">
-                <h1 style={{ fontFamily: 'Paytone One' }} className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact <span style={{ color: '#D00F7F' }}>Us</span></h1>
+                <h3 style={{ fontFamily: 'Paytone One' }} className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CONTACT <span style={{ color: '#D00F7F' }}>US</span></h3>
             </div>
             <section class="text-gray-700 body-font relative">
                 <div class="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
