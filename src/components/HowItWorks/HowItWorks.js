@@ -106,12 +106,12 @@ export default function HorizontalLabelPositionBelowStepper() {
           {activeStep === steps.length ? (
             <React.Fragment>
               <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">
-                LET'S <span class="text-indigo-600" style={{ color: '#D00F7F' }}> START YOUR JOURNEY</span>
+                KNOW <span class="text-indigo-600" style={{ color: '#D00F7F' }}> MORE</span>
               </h3>
               <div class="flex w-full mt-8  md:justify-center justify-center">
                 <button style={{ backgroundColor: '#D00f7F', fontFamily: 'Open Sans', color: '#FFF' }} id="ourwork" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  <Link to="/startjourney" className={classes.dropdownLink}>
-                    START JOURNEY
+                  <Link to="/knowmore" className={classes.dropdownLink}>
+                    GO
                   </Link>
                 </button>
               </div>

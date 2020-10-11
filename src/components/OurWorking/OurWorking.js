@@ -141,8 +141,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -161,8 +161,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -181,8 +181,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -201,8 +201,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -222,8 +222,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -242,8 +242,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -263,8 +263,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -284,7 +284,7 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            <i className='font-black'></i>This impressive paella is a perfect party dish and a fun meal to cook together with your
                                             guests. Add 1 cup of frozen peas along with the mussels, if you like.
                                         </Typography>
                                     </CardContent>
@@ -390,8 +390,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -410,8 +410,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -430,8 +430,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -450,8 +450,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -471,8 +471,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -491,8 +491,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -512,8 +512,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -533,8 +533,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>
@@ -554,8 +554,8 @@ const OurWorking = () => {
                                         borderTop: 'none', borderBottom: '3px solid #fff'
                                     }}>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            This impressive paella is a perfect party dish and a fun meal to cook together with your
-                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                                        <i className='font-black'>This impressive paella is a perfect party dish and a fun meal to cook together with your
+                                            guests. Add 1 cup of frozen peas along with the mussels, if you like.</i>
                                         </Typography>
                                     </CardContent>
                                 </Card>

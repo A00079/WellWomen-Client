@@ -90,9 +90,9 @@ export default function Header(props) {
   });
   const brandComponent = 
   <Link to='/'><img style={{
-    width: '6rem',
-    height: '6rem'
-  }} className={classes.title} src={logo} /></Link>;
+    width: '8rem',
+    height: '2rem'
+  }} className={classes.title} src={logo} /></Link>
   return (
     <AppBar style={{ opacity: '0.9' }} className={appBarClasses}>
       <Toolbar className={classes.container}>

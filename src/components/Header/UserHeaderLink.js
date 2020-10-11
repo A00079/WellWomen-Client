@@ -54,7 +54,7 @@ const HeaderLinks = (props) => {
             <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>
             </ListItem>
-            <ListItem className={classes.listitemdrop}>
+            {/* <ListItem className={classes.listitemdrop}>
                 <CustomDropdown
                     noLiPadding
                     buttonText=""
@@ -69,9 +69,9 @@ const HeaderLinks = (props) => {
                 </Link>
                     ]}
                 />
-            </ListItem>
+            </ListItem> */}
         </List>
-    );
+    )
 }
 
 HeaderLinks.propTypes = {

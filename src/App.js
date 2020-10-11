@@ -23,7 +23,7 @@ import SingleBlog from "../src/views/UserBlogs/SingleBlog.js";
 import Pricing from "../src/views/UserPricing.js";
 import PrivacyPolicy from '../src/views/PrivacyPolicy.js';
 import SingleAboutUs from '../src/views/AboutUs';
-
+import KnowMore from '../src/components/HowItWorks/KnowMore.js';
 
 var hist = createBrowserHistory();
 // Check for token to keep user logged in
@@ -63,6 +63,7 @@ function App() {
         <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/blog/:id" component={SingleBlog} />
+        <Route exact path="/knowmore" component={KnowMore} />
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           {/* <PrivateRoute exact path="/pricing" component={Pricing} /> */}
