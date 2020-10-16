@@ -24,7 +24,7 @@ import Pricing from "../src/views/UserPricing.js";
 import PrivacyPolicy from '../src/views/PrivacyPolicy.js';
 import SingleAboutUs from '../src/views/AboutUs';
 import KnowMore from '../src/components/HowItWorks/KnowMore.js';
-
+import ComingSoon from './views/ComingSoon.js';
 var hist = createBrowserHistory();
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -51,7 +51,9 @@ function App() {
     <Provider store={store}>
       <Router history={hist}>
         <Notifications />
-        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/" component={ComingSoon} />
+
+        {/* <Route exact path="/" component={LandingPage} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={SignIn} />
         <Route exact path='/confirm/:id' component={Confirm} />
@@ -63,7 +65,7 @@ function App() {
         <Route exact path="/YoutubeVideos" component={YoutubeVideos} />
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/blog/:id" component={SingleBlog} />
-        <Route exact path="/knowmore" component={KnowMore} />
+        <Route exact path="/knowmore" component={KnowMore} /> */}
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           {/* <PrivateRoute exact path="/pricing" component={Pricing} /> */}
