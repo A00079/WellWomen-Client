@@ -146,6 +146,11 @@ export default function Header(props) {
                             <ListItem className={classes.listItem}>
                                 <Link to="/pricing">Pricing</Link>
                             </ListItem>
+
+                            <Divider />
+                            <ListItem className={classes.listItem}>
+                                <Link to="/singleaboutus">About us</Link>
+                            </ListItem>
                             <Divider />
 
                             <ListItem className={classes.listItem}>

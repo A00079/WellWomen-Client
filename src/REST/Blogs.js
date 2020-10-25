@@ -1,5 +1,5 @@
-const baseUrl = 'https://www.curvicare.com/';
-// const baseUrl = 'http://localhost:5000/'
+// const baseUrl = 'https://www.curvicare.com/';
+const baseUrl = 'http://localhost:5000/'
 const PostData = {
 
   postBlogdetails(urls,data) {

@@ -117,6 +117,19 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
+            <Link to='/'>
+              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
+                <DirectLinkDiv
+                  to="aboutus"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Home</DirectLinkDiv>
+              </ListItem></Link>
+              <Divider />
+              <Link to='/singleaboutus'>
               <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
                 <DirectLinkDiv
                   to="aboutus"
@@ -126,8 +139,9 @@ export default function Header(props) {
                   duration={500}
                 >
                   About</DirectLinkDiv>
-              </ListItem><Divider />
-
+              </ListItem></Link>
+              <Divider />
+              <Link to='/YoutubeVideos'>
               <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
                 <DirectLinkDiv
                   to="ourwork"
@@ -136,46 +150,20 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  Our Work</DirectLinkDiv>
-              </ListItem><Divider />
+                  Youtube</DirectLinkDiv>
+              </ListItem></Link>
+              <Divider />
+              <Link to='/pricing'>
               <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
                 <DirectLinkDiv
-                  to="testimonials"
+                  to="ourwork"
                   spy={true}
                   smooth={true}
                   offset={50}
                   duration={500}
                 >
-                  Testimonials</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="stats"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Stats</DirectLinkDiv>
-              </ListItem><Divider />
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="contactus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  Contact Us</DirectLinkDiv>
-
-              </ListItem>
-              <ListItem style={{padding: '16px 7px'}} className={classes.listItem}>
-                <Link to="/dashboard">Blogs</Link>
-              </ListItem>
-              <ListItem className={classes.listItem}>
-                Youtube
-        
-      </ListItem><Divider />
+                  Pricing</DirectLinkDiv>
+              </ListItem></Link>
 
               {/* {['Home', 'About', 'Our Work', 'Pricing', 'Stats', 'Contact Us', 'Blogs','Youtube'].map((text, index) => (
                 <React.Fragment  key={index}>

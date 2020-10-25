@@ -129,7 +129,7 @@ const UserBlog = () => {
                 <main
                     class="my-1 pt-2 pb-2 px-0 lg:px-10 md:px-10 flex-1 bg-gray-200 dark:bg-black rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto">
-                    <div class="flex flex-col capitalize text-3xl">
+                    <div class="flex flex-col capitalize text-3xl ml-4 md:ml-0 lg:ml-0">
                         <span class="font-semibold">hello,</span>
                         <span>tempest!</span>
                     </div>

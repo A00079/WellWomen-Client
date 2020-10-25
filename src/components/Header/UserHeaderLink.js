@@ -52,6 +52,12 @@ const HeaderLinks = (props) => {
                 <Link to="/dashboard">Blogs</Link>
             </ListItem>
             <ListItem className={classes.listItem}>
+                <Link to="/singleaboutus">About us</Link>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Link to="/pricing">Pricing</Link>
+            </ListItem>
+            <ListItem className={classes.listItem}>
                 <Link to="/YoutubeVideos">Youtube</Link>
             </ListItem>
             {/* <ListItem className={classes.listitemdrop}>

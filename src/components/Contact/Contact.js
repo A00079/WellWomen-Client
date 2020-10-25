@@ -24,7 +24,7 @@ const Contact = () => {
         PostSerway
             .postSerway(api_url, data)
             .then(response => {
-                notify.show(response.msg, "custom", 4000, { background: '#000', text: "#FFFFFF" })
+                alert(response.msg);
                 document.getElementById('name').value = '';
                 document.getElementById('email').value = '';
                 document.getElementById('message').value = '';
