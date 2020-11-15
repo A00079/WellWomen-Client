@@ -58,7 +58,7 @@ export default function Components(props) {
                     color: "white"
                 }}
             />
-            <Parallax video={require("../assets/videos/mainvideo.mp4")}>
+            <Parallax image={require("../assets/img/bg.jpg")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem>
@@ -93,7 +93,7 @@ export default function Components(props) {
                 </Card>
             </div>
             <div>
-                <div data-aos="fade-up" >
+                <div data-aos="fade-up" style={{display:'none'}}>
                     <WorkingCards />
                 </div>
                 <div data-aos="fade-up" >

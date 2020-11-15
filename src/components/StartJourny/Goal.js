@@ -20,7 +20,7 @@ class Goal extends React.Component {
                     WHAT  <span style={{color:'#D00F7F'}}> IS  YOUR GOAL ?</span>
                 </h3>
                 <section class="text-gray-700 body-font">
-                    <div class="container px-5 py-4 md:py-24 mx-auto">
+                    <div class="container px-5 py-4 md:py-10 mx-auto">
                         <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelGoal('I want to lose more than 10 kgs')}>
                                 <div class="bg-gray-200 rounded flex p-4 h-full items-center">
@@ -28,7 +28,7 @@ class Goal extends React.Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I want to lose more than 10 kgs</span>
+                                    <span class="title-font font-medium">I want to lose weight & get in shape.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelGoal('I want to tone up my body, may be lose kgs 5-10')}>
@@ -37,7 +37,7 @@ class Goal extends React.Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I want to tone up my body, may be lose kgs 5-10</span>
+                                    <span class="title-font font-medium">I want to deal with underlying medical conditions such as pcos, thyroid issues.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelGoal('I want to lose my postpartum weight')}>
@@ -46,7 +46,7 @@ class Goal extends React.Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I want to lose my postpartum weight</span>
+                                    <span class="title-font font-medium">I want to maintain my weight.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelGoal('I want to deal with underlying medical issues through diet and other lifestyles changes')}>
@@ -55,16 +55,7 @@ class Goal extends React.Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I want to deal with underlying medical issues through diet and other lifestyles changes</span>
-                                </div>
-                            </div>
-                            <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelGoal("I want to add some shape in all the right places becasue I'm too skinny right now")}>
-                                <div class="bg-gray-200 rounded flex p-4 h-full items-center">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                                        <path d="M22 4L12 14.01l-3-3"></path>
-                                    </svg>
-                                    <span class="title-font font-medium">I want to add some shape in all the right places becasue I'm too skinny right now</span>
+                                    <span class="title-font font-medium">I want to improve my eating habits.</span>
                                 </div>
                             </div>
                         </div>

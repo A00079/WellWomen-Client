@@ -144,7 +144,7 @@ const AgeGroup = (props) => {
                 </div> */}
 
                 <section class="text-gray-700 body-font">
-                    <div class="container px-5 py-24 mx-auto">
+                    <div class="container px-5 py-0 mx-auto">
 
                         <div class="flex flex-wrap -m-4 text-center">
                             <div class="p-4 md:w-1/4 sm:w-1/2 w-1/2 cursor-pointer" onClick={() => handelAge(20)}>

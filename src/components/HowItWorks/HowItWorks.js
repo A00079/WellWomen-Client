@@ -91,7 +91,7 @@ export default function HorizontalLabelPositionBelowStepper() {
         color: '#4e6073',
         fontFamily: 'Paytone One'
       }} className="sm:text-3xl mb-0 mt-8 font-extrabold md:mb-0 md:mt-16 text-3xl  md:text-4xl font-medium title-font" align="center">
-        HOW <span class="text-indigo-600" style={{color:'#D00F7F'}}> IT WORKS</span>
+        HOW  <span class="text-indigo-600" style={{color:'#D00F7F'}}> DOES IT WORK?</span>
       </h1>
 
       <div className={classes.root}>

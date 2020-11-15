@@ -20,8 +20,8 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import Notifications, { notify } from 'react-notify-toast'
 import Spinner from '../../components/Spinner/Spinner.js';
-
-
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import './SerwayForm.css';
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -106,7 +106,8 @@ const SubmitForm = (props) => {
             <div className={classes.paper} style={{ marginTop: '0px' }}>
                 <h1 style={{ fontFamily: 'Paytone One' }} className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST <span style={{ color: '#D00F7F' }}>FINISHED!</span></h1>
                 <h1 style={{ fontFamily: 'Open Sans' }} className="text-center  text-1xl mt-8 tracking-wide relative">
-                    The next page will take you to the optimal program designed according to your answers.
+                    5, 10, 20, 30 no matter how much weight you want to lose..
+                    You are at right place.
                         </h1>
                 <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
@@ -165,10 +166,29 @@ const SubmitForm = (props) => {
 
                     </Button>
                 </form>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <h4 className='font-bold cursor-pointer'>
+                            Our Programs:
+                                <p className='text-blue-700'>
+                                https://www.drsnehaladsule.com/services-1
+                                </p>
+                        </h4>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <h4 className='font-bold'>
+                            Not sure?
+                            Talk to us on whats app
+                            </h4>
+                    </Grid>
+                </Grid>
             </div>
             <Box mt={5}>
                 <Copyright />
             </Box>
+            <a href="https://api.whatsapp.com/send?phone=918169029085&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float pulse-button" target="_blank">
+                <WhatsAppIcon className='my-float' />
+            </a>
         </Container>
     );
 }

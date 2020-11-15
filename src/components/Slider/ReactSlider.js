@@ -40,9 +40,12 @@ const SimpleSlider = () => {
 					</div>
 					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
 						{/* <h1 style={{fontFamily: 'Paytone One'}} class="title-font sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-gray-900">Our Special Journeys</h1> */}
-						<h2 class="mb-8 font-black leading-relaxed" style={{ fontFamily: 'Open Sans', fontSize: '1.2rem' }}>"Having now dropped lots of weight & successfully managed PCOD, it’s my mission to help 1 million WOMEN so that they can have the body & life they always wanted."</h2>
+						<h2 class="mb-8 font-black leading-relaxed" style={{ fontFamily: 'Open Sans', fontSize: '1.2rem' }}>"Most trusted dietitian of the year 2019."</h2>
 						<br />
-						<p className='title-font lg:ml-48 sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-indigo-900'>- Dr. Snehal Adsule</p>
+						<p  className='title-font lg:ml-48 sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-indigo-900'>- Dr. Snehal Adsule
+						<br />
+						<span className='pl-6 text-xm' style={{fontSize:'1rem'}} >FOUNDER & CEO</span>
+						</p>
 						<div class="flex w-full md:justify-start justify-center">
 							<button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans' }} id="ourwork" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
 								<Link to="/startjourney" className={classes.dropdownLink}>
@@ -59,7 +62,10 @@ const SimpleSlider = () => {
 					<div class="lg:flex-grow md:w-1/2 lg:pl-8 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center">
 						<h2 class="mb-8 font-black leading-relaxed" style={{ fontFamily: 'Open Sans', fontSize: '1.2rem' }}>"Having now dropped lots of weight & successfully managed PCOD, it’s my mission to help 1 million WOMEN so that they can have the body & life they always wanted."</h2>
 						<br />
-						<p className='title-font lg:ml-48 sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-indigo-900'>- Dr. Snehal Adsule</p>
+						<p  className='title-font lg:ml-48 sm:text-4xl md:text-2xl text-2xl mb-4 font-medium text-indigo-900'>- Dr. Snehal Adsule
+						<br />
+						<span className='pl-6 text-xm' style={{fontSize:'1rem'}} >FOUNDER & CEO</span>
+						</p>
 						<div class="flex w-full md:justify-start justify-center">
 							<button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans' }} class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
 								<Link to="/startjourney" className={classes.dropdownLink}>
@@ -75,7 +81,7 @@ const SimpleSlider = () => {
 			</section>
 
 
-			<section class="text-gray-700 body-font" >
+			{/* <section class="text-gray-700 body-font" >
 				<div class="container mx-auto flex px-0 py-4 md:mt-16 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
 						<img class="object-cover object-center rounded" alt="hero" src={image1} />
@@ -93,7 +99,7 @@ const SimpleSlider = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 			{/* <div className='screenheight' data-src={image1} /> */}
 			{/* <div className='screenheight' data-src={image2} /> */}
 			{/* <div className='screenheight' data-src={image3} /> */}

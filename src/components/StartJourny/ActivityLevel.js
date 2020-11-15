@@ -20,7 +20,7 @@ class ActivityLevel extends Component {
                 WHAT  <span style={{color:'#D00F7F'}}> IS  YOUR ACTIVITY LEVEL ?</span>
                 </h3>
                 <section class="text-gray-700 body-font">
-                    <div class="container px-5 py-4 md:py-24 mx-auto">
+                    <div class="container px-5 py-4 md:py-10 mx-auto">
                         <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelActivity('I go for walks everyday to the refrigerator')}>
                                 <div class="bg-gray-200 rounded flex p-4 h-full items-center">
@@ -28,7 +28,7 @@ class ActivityLevel extends Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I go for walks everyday to the refrigerator</span>
+                                    <span class="title-font font-medium">Sedentary lifestyle- No activity.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelActivity('I walk and/or do a bit of yoga 2-3 times a week')}>
@@ -37,7 +37,7 @@ class ActivityLevel extends Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I walk and/or do a bit of yoga 2-3 times a week</span>
+                                    <span class="title-font font-medium">Light activity.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelActivity("I work out but I don't have much of a structure")}>
@@ -46,7 +46,7 @@ class ActivityLevel extends Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I work out but I don't have much of a structure</span>
+                                    <span class="title-font font-medium">Moderate activity.</span>
                                 </div>
                             </div>
                             <div class="p-2 sm:w-1/2 w-full cursor-pointer" onClick={() =>this.handelActivity("I am rockstar at my gym (or other activity)")}>
@@ -55,7 +55,7 @@ class ActivityLevel extends Component {
                                         <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                         <path d="M22 4L12 14.01l-3-3"></path>
                                     </svg>
-                                    <span class="title-font font-medium">I am rockstar at my gym (or other activity)</span>
+                                    <span class="title-font font-medium">Vigorous activity.</span>
                                 </div>
                             </div>
                         </div>
