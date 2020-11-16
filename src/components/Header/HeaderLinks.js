@@ -67,7 +67,7 @@ const HeaderLinks = (props) => {
             offset={50}
             duration={500}
           >
-            Our Work</DirectLinkDiv>
+            Transformation</DirectLinkDiv>
         </ListItem>
       }
       {

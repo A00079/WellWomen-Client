@@ -25,10 +25,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
+import HomeIcon from '@material-ui/icons/Home';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import InfoIcon from '@material-ui/icons/Info';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const useStyles = makeStyles(styles);
 let DirectLinkDiv = Scroll.Link;
@@ -132,29 +137,29 @@ export default function Header(props) {
                 >
                     <div className={classes.appResponsive}>
                         <List className={classes.list}>
-                            <ListItem className={classes.listItem}>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                                 <Link to='/'>
-                                    Home
+                                <HomeIcon /> Home
                                 </Link>
                             </ListItem>
                             <Divider />
 
-                            <ListItem className={classes.listItem}>
-                                <Link to="/dashboard">Blogs</Link>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
                             </ListItem>
                             <Divider />
-                            <ListItem className={classes.listItem}>
-                                <Link to="/pricing">Pricing</Link>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <Link to="/pricing"><MonetizationOnIcon />Pricing</Link>
                             </ListItem>
 
                             <Divider />
-                            <ListItem className={classes.listItem}>
-                                <Link to="/singleaboutus">About us</Link>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <Link to="/singleaboutus"><InfoIcon />About us</Link>
                             </ListItem>
                             <Divider />
 
-                            <ListItem className={classes.listItem}>
-                                <Link to="/YoutubeVideos">Youtube</Link>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
                             </ListItem>
                             <Divider />
 

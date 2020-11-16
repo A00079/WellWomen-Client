@@ -22,7 +22,11 @@ import { Apps, CloudDownload } from "@material-ui/icons";
 // core components
 
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
-
+import HomeIcon from '@material-ui/icons/Home';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import InfoIcon from '@material-ui/icons/Info';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 const useStyles = makeStyles(styles);
 let DirectLinkDiv = Scroll.Link;
 
@@ -43,22 +47,22 @@ const HeaderLinks = (props) => {
     };
     return (
         <List className={classes.list}>
-            <ListItem className={classes.listItem}>
+            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <Link to='/'>
-                    Home
+                <HomeIcon /> Home
                 </Link>
             </ListItem>
-            <ListItem className={classes.listItem}>
-                <Link to="/dashboard">Blogs</Link>
+            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
             </ListItem>
-            <ListItem className={classes.listItem}>
-                <Link to="/singleaboutus">About us</Link>
+            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                <Link to="/singleaboutus"><InfoIcon /> About us</Link>
             </ListItem>
-            <ListItem className={classes.listItem}>
-                <Link to="/pricing">Pricing</Link>
+            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                <Link to="/pricing"><MonetizationOnIcon /> Pricing</Link>
             </ListItem>
-            <ListItem className={classes.listItem}>
-                <Link to="/YoutubeVideos">Youtube</Link>
+            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
             </ListItem>
             {/* <ListItem className={classes.listitemdrop}>
                 <CustomDropdown

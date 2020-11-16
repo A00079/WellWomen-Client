@@ -25,11 +25,18 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
-
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import TransferWithinAStationIcon from '@material-ui/icons/TransferWithinAStation';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
 const useStyles = makeStyles(styles);
 let DirectLinkDiv = Scroll.Link;
 
@@ -132,13 +139,13 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <Link to='/'>
-                  Home
+                  <HomeIcon /> Home
                   </Link>
               </ListItem>
               <Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="aboutus"
                   spy={true}
@@ -146,10 +153,10 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  About</DirectLinkDiv>
+                  <InfoIcon /> About</DirectLinkDiv>
               </ListItem><Divider />
 
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="ourwork"
                   spy={true}
@@ -157,9 +164,9 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  Our Work</DirectLinkDiv>
+                  <TransferWithinAStationIcon />Transformation</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="testimonials"
                   spy={true}
@@ -167,9 +174,9 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  Testimonials</DirectLinkDiv>
+                  <EmojiPeopleIcon /> Testimonials</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="stats"
                   spy={true}
@@ -177,9 +184,9 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  Stats</DirectLinkDiv>
+                  <EqualizerIcon /> Stats</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="contactus"
                   spy={true}
@@ -187,29 +194,29 @@ export default function Header(props) {
                   offset={50}
                   duration={500}
                 >
-                  Contact Us</DirectLinkDiv>
+                  <ContactMailIcon /> Contact Us</DirectLinkDiv>
 
               </ListItem>
               <Divider />
               {
                 isloggedIn ?
                   <Link to="/dashboard">
-                    <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                      Blogs
+                    <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                      <ChromeReaderModeIcon /> Blogs
                     </ListItem>
                   </Link>
                   :
                   <Link to="/dashboard">
-                    <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                      Blogs
+                    <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                    <ChromeReaderModeIcon /> Blogs
                     </ListItem>
                   </Link>
               }
 
               <Divider />
               <Link to="/YoutubeVideos">
-                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                  Youtube
+                <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                  <YouTubeIcon /> Youtube
               </ListItem>
               </Link>
               <Divider />

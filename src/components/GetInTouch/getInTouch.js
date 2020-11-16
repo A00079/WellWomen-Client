@@ -16,7 +16,8 @@ class getIntouch extends Component {
                             <h1 style={{ textAlign: 'center', fontFamily: 'Open Sans' }} className="flex-grow sm:pr-16 mb-8 md:mb-0 text-2xl font-medium title-font text-gray-900">
                                 Still confuse Get a FREE Suggetion from our Health Expert on WhatsApp
                             </h1>
-                            <button style={{ width: '60%', background: '#D00F7F', color: '#fff', margin: '0 auto', fontFamily: 'Open Sans' }} className="flex-shrink-0 text-white  border-0 py-2 px-8 focus:outline-none  rounded text-lg mt-10 sm:mt-0">Click Here To Chat</button>
+                            <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello." style={{ width: '20%', background: '#D00F7F', color: '#fff', margin: '0 auto', fontFamily: 'Open Sans' }} className="flex-shrink-0 text-white  border-0 py-2 px-8 focus:outline-none  rounded text-lg mt-10 sm:mt-0">
+                            Click Here To Chat</a>
                         </div>
                     </div>
                 </section>

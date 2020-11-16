@@ -29,7 +29,8 @@ const headerLinksStyle = theme => ({
     "&:hover": {
       background: '#D00F7F',
       padding: '10px',
-      color: 'white',
+      borderRadius: '4px',
+      color: 'white !important',
       transition: 'all 0.3s ease-in-out'
     },
     [theme.breakpoints.down("sm")]: {

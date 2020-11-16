@@ -29,7 +29,11 @@ import MailIcon from '@material-ui/icons/Mail';
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
-
+import HomeIcon from '@material-ui/icons/Home';
+import ChromeReaderModeIcon from '@material-ui/icons/ChromeReaderMode';
+import InfoIcon from '@material-ui/icons/Info';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 const useStyles = makeStyles(styles);
 let DirectLinkDiv = Scroll.Link;
 
@@ -131,21 +135,21 @@ export default function Header(props) {
                 >
                     <div className={classes.appResponsive}>
                         <List>
-                            <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
+                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                                 <Link to='/'>
-                                    Home
+                                <HomeIcon /> Home
                   </Link>
                             </ListItem>
                             <Divider />
                             <Link to="/dashboard">
-                                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                                    Blogs
+                                <ListItem style={{ padding: '16px 7px', textDecoration: 'none',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <ChromeReaderModeIcon /> Blogs
               </ListItem>
                             </Link>
                             <Divider />
                             <Link to="/YoutubeVideos">
-                                <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>
-                                    Youtube
+                                <ListItem style={{ padding: '16px 7px', textDecoration: 'none',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                <YouTubeIcon /> Youtube
               </ListItem>
                             </Link>
                             <Divider />
