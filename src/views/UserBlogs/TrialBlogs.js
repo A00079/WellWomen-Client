@@ -17,7 +17,7 @@ const TrialBlog = () => {
     }, [])
     return (
         <React.Fragment>
-            <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">
+            <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-32 sm:mb-10">
                 BLO<span class="text-indigo-600" style={{ color: '#D00F7F' }}>GS</span>
             </h3>
             <section class="text-gray-700 body-font">

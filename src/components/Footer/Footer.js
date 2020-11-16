@@ -121,7 +121,16 @@ class Footer extends Component {
                 </a>
                 <a class="ml-3 text-gray-500">
                   <Link to='/privacypolicy'>
-                    Privacy Policy
+                    <span className='font-bold'>Privacy Policy</span>
+                  </Link>
+                  <Link to='/privacypolicy'>
+                    <span className='font-bold'>, Terms & Conditions</span>
+                  </Link>
+                  <Link to='/privacypolicy'>
+                  <span className='font-bold'>, Disclaimer</span>
+                  </Link>
+                  <Link to='/privacypolicy'>
+                  <span className='font-bold'>, Refund Policy</span>
                   </Link>
                 </a>
               </span>

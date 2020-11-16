@@ -30,7 +30,7 @@ const PartOneGallery = () => {
                     <h1 class="sm:text-3xl text-2xl mt-8 font-medium title-font mb-4 text-white" style={{ fontFamily: 'Paytone One' }}>Check out our Youtube channel & Get free diet recipes.</h1>
                     {/* <p class="lg:w-2/3 mx-auto leading-relaxed text-white">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p> */}
                 </div>
-                <div class="container px-5 py-16 lg:py-8 md:py-8 mx-auto">
+                <div class="container px-5 py-0 lg:py-8 md:py-8 mx-auto">
                     <div class="flex flex-wrap -mx-4 -mb-10 text-center">
                         <div class="sm:w-1/2 mb-0 px-0">
                             <div class="rounded-lg h-64 overflow-hidden">

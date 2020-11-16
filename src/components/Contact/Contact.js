@@ -39,10 +39,13 @@ const Contact = () => {
     return (
         <React.Fragment>
             <div className="flex flex-col text-center w-full mb-0">
-                <h3 style={{ fontFamily: 'Paytone One' }} className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CONTACT <span style={{ color: '#D00F7F' }}>US</span></h3>
+                {/* <h3 style={{ fontFamily: 'Paytone One' }} className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CONTACT <span style={{ color: '#D00F7F' }}>US</span></h3> */}
+                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-0 sm:mb-10">
+                CONTACT <span class="text-indigo-600" style={{ color: '#D00F7F' }}> US</span>
+                </h3>
             </div>
             <section class="text-gray-700 body-font relative">
-                <div class="container px-5 py-24 mx-auto flex sm:flex-no-wrap flex-wrap">
+                <div class="container px-5 py-16 mx-auto flex sm:flex-no-wrap flex-wrap">
                     <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                         <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}></iframe>
                         <div class="bg-white relative flex flex-wrap py-6">
