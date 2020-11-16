@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 	screensContainer: {
 		height: '460px',
 		[theme.breakpoints.down("sm")]: {
-			height: '570px'
+			height: '37rem'
 		}
 	},
 	screenheight: {

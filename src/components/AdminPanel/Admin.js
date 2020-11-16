@@ -96,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: theme.spacing(9) + 1,
         },
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
     },
     toolbar: {
         display: 'flex',
@@ -358,6 +361,7 @@ export default function MiniDrawer() {
             setShowBlogs(false);
             setShowSerway(false);
         }
+        handleDrawerClose();
     };
 
     return (
