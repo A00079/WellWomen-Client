@@ -310,7 +310,7 @@ const OurWorking = () => {
                                             borderTop: 'none', borderBottom: '3px solid #fff'
                                         }}>
                                             <Typography variant="body2" color="textSecondary" component="p">
-                                            <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.
+                                                <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.
                                         </Typography>
                                         </CardContent>
                                     </Card>
@@ -388,7 +388,182 @@ const OurWorking = () => {
                                         </CardContent>
                                     </Card> */}
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans2.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <p className='font-black'><span className='text-pink-600 font-bold'>Sonal Medhekar</span><br /> Lost 13KGS in 18 weeks.</p>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans3.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Hedavi</span><br /> 6 KGS IN 8 Weeks.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans4.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Archana</span><br /> Lost 8 KGS IN 7 Weeks.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans5.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Sweety Mungra</span><br /> Progress In 8 Weeks.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans6.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Simran Chandwani</span><br /> 10 Weeks Progress With PCOD.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans7.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Bhavani</span><br /> Progress In 4 Month.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans8.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Vriunda</span><br /> Lost 8.5 KGS In 8 Weeks.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans9.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Kavya</span><br /> Lost 8 KGS In 8 Weeks.</i>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+
+                                    <Card className={classes.root} style={{
+                                        position: 'relative', left: '0', border: '10px solid #fff',
+                                        borderBottom: 'none'
+                                    }}>
+                                        <CardMedia
+                                            className={classes.media}
+                                            image={require('../../assets/img/trans10.jpg')}
+                                            title="Paella dish"
+                                        />
+                                        <CardContent style={{
+                                            border: '1px solid #fff',
+                                            borderTop: 'none', borderBottom: '3px solid #fff'
+                                        }}>
+                                            <Typography variant="body2" color="textSecondary" component="p">
+                                                <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.
+                                        </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                    {/* <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans1.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -557,7 +732,7 @@ const OurWorking = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     {/* <ReactCard imgpath='../../assets/img/trans2.jpg' /> */}
                                     {/* <ReactCard imgpath='../../assets/img/trans3.jpg' /> */}
