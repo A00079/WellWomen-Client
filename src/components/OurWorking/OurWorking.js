@@ -388,7 +388,7 @@ const OurWorking = () => {
                                         </CardContent>
                                     </Card> */}
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans1.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -407,7 +407,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans3.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -426,7 +426,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans4.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -445,7 +445,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans5.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -464,7 +464,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans6.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -483,7 +483,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans7.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -502,7 +502,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans8.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -521,7 +521,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans9.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
@@ -540,7 +540,7 @@ const OurWorking = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                                    <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" style={{borderBottom: '1px solid #ccc'}}>
                                         <div class="bg-white rounded overflow-hidden border-indigo-600 relative">
                                             <img class="h-56 w-full object-cover object-center" src={require('../../assets/img/trans10.jpg')} alt="" />
                                             <div class="p-4 h-auto md:h-40 lg:h-48">
