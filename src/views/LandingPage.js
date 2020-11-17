@@ -58,7 +58,7 @@ export default function Components(props) {
                     color: "white"
                 }}
             />
-            <Parallax image={require("../assets/img/bg.jpg")}>
+            <Parallax image={require("../assets/img/home1.jpg")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem>

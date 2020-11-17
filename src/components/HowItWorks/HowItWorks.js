@@ -57,13 +57,17 @@ function getStepContent(stepIndex) {
 
   switch (stepIndex) {
     case 0:
-      return <HowItWorksCard />;
+      return <HowItWorksCard image={require("../../assets/img/choose.jpg")} />;
     case 1:
-      return <HowItWorksCard />;
+      return <HowItWorksCard image={require("../../assets/img/buddy.jpg")} />;
     case 2:
-      return <HowItWorksCard />;
+      return <HowItWorksCard image={require("../../assets/img/community.jpg")} />;
+    case 3:
+      return <HowItWorksCard image={require("../../assets/img/climb.jpg")} />;
+    case 4:
+      return <HowItWorksCard image={require("../../assets/img/celebrate.jpg")} />;
     default:
-      return <HowItWorksCard />;
+      return <HowItWorksCard image={require("../../assets/img/climb.jpg")} />;
   }
 }
 
