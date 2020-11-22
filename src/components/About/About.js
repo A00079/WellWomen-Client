@@ -18,7 +18,7 @@ class About extends Component {
                         </div>
                         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                             <h1 className="title-font sm:text-4xl md:text-2xl text-3xl mb-4 font-medium text-white">About
-                                <br className="hidden lg:inline-block" />DR. SNEHAL ADSULE
+                                <br className="hidden lg:inline-block" />CurviCare
                             </h1>
                             <p className="mb-8 leading-relaxed text-white">Dr. Snehal Adsule (MD) is an enthusiastic, young Doctor & Nutritionist specialization in Women Weight Loss. She has a BHMS (Homeopathy) degree from Maharashtra University Of Health Sciences. She further certified herself with Nutrition & Dietetics from Tulip International with affiliation of GCTA (Australia). She is also a certified Personal Counselor & REBT Therapist. With all her medical knowledge, passion & ever positive attitude, she is successfully treating & giving complete personal attention to every woman whose unable to find weight loss solution by their own.</p>
                             <div className="flex justify-center">

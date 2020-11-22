@@ -26,6 +26,8 @@ import SingleAboutUs from '../src/views/AboutUs';
 import KnowMore from '../src/components/HowItWorks/KnowMore.js';
 import ComingSoon from './views/ComingSoon.js';
 import Admin from '../src/components/AdminPanel/Admin.js';
+import SupportPortal from '../src/components/SupportPortal/SupportPortal.js';
+
 var hist = createBrowserHistory();
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -68,7 +70,7 @@ function App() {
         <Route exact path="/blog/:id" component={SingleBlog} />
         <Route exact path="/knowmore" component={KnowMore} />
         <Route exact path="/admin" component={Admin} />
-
+        <Route exact path="/support" component={SupportPortal} />
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           {/* <PrivateRoute exact path="/pricing" component={Pricing} /> */}
