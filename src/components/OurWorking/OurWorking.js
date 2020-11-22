@@ -154,7 +154,7 @@ const OurWorking = () => {
                                             borderTop: 'none', borderBottom: '3px solid #fff'
                                         }}>
                                             <Typography variant="body2" color="textSecondary" component="p">
-                                                <p className='font-black'><span className='text-pink-600 font-bold'>Sonal Medhekar</span><br /> Lost 13KGS in 18 weeks.</p>
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Sonal Medhekar</span><br /> Lost 13KGS in 18 weeks.</i>
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -310,8 +310,9 @@ const OurWorking = () => {
                                             borderTop: 'none', borderBottom: '3px solid #fff'
                                         }}>
                                             <Typography variant="body2" color="textSecondary" component="p">
-                                                <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.
-                                        </Typography>
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.</i>
+                                                {/* <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD. */}
+                                            </Typography>
                                         </CardContent>
                                     </Card>
                                     {/* <ReactCard imgpath='../../assets/img/trans2.jpg' /> */}
@@ -402,7 +403,7 @@ const OurWorking = () => {
                                             borderTop: 'none', borderBottom: '3px solid #fff'
                                         }}>
                                             <Typography variant="body2" color="textSecondary" component="p">
-                                                <p className='font-black'><span className='text-pink-600 font-bold'>Sonal Medhekar</span><br /> Lost 13KGS in 18 weeks.</p>
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Sonal Medhekar</span><br /> Lost 13KGS in 18 weeks.</i>
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -558,8 +559,8 @@ const OurWorking = () => {
                                             borderTop: 'none', borderBottom: '3px solid #fff'
                                         }}>
                                             <Typography variant="body2" color="textSecondary" component="p">
-                                                <span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.
-                                        </Typography>
+                                                <i className='font-black'><span className='text-pink-600 font-bold'>Joyti</span><br /> Lost 15 KGS With PCOD.</i>
+                                            </Typography>
                                         </CardContent>
                                     </Card>
 

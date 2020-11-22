@@ -36,7 +36,7 @@ const SimpleSlider = () => {
 			<section class="text-gray-700 body-font" >
 				<div class="container mx-auto flex px-0 py-0 md:mt-0 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
-						<img class="rounded" style={{width: '20rem',height: '20rem'}} alt="hero" src={image1} />
+						<img class="rounded ml-0 lg:ml-20 md:ml-20" style={{width: '20rem',height: '20rem'}} alt="hero" src={image1} />
 					</div>
 					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
 						
@@ -61,7 +61,7 @@ const SimpleSlider = () => {
 			<section class="text-gray-700 body-font" >
 				<div class="container mx-auto flex px-0 py-0 md:mt-0 mt-0 md:flex-row flex-col items-center">
 					<div class="lg:max-w-lg lg:w-full md:w-1/2 w-6/6 mb-6 md:mb-0">
-						<img class="rounded" style={{width: '20rem',height: '20rem'}} alt="hero" src={image2} />
+						<img class="rounded ml-0 lg:ml-20 md:ml-20" style={{width: '20rem',height: '20rem'}} alt="hero" src={image2} />
 					</div>
 					<div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
 						

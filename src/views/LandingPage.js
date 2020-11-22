@@ -27,6 +27,7 @@ import PartOneGallery from '../components/Gallary/PartoneGallery.js';
 import FullGallery from '../components/Gallary/FullGallary.js';
 import Clients from '../components/Testimonials/OurClients.js';
 import TrialBlog from '../views/UserBlogs/TrialBlogs.js';
+import Awards from '../components/Awards/Awards';
 import SocialContacts from '../components/SocialContacts/SocialContacts.js';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -117,9 +118,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <Testimonial />
                 </div>
-                {/* <div data-aos="fade-up" >
-                    <Clients />
-                </div> */}
+                <div data-aos="fade-up" >
+                    <Awards />
+                </div>
                 <div data-aos="fade-up" >
                     <GetInTouch />
                 </div>
