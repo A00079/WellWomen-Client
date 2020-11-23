@@ -1,4 +1,7 @@
-const parallaxStyle = {
+import homeMobile from '../../../../assets/img/home1.jpg';
+import homeDesktop from '../../../../assets/img/home.jpg';
+
+const parallaxStyle = theme => ({
   parallax: {
     height: "90vh",
     maxHeight: "1000px",
@@ -6,6 +9,10 @@ const parallaxStyle = {
     position: "relative",
     backgroundPosition: "center center",
     backgroundSize: "cover",
+    background: `url(${homeDesktop})`,
+    [theme.breakpoints.down('sm')]: {
+      background:`url(${homeMobile})`,
+    },
     margin: "0",
     padding: "0",
     border: "0",
@@ -30,6 +37,6 @@ const parallaxStyle = {
   small: {
     height: "380px"
   }
-};
+});
 
 export default parallaxStyle;

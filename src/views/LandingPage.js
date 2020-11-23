@@ -64,7 +64,8 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}>READY TO LOSE WEIGHT, FOR LIFE? </h1>
+                                {/* <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}>READY TO LOSE WEIGHT, FOR LIFE? </h1> */}
+                                <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}></h1>
                                 {/* <h3 className="md:text-1xl text-2xl font-medium" style={{ fontFamily: 'Paytone One' }}>
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3> */}
@@ -101,6 +102,9 @@ export default function Components(props) {
                     <OurWorking />
                 </div>
                 <div data-aos="fade-up" >
+                    <HowItWorks />
+                </div>
+                <div data-aos="fade-up" >
                     <PartOneGallery />
                 </div>
                 <div data-aos="fade-up" >
@@ -110,16 +114,13 @@ export default function Components(props) {
                     <AppInfo />
                 </div>
                 <div data-aos="fade-up" >
-                    <HowItWorks />
-                </div>
-                <div data-aos="fade-up" >
                     <About />
                 </div>
                 <div data-aos="fade-up" >
-                    <Testimonial />
+                    <Awards />
                 </div>
                 <div data-aos="fade-up" >
-                    <Awards />
+                    <Testimonial />
                 </div>
                 <div data-aos="fade-up" >
                     <GetInTouch />
