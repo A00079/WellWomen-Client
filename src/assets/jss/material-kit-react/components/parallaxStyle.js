@@ -1,5 +1,5 @@
 import homeMobile from '../../../../assets/img/home1.jpg';
-import homeDesktop from '../../../../assets/img/home.jpg';
+import homeDesktop from '../../../../assets/img/desktopbanner.jpg';
 
 const parallaxStyle = theme => ({
   parallax: {

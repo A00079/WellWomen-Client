@@ -66,6 +66,8 @@ export default function Components(props) {
                             <div className={classes.brand}>
                                 {/* <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}>READY TO LOSE WEIGHT, FOR LIFE? </h1> */}
                                 <h1 className="md:text-4xl text-4xl mt-48 md:mt-64 font-black" style={{ fontFamily: 'Paytone One' }}></h1>
+                                <h3 className="md:text-1xl text-2xl font-medium pb-40 lg:pb-12 md:pb-12" style={{ fontFamily: 'Paytone One' }}>
+                                </h3>
                                 {/* <h3 className="md:text-1xl text-2xl font-medium" style={{ fontFamily: 'Paytone One' }}>
                                     WITH ONLY AND ONLY DESI DIET !
                                 </h3> */}

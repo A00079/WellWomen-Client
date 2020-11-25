@@ -39,10 +39,12 @@ import BlogLogs from './BlogLogs.js';
 import SerwayData from './SerwayDetailsLogs.js';
 import Blogs from '../../../src/REST/Blogs.js';
 import Paper from '@material-ui/core/Paper';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import {
     LineChart, BarChart, Bar, AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import CustomAreaChart from './AreaChart.js';
+import AdminLogin from './Adminlogin.js'
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -140,6 +142,7 @@ export default function MiniDrawer() {
     const [ShowBlogs, setShowBlogs] = React.useState(false);
     const [ShowSerway, setShowSerway] = React.useState(false);
     const [SerwayDetails, setSerwayDetails] = React.useState([]);
+    const [isAdminLogin, setisAdminLogin] = React.useState(true);
 
     const [SerwayCount, setSerwayCount] = React.useState(0);
 
@@ -254,10 +257,15 @@ export default function MiniDrawer() {
         }
     ])
     React.useEffect(() => {
-        fetchBlogs();
-        fetchUsers();
-        fetchSerwayDetails();
-    }, [])
+        if (sessionStorage.getItem('sessionid') !== 'yuhfghdj-hdjjdh-ndhdhk799-bbdmdk-6685') {
+            setisAdminLogin(true)
+        } else {
+            setisAdminLogin(false);
+            fetchBlogs();
+            fetchUsers();
+            fetchSerwayDetails();
+        }
+    }, [isAdminLogin])
     const fetchBlogs = () => {
         setOpen(!open)
         let api_url = "api/admin/getBlog/read";
@@ -364,268 +372,292 @@ export default function MiniDrawer() {
         handleDrawerClose();
     };
 
-    return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <AppBar
-                position="fixed"
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
-                })}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap>
-                        Dashboard
-          </Typography>
-                    <Avatar alt="admin icon" src={userIcon} style={{ position: 'absolute', right: '40px' }} />
+    const getCredencials = (email, pass) => {
+        if (email === 'drsnehaladsule@gmail.com' && pass === 'curvicare@321') {
+            setisAdminLogin(false);
+            sessionStorage.setItem('sessionid', 'yuhfghdj-hdjjdh-ndhdhk799-bbdmdk-6685');
+        }else{
+            alert('Wrong Email/Password Combination.');
+        }
+    }
+    const handleLogout = () =>{
+        setisAdminLogin(true);
+        sessionStorage.clear();
+    }
 
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
-                })}
-                classes={{
-                    paper: clsx({
-                        [classes.drawerOpen]: open,
-                        [classes.drawerClose]: !open,
-                    }),
-                }}
-            >
-                <div className={classes.toolbar}>
-                    <Link to='/'>
-                        <img src={applogo} style={{ width: '4rem', position: 'absolute', left: '1rem' }} />
-                    </Link>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    {
-                        open ?
-                            <React.Fragment>
-                                <ListItem className={classes.drawerItems}>
-                                    <Avatar alt="Remy Sharp" src={adminImg} className={classes.large} />
-                                </ListItem>
-                                <ListItem className={classes.drawerItems} style={{ display: 'block', textAlign: 'center' }}>
-                                    <h5 class="text-green-900 font-black">Welcome</h5>
-                                    <h6 class="text-black-900 font-black">dr.snehal adsule</h6>
-                                    <h6 class="text-blue-600 font-black">drsnehaladsule@gmail.com</h6>
+    return (
+        <React.Fragment>
+            {
+                isAdminLogin ? <AdminLogin getCredencials={(email, pass) => getCredencials(email, pass)} />
+                    :
+                    <div className={classes.root}>
+                        <CssBaseline />
+                        <AppBar
+                            position="fixed"
+                            className={clsx(classes.appBar, {
+                                [classes.appBarShift]: open,
+                            })}
+                        >
+                            <Toolbar>
+                                <IconButton
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    onClick={handleDrawerOpen}
+                                    edge="start"
+                                    className={clsx(classes.menuButton, {
+                                        [classes.hide]: open,
+                                    })}
+                                >
+                                    <MenuIcon />
+                                </IconButton>
+                                <Typography variant="h6" noWrap>
+                                    Dashboard
+          </Typography>
+                                <Avatar alt="admin icon" src={userIcon} style={{ position: 'absolute', right: '40px' }} />
+
+                            </Toolbar>
+                        </AppBar>
+                        <Drawer
+                            variant="permanent"
+                            className={clsx(classes.drawer, {
+                                [classes.drawerOpen]: open,
+                                [classes.drawerClose]: !open,
+                            })}
+                            classes={{
+                                paper: clsx({
+                                    [classes.drawerOpen]: open,
+                                    [classes.drawerClose]: !open,
+                                }),
+                            }}
+                        >
+                            <div className={classes.toolbar}>
+                                <Link to='/'>
+                                    <img src={applogo} style={{ width: '4rem', position: 'absolute', left: '1rem' }} />
+                                </Link>
+                                <IconButton onClick={handleDrawerClose}>
+                                    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                                </IconButton>
+                            </div>
+                            <Divider />
+                            <List>
+                                {
+                                    open ?
+                                        <React.Fragment>
+                                            <ListItem className={classes.drawerItems}>
+                                                <Avatar alt="Remy Sharp" src={adminImg} className={classes.large} />
+                                            </ListItem>
+                                            <ListItem className={classes.drawerItems} style={{ display: 'block', textAlign: 'center' }}>
+                                                <h5 class="text-green-900 font-black">Welcome</h5>
+                                                <h6 class="text-black-900 font-black">dr.snehal adsule</h6>
+                                                <h6 class="text-blue-600 font-black">drsnehaladsule@gmail.com</h6>
+                                            </ListItem>
+                                            <Divider />
+                                        </React.Fragment> : ""
+                                }
+                                {
+                                    open == false ?
+                                        <ListItem className={classes.drawerItems}>
+                                            <ListItemIcon><AccountCircle /></ListItemIcon>
+                                        </ListItem> : ""
+                                }
+                                <Divider />
+
+                                <Link to="/">
+                                    <ListItem className={classes.drawerItems}>
+                                        <ListItemIcon><HomeIcon /></ListItemIcon>
+                                        <ListItemText>Home</ListItemText>
+                                    </ListItem>
+                                </Link>
+                                <Divider />
+                                <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('dashboard')}>
+                                    <ListItemIcon><DashboardIcon /></ListItemIcon>
+                                    <ListItemText>Dashboard</ListItemText>
                                 </ListItem>
                                 <Divider />
-                            </React.Fragment> : ""
-                    }
-                    {
-                        open == false ?
-                            <ListItem className={classes.drawerItems}>
-                                <ListItemIcon><AccountCircle /></ListItemIcon>
-                            </ListItem> : ""
-                    }
-                    <Divider />
-
-                    <Link to="/">
-                    <ListItem className={classes.drawerItems}>
-                        <ListItemIcon><HomeIcon /></ListItemIcon>
-                        <ListItemText>Home</ListItemText>
-                    </ListItem>
-                    </Link>
-                    <Divider />
-                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('dashboard')}>
-                        <ListItemIcon><DashboardIcon /></ListItemIcon>
-                        <ListItemText>Dashboard</ListItemText>
-                    </ListItem>
-                    <Divider />
-                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('postblog')}>
-                        <ListItemIcon><CreateIcon /></ListItemIcon>
-                        <ListItemText>Create Blog</ListItemText>
-                    </ListItem>
-                    <Divider />
-                    <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('editblog')}>
-                        <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
-                        <ListItemText >Manage Blog</ListItemText>
-                    </ListItem>
-                    {/* <Divider /> */}
-                    {/* <ListItem className={classes.drawerItems}>
+                                <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('postblog')}>
+                                    <ListItemIcon><CreateIcon /></ListItemIcon>
+                                    <ListItemText>Create Blog</ListItemText>
+                                </ListItem>
+                                <Divider />
+                                <ListItem className={classes.drawerItems} onClick={() => handleActivePanel('editblog')}>
+                                    <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
+                                    <ListItemText >Manage Blog</ListItemText>
+                                </ListItem>
+                                <ListItem className={classes.drawerItems} onClick={() => handleLogout()}>
+                                    <ListItemIcon><PowerSettingsNewIcon /></ListItemIcon>
+                                    <ListItemText >Logout</ListItemText>
+                                </ListItem>
+                                {/* <Divider /> */}
+                                {/* <ListItem className={classes.drawerItems}>
                         <ListItemIcon><PollIcon /></ListItemIcon>
                         <ListItemText onClick={() => handleActivePanel('editblog')}> Demographic</ListItemText>
                     </ListItem> */}
-                </List>
-                <Divider />
-            </Drawer>
-            {
-                dashboard ?
-                    <React.Fragment>
-                        <Grid
-                            style={{
-                                margin: '4rem 0rem 0rem 0rem',
-                                height: '100vh',
-                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
-                            }}
-                            container
-                            direction="row"
-                            justify="center"
-                            spacing={3}>
-                            <Grid item xs={4} md={4} lg={4} >
-                                <InfoCards userCount={userCount} cardtitle="User Traffic" />
-                            </Grid>
-                            <Grid item xs={4} md={4} lg={4} >
-                                <InfoCards userCount={SerwayCount} cardtitle="Started Journey" />
-                            </Grid>
-                            <Grid item xs={4} md={4} lg={4}>
-                                <BlogCard postCount={postCount} cardtitle="Blog Posts" />
-                            </Grid>
-                            <Grid item xs={12} md={5} lg={5}>
-                                <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Users</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of users can be viewed here.</h6>
-                                    <div className="ml-24">
-                                        <BarChart width={200} height={60} data={linechart}>
-                                            <Bar dataKey="uv" fill="#8884d8" />
-                                        </BarChart>
-                                    </div>
-                                    <Button onClick={() => handelLogs('userlog')} variant="contained" size="small" color="primary" className={classes.margin}>
-                                        View Logs
+                            </List>
+                            <Divider />
+                        </Drawer>
+                        {
+                            dashboard ?
+                                <React.Fragment>
+                                    <Grid
+                                        style={{
+                                            margin: '4rem 0rem 0rem 0rem',
+                                            height: '100vh',
+                                            background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                                        }}
+                                        container
+                                        direction="row"
+                                        justify="center"
+                                        spacing={3}>
+                                        <Grid item xs={4} md={4} lg={4} >
+                                            <InfoCards userCount={userCount} cardtitle="User Traffic" />
+                                        </Grid>
+                                        <Grid item xs={4} md={4} lg={4} >
+                                            <InfoCards userCount={SerwayCount} cardtitle="Started Journey" />
+                                        </Grid>
+                                        <Grid item xs={4} md={4} lg={4}>
+                                            <BlogCard postCount={postCount} cardtitle="Blog Posts" />
+                                        </Grid>
+                                        <Grid item xs={12} md={5} lg={5}>
+                                            <Paper elevation={3}>
+                                                <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{ fontFamily: 'Paytone One' }}>Users</h6>
+                                                <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans' }}>A detailed log of users can be viewed here.</h6>
+                                                <div className="ml-24">
+                                                    <BarChart width={200} height={60} data={linechart}>
+                                                        <Bar dataKey="uv" fill="#8884d8" />
+                                                    </BarChart>
+                                                </div>
+                                                <Button onClick={() => handelLogs('userlog')} variant="contained" size="small" color="primary" className={classes.margin}>
+                                                    View Logs
         </Button>
-                                </Paper>
-                                {/* <UserLogs getBlogs={getBlogs} /> */}
-                            </Grid>
-                            <Grid item xs={12} md={5} lg={5}>
-                                <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Blogs</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of blog can be viewed here.</h6>
-                                    <div className="ml-24">
-                                        <AreaChart
-                                            width={200}
-                                            height={60}
-                                            data={linechart}
-                                            margin={{
-                                                top: 5, right: 0, left: 0, bottom: 5,
-                                            }}
-                                        >
-                                            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-                                        </AreaChart>
-                                    </div>
-                                    <Button onClick={() => handelLogs('bloglog')} variant="contained" size="small" color="primary" className={classes.margin}>
-                                        View Logs
+                                            </Paper>
+                                            {/* <UserLogs getBlogs={getBlogs} /> */}
+                                        </Grid>
+                                        <Grid item xs={12} md={5} lg={5}>
+                                            <Paper elevation={3}>
+                                                <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{ fontFamily: 'Paytone One' }}>Blogs</h6>
+                                                <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans' }}>A detailed log of blog can be viewed here.</h6>
+                                                <div className="ml-24">
+                                                    <AreaChart
+                                                        width={200}
+                                                        height={60}
+                                                        data={linechart}
+                                                        margin={{
+                                                            top: 5, right: 0, left: 0, bottom: 5,
+                                                        }}
+                                                    >
+                                                        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                                                    </AreaChart>
+                                                </div>
+                                                <Button onClick={() => handelLogs('bloglog')} variant="contained" size="small" color="primary" className={classes.margin}>
+                                                    View Logs
                                     </Button>
-                                </Paper>
-                                {/* <UserLogs getBlogs={getBlogs} /> */}
-                            </Grid>
-                            <Grid item xs={12} md={10} lg={10}>
-                                <Paper elevation={3}>
-                                    <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{fontFamily: 'Paytone One'}}>Survey Details</h6>
-                                    <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans'}}>A detailed log of users who started journey can be viewed here.</h6>
-                                    <div className="ml-4 md:ml-56 lg:ml-56">
-                                        <LineChart width={300} height={100} data={serveyDetails}>
-                                            <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
-                                        </LineChart>
-                                    </div>
-                                    <Button onClick={() => handelLogs('serwaylog')} variant="contained" size="small" color="primary" className={classes.margin}>
-                                        View Logs
+                                            </Paper>
+                                            {/* <UserLogs getBlogs={getBlogs} /> */}
+                                        </Grid>
+                                        <Grid item xs={12} md={10} lg={10}>
+                                            <Paper elevation={3}>
+                                                <h6 className="md:text-2xl pt-2 text-gray-900 font-black text-center" style={{ fontFamily: 'Paytone One' }}>Survey Details</h6>
+                                                <h6 className="md:text-1xl text-gray-900 font-black text-center" style={{ fontFamily: 'Open Sans' }}>A detailed log of users who started journey can be viewed here.</h6>
+                                                <div className="ml-4 md:ml-56 lg:ml-56">
+                                                    <LineChart width={300} height={100} data={serveyDetails}>
+                                                        <Line type="monotone" dataKey="pv" dot={false} stroke="#8884d8" strokeWidth={2} />
+                                                    </LineChart>
+                                                </div>
+                                                <Button onClick={() => handelLogs('serwaylog')} variant="contained" size="small" color="primary" className={classes.margin}>
+                                                    View Logs
                                     </Button>
-                                </Paper>
-                                {/* <UserLogs getBlogs={getBlogs} /> */}
-                            </Grid>
-                        </Grid>
+                                            </Paper>
+                                            {/* <UserLogs getBlogs={getBlogs} /> */}
+                                        </Grid>
+                                    </Grid>
 
-                    </React.Fragment>
-                    : ""
-            }
-            {
-                ShowUser ?
-                    <React.Fragment>
+                                </React.Fragment>
+                                : ""
+                        }
+                        {
+                            ShowUser ?
+                                <React.Fragment>
 
-                        <Grid
-                            style={{
-                                margin: '4rem 0rem 0rem 0rem',
-                                height: '100vh',
-                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
-                            }}
-                            container
-                            direction="row"
-                            justify="center"
-                            spacing={3}>
-                            <Grid item xs={12} md={12} lg={12} >
-                                <UserLogs UserLogsDetails={UserLogsDetails} />
-                            </Grid>
-                        </Grid>
-                    </React.Fragment>
-                    : ""
-            }
-            {
-                ShowBlogs ?
-                    <React.Fragment>
+                                    <Grid
+                                        style={{
+                                            margin: '4rem 0rem 0rem 0rem',
+                                            height: '100vh',
+                                            background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                                        }}
+                                        container
+                                        direction="row"
+                                        justify="center"
+                                        spacing={3}>
+                                        <Grid item xs={12} md={12} lg={12} >
+                                            <UserLogs UserLogsDetails={UserLogsDetails} />
+                                        </Grid>
+                                    </Grid>
+                                </React.Fragment>
+                                : ""
+                        }
+                        {
+                            ShowBlogs ?
+                                <React.Fragment>
 
-                        <Grid
-                            style={{
-                                margin: '4rem 0rem 0rem 0rem',
-                                height: '100vh',
-                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
-                            }}
-                            container
-                            direction="row"
-                            justify="center"
-                            spacing={3}>
-                            <Grid item xs={12} md={12} lg={12} >
-                                <BlogLogs getBlogs={getBlogs} />
-                            </Grid>
-                        </Grid>
-                    </React.Fragment>
-                    : ""
-            }
-            {
-                ShowSerway ?
-                    <React.Fragment>
+                                    <Grid
+                                        style={{
+                                            margin: '4rem 0rem 0rem 0rem',
+                                            height: '100vh',
+                                            background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                                        }}
+                                        container
+                                        direction="row"
+                                        justify="center"
+                                        spacing={3}>
+                                        <Grid item xs={12} md={12} lg={12} >
+                                            <BlogLogs getBlogs={getBlogs} />
+                                        </Grid>
+                                    </Grid>
+                                </React.Fragment>
+                                : ""
+                        }
+                        {
+                            ShowSerway ?
+                                <React.Fragment>
 
-                        <Grid
-                            style={{
-                                margin: '4rem 0rem 0rem 0rem',
-                                height: '100vh',
-                                background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
-                            }}
-                            container
-                            direction="row"
-                            justify="center"
-                            spacing={3}>
-                            <Grid item xs={12} md={12} lg={12} >
-                                <SerwayData SerwayDetails={SerwayDetails} />
-                            </Grid>
-                        </Grid>
-                    </React.Fragment>
-                    : ""
-            }
-            {
-                postBlog ?
-                    <PostBlog /> : ""
-            }
-            {
-                editBlog ?
-                    <Grid
-                        style={{ margin: '4rem 1rem' }}
-                        container
-                        direction="row"
-                        justify="center"
-                        alignItems="center"
-                        spacing={3}>
-                        <EditBlog />
-                    </Grid>
-                    : <React.Fragment></React.Fragment>
+                                    <Grid
+                                        style={{
+                                            margin: '4rem 0rem 0rem 0rem',
+                                            height: '100vh',
+                                            background: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)'
+                                        }}
+                                        container
+                                        direction="row"
+                                        justify="center"
+                                        spacing={3}>
+                                        <Grid item xs={12} md={12} lg={12} >
+                                            <SerwayData SerwayDetails={SerwayDetails} />
+                                        </Grid>
+                                    </Grid>
+                                </React.Fragment>
+                                : ""
+                        }
+                        {
+                            postBlog ?
+                                <PostBlog /> : ""
+                        }
+                        {
+                            editBlog ?
+                                <Grid
+                                    style={{ margin: '4rem 1rem' }}
+                                    container
+                                    direction="row"
+                                    justify="center"
+                                    alignItems="center"
+                                    spacing={3}>
+                                    <EditBlog />
+                                </Grid>
+                                : <React.Fragment></React.Fragment>
 
+                        }
+                    </div>
             }
-        </div>
+        </React.Fragment>
+
     );
 }
