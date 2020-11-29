@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 class getIntouch extends Component {
     constructor(props) {
@@ -14,10 +15,13 @@ class getIntouch extends Component {
                     <div className="container px-5 md:px-0 py-8 lg:py-2 md:py-24 mx-auto" id="contactus">
                         <h1 style={{ fontFamily: 'Open Sans' }} class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-10">Still confuse Get a FREE Suggetion from our Health Expert on WhatsApp
                     </h1>
-                        <h1 className='sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-10'>
+                        {/* <h1 className='sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-10'>
                             <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello." style={{ width: '20%', background: '#D00F7F', color: '#fff', margin: '0 auto', fontFamily: 'Open Sans' }} className="flex-shrink-0 text-white  border-0 py-2 px-8 focus:outline-none  rounded text-lg mt-20 sm:mt-0">
                                 Click Here To Chat</a>
-                        </h1>
+                        </h1> */}
+                        <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello." style={{right: '40%',left:'40%',bottom:'0px'}} class="text-center float pulse-button" target="_blank">
+                            <WhatsAppIcon style={{marginTop: '9px'}} />
+                        </a>
 
                     </div>
                 </section>

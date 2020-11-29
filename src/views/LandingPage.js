@@ -18,7 +18,7 @@ import AppInfo from "../components/AppInfo/AppInfo.js";
 import About from "../components/About/About.js";
 import Testimonial from "../components/Testimonials/Testimonials.js";
 import GetInTouch from "../components/GetInTouch/getInTouch.js";
-import Contact from "../components/Contact/Contact.js";
+import Contact from "../components/Contact/SectionContact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
@@ -130,9 +130,9 @@ export default function Components(props) {
                 {/* <div data-aos="fade-up" >
                     <Awards />
                 </div> */}
-                {/* <div data-aos="fade-up" >
+                <div data-aos="fade-up" >
                     <Contact />
-                </div> */}
+                </div>
             </div>
             <Footer />
         </div>

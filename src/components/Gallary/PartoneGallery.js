@@ -19,7 +19,7 @@ const PartOneGallery = () => {
     return (
         <React.Fragment>
             <div className={classes.onmobileviewhead}>
-                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">
+                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-0 sm:mb-10">
                     YOU<span class="text-indigo-600" style={{ color: '#D00F7F' }}>TUBE</span>
                 </h3>
             </div>

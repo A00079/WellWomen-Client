@@ -58,7 +58,7 @@ class AppInfo extends Component {
                         </div>
                     </div>
                 </section> */}
-                <div class="py-6 md:py-8" id='stats'>
+                <div class="py-6 md:py-8 mt-16" id='stats'>
                     <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:mt-16 md:text-4xl  leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-10 sm:mb-16">
                         WE <span class="text-indigo-600" style={{ color: '#D00F7F' }}> NEVER STOP IMPROVING</span>
                     </h3>

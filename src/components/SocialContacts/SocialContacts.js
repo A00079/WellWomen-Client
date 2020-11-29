@@ -8,7 +8,7 @@ import ReRender from '../AppInfo/Rerender.js';
 const SocialContacts = () => {
     return (
         <React.Fragment>
-            <section class="text-gray-700 body-font mb-20">
+            <section class="text-gray-700 body-font mb-20 mt-10">
                 <div class="container px-5 py-0 mx-auto">
                     <div class="flex flex-col text-center w-full mb-16">
                         <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-16 sm:mb-10">

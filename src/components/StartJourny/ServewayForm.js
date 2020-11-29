@@ -105,11 +105,11 @@ const SubmitForm = (props) => {
             <CssBaseline />
             <div className={classes.paper} style={{ marginTop: '0px' }}>
                 <h1 style={{ fontFamily: 'Paytone One' }} className="text-center  text-3xl mt-8 tracking-wide relative">ALMOST <span style={{ color: '#D00F7F' }}>FINISHED!</span></h1>
-                <h1 style={{ fontFamily: 'Open Sans' }} className="text-center  text-1xl mt-8 tracking-wide relative">
-                    5, 10, 20, 30 no matter how much weight you want to lose..
+                <h1 style={{ fontFamily: 'Open Sans', color: '#D00F7F' }} className="text-center font-bold  text-2xl mt-8 tracking-wide relative">
+                    <h1 className='text-blue-700'>5, 10, 20, 30</h1> No matter how much weight you want to lose..
                     You are at right place.
-                        </h1>
-                <form className={classes.form} noValidate>
+                </h1>
+                {/* <form className={classes.form} noValidate>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -165,14 +165,16 @@ const SubmitForm = (props) => {
                         }
 
                     </Button>
-                </form>
+                </form> */}
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
-                        <h4 className='font-bold cursor-pointer'>
-                            Our Programs:
-                                <p className='text-blue-700'>
-                                https://www.drsnehaladsule.com/services-1
+                        <h4 className='font-bold cursor-pointer  mt-10'>
+                            <span className='text-3xl'><span style={{ color: '#D00F7F' }}>Our</span> Programs:</span>
+                            <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello." target="_blank">
+                                <p className='text-blue-700 text-1xl'>
+                                    https://www.drsnehaladsule.com/services-1
                                 </p>
+                            </a>
                         </h4>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12}>

@@ -11,6 +11,8 @@ import { red } from '@material-ui/core/colors';
 import ourwork from '../../assets/img/ourwork.png';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import ResponsiveCard from '../../components/Slider/ResponsiveSlider/ResponsiveCard.js';
+import Button from "../../components/CustomButtons/Button.js";
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '300px',
@@ -360,6 +362,21 @@ const OurWorking = () => {
                     </div>
                 </div>
             </div>
+            <div className='text-center'>
+                <Button
+                    style={{ backgroundColor: '#D00f7F', fontFamily: 'Open Sans', color: '#FFF' }}
+                    className={classes.startbtn}
+                    color="danger"
+                    size="lg"
+                    rel="noopener noreferrer"
+                >
+                    <i className="fas fa-play" />
+                    <Link to="/startjourney" className={classes.dropdownLink}>
+                        Start Losing Weight
+                    </Link>
+                </Button>
+            </div>
+
         </React.Fragment >
     );
 }
