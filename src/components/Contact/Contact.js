@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Notifications, { notify } from 'react-notify-toast';
 import PostSerway from '../../REST/SubmitSerway.js';
 import Spinner from '../Spinner/Spinner.js';
-
+import { Link } from 'react-router-dom';
 const Contact = () => {
     const [name, setName] = useState('');
     const [email, setemail] = useState('');
@@ -30,7 +30,7 @@ const Contact = () => {
                 document.getElementById('message').value = '';
                 console.log("Response Data...", response);
                 setissubmited(false)
-            }).catch((err) =>{
+            }).catch((err) => {
                 notify.show('Failed to Submit Details', "custom", 4000, { background: '#0E1717', text: "#FFFFFF" })
                 setissubmited(false)
             })
@@ -40,12 +40,12 @@ const Contact = () => {
         <React.Fragment>
             <div className="flex flex-col text-center w-full mb-0">
                 {/* <h3 style={{ fontFamily: 'Paytone One' }} className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CONTACT <span style={{ color: '#D00F7F' }}>US</span></h3> */}
-                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-32 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-0 sm:mb-10">
-                CONTACT <span class="text-indigo-600" style={{ color: '#D00F7F' }}> US</span>
+                <h3 style={{ fontFamily: 'Paytone One' }} class="text-3xl sm:text-5xl md:text-4xl md:mt-2 leading-normal font-extrabold tracking-tight text-gray-900 text-center mb-0 mt-0 sm:mb-10">
+                    CONTACT <span class="text-indigo-600" style={{ color: '#D00F7F' }}> US</span>
                 </h3>
             </div>
             <section class="text-gray-700 body-font relative">
-                <div class="container px-5 py-16 mx-auto flex sm:flex-no-wrap flex-wrap">
+                <div class="container px-5 py-0 mx-auto flex sm:flex-no-wrap flex-wrap">
                     <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                         <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}></iframe>
                         <div class="bg-white relative flex flex-wrap py-6">
@@ -93,14 +93,19 @@ const Contact = () => {
                         <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contact Us</h2>
                         <p class="leading-relaxed mb-5 text-gray-600">Please contact us if you have any queries or suggestions.</p>
                         <input id='name' onChange={event => { setName(event.target.value) }} class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Name" type="text" />
-                        <input id='email'  onChange={event => { setemail(event.target.value) }} class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" />
+                        <input id='email' onChange={event => { setemail(event.target.value) }} class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" placeholder="Email" type="email" />
                         <textarea id='message' onChange={event => { setmessage(event.target.value) }} class="bg-white rounded border border-gray-400 focus:outline-none h-32 focus:border-indigo-500 text-base px-4 py-2 mb-4 resize-none" placeholder="Message"></textarea>
                         <button onClick={handelFormSubmit} style={{ backgroundColor: '#D00f7F', fontFamily: 'Open Sans', color: '#FFF' }} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                             {
-                                issubmited?<Spinner size='lg' spinning='spinning' />
-                                : 'Submit'
+                                issubmited ? <Spinner size='lg' spinning='spinning' />
+                                    : 'Submit'
                             }
                         </button>
+
+                        <button  style={{ backgroundColor: '#D00f7F', fontFamily: 'Open Sans', color: '#FFF' }} class="text-white bg-indigo-500 border-0 py-2 mt-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                            <Link to='/'> Back</Link>
+                        </button>
+
                         {/* <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p> */}
                     </div>
                 </div>

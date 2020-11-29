@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import Notifications from 'react-notify-toast'
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { setCurrentUser, logoutUser } from "./actions/authActions.js";
 import { Provider } from "react-redux";
@@ -27,6 +28,7 @@ import KnowMore from '../src/components/HowItWorks/KnowMore.js';
 import ComingSoon from './views/ComingSoon.js';
 import Admin from '../src/components/AdminPanel/Admin.js';
 import SupportPortal from '../src/components/SupportPortal/SupportPortal.js';
+import Contact from "../src/components/Contact/Contact.js";
 
 var hist = createBrowserHistory();
 // Check for token to keep user logged in
@@ -71,6 +73,8 @@ function App() {
         <Route exact path="/knowmore" component={KnowMore} />
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/support" component={SupportPortal} />
+        <Route exact path="/contact" component={Contact} />
+
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           {/* <PrivateRoute exact path="/pricing" component={Pricing} /> */}

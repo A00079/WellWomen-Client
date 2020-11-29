@@ -14,3 +14,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.carousel .slide .legend {
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 10px !important;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.9 !important;
+  transition: opacity .35s ease-in-out;
+}

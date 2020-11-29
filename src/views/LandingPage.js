@@ -104,25 +104,10 @@ export default function Components(props) {
                     <OurWorking />
                 </div>
                 <div data-aos="fade-up" >
-                    <HowItWorks />
-                </div>
-                <div data-aos="fade-up" >
-                    <PartOneGallery />
-                </div>
-                <div data-aos="fade-up" >
-                    <TrialBlog />
-                </div>
-                <div data-aos="fade-up" >
                     <AppInfo />
                 </div>
                 <div data-aos="fade-up" >
-                    <About />
-                </div>
-                <div data-aos="fade-up" >
-                    <Awards />
-                </div>
-                <div data-aos="fade-up" >
-                    <Testimonial />
+                    <HowItWorks />
                 </div>
                 <div data-aos="fade-up" >
                     <GetInTouch />
@@ -131,8 +116,23 @@ export default function Components(props) {
                     <SocialContacts />
                 </div>
                 <div data-aos="fade-up" >
-                    <Contact />
+                    <Testimonial />
                 </div>
+                <div data-aos="fade-up" >
+                    <PartOneGallery />
+                </div>
+                <div data-aos="fade-up" >
+                    <TrialBlog />
+                </div>
+                {/* <div data-aos="fade-up" >
+                    <About />
+                </div> */}
+                {/* <div data-aos="fade-up" >
+                    <Awards />
+                </div> */}
+                {/* <div data-aos="fade-up" >
+                    <Contact />
+                </div> */}
             </div>
             <Footer />
         </div>
