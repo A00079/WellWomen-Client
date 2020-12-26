@@ -29,6 +29,8 @@ import ComingSoon from './views/ComingSoon.js';
 import Admin from '../src/components/AdminPanel/Admin.js';
 import SupportPortal from '../src/components/SupportPortal/SupportPortal.js';
 import Contact from "../src/components/Contact/Contact.js";
+import Disclaimer from "../src/components/Disclaimer/Disclaimer.js";
+
 
 var hist = createBrowserHistory();
 // Check for token to keep user logged in
@@ -74,6 +76,7 @@ function App() {
         <Route exact path="/admin" component={Admin} />
         <Route exact path="/support" component={SupportPortal} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/Disclaimer" component={Disclaimer} />
 
         <Switch>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}

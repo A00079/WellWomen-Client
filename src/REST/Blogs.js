@@ -1,4 +1,4 @@
-const baseUrl = 'https://www.curvicare.com/';
+const baseUrl = process.env.REACT_APP_API_URL;
 // const baseUrl = 'http://localhost:5000/'
 const PostData = {
 

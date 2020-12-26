@@ -11,8 +11,11 @@ const TrialBlog = () => {
         Blogs
             .getBlogList(api_url)
             .then((res) => {
-                setBlogOne(res.data[0])
-                setBlogTwo(res.data[1])
+                debugger
+                if (res.data.length !== 0) {
+                    setBlogOne(res.data[0])
+                    setBlogTwo(res.data[1])
+                }
             })
     }, [])
     return (
