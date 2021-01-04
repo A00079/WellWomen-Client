@@ -15,7 +15,7 @@ const Contact = () => {
         console.log('email', email)
         console.log('message', message)
 
-        let api_url = "api/user/contact/create";
+        let api_url = "api/user/contact";
         let data = {
             'name': name,
             'email': email,
