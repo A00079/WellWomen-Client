@@ -43,9 +43,11 @@ const HeaderLinks = (props) => {
   };
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Link to='/'>Home</Link>
+      <Link to='/'>
+        <ListItem className={classes.listItem}>
+          Home
       </ListItem>
+      </Link>
       {/* {
         props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
           <DirectLinkDiv
@@ -104,21 +106,24 @@ const HeaderLinks = (props) => {
             duration={500}
           >
             Contact Us</DirectLinkDiv>
-          
-      </ListItem>
+
+        </ListItem>
       }
-      <ListItem className={classes.listItem}>
-        <Link to="/dashboard">Blogs</Link>
+      <Link to="/dashboard">
+        <ListItem className={classes.listItem}>
+          Blogs
       </ListItem>
+      </Link>
       {
         props.is_admin.isAdmin ? <ListItem className={classes.listItem}>
           Admin Panel
       </ListItem> : ""
       }
-
-      <ListItem className={classes.listItem}>
-      <Link to="/YoutubeVideos">Youtube</Link>
+      <Link to="/YoutubeVideos">
+        <ListItem className={classes.listItem}>
+          Youtube
       </ListItem>
+      </Link>
       {/* {
         handeldropdown ?
           <ListItem className={classes.listItem}>

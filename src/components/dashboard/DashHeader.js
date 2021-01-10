@@ -94,11 +94,11 @@ export default function Header(props) {
         [classes.fixed]: fixed
     });
     const brandComponent =
-    <Link to='/'>
-     <img style={{
-        width: '10rem',
-        height: '3rem'
-    }} className={classes.title} src={logo} /></Link>
+        <Link to='/'>
+            <img style={{
+                width: '10rem',
+                height: '3rem'
+            }} className={classes.title} src={logo} /></Link>
     return (
         <AppBar style={{ opacity: '0.9' }} className={appBarClasses}>
             <Toolbar className={classes.container}>
@@ -137,30 +137,36 @@ export default function Header(props) {
                 >
                     <div className={classes.appResponsive}>
                         <List className={classes.list}>
-                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                                <Link to='/'>
-                                <HomeIcon /> Home
-                                </Link>
+                            <Link to='/'>
+                                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                    <HomeIcon /> Home
                             </ListItem>
+                            </Link>
                             <Divider />
+                            <Link to="/dashboard">
+                                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                    <ChromeReaderModeIcon /> Blogs
+                            </ListItem>
+                            </Link>
+                            <Divider />
+                            <Link to="/pricing">
+                                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                    <MonetizationOnIcon />Pricing
+                            </ListItem>
+                            </Link>
 
-                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
-                            </ListItem>
                             <Divider />
-                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                                <Link to="/pricing"><MonetizationOnIcon />Pricing</Link>
+                            <Link to="/singleaboutus">
+                                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                    <InfoIcon />About us
                             </ListItem>
-
+                            </Link>
                             <Divider />
-                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                                <Link to="/singleaboutus"><InfoIcon />About us</Link>
+                            <Link to="/YoutubeVideos">
+                                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                                    <YouTubeIcon /> Youtube
                             </ListItem>
-                            <Divider />
-
-                            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
-                            </ListItem>
+                            </Link>
                             <Divider />
 
                             {/* <ListItem className={classes.listitemdrop}>

@@ -47,23 +47,31 @@ const HeaderLinks = (props) => {
     };
     return (
         <List className={classes.list}>
-            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to='/'>
-                <HomeIcon /> Home
-                </Link>
+            <Link to='/'>
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                    <HomeIcon /> Home
             </ListItem>
-            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
+            </Link>
+            <Link to="/dashboard">
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                    <ChromeReaderModeIcon /> Blogs
             </ListItem>
-            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/pricing"><MonetizationOnIcon /> Pricing</Link>
+            </Link>
+            <Link to="/pricing">
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                    <MonetizationOnIcon /> Pricing
             </ListItem>
-            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/singleaboutus"><InfoIcon /> About us</Link>
+            </Link>
+            <Link to="/singleaboutus">
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                    <InfoIcon /> About us
             </ListItem>
-            <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
-            </ListItem>
+            </Link>
+            <Link to="/YoutubeVideos">
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                    <YouTubeIcon /> Youtube
+                </ListItem>
+            </Link>
             {/* <ListItem className={classes.listitemdrop}>
                 <ListItem className={classes.listItem}>
                     <Button style={{ backgroundColor: '#D00F7F', fontFamily: 'Open Sans', color: '#FFF' }} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>

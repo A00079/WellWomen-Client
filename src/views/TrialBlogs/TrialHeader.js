@@ -131,11 +131,11 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
+            <Link to='/'>
               <ListItem style={{ padding: '16px 7px' }} className={classes.listItem}>
-                <Link to='/'>
                   Home
-                  </Link>
               </ListItem>
+              </Link>
               <Divider />
               <Link to="/dashboard">
                 <ListItem style={{ padding: '16px 7px', textDecoration: 'none' }} className={classes.listItem}>

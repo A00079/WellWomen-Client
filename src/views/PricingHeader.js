@@ -127,30 +127,35 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
+            <Link to='/'>
               <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }}  className={classes.listItem}>
-                  <Link to='/'>
                   <HomeIcon /> Home
-                  </Link>
               </ListItem>
+              </Link>
               <Divider />
+              <Link to="/dashboard">
               <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }}  className={classes.listItem}>
-                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
+                <ChromeReaderModeIcon /> Blogs
             </ListItem>
+            </Link>
             <Divider />
-
+            <Link  to="/pricing">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }}  className={classes.listItem}>
-                <Link  to="/pricing"><MonetizationOnIcon /> Pricing</Link>
+                <MonetizationOnIcon /> Pricing
             </ListItem>
+            </Link>
             <Divider />
-
+            <Link  to="/singleaboutus">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }}  className={classes.listItem}>
-                <Link  to="/singleaboutus"><InfoIcon /> About Us</Link>
+                <InfoIcon /> About Us
             </ListItem>
+            </Link>
             <Divider />
-
+            <Link to="/YoutubeVideos">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }}  className={classes.listItem}>
-                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
+                <YouTubeIcon /> Youtube
             </ListItem>
+            </Link>
             <Divider />
               {/* <ListItem className={classes.listItem}>
                 <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>

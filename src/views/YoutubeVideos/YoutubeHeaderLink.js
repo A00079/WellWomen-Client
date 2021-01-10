@@ -48,17 +48,21 @@ const HeaderLinks = (props) => {
     };
     return (
         <List className={classes.list}>
+            <Link to="/">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/">
                 <HomeIcon />  Home
-                </Link>
             </ListItem>
+            </Link>
+            <Link to="/dashboard">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/dashboard"><ChromeReaderModeIcon /> Blogs</Link>
+                <ChromeReaderModeIcon /> Blogs
             </ListItem>
+            </Link>
+            <Link style={{borderBottom: '2px solid #d00f7f'}} to="/YoutubeVideos">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link style={{borderBottom: '2px solid #d00f7f'}} to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
+                <YouTubeIcon /> Youtube
             </ListItem>
+            </Link>
             {/* <ListItem className={classes.listItem}>
                 <Button style={{backgroundColor: '#D00F7F', fontFamily: 'Open Sans',color:'#FFF'}} variant="contained" size="small" color="primary" onClick={() => onLogoutClick()}>
                     Logout

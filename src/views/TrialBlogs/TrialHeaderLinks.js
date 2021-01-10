@@ -48,17 +48,21 @@ const HeaderLinks = (props) => {
     };
     return (
         <List className={classes.list}>
+            <Link to="/">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/">
                 <HomeIcon /> Home
-                </Link>
             </ListItem>
+            </Link>
+            <Link to="/dashboard" style={{borderBottom: '2px solid #d00f7f'}}>
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/dashboard" style={{borderBottom: '2px solid #d00f7f'}}><ChromeReaderModeIcon /> Blogs</Link>
+                <ChromeReaderModeIcon /> Blogs
             </ListItem>
+            </Link>
+            <Link to="/YoutubeVideos">
             <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <Link to="/YoutubeVideos"><YouTubeIcon /> Youtube</Link>
+                <YouTubeIcon /> Youtube
             </ListItem>
+            </Link>
             {/* {
                 isloggedIn ?
                     <ListItem className={classes.listItem}>
