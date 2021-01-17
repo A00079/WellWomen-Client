@@ -115,7 +115,7 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <SocialContacts />
                 </div>
-                <div data-aos="fade-up" >
+                <div data-aos="fade-up" style={{display:'none'}}>
                     <Testimonial />
                 </div>
                 <div data-aos="fade-up" >
