@@ -94,7 +94,7 @@ class Footer extends Component {
           <div class="bg-gray-200">
             <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
               <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Curvicare —
-        <a href="" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@TeamPrathemesh</a>
+        <a href="" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@TeamPratham</a>
               </p>
               <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                 <a class="text-gray-500">
