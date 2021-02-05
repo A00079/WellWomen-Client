@@ -139,27 +139,20 @@ export default function Header(props) {
         >
           <div className={classes.appResponsive}>
             <List>
-            <Link to='/'>
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+              <Link to='/'>
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                   <HomeIcon /> Home
               </ListItem>
               </Link>
               <Divider />
               <Link to="/singleaboutus">
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
-                <DirectLinkDiv
-                  to="aboutus"
-                  spy={true}
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                >
-                  <InfoIcon /> About</DirectLinkDiv>
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+                  <InfoIcon /> About
               </ListItem>
               </Link>
               <Divider />
 
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="ourwork"
                   spy={true}
@@ -169,7 +162,7 @@ export default function Header(props) {
                 >
                   <TransferWithinAStationIcon />Transformation</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="testimonials"
                   spy={true}
@@ -179,7 +172,7 @@ export default function Header(props) {
                 >
                   <EmojiPeopleIcon /> Testimonials</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="stats"
                   spy={true}
@@ -189,7 +182,7 @@ export default function Header(props) {
                 >
                   <EqualizerIcon /> Stats</DirectLinkDiv>
               </ListItem><Divider />
-              <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
+              <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="contactus"
                   spy={true}
@@ -204,21 +197,21 @@ export default function Header(props) {
               {
                 isloggedIn ?
                   <Link to="/dashboard">
-                    <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                    <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
                       <ChromeReaderModeIcon /> Blogs
                     </ListItem>
                   </Link>
                   :
                   <Link to="/dashboard">
-                    <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
-                    <ChromeReaderModeIcon /> Blogs
+                    <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                      <ChromeReaderModeIcon /> Blogs
                     </ListItem>
                   </Link>
               }
 
               <Divider />
               <Link to="/YoutubeVideos">
-                <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
+                <ListItem style={{ padding: '16px 7px', color: 'rgb(208, 15, 127)', textDecoration: 'none' }} className={classes.listItem}>
                   <YouTubeIcon /> Youtube
               </ListItem>
               </Link>
