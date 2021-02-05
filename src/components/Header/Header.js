@@ -145,6 +145,7 @@ export default function Header(props) {
               </ListItem>
               </Link>
               <Divider />
+              <Link to="/singleaboutus">
               <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv
                   to="aboutus"
@@ -154,7 +155,9 @@ export default function Header(props) {
                   duration={500}
                 >
                   <InfoIcon /> About</DirectLinkDiv>
-              </ListItem><Divider />
+              </ListItem>
+              </Link>
+              <Divider />
 
               <ListItem style={{ padding: '16px 7px',color: 'rgb(208, 15, 127)' }} className={classes.listItem}>
                 <DirectLinkDiv

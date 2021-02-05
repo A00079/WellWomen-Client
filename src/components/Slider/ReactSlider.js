@@ -31,7 +31,7 @@ const SimpleSlider = () => {
 			play={true}
 			bullets={false}
 			cancelOnInteraction={false} // should stop playing on user interaction
-			interval={4000}
+			interval={8000}
 		>
 			<section class="text-gray-700 body-font" >
 				<div class="container mx-auto flex px-0 py-0 md:mt-0 mt-0 md:flex-row flex-col items-center">

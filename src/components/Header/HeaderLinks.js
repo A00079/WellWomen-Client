@@ -49,16 +49,10 @@ const HeaderLinks = (props) => {
       </ListItem>
       </Link>
       {
-        props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
-          <DirectLinkDiv
-            to="aboutus"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            About</DirectLinkDiv>
+        props.is_admin.isAdmin ? "" : <Link to="/singleaboutus"><ListItem className={classes.listItem}>
+            About
         </ListItem>
+        </Link>
       }
       {
         props.is_admin.isAdmin ? "" : <ListItem className={classes.listItem}>
