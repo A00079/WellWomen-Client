@@ -123,7 +123,7 @@ class Footer extends Component {
                   <Link to='/privacypolicy'>
                     <span className='font-bold'>Privacy Policy</span>
                   </Link>
-                  <Link to='/privacypolicy'>
+                  <Link to='/terms-and-conditions'>
                     <span className='font-bold'>, Terms & Conditions</span>
                   </Link>
                   <Link to='/Disclaimer'>

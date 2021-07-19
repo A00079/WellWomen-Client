@@ -181,14 +181,14 @@ const SubmitForm = (props) => {
                         <h4 className='font-bold'>
                             Not sure?
                             Talk to us on whats app
-                            </h4>
+                        </h4>
                     </Grid>
                 </Grid>
             </div>
             <Box mt={5}>
                 <Copyright />
             </Box>
-            <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello." class="float pulse-button" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello I want to lose 56kg. Name: Clerk kent Age:28 Email ID: clear@gmail.com City: Mumbai ." class="float pulse-button" target="_blank">
                 <WhatsAppIcon className='my-float' />
             </a>
         </Container>
