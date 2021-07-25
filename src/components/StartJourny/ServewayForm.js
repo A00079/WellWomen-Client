@@ -22,13 +22,22 @@ import Notifications, { notify } from 'react-notify-toast'
 import Spinner from '../../components/Spinner/Spinner.js';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import './SerwayForm.css';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="/">
                 @Team Pratham
-      </Link>{' '}
+            </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
@@ -60,7 +69,30 @@ const SubmitForm = (props) => {
     const [name, setName] = useState('');
     const [email, setemail] = useState('');
     const [phone, setphone] = useState(0);
-    const [issubmited, setissubmited] = useState(false)
+    const [issubmited, setissubmited] = useState(false);
+
+
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const [userName, setUserName] = useState(0);
+    const [userAge, setUserAge] = useState(0);
+    const [userWeight, setUserWeight] = useState(0);
+    const [userCity, setUserCity] = useState(0);
+    const [userEmail, setUserEmail] = useState(0);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const whatsappSubmit = () => {
+        window.location = `https://api.whatsapp.com/send?phone=9109137617952&text=Hello I want to lose ${userWeight}kg. Name: ${userName} Age:${userAge} Email ID: ${userEmail} City: ${userCity}.`;
+    }
 
 
     useEffect(() => {
@@ -188,9 +220,42 @@ const SubmitForm = (props) => {
             <Box mt={5}>
                 <Copyright />
             </Box>
-            <a href="https://api.whatsapp.com/send?phone=9109137617952&text=Hello I want to lose 56kg. Name: Clerk kent Age:28 Email ID: clear@gmail.com City: Mumbai ." class="float pulse-button" target="_blank">
+            <a onClick={handleClickOpen} class="float pulse-button" target="_blank">
                 <WhatsAppIcon className='my-float' />
             </a>
+            <Dialog
+                fullScreen={fullScreen}
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="responsive-dialog-title"
+            >
+                <DialogTitle id="responsive-dialog-title">{"Basic Details"}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        <div className='space-y-2'>
+                            <div className='flex flex-row justify-between space-x-4'>
+                                <TextField id="outlined-basic" label="Name" onChange={(e) => setUserName(e.target.value)} variant="outlined" />
+                                <TextField id="outlined-basic" label="Age" onChange={(e) => setUserAge(e.target.value)} variant="outlined" />
+                            </div>
+                            <div className='w-full'>
+                                <TextField className='w-full' id="outlined-basic" label="Email" onChange={(e) => setUserEmail(e.target.value)} variant="outlined" />
+                            </div>
+                            <div className='flex flex-row justify-between space-x-4'>
+                                <TextField id="outlined-basic" label="Weight" onChange={(e) => setUserWeight(e.target.value)} variant="outlined" />
+                                <TextField id="outlined-basic" label="City" onChange={(e) => setUserCity(e.target.value)} variant="outlined" />
+                            </div>
+                        </div>
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button autoFocus onClick={handleClose} color="primary">
+                        Cancel
+                    </Button>
+                    <Button color="primary" onClick={() => whatsappSubmit()} autoFocus>
+                        Submit
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Container>
     );
 }
