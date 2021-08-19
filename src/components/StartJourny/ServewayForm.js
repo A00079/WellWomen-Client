@@ -201,11 +201,9 @@ const SubmitForm = (props) => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <h4 className='font-bold cursor-pointer  mt-10'>
-                            <span className='text-3xl'><span style={{ color: '#D00F7F' }}>Our</span> Programs:</span>
-                            <a href="https://www.drsnehaladsule.com/services-1" target="_blank">
-                                <p className='text-blue-700 text-1xl'>
-                                    https://www.drsnehaladsule.com/services-1
-                                </p>
+                            {/* <span className='text-3xl'><span style={{ color: '#D00F7F' }}>Our</span> Programs:</span> */}
+                            <a className='bg-pink-600 p-3 text-white rounded-lg' href="https://www.drsnehaladsule.com/services-1" target="_blank">
+                                Our Programs
                             </a>
                         </h4>
                     </Grid>

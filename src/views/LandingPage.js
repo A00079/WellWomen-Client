@@ -22,6 +22,7 @@ import Contact from "../components/Contact/SectionContact.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import HowItWorks from "../components/HowItWorks/HowItWorks.js";
 import OurWorking from "../components/OurWorking/OurWorking.js";
+import MediaLink from "../components/MediaLink/MediaLink.js";
 import WorkingCards from "../components/OurWorking/OurWorkingCards.js";
 import PartOneGallery from '../components/Gallary/PartoneGallery.js';
 import FullGallery from '../components/Gallary/FullGallary.js';
@@ -115,6 +116,9 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <SocialContacts />
                 </div>
+                <div data-aos="fade-up" >
+                    <MediaLink />
+                </div>
                 <div data-aos="fade-up">
                     <Testimonial />
                 </div>
@@ -124,9 +128,6 @@ export default function Components(props) {
                 <div data-aos="fade-up" >
                     <TrialBlog />
                 </div>
-                {/* <div data-aos="fade-up" >
-                    <About />
-                </div> */}
                 {/* <div data-aos="fade-up" >
                     <Awards />
                 </div> */}

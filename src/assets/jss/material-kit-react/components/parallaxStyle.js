@@ -9,6 +9,7 @@ const parallaxStyle = theme => ({
     position: "relative",
     backgroundPosition: "center center",
     backgroundSize: "cover",
+    backgroundRepeat: "no-repeat", 
     background: `url(${homeDesktop})`,
     [theme.breakpoints.down('sm')]: {
       background:`url(${homeMobile})`,
